@@ -19,3 +19,21 @@ html_static_path = ["_static"]
 language = "en"                # 默认英文
 locale_dirs = ["locale/"]      # 翻译目录（相对 docs/source）
 gettext_compact = False
+
+# 模板 & 静态目录
+templates_path = ["_templates"]
+# html_static_path = ["_static"]
+
+# 侧边栏里插入我们自定义的 language.html
+html_sidebars = {
+    "**": [
+        "globaltoc.html",
+        "sourcelink.html",
+        "searchbox.html",
+        "language.html",   # <--- 新增这一行
+    ]
+}
+
+# 把自定义 JS 注入到每页
+def setup(app):
+    app.add_js_file("langswitch.js")
