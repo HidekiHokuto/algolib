@@ -4,9 +4,10 @@ Minimal algorithms library template with pytest and Sphinx docs.
 
 [**Docs (EN)**](https://HidekiHokuto.github.io/algolib/en/) • [**文档（简体中文）**](https://HidekiHokuto.github.io/algolib/zh/)
 
-![docs](https://img.shields.io/badge/Docs-Pages-success)
-![i18n zh_CN](https://img.shields.io/badge/i18n_zh--CN-0%25-blue)
-
+<!-- i18n-progress:start -->
+[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-0%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
+Translation Progress: 0%
+<!-- i18n-progress:end -->
 
 ## Quick start
 ```bash
