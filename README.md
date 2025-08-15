@@ -9,6 +9,8 @@ Minimal algorithms library template with pytest and Sphinx docs.
 Translation Progress: 0%
 <!-- i18n-progress:end -->
 
+---
+
 ## Quick start
 ```bash
 conda create -n algos310 python=3.10 -y
