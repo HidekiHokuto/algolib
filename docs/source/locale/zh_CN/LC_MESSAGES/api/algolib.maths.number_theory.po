@@ -33,7 +33,7 @@ msgstr "algolib.maths.number_theory.prime 模块"
 
 #: algolib.maths.number_theory.prime.is_prime:1 of
 msgid "Check whether an integer is a prime using the 6k ± 1 optimization."
-msgstr "使用 6k ± 1 优化方法检查一个整数是否为质数。"
+msgstr "使用 :math:`6k \\pm 1` 优化方法检查一个整数是否为质数。"
 
 #: ../source/api/algolib.maths.number_theory.rst
 msgid "Parameters"
