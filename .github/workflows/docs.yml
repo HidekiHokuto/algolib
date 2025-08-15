@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# 关键权限！
+# 关键权限：没有这三项会 404 / 权限不足
 permissions:
   contents: read
   pages: write
@@ -21,33 +21,55 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
-      - name: Install dependencies
+      - name: Install doc deps
         run: |
           python -m pip install -U pip
           pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
-          # 如果你的项目需要额外依赖（生成 API 文档等），这里一起装
+          # 如果需要自动生成 API 文档（建议）：
+          pip install . || true
 
-      # 生成英文 & 中文（示例命令；按你的项目实际 build 命令替换）
-      - name: Build Sphinx (EN)
-        working-directory: docs
+      - name: Generate API docs (sphinx-apidoc)
         run: |
-          make clean
-          make html
+          sphinx-apidoc -f -o docs/source/api src/algolib
 
-      # 如果你已经做了 i18n，并且有 zh_CN 的 po/mo，添加中文构建：
-      # - name: Build Sphinx (ZH)
-      #   working-directory: docs
-      #   env:
-      #     SPHINXOPTS: "-D language=zh_CN"
-      #   run: |
-      #     make html
+      # 构建英文到 docs/build/html/en
+      - name: Build Sphinx (EN)
+        run: |
+          sphinx-build -b html docs/source docs/build/html/en -D language=en
 
-      - name: Prepare Pages artifact
+      # 构建中文到 docs/build/html/zh
+      # 若你已完成 i18n（有 locale/zh_CN/ 的 po/mo），会显示中文；
+      # 否则也能构建成功，但内容还是英文（后续逐步翻译即可）。
+      - name: Build Sphinx (ZH)
+        run: |
+          sphinx-build -b html docs/source docs/build/html/zh -D language=zh_CN
+
+      # 在根目录放一个语言选择页（相对链接，避免路径问题）
+      - name: Create root index selector
+        run: |
+          mkdir -p docs/build/html
+          cat > docs/build/html/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8">
+          <title>algolib docs</title>
+          <style>
+            body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; padding: 2rem; line-height: 1.6; }
+            a { text-decoration: none; }
+            .btn { display:inline-block; padding:.6rem 1rem; border:1px solid #ccc; border-radius:8px; margin-right:1rem; }
+          </style>
+          <h1>algolib documentation</h1>
+          <p>Select language / 选择语言：</p>
+          <p>
+            <a class="btn" href="./en/">English</a>
+            <a class="btn" href="./zh/">简体中文</a>
+          </p>
+          HTML
+
+      - name: Disable Jekyll
         run: |
           touch docs/build/html/.nojekyll
 

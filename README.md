@@ -8,6 +8,7 @@ conda create -n algos310 python=3.10 -y
 conda activate algos310
 conda install -c conda-forge pytest sphinx sphinx_rtd_theme myst-parser -y
 pytest
+```
 
 ---
 
