@@ -10,6 +10,7 @@ permissions:
   pull-requests: write
   pages: write              # 部署 Pages
   id-token: write           # OIDC for Pages
+  issues: write
 
 concurrency:
   group: "pages"
