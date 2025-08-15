@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the Algolib package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
@@ -26,4 +25,3 @@ msgstr "目录"
 #: ../source/index.rst:2
 msgid "Welcome to Algolib's documentation!"
 msgstr "欢迎来到 Algolib 的文档"
-

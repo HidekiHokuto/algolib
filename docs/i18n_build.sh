@@ -50,74 +50,88 @@ echo "[7/7] Compute zh_CN translation progress & update README..."
 # 兼容两种可能的目录：docs/locale/... 和 docs/source/locale/...
 PO_BASES=("locale/zh_CN/LC_MESSAGES" "source/locale/zh_CN/LC_MESSAGES")
 
-TOTAL=0
-TRANS=0
-FUZZY=0
-UNTRANS=0
-
+# --- 先逐文件用 msgfmt 打印“可读统计”（仅展示，不用于最终汇总） ---
 for base in "${PO_BASES[@]}"; do
   [ -d "$base" ] || continue
-  tmpfile="$(mktemp)"
-  find "$base" -type f -name '*.po' > "$tmpfile"
-  while IFS= read -r po; do
-    [ -f "$po" ] || continue
+  while IFS= read -r -d '' po; do
     STATS="$(msgfmt --statistics -o /dev/null "$po" 2>&1 || true)"
     echo " - $(basename "$po"): $STATS"
-
-    # 例："2 translated messages, 0 fuzzy translations, 5 untranslated messages."
-    t=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p' | head -n1)
-    f=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p' | head -n1)
-    u=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p' | head -n1)
-    [ -z "$t" ] && t=0; [ -z "$f" ] && f=0; [ -z "$u" ] && u=0
-
-    TRANS=$((TRANS + t))
-    FUZZY=$((FUZZY + f))
-    UNTRANS=$((UNTRANS + u))
-    TOTAL=$((TOTAL + t + f + u))
-  done < "$tmpfile"
-  rm -f "$tmpfile"
+  done < <(find "$base" -type f -name '*.po' -print0)
 done
 
-if [ "$TOTAL" -gt 0 ]; then
-  PCT=$(( TRANS * 100 / TOTAL ))   # translated 已排除 fuzzy
+# --- 去重重复 msgid（避免后续统计异常），需要 gettext 的 msguniq ---
+if command -v msguniq >/dev/null 2>&1; then
+  for base in "${PO_BASES[@]}"; do
+    [ -d "$base" ] || continue
+    while IFS= read -r -d '' po; do
+      tmp="$(mktemp)"
+      msguniq --use-first -o "$tmp" "$po" && mv "$tmp" "$po"
+    done < <(find "$base" -type f -name '*.po' -print0)
+  done
 else
-  PCT=0
+  echo "  (msguniq not found, skip de-duplicate .po; install gettext for best results)" >&2
 fi
 
-echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
-echo "Progress: ${PCT}%"
+# --- 用 polib 精确统计并回写 README（不要再用 sed/awk 抽数字） ---
+python3 - <<'PY'
+import pathlib, re, sys
+try:
+    import polib
+except Exception as e:
+    print("polib not available; cannot compute progress.", file=sys.stderr)
+    sys.exit(1)
 
-# —— 用 Python 稳定回写 README 的 i18n 标记块（支持首次追加）——
-python3 - "$PCT" <<'PY'
-import sys, re, pathlib
+BASES = [
+    pathlib.Path("source/locale/zh_CN/LC_MESSAGES"),
+    pathlib.Path("locale/zh_CN/LC_MESSAGES"),
+]
 
-pct = int(sys.argv[1])
+files = []
+for b in BASES:
+    if b.is_dir():
+        files += sorted(b.rglob("*.po"))
+
+trans = fuzzy = untrans = total = 0
+
+def file_stats(po_path: pathlib.Path):
+    T=F=U=Tot=0
+    po = polib.pofile(str(po_path))
+    for e in po:
+        if e.obsolete:
+            continue
+        Tot += 1
+        if e.fuzzy:
+            F += 1
+        elif e.translated():
+            T += 1
+        else:
+            U += 1
+    return T,F,U,Tot
+
+for f in files:
+    T,F,U,Tot = file_stats(f)
+    trans += T; fuzzy += F; untrans += U; total += Tot
+
+pct = int(round(100.0 * trans / total)) if total else 0
+print(f"Summary: translated={trans}, fuzzy={fuzzy}, untranslated={untrans}, total={total}")
+print(f"Progress: {pct}%")
+
+# 回写 README 的锚点块
 readme = pathlib.Path(__file__).resolve().parents[1] / "README.md"
-text = readme.read_text(encoding="utf-8")
+badge = f"[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-{pct}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)"
+block = "<!-- i18n-progress:start -->\n" + badge + f"\nTranslation Progress: {pct}%\n<!-- i18n-progress:end -->"
 
-block = (
-    "<!-- i18n-progress:start -->\n"
-    f"[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-{pct}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)\n"
-    f"Translation Progress: {pct}%\n"
-    "<!-- i18n-progress:end -->"
-)
-
-pattern = re.compile(
-    r"<!--\s*i18n-progress:start\s*-->.*?<!--\s*i18n-progress:end\s*-->",
-    re.S | re.I,
-)
-
-if pattern.search(text):
-    new_text = pattern.sub(block, text)
+if readme.exists():
+    txt = readme.read_text(encoding="utf-8")
+    new = re.sub(r"<!-- i18n-progress:start -->.*?<!-- i18n-progress:end -->",
+                 block, txt, flags=re.S)
+    if new != txt:
+        readme.write_text(new, encoding="utf-8")
+        print("README updated.")
+    else:
+        print("README already up-to-date.")
 else:
-    # 没有锚点块：首次追加到 README 末尾
-    new_text = text.rstrip() + "\n\n" + block + "\n"
-
-if new_text != text:
-    readme.write_text(new_text, encoding="utf-8", newline="\n")
-    print(f"README updated to {pct}%")
-else:
-    print("README already up-to-date.")
+    print("README.md not found; skip updating.", file=sys.stderr)
 PY
 
 echo "✅ Done."

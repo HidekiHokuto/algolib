@@ -45,17 +45,17 @@ msgstr "此库的基础异常类。"
 
 #: algolib.exceptions.InvalidTypeError:1 of
 msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
-msgstr "基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
 
 #: algolib.exceptions.InvalidTypeError:1 of
 msgid "Raised when an argument has an invalid type."
 msgstr "当参数类型无效时引发。"
 
 #: algolib.exceptions.InvalidValueError:1 of
-msgid ""
-"Bases: :py:class:`~algolib.exceptions.AlgolibError`, "
-":py:class:`ValueError`"
-msgstr "基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`ValueError`"
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`ValueError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`ValueError`"
 
 #: algolib.exceptions.InvalidValueError:1 of
 msgid "Raised when an argument has an invalid value."
@@ -70,4 +70,3 @@ msgstr "模块内容"
 
 #~ msgid "Return a + b."
 #~ msgstr "返回 a + b。"
-

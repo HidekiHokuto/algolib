@@ -22,4 +22,3 @@ msgstr ""
 #: ../source/api/modules.rst:2
 msgid "algolib"
 msgstr "algolib"
-

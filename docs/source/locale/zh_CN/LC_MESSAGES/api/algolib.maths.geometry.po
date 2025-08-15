@@ -193,8 +193,8 @@ msgstr ""
 #: algolib.maths.geometry.geometry.Point:11 of
 msgid ""
 "A point is a location in space, with no direction or magnitude. In "
-"mathematics, a point P in N-dimensional space is represented as: :math:`P"
-" = (x_1, x_2, \\cdots, x_N)`"
+"mathematics, a point P in N-dimensional space is represented as: :math:`P = "
+"(x_1, x_2, \\cdots, x_N)`"
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Point.dimension:1 of
@@ -265,4 +265,3 @@ msgstr ""
 #: ../source/api/algolib.maths.geometry.rst:16
 msgid "Module contents"
 msgstr ""
-

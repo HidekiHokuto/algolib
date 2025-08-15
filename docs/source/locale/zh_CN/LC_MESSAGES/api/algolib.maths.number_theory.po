@@ -70,4 +70,3 @@ msgstr "如果 `n` 是负数。"
 #: ../source/api/algolib.maths.number_theory.rst:16
 msgid "Module contents"
 msgstr "模块内容"
-
