@@ -30,14 +30,29 @@ jobs:
           python -m pip install -U pip
           pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
           pip install . || true
-          
-      - name: Update README with translation progress
+
+      - name: Show translation progress
         run: |
-          sed -i "s/\(Translation Progress: \)[0-9]\+%/\1${{ env.translation_progress }}%/" README.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update translation progress badge to ${{ env.translation_progress }}%" || echo "No changes to commit"
-          git push
+          echo "Calculating translation progress..."
+          PO_FILE=$(find docs/source/locale/zh_CN/LC_MESSAGES -name '*.po' | head -n 1)
+          if [ -z "$PO_FILE" ]; then
+            echo "No PO files found"
+            exit 0
+          fi
+
+          # 统计总条数（排除空行和注释）
+          TOTAL=$(grep -c '^msgid ' "$PO_FILE")
+          # 统计已翻译条数（msgstr 非空）
+          DONE=$(grep -B1 '^msgstr "' "$PO_FILE" | grep -c '^msgid ')
+
+          if [ "$TOTAL" -gt 0 ]; then
+            PROGRESS=$(( DONE * 100 / TOTAL ))
+            echo "Translation progress: $DONE / $TOTAL ($PROGRESS%)"
+            echo "translation_progress=$PROGRESS" >> $GITHUB_ENV
+          else
+            echo "No msgid found in PO file"
+            echo "translation_progress=0" >> $GITHUB_ENV
+          fi
 
       - name: Update README with translation progress
         run: |
