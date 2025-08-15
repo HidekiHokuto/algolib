@@ -6,7 +6,7 @@ Minimal algorithms library template with pytest and Sphinx docs.
 
 <!-- i18n-progress:start -->
 [![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-0%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
-Translation Progress: 0%
+Translation Progress: 75%
 <!-- i18n-progress:end -->
 
 ---
