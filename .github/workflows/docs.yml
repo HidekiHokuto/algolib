@@ -5,7 +5,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# 关键权限：没有这三项会 404 / 权限不足
 permissions:
   contents: read
   pages: write
@@ -30,48 +29,12 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
-          # 如果需要自动生成 API 文档（建议）：
           pip install . || true
 
-      - name: Generate API docs (sphinx-apidoc)
+      # 只这一句：脚本里做好所有构建与首页
+      - name: Build docs (EN + ZH)
         run: |
-          sphinx-apidoc -f -o docs/source/api src/algolib
-
-      # 构建英文到 docs/build/html/en
-      - name: Build Sphinx (EN)
-        run: |
-          sphinx-build -b html docs/source docs/build/en -D language=en
-
-      # 构建中文到 docs/build/html/zh
-      # 若你已完成 i18n（有 locale/zh_CN/ 的 po/mo），会显示中文；
-      # 否则也能构建成功，但内容还是英文（后续逐步翻译即可）。
-      - name: Build Sphinx (ZH)
-        run: |
-          sphinx-build -b html docs/source docs/build/zh -D language=zh_CN
-
-      # 在根目录放一个语言选择页（相对链接，避免路径问题）
-      - name: Create root index selector
-        run: |
-          mkdir -p docs/build/html
-          cat > docs/build/html/index.html <<'HTML'
-          <!doctype html><meta charset="utf-8">
-          <title>algolib docs</title>
-          <style>
-            body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; padding: 2rem; line-height: 1.6; }
-            a { text-decoration: none; }
-            .btn { display:inline-block; padding:.6rem 1rem; border:1px solid #ccc; border-radius:8px; margin-right:1rem; }
-          </style>
-          <h1>algolib documentation</h1>
-          <p>Select language / 选择语言：</p>
-          <p>
-            <a class="btn" href="./en/">English</a>
-            <a class="btn" href="./zh/">简体中文</a>
-          </p>
-          HTML
-
-      - name: Disable Jekyll
-        run: |
-          touch docs/build/html/.nojekyll
+          bash docs/i18n_build.sh
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
