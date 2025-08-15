@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   pages: write
   id-token: write
 
@@ -28,41 +29,9 @@ jobs:
       - name: Install doc deps
         run: |
           python -m pip install -U pip
-          pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
+          pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl polib
           pip install . || true
 
-      - name: Show translation progress
-        run: |
-          echo "Calculating translation progress..."
-          PO_FILE=$(find docs/source/locale/zh_CN/LC_MESSAGES -name '*.po' | head -n 1)
-          if [ -z "$PO_FILE" ]; then
-            echo "No PO files found"
-            exit 0
-          fi
-
-          # 统计总条数（排除空行和注释）
-          TOTAL=$(grep -c '^msgid ' "$PO_FILE")
-          # 统计已翻译条数（msgstr 非空）
-          DONE=$(grep -B1 '^msgstr "' "$PO_FILE" | grep -c '^msgid ')
-
-          if [ "$TOTAL" -gt 0 ]; then
-            PROGRESS=$(( DONE * 100 / TOTAL ))
-            echo "Translation progress: $DONE / $TOTAL ($PROGRESS%)"
-            echo "translation_progress=$PROGRESS" >> $GITHUB_ENV
-          else
-            echo "No msgid found in PO file"
-            echo "translation_progress=0" >> $GITHUB_ENV
-          fi
-
-      - name: Update README with translation progress
-        run: |
-          sed -i "s/\(Translation Progress: \)[0-9]\+%/\1${{ env.translation_progress }}%/" README.md
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update translation progress badge to ${{ env.translation_progress }}%" || echo "No changes to commit"
-          git push
-
-      # 只这一句：脚本里做好所有构建与首页
       - name: Build docs (EN + ZH)
         run: |
           bash docs/i18n_build.sh
@@ -71,6 +40,26 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/build/html
+
+      # —— 计算真实翻译进度并回写 README —— #
+      - name: Update README translation badge (real progress)
+        run: |
+          python docs/i18n_progress.py
+
+      - name: Create PR for README progress update
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "docs(readme): update zh_CN translation progress badge"
+          title: "docs: update zh_CN translation progress badge"
+          body: |
+            Automated update of zh_CN translation progress badge in README.
+            - Computed from all zh_CN .po files (non-fuzzy, non-obsolete).
+          branch: ci/update-readme-progress
+          add-paths: |
+            README.md
+          labels: |
+            docs
+            automation
 
   deploy:
     needs: build

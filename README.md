@@ -18,3 +18,4 @@ pytest
 
 - 🌐 **[English Docs](https://HidekiHokuto.github.io/algolib/en/)**  
 - 🇨🇳 **[简体中文文档](https://HidekiHokuto.github.io/algolib/zh/)** Translation Progress: 0%
+![zh_CN translation](https://img.shields.io/badge/zh--CN_translation-0%25-blue)
