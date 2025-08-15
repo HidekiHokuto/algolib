@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 22:12+0900\n"
+"POT-Creation-Date: 2025-08-16 04:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../source/api/modules.rst:2
-msgid "algolib"
-msgstr "algolib"
+#: ../source/api/algolib.maths.rst:2
+msgid "algolib.maths package"
+msgstr "algolib.maths 包"
+
+#: ../source/api/algolib.maths.rst:5
+msgid "Subpackages"
+msgstr "子包"
+
+#: ../source/api/algolib.maths.rst:13
+msgid "Module contents"
+msgstr "模块内容"
 

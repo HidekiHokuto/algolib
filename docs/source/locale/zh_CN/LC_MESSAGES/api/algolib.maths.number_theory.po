@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Algolib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Algolib \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-16 04:41+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/api/algolib.maths.number_theory.rst:2
+msgid "algolib.maths.number\\_theory package"
+msgstr "algolib.maths.number_theory 包"
+
+#: ../source/api/algolib.maths.number_theory.rst:5
+msgid "Submodules"
+msgstr "子模块"
+
+#: ../source/api/algolib.maths.number_theory.rst:8
+msgid "algolib.maths.number\\_theory.prime module"
+msgstr "algolib.maths.number_theory.prime 模块"
+
+#: algolib.maths.number_theory.prime.is_prime:1 of
+msgid "Check whether an integer is a prime using the 6k ± 1 optimization."
+msgstr "使用 6k ± 1 优化方法检查一个整数是否为质数。"
+
+#: ../source/api/algolib.maths.number_theory.rst
+msgid "Parameters"
+msgstr "参数"
+
+#: algolib.maths.number_theory.prime.is_prime:3 of
+msgid "Non-negative integer to test."
+msgstr "要测试的非负整数。"
+
+#: ../source/api/algolib.maths.number_theory.rst
+msgid "Returns"
+msgstr "返回值"
+
+#: algolib.maths.number_theory.prime.is_prime:6 of
+msgid "True if `n` is prime; False otherwise."
+msgstr "如果 `n` 是质数则返回 True，否则返回 False。"
+
+#: ../source/api/algolib.maths.number_theory.rst
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../source/api/algolib.maths.number_theory.rst
+msgid "Raises"
+msgstr "异常"
+
+#: algolib.maths.number_theory.prime.is_prime:9 of
+msgid "If `n` is not int."
+msgstr "如果 `n` 不是 int 类型。"
+
+#: algolib.maths.number_theory.prime.is_prime:10 of
+msgid "If `n` is negative."
+msgstr "如果 `n` 是负数。"
+
+#: ../source/api/algolib.maths.number_theory.rst:16
+msgid "Module contents"
+msgstr "模块内容"
+

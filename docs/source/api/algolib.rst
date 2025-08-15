@@ -1,8 +1,24 @@
 algolib package
 ===============
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   algolib.maths
+
 Submodules
 ----------
+
+algolib.exceptions module
+-------------------------
+
+.. automodule:: algolib.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 algolib.sample module
 ---------------------
