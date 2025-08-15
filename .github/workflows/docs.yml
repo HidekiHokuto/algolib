@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# 关键权限！
 permissions:
   contents: read
   pages: write
@@ -18,48 +19,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python 3.10
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
-          cache: "pip"
+          python-version: '3.10'
 
-      - name: Install doc dependencies
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install sphinx sphinx-intl sphinx-rtd-theme myst-parser
+          python -m pip install -U pip
+          pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
+          # 如果你的项目需要额外依赖（生成 API 文档等），这里一起装
 
-      - name: Build docs (EN & ZH)
+      # 生成英文 & 中文（示例命令；按你的项目实际 build 命令替换）
+      - name: Build Sphinx (EN)
         working-directory: docs
         run: |
-          # 1) 提取原文模板并更新中文 PO
-          sphinx-build -b gettext source source/locale
-          sphinx-intl update -p source/locale -l zh_CN
+          make clean
+          make html
 
-          # 2) 构建英文 & 中文到统一站点目录
-          sphinx-build -b html -D language=en    source build/site/en
-          sphinx-build -b html -D language=zh_CN source build/site/zh
+      # 如果你已经做了 i18n，并且有 zh_CN 的 po/mo，添加中文构建：
+      # - name: Build Sphinx (ZH)
+      #   working-directory: docs
+      #   env:
+      #     SPHINXOPTS: "-D language=zh_CN"
+      #   run: |
+      #     make html
 
-          # 3) 顶层导航页 + .nojekyll 防止 Pages 误当 Jekyll 处理
-          mkdir -p build/site
-          cat > build/site/index.html <<'HTML'
-          <!doctype html><meta charset="utf-8">
-          <title>algolib docs</title>
-          <h1>algolib documentation</h1>
-          <ul>
-            <li><a href="en/index.html">English</a></li>
-            <li><a href="zh/index.html">简体中文</a></li>
-          </ul>
-          HTML
-          touch build/site/.nojekyll
+      - name: Prepare Pages artifact
+        run: |
+          touch docs/build/html/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/build/site
+          path: docs/build/html
 
   deploy:
     needs: build
@@ -68,5 +63,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

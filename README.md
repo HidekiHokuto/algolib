@@ -13,7 +13,7 @@ pytest
 
 ## 📚 Documentation
 
-[![Docs Build Status](https://github.com/HidekiHokuto/algolib/actions/workflows/docs.yml/badge.svg)](https://github.com/<USERNAME>/algolib/actions/workflows/docs.yml)
+[![Docs Build Status](https://github.com/HidekiHokuto/algolib/actions/workflows/docs.yml/badge.svg)](https://github.com/HidekiHokuto/algolib/actions/workflows/docs.yml)
 
 - 🌐 **[English Docs](https://HidekiHokuto.github.io/algolib/en/)**  
 - 🇨🇳 **[简体中文文档](https://HidekiHokuto.github.io/algolib/zh/)**
