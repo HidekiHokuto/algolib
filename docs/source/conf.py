@@ -37,3 +37,5 @@ html_sidebars = {
 # 把自定义 JS 注入到每页
 def setup(app):
     app.add_js_file("langswitch.js")
+
+html_css_files = ['custom.css']

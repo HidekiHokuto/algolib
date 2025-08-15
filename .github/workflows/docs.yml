@@ -40,14 +40,14 @@ jobs:
       # 构建英文到 docs/build/html/en
       - name: Build Sphinx (EN)
         run: |
-          sphinx-build -b html docs/source docs/build/html/en -D language=en
+          sphinx-build -b html docs/source docs/build/en -D language=en
 
       # 构建中文到 docs/build/html/zh
       # 若你已完成 i18n（有 locale/zh_CN/ 的 po/mo），会显示中文；
       # 否则也能构建成功，但内容还是英文（后续逐步翻译即可）。
       - name: Build Sphinx (ZH)
         run: |
-          sphinx-build -b html docs/source docs/build/html/zh -D language=zh_CN
+          sphinx-build -b html docs/source docs/build/zh -D language=zh_CN
 
       # 在根目录放一个语言选择页（相对链接，避免路径问题）
       - name: Create root index selector
