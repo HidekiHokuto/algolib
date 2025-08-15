@@ -34,31 +34,31 @@ msgstr "algolib.maths.geometry.geometry 模块"
 msgid ""
 "A professional-grade N-dimensional geometry library with detailed "
 "documentation."
-msgstr ""
+msgstr "一个专业级的 :math:`N` 维几何库，提供详细文档。"
 
 #: algolib.maths.geometry.geometry:3 of
 msgid "This module implements:"
-msgstr ""
+msgstr "本模块实现了以下内容："
 
 #: algolib.maths.geometry.geometry:4 of
 msgid "Point: Represents a point in N-dimensional space."
-msgstr ""
+msgstr "点(Point)：表示 :math:`N` 维空间中的一个点。"
 
 #: algolib.maths.geometry.geometry:5 of
 msgid "Vector: Represents a vector in N-dimensional space."
-msgstr ""
+msgstr "向量(Vector)：表示 :math:`N` 维空间中的一个向量。"
 
 #: algolib.maths.geometry.geometry:6 of
 msgid "Line: Represents a line (infinite in both directions)."
-msgstr ""
+msgstr "线(Line)：表示一条直线（双向无限延伸）。"
 
 #: algolib.maths.geometry.geometry:7 of
 msgid "Plane: Represents a hyperplane in N-dimensional space."
-msgstr ""
+msgstr "平面(Plane)：表示 :math:`N` 维空间中的一个超平面。"
 
 #: algolib.maths.geometry.geometry:8 of
 msgid "GeometryUtils: Common geometric computation utilities."
-msgstr ""
+msgstr "几何工具(GeometryUtils)：通用的几何计算工具。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1
 #: algolib.maths.geometry.geometry.Line:1
@@ -66,129 +66,129 @@ msgstr ""
 #: algolib.maths.geometry.geometry.Point:1
 #: algolib.maths.geometry.geometry.Vector:1 of
 msgid "Bases: :py:class:`object`"
-msgstr ""
+msgstr "基类：:py:class:`object`"
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1 of
 msgid "Utility functions for :math:`N`-dimensional geometry."
-msgstr ""
+msgstr ":math:`N`维几何的工具函数。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:1 of
 msgid "Compute Euclidean distance between two points."
-msgstr ""
+msgstr "计算两点之间的欧几里得距离。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:4
 #: algolib.maths.geometry.geometry.Vector.dot:4
 #: algolib.maths.geometry.geometry.Vector.norm:4 of
 msgid "Formula"
-msgstr ""
+msgstr "公式"
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:5 of
 msgid ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
-msgstr ""
+msgstr ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
 
 #: algolib.maths.geometry.geometry.Line:1 of
 msgid "Represents an infinite line in N-dimensional space."
-msgstr ""
+msgstr "表示 :math:`N` 维空间中的一条无限长直线。"
 
 #: algolib.maths.geometry.geometry.Line:5 of
 msgid "A point through which the line passes."
-msgstr ""
+msgstr "直线经过的一个点。"
 
 #: algolib.maths.geometry.geometry.Line algolib.maths.geometry.geometry.Plane
 #: algolib.maths.geometry.geometry.Point algolib.maths.geometry.geometry.Vector
 #: of
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: algolib.maths.geometry.geometry.Line:7
 #: algolib.maths.geometry.geometry.Plane:7 of
 msgid "Point"
-msgstr ""
+msgstr "点"
 
 #: algolib.maths.geometry.geometry.Line:11 of
 msgid "The direction vector of the line."
-msgstr ""
+msgstr "直线的方向向量。"
 
 #: algolib.maths.geometry.geometry.Line:13
 #: algolib.maths.geometry.geometry.Plane:13 of
 msgid "Vector"
-msgstr ""
+msgstr "向量"
 
 #: algolib.maths.geometry.geometry.Line:16
 #: algolib.maths.geometry.geometry.Plane:16
 #: algolib.maths.geometry.geometry.Point:10
 #: algolib.maths.geometry.geometry.Vector:10 of
 msgid "Notes"
-msgstr ""
+msgstr "说明"
 
 #: algolib.maths.geometry.geometry.Line:17 of
 msgid "A line :math:`L` can be represented parametrically as:"
-msgstr ""
+msgstr "一条直线 :math:`L` 可以用参数方程表示："
 
 #: algolib.maths.geometry.geometry.Line:18 of
 msgid ":math:`L(t) = P_0 + t \\cdot d`"
-msgstr ""
+msgstr ":math:`L(t) = P_0 + t \\cdot d`"
 
 #: algolib.maths.geometry.geometry.Line:19
 #: algolib.maths.geometry.geometry.Plane:19 of
 msgid "where:"
-msgstr ""
+msgstr "其中："
 
 #: algolib.maths.geometry.geometry.Line:20 of
 msgid ":math:`P_0` = a fixed point"
-msgstr ""
+msgstr ":math:`P_0` = 一个固定点"
 
 #: algolib.maths.geometry.geometry.Line:21 of
 msgid ":math:`d` = direction vector (non-zero)"
-msgstr ""
+msgstr ":math:`d` = 方向向量（非零）"
 
 #: algolib.maths.geometry.geometry.Line:22 of
 msgid ":math:`t` = real parameter"
-msgstr ""
+msgstr ":math:`t` = 实数参数"
 
 #: algolib.maths.geometry.geometry.Plane:1 of
 msgid "Represents a hyperplane in N-dimensional space."
-msgstr ""
+msgstr "表示 :math:`N` 维空间中的一个超平面。"
 
 #: algolib.maths.geometry.geometry.Plane:5 of
 msgid "A point on the plane."
-msgstr ""
+msgstr "平面上的一个点。"
 
 #: algolib.maths.geometry.geometry.Plane:11 of
 msgid "The normal vector to the plane."
-msgstr ""
+msgstr "平面的法向量。"
 
 #: algolib.maths.geometry.geometry.Plane:17 of
 msgid ""
 "In :math:`N` dimensions, a hyperplane is the set of points :math:`X` "
 "satisfying:"
-msgstr ""
+msgstr "在 :math:`N` 维空间中，超平面是满足以下条件的所有点 :math:`X` 的集合："
 
 #: algolib.maths.geometry.geometry.Plane:18 of
 #, python-brace-format
 msgid ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
-msgstr ""
+msgstr ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
 
 #: algolib.maths.geometry.geometry.Plane:20 of
 msgid ":math:`n` = normal vector"
-msgstr ""
+msgstr ":math:`n` = 法向量"
 
 #: algolib.maths.geometry.geometry.Plane:21 of
 msgid ":math:`P_0` = a fixed point on the plane"
-msgstr ""
+msgstr ":math:`P_0` = 平面上的一个固定点"
 
 #: algolib.maths.geometry.geometry.Point:1 of
 msgid "Represents a point in N-dimensional Euclidean space."
-msgstr ""
+msgstr "表示 :math:`N` 维欧几里得空间中的一个点。"
 
 #: algolib.maths.geometry.geometry.Point:5 of
 msgid "Coordinates of the point. Length determines the dimensionality."
-msgstr ""
+msgstr "点的坐标。坐标长度决定了空间的维度。"
 
 #: algolib.maths.geometry.geometry.Point:7
 #: algolib.maths.geometry.geometry.Vector:7 of
 msgid "List[Number]"
-msgstr ""
+msgstr "List[Number]"
 
 #: algolib.maths.geometry.geometry.Point:11 of
 msgid ""
@@ -196,72 +196,74 @@ msgid ""
 "mathematics, a point P in N-dimensional space is represented as: :math:`P = "
 "(x_1, x_2, \\cdots, x_N)`"
 msgstr ""
+"点是空间中的一个位置，没有方向或大小。在数学中，N维空间中的点P表示为："
+":math:`P = (x_1, x_2, \\cdots, x_N)`"
 
 #: algolib.maths.geometry.geometry.Point.dimension:1 of
 msgid "Returns the dimensionality of the point."
-msgstr ""
+msgstr "返回点的维度。"
 
 #: ../source/api/algolib.maths.geometry.rst
 msgid "Returns"
-msgstr ""
+msgstr "返回"
 
 #: algolib.maths.geometry.geometry.Point.dimension:3 of
 msgid "Number of coordinates."
-msgstr ""
+msgstr "坐标数量。"
 
 #: ../source/api/algolib.maths.geometry.rst
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
 #: algolib.maths.geometry.geometry.Vector:1 of
 msgid "Represents a vector in :math:`N`-dimensional Euclidean space."
-msgstr ""
+msgstr "表示 :math:`N` 维欧几里得空间中的一个向量。"
 
 #: algolib.maths.geometry.geometry.Vector:5 of
 msgid "Components of the vector."
-msgstr ""
+msgstr "向量的分量。"
 
 #: algolib.maths.geometry.geometry.Vector:11 of
 msgid "A vector represents both magnitude and direction."
-msgstr ""
+msgstr "向量同时表示大小和方向。"
 
 #: algolib.maths.geometry.geometry.Vector.add:1 of
 msgid "Return the sum of two vectors."
-msgstr ""
+msgstr "返回两个向量的和。"
 
 #: algolib.maths.geometry.geometry.Vector.dimension:1 of
 msgid "Return the dimensionality of the vector."
-msgstr ""
+msgstr "返回向量的维度。"
 
 #: algolib.maths.geometry.geometry.Vector.dot:1 of
 msgid "Compute the dot product with another vector."
-msgstr ""
+msgstr "计算与另一个向量的点积。"
 
 #: algolib.maths.geometry.geometry.Vector.dot:5 of
 msgid ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
-msgstr ""
+msgstr ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
 
 #: algolib.maths.geometry.geometry.Vector.norm:1 of
 msgid "Compute the Euclidean norm (length) of the vector."
-msgstr ""
+msgstr "计算向量的欧几里得范数（长度）。"
 
 #: algolib.maths.geometry.geometry.Vector.norm:5 of
 #, python-brace-format
 msgid ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
-msgstr ""
+msgstr ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
 
 #: algolib.maths.geometry.geometry.Vector.norm of
 msgid "returns"
-msgstr ""
+msgstr "返回"
 
 #: algolib.maths.geometry.geometry.Vector.norm:7 of
 msgid "*float*"
-msgstr ""
+msgstr "*float*"
 
 #: algolib.maths.geometry.geometry.Vector.norm:8 of
 msgid "*The Euclidean length of the vector.*"
-msgstr ""
+msgstr "*向量的欧几里得长度。*"
 
 #: ../source/api/algolib.maths.geometry.rst:16
 msgid "Module contents"
-msgstr ""
+msgstr "模块内容"

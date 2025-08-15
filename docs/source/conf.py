@@ -3,7 +3,8 @@ sys.path.insert(0, os.path.abspath("../../src"))
 
 project = "Algolib"
 author = "Hideki Hokuto"
-release = "0.1.0"
+release = "0.1.1"
+copyright = f"2025, {author}"
 
 extensions = [
     "myst_parser",          # Markdown 支持
