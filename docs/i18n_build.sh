@@ -2,6 +2,10 @@
 set -euo pipefail
 cd "$(dirname "$0")"  # -> docs/
 
+if ! command -v msgfmt >/dev/null 2>&1; then
+  echo "Warning: msgfmt not found. Install gettext (Linux: apt-get install gettext, macOS: brew install gettext && brew link gettext --force)" >&2
+fi
+
 # 可选：自动生成 API 文档（注释掉就不生成）
 if command -v sphinx-apidoc >/dev/null 2>&1; then
   echo "[0/7] Generate API docs..."
@@ -81,12 +85,12 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# 回写 README（徽章 & 文本）——更宽松的匹配
-# 1) 徽章（匹配 i18n zh--CN-0%25 / i18n%20zh--CN-0%25 / i18n zh-CN-0% 等多种写法）
-perl -0777 -i -pe 's|(i18n(?:%20|[ _-])?zh[-_ ]?CN-)\d+(%25|%)|\1'"$PCT"'\2|gi' ../README.md
+# 回写 README（徽章 & 文本），用 GNU sed，大小写不敏感
+# 1) 徽章：匹配 i18n zh-CN 的百分比（支持中间空格/下划线/连字符和 %25 或 %）
+sed -E -i "s/(i18n[ %_-]?zh[ _-]?CN-)[0-9]+(%25|%)/\1${PCT}\2/I" ../README.md
 
 # 2) 纯文本：Translation Progress: 0%
-perl -0777 -i -pe 's|(Translation Progress:\s*)\d+%|\1'"$PCT"'%|gi' ../README.md
+sed -E -i "s/(Translation Progress:[[:space:]]*)[0-9]+%/\1${PCT}%/I" ../README.md
 
 echo "✅ Done."
 echo "EN: $(pwd)/build/html/en"
