@@ -31,7 +31,7 @@ jobs:
           pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
           pip install . || true
           
-            - name: Update README with translation progress
+      - name: Update README with translation progress
         run: |
           sed -i "s/\(Translation Progress: \)[0-9]\+%/\1${{ env.translation_progress }}%/" README.md
           git config user.name "github-actions[bot]"
