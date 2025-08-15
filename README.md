@@ -2,6 +2,12 @@
 
 Minimal algorithms library template with pytest and Sphinx docs.
 
+[**Docs (EN)**](https://<你的用户名>.github.io/algolib/en/) • [**文档（简体中文）**](https://<你的用户名>.github.io/algolib/zh/)
+
+![docs](https://img.shields.io/badge/Docs-Pages-success)
+![i18n zh_CN](https://img.shields.io/badge/i18n_zh--CN-0%25-blue)
+**ZH Translation Progress:** 0%
+
 ## Quick start
 ```bash
 conda create -n algos310 python=3.10 -y
@@ -12,10 +18,3 @@ pytest
 
 ---
 
-## 📚 Documentation
-
-[![Docs Build Status](https://github.com/HidekiHokuto/algolib/actions/workflows/docs.yml/badge.svg)](https://github.com/HidekiHokuto/algolib/actions/workflows/docs.yml)
-
-- 🌐 **[English Docs](https://HidekiHokuto.github.io/algolib/en/)**  
-- 🇨🇳 **[简体中文文档](https://HidekiHokuto.github.io/algolib/zh/)** Translation Progress: 0%
-![zh_CN translation](https://img.shields.io/badge/zh--CN_translation-0%25-blue)

@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write           # 用于创建 PR（回写 README 进度）
   pull-requests: write
-  pages: write
-  id-token: write
+  pages: write              # 部署 Pages
+  id-token: write           # OIDC for Pages
 
 concurrency:
   group: "pages"
@@ -29,10 +29,11 @@ jobs:
       - name: Install doc deps
         run: |
           python -m pip install -U pip
-          pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl polib
+          pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl
           pip install . || true
 
-      - name: Build docs (EN + ZH)
+      # 一步完成构建 + 首页 + 翻译进度回写
+      - name: Build docs (EN + ZH) & update progress
         run: |
           bash docs/i18n_build.sh
 
@@ -41,11 +42,7 @@ jobs:
         with:
           path: docs/build/html
 
-      # —— 计算真实翻译进度并回写 README —— #
-      - name: Update README translation badge (real progress)
-        run: |
-          python docs/i18n_progress.py
-
+      # 如果 README 被脚本改动，则开 PR（仅包含 README）
       - name: Create PR for README progress update
         uses: peter-evans/create-pull-request@v6
         with:
@@ -53,7 +50,7 @@ jobs:
           title: "docs: update zh_CN translation progress badge"
           body: |
             Automated update of zh_CN translation progress badge in README.
-            - Computed from all zh_CN .po files (non-fuzzy, non-obsolete).
+            - Computed from all zh_CN .po files (non-obsolete).
           branch: ci/update-readme-progress
           add-paths: |
             README.md
