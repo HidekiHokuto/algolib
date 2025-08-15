@@ -20,14 +20,6 @@ algolib.exceptions module
    :undoc-members:
    :show-inheritance:
 
-algolib.sample module
----------------------
-
-.. automodule:: algolib.sample
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 

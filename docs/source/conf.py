@@ -10,6 +10,7 @@ extensions = [
     "sphinx.ext.autodoc",   # 从 docstring 生成 API 文档
     "sphinx.ext.viewcode",  # 文档里显示源码
     "sphinx.ext.napoleon",  # Google/NumPy 风格 docstring
+    'sphinx.ext.mathjax'
 ]
 
 html_theme = "sphinx_rtd_theme"

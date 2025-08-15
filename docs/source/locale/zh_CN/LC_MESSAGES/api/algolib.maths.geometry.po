@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Algolib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Algolib \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-16 07:02+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/api/algolib.maths.geometry.rst:2
+msgid "algolib.maths.geometry package"
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst:8
+msgid "algolib.maths.geometry.geometry module"
+msgstr ""
+
+#: algolib.maths.geometry.geometry:1 of
+msgid ""
+"A professional-grade N-dimensional geometry library with detailed "
+"documentation."
+msgstr ""
+
+#: algolib.maths.geometry.geometry:3 of
+msgid "This module implements:"
+msgstr ""
+
+#: algolib.maths.geometry.geometry:4 of
+msgid "Point: Represents a point in N-dimensional space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry:5 of
+msgid "Vector: Represents a vector in N-dimensional space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry:6 of
+msgid "Line: Represents a line (infinite in both directions)."
+msgstr ""
+
+#: algolib.maths.geometry.geometry:7 of
+msgid "Plane: Represents a hyperplane in N-dimensional space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry:8 of
+msgid "GeometryUtils: Common geometric computation utilities."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.GeometryUtils:1
+#: algolib.maths.geometry.geometry.Line:1
+#: algolib.maths.geometry.geometry.Plane:1
+#: algolib.maths.geometry.geometry.Point:1
+#: algolib.maths.geometry.geometry.Vector:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.GeometryUtils:1 of
+msgid "Utility functions for :math:`N`-dimensional geometry."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.GeometryUtils.distance:1 of
+msgid "Compute Euclidean distance between two points."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.GeometryUtils.distance:4
+#: algolib.maths.geometry.geometry.Vector.dot:4
+#: algolib.maths.geometry.geometry.Vector.norm:4 of
+msgid "Formula"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.GeometryUtils.distance:5 of
+msgid ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:1 of
+msgid "Represents an infinite line in N-dimensional space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:5 of
+msgid "A point through which the line passes."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line algolib.maths.geometry.geometry.Plane
+#: algolib.maths.geometry.geometry.Point algolib.maths.geometry.geometry.Vector
+#: of
+msgid "type"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:7
+#: algolib.maths.geometry.geometry.Plane:7 of
+msgid "Point"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:11 of
+msgid "The direction vector of the line."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:13
+#: algolib.maths.geometry.geometry.Plane:13 of
+msgid "Vector"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:16
+#: algolib.maths.geometry.geometry.Plane:16
+#: algolib.maths.geometry.geometry.Point:10
+#: algolib.maths.geometry.geometry.Vector:10 of
+msgid "Notes"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:17 of
+msgid "A line :math:`L` can be represented parametrically as:"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:18 of
+msgid ":math:`L(t) = P_0 + t \\cdot d`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:19
+#: algolib.maths.geometry.geometry.Plane:19 of
+msgid "where:"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:20 of
+msgid ":math:`P_0` = a fixed point"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:21 of
+msgid ":math:`d` = direction vector (non-zero)"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Line:22 of
+msgid ":math:`t` = real parameter"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:1 of
+msgid "Represents a hyperplane in N-dimensional space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:5 of
+msgid "A point on the plane."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:11 of
+msgid "The normal vector to the plane."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:17 of
+msgid ""
+"In :math:`N` dimensions, a hyperplane is the set of points :math:`X` "
+"satisfying:"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:18 of
+#, python-brace-format
+msgid ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:20 of
+msgid ":math:`n` = normal vector"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Plane:21 of
+msgid ":math:`P_0` = a fixed point on the plane"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point:1 of
+msgid "Represents a point in N-dimensional Euclidean space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point:5 of
+msgid "Coordinates of the point. Length determines the dimensionality."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point:7
+#: algolib.maths.geometry.geometry.Vector:7 of
+msgid "List[Number]"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point:11 of
+msgid ""
+"A point is a location in space, with no direction or magnitude. In "
+"mathematics, a point P in N-dimensional space is represented as: :math:`P"
+" = (x_1, x_2, \\cdots, x_N)`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point.dimension:1 of
+msgid "Returns the dimensionality of the point."
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst
+msgid "Returns"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Point.dimension:3 of
+msgid "Number of coordinates."
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst
+msgid "Return type"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector:1 of
+msgid "Represents a vector in :math:`N`-dimensional Euclidean space."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector:5 of
+msgid "Components of the vector."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector:11 of
+msgid "A vector represents both magnitude and direction."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.add:1 of
+msgid "Return the sum of two vectors."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.dimension:1 of
+msgid "Return the dimensionality of the vector."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.dot:1 of
+msgid "Compute the dot product with another vector."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.dot:5 of
+msgid ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:1 of
+msgid "Compute the Euclidean norm (length) of the vector."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:5 of
+#, python-brace-format
+msgid ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm of
+msgid "returns"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:7 of
+msgid "*float*"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:8 of
+msgid "*The Euclidean length of the vector.*"
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst:16
+msgid "Module contents"
+msgstr ""
+
+#~ msgid "Lightweight N-D vector: addition, scalar ops, dot, norm."
+#~ msgstr ""
+
+#~ msgid "algolib.maths.geometry.vector module"
+#~ msgstr ""
+
+#~ msgid "Lightweight N-dimensional vector."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This class intentionally provides a "
+#~ "**minimal but precise** set of "
+#~ "operations that are numerically stable "
+#~ "for typical geometry use-cases. It "
+#~ "is used as a foundation for "
+#~ "higher-level 2D/3D primitives but works "
+#~ "in arbitrary dimensions."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The instance is **immutable** (backed by"
+#~ " a tuple) so it is hashable and"
+#~ " can be used as a dictionary "
+#~ "key."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "Iterable of real numbers (will be converted to ``float``)."
+#~ msgstr ""
+
+#~ msgid "Raises"
+#~ msgstr ""
+
+#~ msgid "If no coordinate is provided."
+#~ msgstr ""
+
+#~ msgid "**Examples**"
+#~ msgstr ""
+
+#~ msgid "Dot (inner) product."
+#~ msgstr ""
+
+#~ msgid "Vector of the same dimension."
+#~ msgstr ""
+
+#~ msgid "If dimensions do not match."
+#~ msgstr ""
+
+#~ msgid "Sum of component-wise products."
+#~ msgstr ""
+
+#~ msgid "Euclidean (L2) norm."
+#~ msgstr ""
+
+#~ msgid "``sqrt(self·self)``."
+#~ msgstr ""
+
+#~ msgid "geometry.py"
+#~ msgstr ""
+
+#~ msgid "P = (x1, x2, ..., xN)"
+#~ msgstr ""
+
+#~ msgid "$P = (x_1, x_2, \\cdots, x_N)$"
+#~ msgstr ""
+
+#~ msgid "`P = (x_1, x_2, \\cdots, x_N)`"
+#~ msgstr ""
+
+#~ msgid "$$P = (x_1, x_2, \\cdots, x_N)$$"
+#~ msgstr ""
+
+#~ msgid "\\( P = (x_1, x_2, \\cdots, x_N) \\)"
+#~ msgstr ""
+
+#~ msgid "\\( P = (x_1, x_2, \\cdots, x_N) \\) \\( E ="
+#~ msgstr ""
+
+#~ msgid "rac{1}{2} m v^2 \\)"
+#~ msgstr ""
+
+#~ msgid "coords"
+#~ msgstr ""
+
+#~ msgid "\\( P = (x_1, x_2, \\cdots, x_N) \\) .. math::"
+#~ msgstr ""
+
+#~ msgid "i\\hbar"
+#~ msgstr ""
+
+#~ msgid "rac{\\partial}{\\partial t} \\Psi(\\mathbf{r}, t) ="
+#~ msgstr ""
+
+#~ msgid "\\left[ -"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "rac{\\hbar^2}{2m} abla^2 + V(\\mathbf{r}, t)"
+#~ " ight] \\Psi(\\mathbf{r}, t)"
+#~ msgstr ""
+
+#~ msgid "Author: Hideki Hokuto Date: 2025-08-16"
+#~ msgstr ""
+
+#~ msgid "‖v‖ = sqrt(sum(v_i²))"
+#~ msgstr ""
+
+#~ msgid "\\|v\\| = \\sqrt{\\sum_i v_i^2}"
+#~ msgstr ""
+
+#~ msgid "The Euclidean length of the vector."
+#~ msgstr ""
+
+#~ msgid "rtype"
+#~ msgstr ""
+
+#~ msgid "float"
+#~ msgstr ""
+
+#~ msgid "$\\|v\\| = \\sqrt{\\sum v_i^2}$"
+#~ msgstr ""
+
+#~ msgid "\\( \\|v\\| = \\sqrt{\\sum v_i^2} \\)"
+#~ msgstr ""
+
+#~ msgid "math"
+#~ msgstr ""
+
+#~ msgid "\\|v\\| = \\sqrt{\\sum v_i^2}"
+#~ msgstr ""
+
+#~ msgid "Utility functions for N-dimensional geometry."
+#~ msgstr ""
+
+#~ msgid "d = sqrt(sum((x1_i - x2_i)²))"
+#~ msgstr ""
+
+#~ msgid ":math:`d = \\sqrt(\\sum((x_{1i}-x_{2i})^2))`"
+#~ msgstr ""
+
+#~ msgid ":math:`d = \\sqrt{\\sum((x_{1i}-x_{2i})^2)}`"
+#~ msgstr ""
+
+#~ msgid "# geometry.py"
+#~ msgstr ""
+
+#~ msgid "A line L can be represented parametrically as:"
+#~ msgstr ""
+
+#~ msgid "L(t) = P0 + t * d"
+#~ msgstr ""
+
+#~ msgid "P0 = a fixed point d = direction vector (non-zero) t = real parameter"
+#~ msgstr ""
+
+#~ msgid "In N dimensions, a hyperplane is the set of points X satisfying:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":math:`P_0` = a fixed point :math:`d`"
+#~ " = direction vector (non-zero) "
+#~ ":math:`t` = real parameter"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A point is a location in space,"
+#~ " with no direction or magnitude. In"
+#~ " mathematics, a point P in "
+#~ "N-dimensional space is represented as:"
+#~ msgstr ""
+
+#~ msgid ":math:`P = (x_1, x_2, \\cdots, x_N)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A point is a location in space,"
+#~ " with no direction or magnitude. In"
+#~ " mathematics, a point P in "
+#~ "N-dimensional space is represented as: "
+#~ ":math:`P = (x_1, x_2, \\cdots, x_N)`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In :math:`N` dimensions, a hyperplane is"
+#~ " the set of points X satisfying:"
+#~ msgstr ""
+
+#~ msgid "n · (X - P0) = 0"
+#~ msgstr ""
+
+#~ msgid "Represents a vector in N-dimensional Euclidean space."
+#~ msgstr ""
+
+#~ msgid "v · w = sum(v_i * w_i)"
+#~ msgstr ""
+
+#~ msgid ":math:`\\vb*{n} \\cdot (X - P_0) = 0`"
+#~ msgstr ""
+
+#~ msgid ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
+#~ msgstr ""
+
+#~ msgid ":math:`\\mathit{\\mathbf{n}} \\cdot (X - P_0) = 0`"
+#~ msgstr ""
+
+#~ msgid ":math:`\\bm{n} \\cdot (X - P_0) = 0`"
+#~ msgstr ""
+
+#~ msgid ":math:`\\mathit{n} \\cdot (X - P_0) = 0`"
+#~ msgstr ""
+
+#~ msgid "n = normal vector P0 = a fixed point on the plane"
+#~ msgstr ""
+

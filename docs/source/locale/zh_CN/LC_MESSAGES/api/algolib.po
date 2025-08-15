@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 04:41+0900\n"
+"POT-Creation-Date: 2025-08-16 05:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -62,14 +62,12 @@ msgid "Raised when an argument has an invalid value."
 msgstr "当参数值无效时引发。"
 
 #: ../source/api/algolib.rst:24
-msgid "algolib.sample module"
-msgstr "algolib.sample 模块"
-
-#: algolib.sample.add:1 of
-msgid "Return a + b."
-msgstr "返回 a + b。"
-
-#: ../source/api/algolib.rst:32
 msgid "Module contents"
 msgstr "模块内容"
+
+#~ msgid "algolib.sample module"
+#~ msgstr "algolib.sample 模块"
+
+#~ msgid "Return a + b."
+#~ msgstr "返回 a + b。"
 
