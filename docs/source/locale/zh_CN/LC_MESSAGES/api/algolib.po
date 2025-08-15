@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../source/api/algolib.rst:2
 msgid "algolib package"
-msgstr ""
+msgstr "algolib 包"
 
 #: ../source/api/algolib.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.rst:8
 msgid "algolib.sample module"
-msgstr ""
+msgstr "algolib.sample 模块"
 
 #: algolib.sample.add:1 of
 msgid "Return a + b."
@@ -37,5 +37,5 @@ msgstr ""
 
 #: ../source/api/algolib.rst:16
 msgid "Module contents"
-msgstr ""
+msgstr "模块目录"
 

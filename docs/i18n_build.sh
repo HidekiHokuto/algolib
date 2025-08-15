@@ -81,10 +81,12 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# 回写 README（徽章 & 文本）
-sed -i.bak -E "s|(translation--)([0-9]+)%25|\1${PCT}%25|g" ../README.md || true
-sed -i.bak -E "s|(Translation Progress: )[0-9]+%|\1${PCT}%|g" ../README.md || true
-rm -f ../README.md.bak
+# 回写 README（徽章 & 文本）——更宽松的匹配
+# 1) 徽章（匹配 i18n zh--CN-0%25 / i18n%20zh--CN-0%25 / i18n zh-CN-0% 等多种写法）
+perl -0777 -i -pe 's|(i18n(?:%20|[ _-])?zh[-_ ]?CN-)\d+(%25|%)|\1'"$PCT"'\2|gi' ../README.md
+
+# 2) 纯文本：Translation Progress: 0%
+perl -0777 -i -pe 's|(Translation Progress:\s*)\d+%|\1'"$PCT"'%|gi' ../README.md
 
 echo "✅ Done."
 echo "EN: $(pwd)/build/html/en"
