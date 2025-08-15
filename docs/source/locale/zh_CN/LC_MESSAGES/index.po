@@ -27,14 +27,3 @@ msgstr "目录"
 msgid "Welcome to Algolib's documentation!"
 msgstr "欢迎来到 Algolib 的文档"
 
-#~ msgid "<p>"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<a href=\"../html/index.html\">English</a> | <a "
-#~ "href=\"../html-zh/index.html\">简体中文</a>"
-#~ msgstr ""
-
-#~ msgid "</p>"
-#~ msgstr ""
-
