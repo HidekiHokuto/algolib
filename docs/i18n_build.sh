@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"  # -> docs/
 
-# 可选：自动生成 API 文档
+# 可选：自动生成 API 文档（注释掉就不生成）
 if command -v sphinx-apidoc >/dev/null 2>&1; then
   echo "[0/7] Generate API docs..."
   sphinx-apidoc -f -o source/api ../src/algolib
@@ -42,44 +42,54 @@ echo "[6/7] Disable Jekyll..."
 touch build/html/.nojekyll
 
 echo "[7/7] Compute zh_CN translation progress & update README..."
-# 统计所有 zh_CN .po：翻译/模糊/未翻译
-total=0; trans=0; fuzzy=0; untrans=0
 
-# 兼容两种常见布局：docs/locale/... 或 docs/source/locale/...
-mapfile -t PO_FILES < <(find . -type f -path "./locale/zh_CN/LC_MESSAGES/*.po" -o -path "./source/locale/zh_CN/LC_MESSAGES/*.po" | sort)
-if [ ${#PO_FILES[@]} -eq 0 ]; then
-  echo "No zh_CN .po files found; progress remains 0%."
+# 兼容两种可能的目录：docs/locale/... 和 docs/source/locale/...
+PO_BASES=("locale/zh_CN/LC_MESSAGES" "source/locale/zh_CN/LC_MESSAGES")
+
+TOTAL=0
+TRANS=0
+FUZZY=0
+UNTRANS=0
+
+for base in "${PO_BASES[@]}"; do
+  if [ -d "$base" ]; then
+    # 遍历所有 .po 文件，用 msgfmt --statistics 逐个拿到三类计数并累加
+    find "$base" -type f -name '*.po' | while IFS= read -r po; do
+      STATS="$(msgfmt --statistics -o /dev/null "$po" 2>&1 || true)"
+      # 可能的输出示例：
+      # "2 translated messages, 0 fuzzy translations, 5 untranslated messages."
+      t=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p' | head -n1)
+      f=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p' | head -n1)
+      u=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p' | head -n1)
+      [ -z "$t" ] && t=0
+      [ -z "$f" ] && f=0
+      [ -z "$u" ] && u=0
+      TRANS=$((TRANS + t))
+      FUZZY=$((FUZZY + f))
+      UNTRANS=$((UNTRANS + u))
+      TOTAL=$((TOTAL + t + f + u))
+      echo " - $(basename "$po"): $STATS"
+    done
+  fi
+done
+
+if [ "$TOTAL" -gt 0 ]; then
+  # 只把“非 fuzzy 的已翻译”算作进度
+  # 由于 msgfmt 统计的 translated 本身已不含 fuzzy，这里直接用 TRANS/TOTAL
+  PCT=$(( TRANS * 100 / TOTAL ))
 else
-  for f in "${PO_FILES[@]}"; do
-    # msgfmt --statistics 输出到 stderr，例如：
-    #   12 translated messages, 3 fuzzy translations, 5 untranslated messages.
-    stats="$(msgfmt --statistics -o /dev/null "$f" 2>&1 || true)"
-    t=$(echo "$stats" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p')
-    fu=$(echo "$stats" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p')
-    u=$(echo "$stats" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p')
-    t=${t:-0}; fu=${fu:-0}; u=${u:-0}
-    trans=$((trans + t))
-    fuzzy=$((fuzzy + fu))
-    untrans=$((untrans + u))
-  done
-  total=$((trans + fuzzy + untrans))
+  PCT=0
 fi
 
-pct=0
-if [ "$total" -gt 0 ]; then
-  # 四舍五入为整数百分比
-  pct=$(awk -v a="$trans" -v b="$total" 'BEGIN{ printf("%d", (a*100.0/b)+0.5) }')
-fi
+echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
+echo "Progress: ${PCT}%"
 
-# 回写 README：两处——文字百分比 & 徽章中的百分比（%25 要 URL 编码）
-# 这些替换依赖 README 中的占位写法（见下文 README 修改）
-if [ -f ../README.md ]; then
-  sed -i -E "s/(ZH Translation Progress:\s*)[0-9]+%/\\1${pct}%/" ../README.md
-  sed -i -E "s#(i18n_zh--CN-)[0-9]+%25#\\1${pct}%25#" ../README.md
-  echo "Updated README progress to ${pct}% (translated=${trans}, fuzzy=${fuzzy}, untranslated=${untrans}, total=${total})."
-else
-  echo "README.md not found at repo root; skipped progress update."
-fi
+# 回写 README：两种格式都兼容（svg 徽章和纯文本）
+# 1) 徽章 URL 中的百分比（..-0%25-..）
+sed -i.bak -E "s/(translation--)([0-9]+)%25/\1${PCT}%25/g" ../README.md || true
+# 2) 文本中的 'Translation Progress: NN%'
+sed -i.bak -E "s/(Translation Progress: )[0-9]+%/\1${PCT}%/g" ../README.md || true
+rm -f ../README.md.bak
 
 echo "✅ Done."
 echo "EN: $(pwd)/build/html/en"
