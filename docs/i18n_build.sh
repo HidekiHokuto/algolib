@@ -52,31 +52,28 @@ FUZZY=0
 UNTRANS=0
 
 for base in "${PO_BASES[@]}"; do
-  if [ -d "$base" ]; then
-    # 遍历所有 .po 文件，用 msgfmt --statistics 逐个拿到三类计数并累加
-    find "$base" -type f -name '*.po' | while IFS= read -r po; do
-      STATS="$(msgfmt --statistics -o /dev/null "$po" 2>&1 || true)"
-      # 可能的输出示例：
-      # "2 translated messages, 0 fuzzy translations, 5 untranslated messages."
-      t=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p' | head -n1)
-      f=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p' | head -n1)
-      u=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p' | head -n1)
-      [ -z "$t" ] && t=0
-      [ -z "$f" ] && f=0
-      [ -z "$u" ] && u=0
-      TRANS=$((TRANS + t))
-      FUZZY=$((FUZZY + f))
-      UNTRANS=$((UNTRANS + u))
-      TOTAL=$((TOTAL + t + f + u))
-      echo " - $(basename "$po"): $STATS"
-    done
-  fi
+  [ -d "$base" ] || continue
+  tmpfile="$(mktemp)"
+  find "$base" -type f -name '*.po' > "$tmpfile"
+  while IFS= read -r po; do
+    [ -f "$po" ] || continue
+    STATS="$(msgfmt --statistics -o /dev/null "$po" 2>&1 || true)"
+    # 例："2 translated messages, 0 fuzzy translations, 5 untranslated messages."
+    t=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p' | head -n1)
+    f=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p' | head -n1)
+    u=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p' | head -n1)
+    [ -z "$t" ] && t=0; [ -z "$f" ] && f=0; [ -z "$u" ] && u=0
+    echo " - $(basename "$po"): $STATS"
+    TRANS=$((TRANS + t))
+    FUZZY=$((FUZZY + f))
+    UNTRANS=$((UNTRANS + u))
+    TOTAL=$((TOTAL + t + f + u))
+  done < "$tmpfile"
+  rm -f "$tmpfile"
 done
 
 if [ "$TOTAL" -gt 0 ]; then
-  # 只把“非 fuzzy 的已翻译”算作进度
-  # 由于 msgfmt 统计的 translated 本身已不含 fuzzy，这里直接用 TRANS/TOTAL
-  PCT=$(( TRANS * 100 / TOTAL ))
+  PCT=$(( TRANS * 100 / TOTAL ))   # msgfmt 的 translated 已排除 fuzzy
 else
   PCT=0
 fi
@@ -84,11 +81,9 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# 回写 README：两种格式都兼容（svg 徽章和纯文本）
-# 1) 徽章 URL 中的百分比（..-0%25-..）
-sed -i.bak -E "s/(translation--)([0-9]+)%25/\1${PCT}%25/g" ../README.md || true
-# 2) 文本中的 'Translation Progress: NN%'
-sed -i.bak -E "s/(Translation Progress: )[0-9]+%/\1${PCT}%/g" ../README.md || true
+# 回写 README（徽章 & 文本）
+sed -i.bak -E "s|(translation--)([0-9]+)%25|\1${PCT}%25|g" ../README.md || true
+sed -i.bak -E "s|(Translation Progress: )[0-9]+%|\1${PCT}%|g" ../README.md || true
 rm -f ../README.md.bak
 
 echo "✅ Done."
