@@ -85,12 +85,19 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# 回写 README（徽章 & 文本），用 GNU sed，大小写不敏感
-# 1) 徽章：匹配 i18n zh-CN 的百分比（支持中间空格/下划线/连字符和 %25 或 %）
-sed -E -i "s/(i18n[ %_-]?zh[ _-]?CN-)[0-9]+(%25|%)/\1${PCT}\2/I" ../README.md
+# 回写 README（用锚点块替换）
+badge="[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-${PCT}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)"
+block="<!-- i18n-progress:start -->
+${badge}
+Translation Progress: ${PCT}%
+<!-- i18n-progress:end -->"
 
-# 2) 纯文本：Translation Progress: 0%
-sed -E -i "s/(Translation Progress:[[:space:]]*)[0-9]+%/\1${PCT}%/I" ../README.md
+awk -v RS= -v ORS= -v block="$block" '
+  {
+    gsub(/<!-- i18n-progress:start -->.*<!-- i18n-progress:end -->/s, block)
+    print
+  }
+' ../README.md > ../README.md.tmp && mv ../README.md.tmp ../README.md
 
 echo "✅ Done."
 echo "EN: $(pwd)/build/html/en"
