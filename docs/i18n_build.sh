@@ -87,28 +87,37 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# —— 用 Python 稳定回写 README 的 i18n 标记块（避免 awk/sed 跨平台问题）——
+# —— 用 Python 稳定回写 README 的 i18n 标记块（支持首次追加）——
 python3 - "$PCT" <<'PY'
 import sys, re, pathlib
+
 pct = int(sys.argv[1])
 readme = pathlib.Path(__file__).resolve().parents[1] / "README.md"
 text = readme.read_text(encoding="utf-8")
 
-new_block = (
+block = (
     "<!-- i18n-progress:start -->\n"
     f"[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-{pct}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)\n"
     f"Translation Progress: {pct}%\n"
     "<!-- i18n-progress:end -->"
 )
 
-text = re.sub(
-    r"<!-- i18n-progress:start -->.*?<!-- i18n-progress:end -->",
-    new_block,
-    text,
-    flags=re.S,
+pattern = re.compile(
+    r"<!--\s*i18n-progress:start\s*-->.*?<!--\s*i18n-progress:end\s*-->",
+    re.S | re.I,
 )
-readme.write_text(text, encoding="utf-8")
-print(f"README updated to {pct}%")
+
+if pattern.search(text):
+    new_text = pattern.sub(block, text)
+else:
+    # 没有锚点块：首次追加到 README 末尾
+    new_text = text.rstrip() + "\n\n" + block + "\n"
+
+if new_text != text:
+    readme.write_text(new_text, encoding="utf-8", newline="\n")
+    print(f"README updated to {pct}%")
+else:
+    print("README already up-to-date.")
 PY
 
 echo "✅ Done."
