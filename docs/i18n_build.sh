@@ -62,12 +62,14 @@ for base in "${PO_BASES[@]}"; do
   while IFS= read -r po; do
     [ -f "$po" ] || continue
     STATS="$(msgfmt --statistics -o /dev/null "$po" 2>&1 || true)"
+    echo " - $(basename "$po"): $STATS"
+
     # 例："2 translated messages, 0 fuzzy translations, 5 untranslated messages."
     t=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) translated.*/\1/p' | head -n1)
     f=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) fuzzy.*/\1/p' | head -n1)
     u=$(printf '%s' "$STATS" | sed -n 's/.*\([0-9][0-9]*\) untranslated.*/\1/p' | head -n1)
     [ -z "$t" ] && t=0; [ -z "$f" ] && f=0; [ -z "$u" ] && u=0
-    echo " - $(basename "$po"): $STATS"
+
     TRANS=$((TRANS + t))
     FUZZY=$((FUZZY + f))
     UNTRANS=$((UNTRANS + u))
@@ -77,7 +79,7 @@ for base in "${PO_BASES[@]}"; do
 done
 
 if [ "$TOTAL" -gt 0 ]; then
-  PCT=$(( TRANS * 100 / TOTAL ))   # msgfmt 的 translated 已排除 fuzzy
+  PCT=$(( TRANS * 100 / TOTAL ))   # translated 已排除 fuzzy
 else
   PCT=0
 fi
@@ -85,19 +87,29 @@ fi
 echo "Summary: translated=$TRANS, fuzzy=$FUZZY, untranslated=$UNTRANS, total=$TOTAL"
 echo "Progress: ${PCT}%"
 
-# 回写 README（用锚点块替换）
-badge="[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-${PCT}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)"
-block="<!-- i18n-progress:start -->
-${badge}
-Translation Progress: ${PCT}%
-<!-- i18n-progress:end -->"
+# —— 用 Python 稳定回写 README 的 i18n 标记块（避免 awk/sed 跨平台问题）——
+python3 - "$PCT" <<'PY'
+import sys, re, pathlib
+pct = int(sys.argv[1])
+readme = pathlib.Path(__file__).resolve().parents[1] / "README.md"
+text = readme.read_text(encoding="utf-8")
 
-awk -v RS= -v ORS= -v block="$block" '
-  {
-    gsub(/<!-- i18n-progress:start -->.*<!-- i18n-progress:end -->/s, block)
-    print
-  }
-' ../README.md > ../README.md.tmp && mv ../README.md.tmp ../README.md
+new_block = (
+    "<!-- i18n-progress:start -->\n"
+    f"[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-{pct}%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)\n"
+    f"Translation Progress: {pct}%\n"
+    "<!-- i18n-progress:end -->"
+)
+
+text = re.sub(
+    r"<!-- i18n-progress:start -->.*?<!-- i18n-progress:end -->",
+    new_block,
+    text,
+    flags=re.S,
+)
+readme.write_text(text, encoding="utf-8")
+print(f"README updated to {pct}%")
+PY
 
 echo "✅ Done."
 echo "EN: $(pwd)/build/html/en"
