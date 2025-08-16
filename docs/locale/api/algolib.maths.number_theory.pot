@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 
+# Copyright (C) 2025, Hideki Hokuto
 # This file is distributed under the same license as the Algolib package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 04:41+0900\n"
+"POT-Creation-Date: 2025-08-16 15:32+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../src/algolib/maths/number_theory/__init__.py:docstring of algolib.maths.number_theory.prime.is_prime:1
 #: ../../src/algolib/maths/number_theory/prime.py:docstring of algolib.maths.number_theory.prime.is_prime:1
-msgid "Check whether an integer is a prime using the 6k ± 1 optimization."
+msgid "Check whether an integer is a prime using the :math:`6k \\pm 1` optimization."
 msgstr ""
 
 #: ../source/api/algolib.maths.number_theory.rst:0

@@ -1,12 +1,12 @@
 """
 
-A professional-grade N-dimensional geometry library with detailed documentation.
+A professional-grade :math:`N`-dimensional geometry library with detailed documentation.
 
 This module implements:
-    - Point: Represents a point in N-dimensional space.
-    - Vector: Represents a vector in N-dimensional space.
+    - Point: Represents a point in :math:`N`-dimensional space.
+    - Vector: Represents a vector in :math:`N`-dimensional space.
     - Line: Represents a line (infinite in both directions).
-    - Plane: Represents a hyperplane in N-dimensional space.
+    - Plane: Represents a hyperplane in :math:`N`-dimensional space.
     - GeometryUtils: Common geometric computation utilities.
 
 """
@@ -19,7 +19,7 @@ Number = Union[int, float]
 
 class Point:
     """
-    Represents a point in N-dimensional Euclidean space.
+    Represents a point in :math:`N`-dimensional Euclidean space.
 
     Attributes
     ----------
@@ -29,7 +29,7 @@ class Point:
     Notes
     -----
     A point is a location in space, with no direction or magnitude.
-    In mathematics, a point P in N-dimensional space is represented as:
+    In mathematics, a point :math:`P` in :math:`N`-dimensional space is represented as:
     :math:`P = (x_1, x_2, \cdots, x_N)`
     """
 

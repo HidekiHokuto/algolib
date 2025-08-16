@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 
+# Copyright (C) 2025, Hideki Hokuto
 # This file is distributed under the same license as the Algolib package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 07:02+0900\n"
+"POT-Creation-Date: 2025-08-16 15:35+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "algolib.maths.geometry.geometry module"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:1
-msgid "A professional-grade N-dimensional geometry library with detailed documentation."
+msgid "A professional-grade :math:`N`-dimensional geometry library with detailed documentation."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:3
@@ -37,11 +37,11 @@ msgid "This module implements:"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:4
-msgid "Point: Represents a point in N-dimensional space."
+msgid "Point: Represents a point in :math:`N`-dimensional space."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:5
-msgid "Vector: Represents a vector in N-dimensional space."
+msgid "Vector: Represents a vector in :math:`N`-dimensional space."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:6
@@ -49,7 +49,7 @@ msgid "Line: Represents a line (infinite in both directions)."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:7
-msgid "Plane: Represents a hyperplane in N-dimensional space."
+msgid "Plane: Represents a hyperplane in :math:`N`-dimensional space."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:8
@@ -172,7 +172,7 @@ msgid ":math:`P_0` = a fixed point on the plane"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:1
-msgid "Represents a point in N-dimensional Euclidean space."
+msgid "Represents a point in :math:`N`-dimensional Euclidean space."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:5
@@ -185,7 +185,7 @@ msgid "List[Number]"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:11
-msgid "A point is a location in space, with no direction or magnitude. In mathematics, a point P in N-dimensional space is represented as: :math:`P = (x_1, x_2, \\cdots, x_N)`"
+msgid "A point is a location in space, with no direction or magnitude. In mathematics, a point :math:`P` in :math:`N`-dimensional space is represented as: :math:`P = (x_1, x_2, \\cdots, x_N)`"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point.dimension:1

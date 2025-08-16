@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C)
 # This file is distributed under the same license as the Algolib package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# HidekiHokuto <sz03101997@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 07:02+0900\n"
+"POT-Creation-Date: 2025-08-16 15:35+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -32,33 +32,33 @@ msgstr "algolib.maths.geometry.geometry 模块"
 
 #: algolib.maths.geometry.geometry:1 of
 msgid ""
-"A professional-grade N-dimensional geometry library with detailed "
+"A professional-grade :math:`N`-dimensional geometry library with detailed "
 "documentation."
-msgstr "一个专业级的 :math:`N` 维几何库，提供详细文档。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry:3 of
 msgid "This module implements:"
-msgstr "本模块实现了以下内容："
+msgstr ""
 
 #: algolib.maths.geometry.geometry:4 of
-msgid "Point: Represents a point in N-dimensional space."
-msgstr "点(Point)：表示 :math:`N` 维空间中的一个点。"
+msgid "Point: Represents a point in :math:`N`-dimensional space."
+msgstr ""
 
 #: algolib.maths.geometry.geometry:5 of
-msgid "Vector: Represents a vector in N-dimensional space."
-msgstr "向量(Vector)：表示 :math:`N` 维空间中的一个向量。"
+msgid "Vector: Represents a vector in :math:`N`-dimensional space."
+msgstr ""
 
 #: algolib.maths.geometry.geometry:6 of
 msgid "Line: Represents a line (infinite in both directions)."
-msgstr "线(Line)：表示一条直线（双向无限延伸）。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry:7 of
-msgid "Plane: Represents a hyperplane in N-dimensional space."
-msgstr "平面(Plane)：表示 :math:`N` 维空间中的一个超平面。"
+msgid "Plane: Represents a hyperplane in :math:`N`-dimensional space."
+msgstr ""
 
 #: algolib.maths.geometry.geometry:8 of
 msgid "GeometryUtils: Common geometric computation utilities."
-msgstr "几何工具(GeometryUtils)：通用的几何计算工具。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1
 #: algolib.maths.geometry.geometry.Line:1
@@ -66,11 +66,11 @@ msgstr "几何工具(GeometryUtils)：通用的几何计算工具。"
 #: algolib.maths.geometry.geometry.Point:1
 #: algolib.maths.geometry.geometry.Vector:1 of
 msgid "Bases: :py:class:`object`"
-msgstr "基类：:py:class:`object`"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1 of
 msgid "Utility functions for :math:`N`-dimensional geometry."
-msgstr ":math:`N`维几何的工具函数。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:1 of
 msgid "Compute Euclidean distance between two points."
@@ -80,50 +80,50 @@ msgstr "计算两点之间的欧几里得距离。"
 #: algolib.maths.geometry.geometry.Vector.dot:4
 #: algolib.maths.geometry.geometry.Vector.norm:4 of
 msgid "Formula"
-msgstr "公式"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:5 of
 msgid ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
-msgstr ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:1 of
 msgid "Represents an infinite line in N-dimensional space."
-msgstr "表示 :math:`N` 维空间中的一条无限长直线。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:5 of
 msgid "A point through which the line passes."
-msgstr "直线经过的一个点。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line algolib.maths.geometry.geometry.Plane
 #: algolib.maths.geometry.geometry.Point algolib.maths.geometry.geometry.Vector
 #: of
 msgid "type"
-msgstr "类型"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:7
 #: algolib.maths.geometry.geometry.Plane:7 of
 msgid "Point"
-msgstr "点"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:11 of
 msgid "The direction vector of the line."
-msgstr "直线的方向向量。"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:13
 #: algolib.maths.geometry.geometry.Plane:13 of
 msgid "Vector"
-msgstr "向量"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:16
 #: algolib.maths.geometry.geometry.Plane:16
 #: algolib.maths.geometry.geometry.Point:10
 #: algolib.maths.geometry.geometry.Vector:10 of
 msgid "Notes"
-msgstr "说明"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:17 of
 msgid "A line :math:`L` can be represented parametrically as:"
-msgstr "一条直线 :math:`L` 可以用参数方程表示："
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:18 of
 msgid ":math:`L(t) = P_0 + t \\cdot d`"
@@ -136,7 +136,7 @@ msgstr "其中："
 
 #: algolib.maths.geometry.geometry.Line:20 of
 msgid ":math:`P_0` = a fixed point"
-msgstr ":math:`P_0` = 一个固定点"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Line:21 of
 msgid ":math:`d` = direction vector (non-zero)"
@@ -178,7 +178,7 @@ msgid ":math:`P_0` = a fixed point on the plane"
 msgstr ":math:`P_0` = 平面上的一个固定点"
 
 #: algolib.maths.geometry.geometry.Point:1 of
-msgid "Represents a point in N-dimensional Euclidean space."
+msgid "Represents a point in :math:`N`-dimensional Euclidean space."
 msgstr "表示 :math:`N` 维欧几里得空间中的一个点。"
 
 #: algolib.maths.geometry.geometry.Point:5 of
@@ -193,11 +193,11 @@ msgstr "List[Number]"
 #: algolib.maths.geometry.geometry.Point:11 of
 msgid ""
 "A point is a location in space, with no direction or magnitude. In "
-"mathematics, a point P in N-dimensional space is represented as: :math:`P = "
-"(x_1, x_2, \\cdots, x_N)`"
+"mathematics, a point :math:`P` in :math:`N`-dimensional space is represented "
+"as: :math:`P = (x_1, x_2, \\cdots, x_N)`"
 msgstr ""
-"点是空间中的一个位置，没有方向或大小。在数学中，N维空间中的点P表示为："
-":math:`P = (x_1, x_2, \\cdots, x_N)`"
+"点是空间中的一个位置，没有方向或大小。在数学中，N维空间中的点P表示"
+"为：:math:`P = (x_1, x_2, \\cdots, x_N)`"
 
 #: algolib.maths.geometry.geometry.Point.dimension:1 of
 msgid "Returns the dimensionality of the point."
@@ -250,7 +250,7 @@ msgstr "计算向量的欧几里得范数（长度）。"
 #: algolib.maths.geometry.geometry.Vector.norm:5 of
 #, python-brace-format
 msgid ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
-msgstr ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Vector.norm of
 msgid "returns"
@@ -258,11 +258,11 @@ msgstr "返回"
 
 #: algolib.maths.geometry.geometry.Vector.norm:7 of
 msgid "*float*"
-msgstr "*float*"
+msgstr ""
 
 #: algolib.maths.geometry.geometry.Vector.norm:8 of
 msgid "*The Euclidean length of the vector.*"
-msgstr "*向量的欧几里得长度。*"
+msgstr ""
 
 #: ../source/api/algolib.maths.geometry.rst:16
 msgid "Module contents"

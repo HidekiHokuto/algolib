@@ -5,7 +5,7 @@ from algolib.exceptions import InvalidTypeError, InvalidValueError
 __all__ = ["is_prime"]
 
 def is_prime(n: int) -> bool:
-    """Check whether an integer is a prime using the 6k ± 1 optimization.
+    """Check whether an integer is a prime using the :math:`6k \pm 1` optimization.
 
     Parameters
     ----------
