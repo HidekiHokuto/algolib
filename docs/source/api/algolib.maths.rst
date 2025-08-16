@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   algolib.maths.complex
    algolib.maths.geometry
    algolib.maths.number_theory
 
