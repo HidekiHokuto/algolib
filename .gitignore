@@ -8,3 +8,9 @@ dist/
 build/
 docs/_build/
 .idea/
+.coverage
+coverage.xml
+coverage_html/
+docs/coverage/
+
+
