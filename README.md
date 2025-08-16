@@ -21,3 +21,9 @@ pytest
 
 ---
 
+Copyright (C) 2025 HidekiHokuto
+
+This file is part of algolib and distributed under the terms of the
+GNU General Public License v3.0 (GPLv3).
+
+See the LICENSE file in the root directory for full license details.
