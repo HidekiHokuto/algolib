@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 19:56+0900\n"
+"POT-Creation-Date: 2025-08-16 23:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,12 +84,16 @@ msgstr ""
 msgid "Element-wise comparison with tolerance for floats."
 msgstr ""
 
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.identity:1
+msgid "Alias of :func:`identity`."
+msgstr ""
+
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.from_rows:1
 msgid "Construct from row-major data (alias of the constructor)."
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.identity:1
-msgid "Return the :math:`n     imes n` identity matrix."
+msgid "Return the :math:`n \\times n` identity matrix."
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.inv:1

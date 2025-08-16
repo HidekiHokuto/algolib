@@ -75,10 +75,13 @@ class MatrixDense:
 
     @staticmethod
     def identity(n: int) -> "MatrixDense":
-        """Return the :math:`n \times n` identity matrix."""
+        """Return the :math:`n \\times n` identity matrix."""
         if n <= 0:
             raise InvalidValueError("size must be positive.")
         return MatrixDense([[1.0 if i == j else 0.0 for j in range(n)] for i in range(n)])
+
+    eye = identity
+    """Alias of :func:`identity`."""
 
     # ---------- Basic properties ----------
 

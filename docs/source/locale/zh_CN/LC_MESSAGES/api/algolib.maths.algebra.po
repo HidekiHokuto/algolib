@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 19:52+0900\n"
+"POT-Creation-Date: 2025-08-16 23:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../source/api/algolib.maths.algebra.rst:2
 msgid "algolib.maths.algebra package"
-msgstr ""
+msgstr "algolib.maths.algebra 包"
 
 #: ../source/api/algolib.maths.algebra.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.maths.algebra.rst:8
 msgid "algolib.maths.algebra.matrix\\_dense module"
@@ -89,12 +89,16 @@ msgstr ""
 msgid "Element-wise comparison with tolerance for floats."
 msgstr ""
 
+#: algolib.maths.algebra.matrix_dense.MatrixDense.identity:1 of
+msgid "Alias of :func:`identity`."
+msgstr ""
+
 #: algolib.maths.algebra.matrix_dense.MatrixDense.from_rows:1 of
 msgid "Construct from row-major data (alias of the constructor)."
 msgstr ""
 
 #: algolib.maths.algebra.matrix_dense.MatrixDense.identity:1 of
-msgid "Return the :math:`n     imes n` identity matrix."
+msgid "Return the :math:`n \\times n` identity matrix."
 msgstr ""
 
 #: algolib.maths.algebra.matrix_dense.MatrixDense.inv:1 of
@@ -125,6 +129,7 @@ msgstr ""
 msgid "Return type"
 msgstr ""
 
+#: algolib.maths.algebra.MatrixDense.shape:1
 #: algolib.maths.algebra.matrix_dense.MatrixDense.shape:1 of
 msgid "(n_rows, n_cols)"
 msgstr ""

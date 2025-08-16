@@ -18,7 +18,7 @@ Number = Union[int, float]
 
 
 class Point:
-    """
+    r"""
     Represents a point in :math:`N`-dimensional Euclidean space.
 
     Attributes
@@ -97,7 +97,7 @@ class Vector:
         return math.sqrt(sum(c**2 for c in self.comps))
 
     def dot(self, other: 'Vector') -> float:
-        """
+        r"""
         Compute the dot product with another vector.
 
         Formula
@@ -116,7 +116,7 @@ class Vector:
 
 
 class Line:
-    """
+    r"""
     Represents an infinite line in N-dimensional space.
 
     Attributes
@@ -147,7 +147,7 @@ class Line:
 
 
 class Plane:
-    """
+    r"""
     Represents a hyperplane in N-dimensional space.
 
     Attributes

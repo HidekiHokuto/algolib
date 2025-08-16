@@ -36,7 +36,45 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install sphinx sphinx-rtd-theme myst-parser sphinx-intl polib
+          pip install pytest pytest-cov
           pip install . || true
+
+      # ---------- 覆盖率：XML + HTML ----------
+      - name: Run tests & coverage
+        run: |
+          pytest \
+            --cov=src/algolib \
+            --cov-report=term-missing \
+            --cov-report=xml:coverage.xml \
+            --cov-report=html:coverage_html
+
+      # 读取 coverage.xml，计算百分比，并回写 README 的覆盖率徽章块
+      - name: Update README coverage badge (real)
+        run: |
+          python - <<'PY'
+          import re, pathlib, xml.etree.ElementTree as ET
+          root = ET.parse("coverage.xml").getroot()
+          # coverage.py 的 XML summary 在 <coverage line-rate="0.80" .../>
+          line_rate = float(root.attrib.get("line-rate", "0"))
+          pct = int(round(line_rate * 100))
+          readme = pathlib.Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+
+          new_block = (
+              "<!-- coverage:start -->\n"
+              f"[![coverage](https://img.shields.io/badge/coverage-{pct}%25-brightgreen)](https://HidekiHokuto.github.io/algolib/coverage/)\n"
+              f"Coverage: {pct}%\n"
+              "<!-- coverage:end -->"
+          )
+          text = re.sub(
+              r"<!-- coverage:start -->.*?<!-- coverage:end -->",
+              new_block,
+              text,
+              flags=re.S,
+          )
+          readme.write_text(text, encoding="utf-8")
+          print(f"README coverage updated to {pct}%")
+          PY
 
       # 一步完成构建 + 首页 + 翻译进度回写
       - name: Build docs (EN + ZH) & update progress
