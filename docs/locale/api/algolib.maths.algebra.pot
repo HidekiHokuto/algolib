@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, Hideki Hokuto
+# This file is distributed under the same license as the Algolib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Algolib \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-16 19:56+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/api/algolib.maths.algebra.rst:2
+msgid "algolib.maths.algebra package"
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:8
+msgid "algolib.maths.algebra.matrix\\_dense module"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:1
+msgid "A simple dense matrix (row-major) without external dependencies."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:3
+msgid "Designed for correctness and clarity (teaching/learning oriented). Not optimized for large-scale numerical workloads."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:6
+msgid "Row-major data. Must be rectangular (all rows same length)."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+msgid "Raises"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:9
+msgid "If rows are not sequences of numbers."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:10
+msgid "If matrix is empty or not rectangular."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:13
+msgid "Examples"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.T:1
+msgid "Transpose."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.copy:1
+msgid "Shallow copy (rows are tuples; safe)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.det:1
+msgid "Determinant via Gaussian elimination with partial pivoting (O(n^3))."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.det:3
+msgid "If matrix is not square."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.equals:1
+msgid "Element-wise comparison with tolerance for floats."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.from_rows:1
+msgid "Construct from row-major data (alias of the constructor)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.identity:1
+msgid "Return the :math:`n     imes n` identity matrix."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.inv:1
+msgid "Inverse via Gauss-Jordan elimination (O(n^3))."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.inv:3
+msgid "If matrix is not square or singular."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.matvec:1
+msgid "Matrix-vector product (Ax)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.matvec:3
+msgid "Vector of length equal to number of columns."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.matvec:6
+msgid "Resulting vector."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.MatrixDense.shape:1
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.shape:1
+msgid "(n_rows, n_cols)"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.zeros:1
+msgid "Return an :math:`(n_{\\mathrm{rows}} × n_{\\mathrm{cols}})` zero matrix."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:16
+msgid "Module contents"
+msgstr ""
