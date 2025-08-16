@@ -3,12 +3,12 @@
 Minimal algorithms library template with pytest and Sphinx docs.
 
 <!-- coverage:start -->
-[![coverage](https://img.shields.io/badge/coverage-0%25-brightgreen)](https://HidekiHokuto.github.io/algolib/coverage/)
-Coverage: 0%
+[![coverage](https://img.shields.io/badge/coverage-80%25-brightgreen)](https://HidekiHokuto.github.io/algolib/coverage/)
+Coverage: 80%
 <!-- coverage:end -->
 <!-- i18n-progress:start -->
-[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-41%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
-Translation Progress: 41%
+[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-40%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
+Translation Progress: 40%
 <!-- i18n-progress:end -->
 
 [**Docs (EN)**](https://HidekiHokuto.github.io/algolib/en/) • [**文档（简体中文）**](https://HidekiHokuto.github.io/algolib/zh/)
