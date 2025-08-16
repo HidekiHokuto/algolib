@@ -46,7 +46,7 @@ jobs:
             --cov=src/algolib \
             --cov-report=term-missing \
             --cov-report=xml:coverage.xml \
-            --cov-report=html:coverage_html
+            --cov-report=html:docs/build/html/coverage
 
       # 读取 coverage.xml，计算百分比，并回写 README 的覆盖率徽章块
       - name: Update README coverage badge (real)

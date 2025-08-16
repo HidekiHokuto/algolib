@@ -35,6 +35,7 @@ cat > build/html/index.html <<'HTML'
   .btn { display:inline-block; padding:.6rem 1rem; border:1px solid #ccc; border-radius:8px; margin-right:1rem; }
 </style>
 <h1>algolib documentation</h1>
+<p><a class="btn" href="./coverage/">Coverage report</a></p>
 <p>Select language / 选择语言：</p>
 <p>
   <a class="btn" href="./en/">English</a>
