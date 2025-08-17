@@ -15,3 +15,10 @@ addopts = """
 --cov-report=term-missing
 --cov-fail-under=80
 """
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "hypothesis"
+]
