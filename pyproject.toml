@@ -39,6 +39,7 @@ dev = [
   "sphinx-rtd-theme",
   "myst-parser",
   "sphinx-intl",
+  "polib",
 ]
 
 [tool.setuptools]
