@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 16:42+0900\n"
+"POT-Creation-Date: 2025-08-18 07:10+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,134 +26,6 @@ msgstr ""
 
 #: ../source/api/algolib.maths.complex.rst:8
 msgid "algolib.maths.complex.complex module"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:1
-msgid "A lightweight Complex number implementation (without using Python's built-in ``complex``)."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:3
-msgid "This module provides a small, well-documented ``Complex`` class suitable for learning and algorithmic implementations. It supports algebraic form (a + bi) and polar form (r·e^{iθ}), with common operations."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:8
-msgid "Notes"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:9
-msgid "This class uses plain floats and is immutable."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:10
-msgid "We intentionally avoid Python's built-in :class:`complex` to practice fundamentals."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex:13
-msgid "Examples"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex:1
-msgid "Bases: :py:class:`object`"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex:1
-msgid "Complex number in algebraic form :math:`a + b \\mathrm{i}`."
-msgstr ""
-
-#: ../source/api/algolib.maths.complex.rst:0
-msgid "Parameters"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex:3
-msgid "Real part :math:`a`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex:5
-msgid "Imaginary part :math:`b`."
-msgstr ""
-
-#: ../source/api/algolib.maths.complex.rst:0
-msgid "Raises"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex:8
-msgid "If either part is not a real number (int/float)."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.almost_equal:1
-msgid "Return True if each component differs by at most ``tol`` (absolute)."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.almost_equal:3
-msgid "This is safer than exact float equality."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.argument:1
-msgid "Return the principal argument :math:`\\arg z \\in (-\\pi, \\pi]`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.argument:3
-msgid "Uses :func:`math.atan2`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.conjugate:1
-msgid "Return the complex conjugate :math:`\\overline{z} = a - b i`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_cartesian:1
-msgid "Construct from Cartesian coordinates (re, im). :param re: Real part. :param im: Imaginary part. :returns: Complex number corresponding to :math:`(re, im)`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_iterable:1
-msgid "Construct from an iterable of two numbers."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_iterable:3
-msgid "Iterable ``(re, im)``."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_iterable:4
-msgid "If iterable does not have exactly two numeric elements."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_polar:1
-msgid "Construct from polar coordinates :math:`(r, \\theta)`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_polar:3
-msgid "Modulus (radius). Must be non-negative."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_polar:4
-msgid "Argument (angle in radians)."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_polar:5
-msgid "If ``r < 0``."
-msgstr ""
-
-#: ../source/api/algolib.maths.complex.rst:0
-msgid "Returns"
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.from_polar:6
-msgid "Complex number corresponding to :math:`r(\\cos\\theta + i\\sin\\theta)`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.modulus:1
-msgid "Return the modulus :math:`\\\\abs{z} = \\\\sqrt{a^2 + b^2}`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.normalized:1
-msgid "Return :math:`z / |z|`. Raises if :math:`z = 0`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.to_polar:1
-msgid "Return ``(r, theta)`` with :math:`r = |z|` and :math:`\\theta = \\arg z`."
-msgstr ""
-
-#: ../../src/algolib/maths/complex/complex.py:docstring of algolib.maths.complex.complex.Complex.to_tuple:1
-msgid "Return ``(re, im)``."
 msgstr ""
 
 #: ../source/api/algolib.maths.complex.rst:16

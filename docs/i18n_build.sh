@@ -6,6 +6,12 @@ if ! command -v msgfmt >/dev/null 2>&1; then
   echo "Warning: msgfmt not found. Install gettext (Linux: apt-get install gettext, macOS: brew install gettext && brew link gettext --force)" >&2
 fi
 
+API_DIR="source/api"
+echo "[0/7] Generate API docs..."
+rm -rf "$API_DIR"               # 关键：清掉旧的 .rst（避免残留 algolib.maths.complex）
+mkdir -p "$API_DIR"
+sphinx-apidoc -f -o "$API_DIR" ../src/algolib
+
 # 可选：自动生成 API 文档（注释掉就不生成）
 if command -v sphinx-apidoc >/dev/null 2>&1; then
   echo "[0/7] Generate API docs..."

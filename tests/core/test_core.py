@@ -1,8 +1,8 @@
-# tests/maths/complex/test_complex.py
+# tests/maths/complex/test_core.py
 import math
 import pytest
 
-from algolib.maths.complex.complex import Complex
+from algolib.core.complex import Complex
 from algolib.exceptions import InvalidTypeError, InvalidValueError
 
 
