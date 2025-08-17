@@ -1,42 +1,34 @@
-/* 固定底部容器样式 */
-#algolib-side-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 12px;
-  padding: 10px 16px 6px 16px;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(255,255,255,0.12);
+/* 让侧边栏成为纵向布局，extras 能贴到底 */
+.wy-side-scroll { display: flex; flex-direction: column; }
+
+/* 目录占据中段空间 */
+.wy-menu-vertical { flex: 1 1 auto; }
+
+/* 注入的区域 */
+.algolib-extras {
+  margin-top: auto;            /* 贴底关键 */
+  padding: 1rem 1rem 1.2rem;
+  border-top: 1px solid rgba(255,255,255,.08);
 }
 
-.algolib-footer-title {
+/* 语言切换 */
+.algolib-lang h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin: 8px 0 6px 0;
-  font-size: 16px;
   color: #fff;
 }
-
-.algolib-footer-lang a {
+.algolib-lang a, .algolib-lang a:visited {
+  color: #cfd8e3;              /* 访问前后颜色一致 */
   text-decoration: none;
-  color: rgba(255,255,255,0.85);
-  margin-right: 10px;
 }
-.algolib-footer-lang a:hover { color: #fff; }
-.algolib-footer-lang a.active { color: #fff; font-weight: 700; }
-.algolib-footer-lang .sep { color: rgba(255,255,255,0.4); margin-right: 10px; }
+.algolib-lang a:hover { color: #fff; text-decoration: underline; }
+.algolib-lang .sep { margin: 0 .6rem; opacity: .5; }
 
-.algolib-footer-gh { margin-top: 10px; }
-
-/* 让 GitHub SVG 在深色底下显白： */
-.algolib-footer-gh .gh-icon {
-  color: #fff;              /* currentColor -> SVG 填充色 */
-  opacity: 0.85;
-  display: inline-flex;
-  align-items: center;
+/* GitHub 圆形白底按钮（不变形、深色可见） */
+.algolib-gh { display: inline-flex; align-items: center; margin-top: .6rem; }
+.algolib-gh-circle {
+  width: 30px; height: 30px; border-radius: 100%;
+  background: #fff; display: inline-flex; align-items: center; justify-content: center;
 }
-.algolib-footer-gh .gh-icon:hover { opacity: 1; }
-.algolib-footer-gh .gh-icon svg { display: block; }
-
-/* 如果你切换浅色主题想变深色，可按需覆盖：
-html:not([data-theme="dark"]) .algolib-footer-gh .gh-icon { color: #333; }
-*/
+.algolib-gh-circle img { width: 28px; height: 28px; display: block; object-fit: contain; }
