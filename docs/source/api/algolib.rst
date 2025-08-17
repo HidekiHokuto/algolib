@@ -7,7 +7,9 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   algolib.core
    algolib.maths
+   algolib.utils
 
 Submodules
 ----------

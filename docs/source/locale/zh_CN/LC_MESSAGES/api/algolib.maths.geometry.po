@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 15:35+0900\n"
+"POT-Creation-Date: 2025-08-17 07:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -165,8 +165,8 @@ msgid ""
 msgstr "在 :math:`N` 维空间中，超平面是满足以下条件的所有点 :math:`X` 的集合："
 
 #: algolib.maths.geometry.geometry.Plane:18 of
-#, python-brace-format
-msgid ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
+#, fuzzy, python-brace-format
+msgid ":math:`\\\\mathbf{n} \\cdot (X - P_0) = 0`"
 msgstr ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
 
 #: algolib.maths.geometry.geometry.Plane:20 of
@@ -240,7 +240,8 @@ msgid "Compute the dot product with another vector."
 msgstr "计算与另一个向量的点积。"
 
 #: algolib.maths.geometry.geometry.Vector.dot:5 of
-msgid ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
+#, fuzzy
+msgid ":math:`v \\cdot w = \\\\sum(v_i \\cdot w_i)`"
 msgstr ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
 
 #: algolib.maths.geometry.geometry.Vector.norm:1 of

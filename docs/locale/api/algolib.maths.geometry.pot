@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 15:35+0900\n"
+"POT-Creation-Date: 2025-08-17 07:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgid "In :math:`N` dimensions, a hyperplane is the set of points :math:`X` sati
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:18
-msgid ":math:`\\mathbf{n} \\cdot (X - P_0) = 0`"
+msgid ":math:`\\\\mathbf{n} \\cdot (X - P_0) = 0`"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:20
@@ -229,7 +229,7 @@ msgid "Compute the dot product with another vector."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:5
-msgid ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
+msgid ":math:`v \\cdot w = \\\\sum(v_i \\cdot w_i)`"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:1

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 15:32+0900\n"
+"POT-Creation-Date: 2025-08-17 07:46+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Subpackages"
 msgstr ""
 
-#: ../source/api/algolib.rst:13
+#: ../source/api/algolib.rst:15
 msgid "Submodules"
 msgstr ""
 
-#: ../source/api/algolib.rst:16
+#: ../source/api/algolib.rst:18
 msgid "algolib.exceptions module"
 msgstr ""
 
@@ -56,6 +56,6 @@ msgstr ""
 msgid "Raised when an argument has an invalid value."
 msgstr ""
 
-#: ../source/api/algolib.rst:24
+#: ../source/api/algolib.rst:26
 msgid "Module contents"
 msgstr ""
