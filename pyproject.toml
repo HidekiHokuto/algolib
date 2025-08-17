@@ -1,11 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "algolib"
 version = "0.1.0"
-description = "A clean algorithms library template with tests and docs (Python 3.10 edition)"
+description = "A clean algorithms / math library template with tests and docs (Python 3.10 edition)"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Hideki Hokuto" }]
-license = { text = "MIT" }
+
+# 用文件声明许可证，避免与 LICENSE 内容不一致；你当前仓库是 GPLv3
+license = { file = "LICENSE" }
+
+#（可选）分类器让 PyPI/工具链更好识别你的项目元数据
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Education",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.urls]
+Homepage = "https://github.com/HidekiHokuto/algolib"
+Repository = "https://github.com/HidekiHokuto/algolib"
+Documentation = "https://hidekihokuto.github.io/algolib/en/"
+
+[project.optional-dependencies]
+# 开发环境（测试 + 文档）
+dev = [
+  "pytest",
+  "pytest-cov",
+  "hypothesis",
+  "sphinx",
+  "sphinx-rtd-theme",
+  "myst-parser",
+  "sphinx-intl",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
@@ -15,10 +55,3 @@ addopts = """
 --cov-report=term-missing
 --cov-fail-under=80
 """
-
-[project.optional-dependencies]
-dev = [
-    "pytest",
-    "pytest-cov",
-    "hypothesis"
-]
