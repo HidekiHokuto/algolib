@@ -1,4 +1,0 @@
-# file: /Users/zhengshi/Projects/algolib/src/algolib/numerics/diff.py
-# hypothesis_version: 6.138.2
-
-[1e-20, 0.001, 1.0, 2.0]

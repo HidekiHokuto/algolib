@@ -1,4 +1,0 @@
-# file: /Users/zhengshi/Projects/algolib/src/algolib/core/complex.py
-# hypothesis_version: 6.138.2
-
-[0.0, 1e-300, 1e-12, '+', '-', 'Complex', 'im', 're']
