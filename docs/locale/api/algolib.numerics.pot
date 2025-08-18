@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, Hideki Hokuto
+# This file is distributed under the same license as the Algolib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Algolib \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-18 17:43+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/api/algolib.numerics.rst:2
+msgid "algolib.numerics package"
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:8
+msgid "algolib.numerics.constants module"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:1
+msgid "Centralized numerical constants for algolib."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:3
+msgid "No imports from `math` or third-party libs: *pure Python floats only*."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:4
+msgid "Values are given either as exact decimal, or with comments showing hex-float for traceability."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:6
+msgid "Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.copysign1:1
+msgid "Return :math:\\\\abs{x} with the sign of y. No math module, handles ±0.0 and NaN."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:1
+msgid "Compute 2**k using only multiplies (supports negative k) with IEEE754-style bounds."
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:3
+msgid "Behavior:"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:4
+msgid "k >  1023 -> raise NumericOverflowError (subclass of OverflowError)"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:5
+msgid "k < -1074 -> 0.0 (underflow to zero)"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:6
+msgid "-1074 <= k <= -1023 -> exact subnormal via halving from DBL_MIN"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:7
+msgid "otherwise -> exponentiation-by-squaring (<= 1023 以及 >= -1022)"
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:16
+msgid "algolib.numerics.diff module"
+msgstr ""
+
+#: ../../src/algolib/numerics/diff.py:docstring of algolib.numerics.diff.derivative_central:1
+msgid "Central difference derivative approximation with Richardson extrapolation."
+msgstr ""
+
+#: ../../src/algolib/numerics/diff.py:docstring of algolib.numerics.diff.derivative_central:3
+msgid "Useful when f does not support complex input. Accuracy is O(h^2) per step and improved by extrapolation."
+msgstr ""
+
+#: ../../src/algolib/numerics/diff.py:docstring of algolib.numerics.diff.derivative_cstep:1
+msgid "Complex-step derivative approximation:"
+msgstr ""
+
+#: ../../src/algolib/numerics/diff.py:docstring of algolib.numerics.diff.derivative_cstep:3
+msgid "f'(x) ≈ Im(f(x + i*h)) / h"
+msgstr ""
+
+#: ../../src/algolib/numerics/diff.py:docstring of algolib.numerics.diff.derivative_cstep:5
+msgid "Requires f to support complex input. Very stable since there is no subtractive cancellation."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:24
+msgid "Module contents"
+msgstr ""

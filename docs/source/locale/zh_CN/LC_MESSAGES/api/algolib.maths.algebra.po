@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 09:42+0900\n"
+"POT-Creation-Date: 2025-08-18 17:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -194,14 +194,9 @@ msgid "Return the degree (``len(coeffs)-1``), with ``deg(0)=0`` by convention."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.derivative:1 of
-msgid "Return the derivative :math:`p'(x)`."
-msgstr ""
-
-#: algolib.maths.algebra.polynomial.Polynomial.derivative:3 of
-#, python-brace-format
 msgid ""
-"If ``p(x)=\\\\sum_{k=0}^n c_k x^k``, then :math:`p'(x)=\\\\sum_{k=1}^n k c_k "
-"x^{k-1}`."
+"Return the analytical derivative p'(x). If p(x) = a0 + a1*x + ... + an*x^n, "
+"then p'(x) = a1 + 2*a2*x + ... + n*an*x^(n-1)."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.identity:1 of

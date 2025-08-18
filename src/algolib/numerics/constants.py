@@ -8,6 +8,8 @@ Centralized numerical constants for algolib.
 - Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos.
 """
 
+from algolib.exceptions import NumericOverflowError
+
 # -----------------------------
 # IEEE-754 double "machine" info
 # -----------------------------
@@ -64,20 +66,69 @@ ABS_EPS_DEFAULT = 1e-12
 # Small helpers (no math.*; keep them dependency-free)
 # ------------------------------------------------
 def pow2_int(k: int) -> float:
-    """Compute 2**k using only multiplies (supports negative k)."""
+    """Compute 2**k using only multiplies (supports negative k) with IEEE754-style bounds.
+
+    Behavior:
+      - k >  1023 -> raise NumericOverflowError (subclass of OverflowError)
+      - k < -1074 -> 0.0 (underflow to zero)
+      - -1074 <= k <= -1023 -> exact subnormal via halving from DBL_MIN
+      - otherwise -> exponentiation-by-squaring (<= 1023 以及 >= -1022)
+    """
     if k == 0:
         return 1.0
-    neg = k < 0
-    k = -k if neg else k
-    y = 1.0
-    base = 2.0
-    while k:
-        if (k & 1) != 0:
-            y *= base
-        base *= base
-        k >>= 1
-    return (1.0 / y) if neg else y
+    if k > 1023:
+        # mirror builtin overflow, 但用库内异常（是 OverflowError 的子类）
+        raise NumericOverflowError("Result too large")
+    if k < -1074:
+        # underflow to zero
+        return 0.0
+
+    if k >= DBL_MIN_EXP:  # 正规区间（包含 -1022）
+        if k > 0:
+            y = 1.0
+            base = 2.0
+            n = k
+            while n:
+                if (n & 1) != 0:
+                    y *= base
+                base *= base
+                n >>= 1
+            return y
+        else:
+            # -1022 <= k <= -1：用 0.5 的平方幂，稳定且不会一路掉成 0
+            y = 1.0
+            base = 0.5  # 2**-1
+            n = -k
+            while n:
+                if (n & 1) != 0:
+                    y *= base
+                base *= base
+                n >>= 1
+            return y
+
+    # 次正规：-1074 <= k <= -1023
+    # 思路：从最小正规 DBL_MIN = 2**-1022 开始，做 (-(k+1022)) 次“乘 0.5”。
+    # 这里最多 52 次，能得到精确的 subnormal。
+    steps = -(k + 1022)  # 介于 1..52
+    y = DBL_MIN
+    for _ in range(steps):
+        y *= 0.5
+    # k = -1074 时 y == DBL_DENORM_MIN（5e-324）
+    return y
 
 def copysign1(x: float, y: float) -> float:
-    """Return |x| with the sign of y. Only uses comparisons."""
-    return x if (y >= 0.0 or y != y) else -x  # NaN keeps x
+    r"""Return :math:\\abs{x} with the sign of y. No math module, handles ±0.0 and NaN."""
+    # y 是 NaN：按约定返回 x 本身（测试也是这么期望的）
+    if y != y:  # NaN 自不等
+        return x
+
+    # 取 |x|
+    ax = x if x >= 0.0 else -x
+
+    # y == 0.0 时，用十六进制表示判断符号位
+    if y == 0.0:
+        neg = float.hex(y).startswith("-")
+        return -ax if neg else ax
+
+    # 其余情况：比较即可
+    return ax if y > 0.0 else -ax

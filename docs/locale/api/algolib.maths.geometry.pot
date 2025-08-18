@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 07:46+0900\n"
+"POT-Creation-Date: 2025-08-18 17:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,31 +29,35 @@ msgid "algolib.maths.geometry.geometry module"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:1
-msgid "A professional-grade :math:`N`-dimensional geometry library with detailed documentation."
+msgid "A professional-grade :math:`N`-dimensional geometry module."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:3
-msgid "This module implements:"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:4
-msgid "Point: Represents a point in :math:`N`-dimensional space."
+msgid "It implements:"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:5
-msgid "Vector: Represents a vector in :math:`N`-dimensional space."
+msgid "**Point**: a location in :math:`\\mathbb{R}^N`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:6
-msgid "Line: Represents a line (infinite in both directions)."
+msgid "**Vector**: a displacement in :math:`\\mathbb{R}^N`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:7
-msgid "Plane: Represents a hyperplane in :math:`N`-dimensional space."
+msgid "**Line**: parametric line :math:`P(t) = P_0 + t\\,d`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:8
-msgid "GeometryUtils: Common geometric computation utilities."
+msgid "**Plane**: hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}`."
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:9
+msgid "**GeometryUtils**: utility routines."
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry:11
+msgid "All classes validate dimensions and numeric inputs, and raise :class:`algolib.exceptions.InvalidTypeError` or :class:`algolib.exceptions.InvalidValueError` on invalid usage."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils:1
@@ -65,191 +69,112 @@ msgid "Bases: :py:class:`object`"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils:1
-msgid "Utility functions for :math:`N`-dimensional geometry."
+msgid "Common geometry utilities."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils.distance:1
-msgid "Compute Euclidean distance between two points."
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils.distance:4
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:4
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:4
-msgid "Formula"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils.distance:5
-msgid ":math:`d = \\sqrt{\\sum(x_{1i}-x_{2i})^2}`"
+msgid "Euclidean distance :math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:1
-msgid "Represents an infinite line in N-dimensional space."
+msgid "Parametric line :math:`P(t) = P_0 + t\\\\,d` in :math:`\\\\mathbb{R}^N`."
+msgstr ""
+
+#: ../source/api/algolib.maths.geometry.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:3
+msgid "A point on the line (:math:`P_0`)."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:5
-msgid "A point through which the line passes."
+msgid "Direction vector :math:`d` (must be non-zero)."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:0
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:0
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:0
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:0
-msgid "type"
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line.contains:1
+msgid "Return True if ``p`` lies on the line (within tolerance)."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:7
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:7
-msgid "Point"
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line.contains:3
+msgid "We check that :math:`p - P_0` is colinear with :math:`d` by comparing ratios; component pairs with :math:`|d_i| \\le \\text{tol}` are skipped."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:11
-msgid "The direction vector of the line."
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:13
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:13
-msgid "Vector"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:16
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:16
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:10
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:10
-msgid "Notes"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:17
-msgid "A line :math:`L` can be represented parametrically as:"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:18
-msgid ":math:`L(t) = P_0 + t \\cdot d`"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:19
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:19
-msgid "where:"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:20
-msgid ":math:`P_0` = a fixed point"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:21
-msgid ":math:`d` = direction vector (non-zero)"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:22
-msgid ":math:`t` = real parameter"
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line.point_at:1
+msgid "Return the point :math:`P_0 + t\\,d`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:1
-msgid "Represents a hyperplane in N-dimensional space."
+msgid "Hyperplane :math:`\\\\{X:\\\\; n\\\\cdot(X-P_0)=0\\\\}` in :math:`\\\\mathbb{R}^N`."
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:3
+msgid "A reference point :math:`P_0` on the plane."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:5
-msgid "A point on the plane."
+msgid "Normal vector :math:`n` (must be non-zero)."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:11
-msgid "The normal vector to the plane."
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane.contains:1
+msgid "Return True if ``|n·(p-P0)| <= tol * ||n||``."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:17
-msgid "In :math:`N` dimensions, a hyperplane is the set of points :math:`X` satisfying:"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:18
-msgid ":math:`\\\\mathbf{n} \\cdot (X - P_0) = 0`"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:20
-msgid ":math:`n` = normal vector"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:21
-msgid ":math:`P_0` = a fixed point on the plane"
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane.signed_distance:1
+msgid "Return signed distance :math:`\\\\frac{n\\\\cdot (p-P_0)}{\\\\lVert n\\\\rVert}`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:1
-msgid "Represents a point in :math:`N`-dimensional Euclidean space."
+msgid "Point in :math:`N`-dimensional Euclidean space."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:5
-msgid "Coordinates of the point. Length determines the dimensionality."
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:3
+msgid "Coordinates of the point; length defines the dimension."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:7
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:7
-msgid "List[Number]"
+msgid "Notes"
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:11
-msgid "A point is a location in space, with no direction or magnitude. In mathematics, a point :math:`P` in :math:`N`-dimensional space is represented as: :math:`P = (x_1, x_2, \\cdots, x_N)`"
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:8
+msgid "A point has location but no direction or magnitude: :math:`P=(x_1,x_2,\\\\dots,x_N)`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point.dimension:1
-msgid "Returns the dimensionality of the point."
-msgstr ""
-
-#: ../source/api/algolib.maths.geometry.rst:0
-msgid "Returns"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point.dimension:3
-msgid "Number of coordinates."
-msgstr ""
-
-#: ../source/api/algolib.maths.geometry.rst:0
-msgid "Return type"
+msgid "Return the dimension (number of coordinates)."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:1
-msgid "Represents a vector in :math:`N`-dimensional Euclidean space."
+msgid "Vector in :math:`N`-dimensional Euclidean space."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:5
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:3
 msgid "Components of the vector."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:11
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector:8
 msgid "A vector represents both magnitude and direction."
 msgstr ""
 
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.add:1
-msgid "Return the sum of two vectors."
-msgstr ""
-
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dimension:1
-msgid "Return the dimensionality of the vector."
+msgid "Return the dimension (number of components)."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:1
-msgid "Compute the dot product with another vector."
+msgid "Return the dot product with another vector."
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:4
+msgid "Formula"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:5
-msgid ":math:`v \\cdot w = \\\\sum(v_i \\cdot w_i)`"
+msgid ":math:`v\\\\cdot w = \\\\sum_i v_i w_i`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:1
-msgid "Compute the Euclidean norm (length) of the vector."
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:5
-msgid ":math:`\\|v\\| = \\sqrt{\\sum v_i^2}`"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:0
-msgid "returns"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:7
-msgid "*float*"
-msgstr ""
-
-#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:8
-msgid "*The Euclidean length of the vector.*"
+msgid "Return the Euclidean norm :math:`\\\\lVert v\\\\rVert = \\\\sqrt{\\\\sum_i v_i^2}`."
 msgstr ""
 
 #: ../source/api/algolib.maths.geometry.rst:16

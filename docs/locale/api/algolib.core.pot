@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 09:42+0900\n"
+"POT-Creation-Date: 2025-08-18 17:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,6 +49,11 @@ msgid "We intentionally avoid Python's built-in :class:`complex` to practice fun
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex:13
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:12
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:12
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:15
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:7
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:7
 msgid "Examples"
 msgstr ""
 
@@ -61,6 +66,9 @@ msgid "Complex number in algebraic form :math:`a + b \\mathrm{i}`."
 msgstr ""
 
 #: ../source/api/algolib.core.rst:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
 msgid "Parameters"
 msgstr ""
 
@@ -73,6 +81,8 @@ msgid "Imaginary part :math:`b`."
 msgstr ""
 
 #: ../source/api/algolib.core.rst:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
 msgid "Raises"
 msgstr ""
 
@@ -101,47 +111,83 @@ msgid "Return the complex conjugate :math:`\\overline{z} = a - b i`."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:1
-msgid "Construct from Cartesian coordinates (re, im). :param re: Real part. :param im: Imaginary part. :returns: Complex number corresponding to :math:`(re, im)`."
+msgid "Construct a complex number from Cartesian coordinates."
 msgstr ""
 
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:1
-msgid "Construct from an iterable of two numbers."
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:3
+msgid "The real part of the complex number."
 msgstr ""
 
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:3
-msgid "Iterable ``(re, im)``."
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:5
+msgid "The imaginary part of the complex number."
 msgstr ""
 
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:4
-msgid "If iterable does not have exactly two numeric elements."
-msgstr ""
-
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:1
-msgid "Construct from polar coordinates :math:`(r, \\theta)`."
-msgstr ""
-
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:3
-msgid "Modulus (radius). Must be non-negative."
-msgstr ""
-
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:4
-msgid "Argument (angle in radians)."
-msgstr ""
-
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:5
-msgid "If ``r < 0``."
-msgstr ""
-
-#: ../source/api/algolib.core.rst:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
 msgid "Returns"
 msgstr ""
 
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:6
-msgid "Complex number corresponding to :math:`r(\\cos\\theta + i\\sin\\theta)`."
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:8
+msgid "The complex number corresponding to the Cartesian coordinates."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:1
+msgid "Construct a complex number from an iterable of two numbers."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:3
+msgid "An iterable containing exactly two elements: the real and imaginary parts."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:6
+msgid "The complex number constructed from the iterable."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:9
+msgid "If the iterable does not contain exactly two numeric elements."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:1
+msgid "Construct a complex number from polar coordinates."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:3
+msgid "The modulus (radius) of the complex number. Must be non-negative."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:5
+msgid "The argument (angle in radians) of the complex number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:8
+msgid "The complex number corresponding to the polar coordinates."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:11
+msgid "If `r` or `theta` is not a real number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:12
+msgid "If `r` is negative."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:1
-msgid "Return the modulus :math:`\\\\abs{z} = \\\\sqrt{a^2 + b^2}`."
+msgid "Compute the modulus (absolute value) of the complex number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:3
+msgid "The modulus :math:`\\sqrt{a^2 + b^2}`."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:1
@@ -157,7 +203,11 @@ msgid "Return ``(r, theta)`` with :math:`r = |z|` and :math:`\\theta = \\arg z`.
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:1
-msgid "Return ``(re, im)``."
+msgid "Convert the complex number to a tuple of its real and imaginary parts."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:3
+msgid "A tuple `(re, im)` representing the real and imaginary parts."
 msgstr ""
 
 #: ../source/api/algolib.core.rst:16

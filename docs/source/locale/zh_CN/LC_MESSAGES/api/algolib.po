@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 05:55+0900\n"
+"POT-Creation-Date: 2025-08-18 17:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -27,13 +27,29 @@ msgstr "algolib 包"
 msgid "Subpackages"
 msgstr "子包"
 
-#: ../source/api/algolib.rst:13
+#: ../source/api/algolib.rst:16
 msgid "Submodules"
 msgstr "子模块"
 
-#: ../source/api/algolib.rst:16
+#: ../source/api/algolib.rst:19
 msgid "algolib.exceptions module"
 msgstr "algolib.exceptions 模块"
+
+#: algolib.exceptions:1 of
+msgid "Centralized exception hierarchy for algolib."
+msgstr ""
+
+#: algolib.exceptions:3 of
+msgid ""
+"Keep backward compatibility with existing exceptions: - AlgolibError - "
+"InvalidTypeError - InvalidValueError"
+msgstr ""
+
+#: algolib.exceptions:7 of
+msgid ""
+"Add more specific exceptions grouped by area (args/dimension, algebra, "
+"geometry, numeric/convergence, feature support)."
+msgstr ""
 
 #: algolib.exceptions.AlgolibError:1 of
 msgid "Bases: :py:class:`Exception`"
@@ -42,6 +58,36 @@ msgstr "基类：:py:class:`Exception`"
 #: algolib.exceptions.AlgolibError:1 of
 msgid "Base exception for this library."
 msgstr "此库的基础异常类。"
+
+#: algolib.exceptions.AmbiguousGeometryError:1
+#: algolib.exceptions.ConvergenceError:1 algolib.exceptions.DegeneracyError:1
+#: algolib.exceptions.DimensionMismatchError:1
+#: algolib.exceptions.LossOfSignificanceError:1
+#: algolib.exceptions.NoIntersectionError:1
+#: algolib.exceptions.NotPositiveDefiniteError:1
+#: algolib.exceptions.NotSupportedError:1
+#: algolib.exceptions.NumericUnderflowError:1
+#: algolib.exceptions.SingularMatrixError:1 of
+#, fuzzy
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
+
+#: algolib.exceptions.AmbiguousGeometryError:1 of
+msgid "Constraints are insufficient or solution is not unique."
+msgstr ""
+
+#: algolib.exceptions.ConvergenceError:1 of
+msgid "Iteration did not converge within budget/tolerance."
+msgstr ""
+
+#: algolib.exceptions.DegeneracyError:1 of
+msgid "Degenerate configuration (e.g., zero-length direction, collinear)."
+msgstr ""
+
+#: algolib.exceptions.DimensionMismatchError:1 of
+msgid "Incompatible shapes/dimensions."
+msgstr ""
 
 #: algolib.exceptions.InvalidTypeError:1 of
 msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
@@ -61,7 +107,61 @@ msgstr ""
 msgid "Raised when an argument has an invalid value."
 msgstr "当参数值无效时引发。"
 
-#: ../source/api/algolib.rst:24
+#: algolib.exceptions.LossOfSignificanceError:1 of
+msgid "Severe cancellation/rounding made the result unreliable."
+msgstr ""
+
+#: algolib.exceptions.NoIntersectionError:1 of
+msgid "No intersection between geometric entities."
+msgstr ""
+
+#: algolib.exceptions.NotImplementedAlgolibError:1 of
+#, fuzzy
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`NotImplementedError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`TypeError`"
+
+#: algolib.exceptions.NotImplementedAlgolibError:1 of
+msgid "Public API declared but not implemented yet."
+msgstr ""
+
+#: algolib.exceptions.NotPositiveDefiniteError:1 of
+msgid "Matrix expected to be (strictly) positive-definite."
+msgstr ""
+
+#: algolib.exceptions.NotSupportedError:1 of
+msgid "Feature not supported in this backend/type/platform."
+msgstr ""
+
+#: algolib.exceptions.NumericOverflowError:1 of
+#, fuzzy
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`OverflowError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`ValueError`"
+
+#: algolib.exceptions.NumericOverflowError:1 of
+msgid "Numeric overflow exposed as algolib-specific error."
+msgstr ""
+
+#: algolib.exceptions.NumericUnderflowError:1 of
+msgid "Numeric underflow to zero/denormals that invalidates the result."
+msgstr ""
+
+#: algolib.exceptions.SingularMatrixError:1 of
+msgid "Matrix is singular / not invertible."
+msgstr ""
+
+#: algolib.exceptions.ToleranceError:1 of
+#, fuzzy
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`AssertionError`"
+msgstr ""
+"基类：:py:class:`~algolib.exceptions.AlgolibError`, :py:class:`ValueError`"
+
+#: algolib.exceptions.ToleranceError:1 of
+msgid "An expected property did not hold within tolerance."
+msgstr ""
+
+#: ../source/api/algolib.rst:27
 msgid "Module contents"
 msgstr "模块内容"
 

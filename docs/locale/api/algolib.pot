@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 07:46+0900\n"
+"POT-Creation-Date: 2025-08-18 17:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,12 +24,24 @@ msgstr ""
 msgid "Subpackages"
 msgstr ""
 
-#: ../source/api/algolib.rst:15
+#: ../source/api/algolib.rst:16
 msgid "Submodules"
 msgstr ""
 
-#: ../source/api/algolib.rst:18
+#: ../source/api/algolib.rst:19
 msgid "algolib.exceptions module"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions:1
+msgid "Centralized exception hierarchy for algolib."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions:3
+msgid "Keep backward compatibility with existing exceptions: - AlgolibError - InvalidTypeError - InvalidValueError"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions:7
+msgid "Add more specific exceptions grouped by area (args/dimension, algebra, geometry, numeric/convergence, feature support)."
 msgstr ""
 
 #: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.AlgolibError:1
@@ -38,6 +50,35 @@ msgstr ""
 
 #: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.AlgolibError:1
 msgid "Base exception for this library."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.AmbiguousGeometryError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.ConvergenceError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.DegeneracyError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.DimensionMismatchError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.LossOfSignificanceError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NoIntersectionError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotPositiveDefiniteError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotSupportedError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NumericUnderflowError:1
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.SingularMatrixError:1
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.AmbiguousGeometryError:1
+msgid "Constraints are insufficient or solution is not unique."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.ConvergenceError:1
+msgid "Iteration did not converge within budget/tolerance."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.DegeneracyError:1
+msgid "Degenerate configuration (e.g., zero-length direction, collinear)."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.DimensionMismatchError:1
+msgid "Incompatible shapes/dimensions."
 msgstr ""
 
 #: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.InvalidTypeError:1
@@ -56,6 +97,54 @@ msgstr ""
 msgid "Raised when an argument has an invalid value."
 msgstr ""
 
-#: ../source/api/algolib.rst:26
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.LossOfSignificanceError:1
+msgid "Severe cancellation/rounding made the result unreliable."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NoIntersectionError:1
+msgid "No intersection between geometric entities."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotImplementedAlgolibError:1
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`NotImplementedError`"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotImplementedAlgolibError:1
+msgid "Public API declared but not implemented yet."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotPositiveDefiniteError:1
+msgid "Matrix expected to be (strictly) positive-definite."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NotSupportedError:1
+msgid "Feature not supported in this backend/type/platform."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NumericOverflowError:1
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`OverflowError`"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NumericOverflowError:1
+msgid "Numeric overflow exposed as algolib-specific error."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NumericUnderflowError:1
+msgid "Numeric underflow to zero/denormals that invalidates the result."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.SingularMatrixError:1
+msgid "Matrix is singular / not invertible."
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.ToleranceError:1
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`AssertionError`"
+msgstr ""
+
+#: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.ToleranceError:1
+msgid "An expected property did not hold within tolerance."
+msgstr ""
+
+#: ../source/api/algolib.rst:27
 msgid "Module contents"
 msgstr ""
