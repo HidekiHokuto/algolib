@@ -1,0 +1,4 @@
+# file: /Users/zhengshi/Projects/algolib/src/algolib/__init__.py
+# hypothesis_version: 6.138.2
+
+['exceptions', 'maths']

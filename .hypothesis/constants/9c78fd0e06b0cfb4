@@ -1,0 +1,4 @@
+# file: /Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py
+# hypothesis_version: 6.138.2
+
+['--doctest-modules', '--jb-show-summary', '--no-header', '--no-summary', '-q', '-s', '.', '.py', '.py::', '/', '1', ':', '::', '__init__.py', '__main__', 'ignore', 'numprocesses', 'pytest', 'pytest-teamcity', 'pytest11']

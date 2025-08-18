@@ -1,0 +1,4 @@
+# file: /Users/zhengshi/Projects/algolib/src/algolib/maths/algebra/matrix_dense.py
+# hypothesis_version: 6.138.2
+
+[-1.0, 0.0, 1e-15, 1e-12, 1.0, 'MatrixDense', 'rows']

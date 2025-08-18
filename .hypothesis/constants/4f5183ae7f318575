@@ -1,0 +1,4 @@
+# file: /Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/diff_tools.py
+# hypothesis_version: 6.138.2
+
+[10000, ' != ', ' :: ']

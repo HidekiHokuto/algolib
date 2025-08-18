@@ -173,3 +173,24 @@ def test_binary_ops_type_errors(op):
 def test_from_polar_theta_type_error():
     with pytest.raises(InvalidTypeError):
         Complex.from_polar(1.0, "ang")  # type: ignore[arg-type]
+
+def almost(a, b, tol=1e-12):
+    return abs(a - b) <= tol
+
+def test_div_branch_c_dominant():
+    # |c| >= |d| 分支：c 的绝对值更大
+    z = Complex(1.0, 2.0)
+    w = Complex(3.0, 0.1)   # |3.0| > |0.1|
+    got = z / w
+    ref = complex(1.0, 2.0) / complex(3.0, 0.1)
+    assert almost(got.re, ref.real)
+    assert almost(got.im, ref.imag)
+
+def test_div_branch_d_dominant():
+    # |d| > |c| 分支：d 的绝对值更大
+    z = Complex(1.0, 2.0)
+    w = Complex(0.1, 3.0)   # |3.0| > |0.1|
+    got = z / w
+    ref = complex(1.0, 2.0) / complex(0.1, 3.0)
+    assert almost(got.re, ref.real)
+    assert almost(got.im, ref.imag)

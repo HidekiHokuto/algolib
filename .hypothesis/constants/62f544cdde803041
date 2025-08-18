@@ -1,0 +1,4 @@
+# file: /Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm/teamcity/__init__.py
+# hypothesis_version: 6.138.2
+
+['1.29', 'TEAMCITY_VERSION']

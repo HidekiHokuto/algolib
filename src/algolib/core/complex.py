@@ -138,11 +138,23 @@ class Complex:
     def normalized(self) -> "Complex":
         r"""
         Return :math:`z / |z|`. Raises if :math:`z = 0`.
+
+        This implementation performs a second, tiny rescaling step so that the
+        final norm is ~1 within a few ULP even for subnormals.
         """
-        r = self.modulus()
+        r = math.hypot(self.re, self.im)
         if r == 0.0:
             raise InvalidValueError("cannot normalize 0+0i.")
-        return Complex(self.re / r, self.im / r)
+        # 先标准化
+        x, y = self.re / r, self.im / r
+        # 计算（标准化后）的模长平方，理论应为 1，但会有舍入
+        m2 = x * x + y * y
+        # 用一次性的缩放把模长“微校准”到 1
+        # 注意：sqrt 和乘法的舍入会再带来极小误差，但会压到 ~1e-15 量级
+        if m2 != 1.0 and m2 > 0.0 and math.isfinite(m2):
+            adj = 1.0 / math.sqrt(m2)
+            x, y = x * adj, y * adj
+        return Complex(x, y)
 
     # ---------------------------------- algebra ---------------------------------
 
@@ -179,21 +191,43 @@ class Complex:
 
     def __truediv__(self, other: "Complex") -> "Complex":
         r"""
-        Divide two complex numbers using conjugate.
+        Robust complex division using scaling + Smith's algorithm to avoid overflow/underflow.
 
-        Formula
-        -------
-        :math:`\dfrac{a+bi}{c+di} = \dfrac{(a+bi)(c-di)}{c^2+d^2}`.
-
-        :raises InvalidValueError: If ``other`` is zero.
+        For z = a+bi, w = c+di:
+          1) scale = max(|a|,|b|,|c|,|d|) ; divide all by scale (if scale>0)
+          2) use Smith's branch on the scaled values.
         """
         if not isinstance(other, Complex):
             raise InvalidTypeError("other must be Complex.")
-        den = other.re * other.re + other.im * other.im
-        if den == 0.0:
+        a, b = self.re, self.im
+        c, d = other.re, other.im
+        if c == 0.0 and d == 0.0:
             raise InvalidValueError("division by zero complex.")
-        num = self * other.conjugate()
-        return Complex(num.re / den, num.im / den)
+
+        # ---- 统一缩放，避免中间量溢出/下溢 ----
+        scale = max(abs(a), abs(b), abs(c), abs(d))
+        if scale > 0.0:
+            a /= scale;
+            b /= scale;
+            c /= scale;
+            d /= scale
+        # 若 scale==0，这里意味着 self==0 且 other!=0，直接走下面公式也安全
+
+        ac = abs(c)
+        ad = abs(d)
+        if ac >= ad:
+            # |c| >= |d|
+            t = d / c  # |t| <= 1
+            denom = c + d * t  # 数值上 ~ (c^2 + d^2)/c
+            re = (a + b * t) / denom
+            im = (b - a * t) / denom
+        else:
+            t = c / d  # |t| <= 1
+            denom = d + c * t  # 数值上 ~ (c^2 + d^2)/d
+            re = (a * t + b) / denom
+            im = (b * t - a) / denom
+
+        return Complex(re, im)
 
     def __neg__(self) -> "Complex":
         """Unary minus."""
