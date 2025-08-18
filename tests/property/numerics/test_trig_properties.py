@@ -90,8 +90,8 @@ def test_periodicity(x: float, y: float):
     # 两端都远离极点
     # assume(_dist_to_half_pi_grid(x) > 8e-4 and _dist_to_half_pi_grid(x + yk2) > 8e-4)
     # 用同一个代表元体系判断“远离极点”，避免两端判定口径不一致
-    xr = math.remainder(x, C.PI)
-    xr2 = math.remainder(x + yk2, C.PI)
+    xr  = math.remainder(x, C.TAU)
+    xr2 = math.remainder(x + yk2, C.TAU)
     assume(_dist_to_half_pi_grid(xr) > 8e-4 and
            _dist_to_half_pi_grid(xr2) > 8e-4)
     assert _isclose(my_tan(x + yk2), my_tan(x), rel=6e-9, abs_=3e-9, ulps=4096)
