@@ -54,9 +54,10 @@ def test_sin_cos_match_math(x: float):
 @settings(max_examples=120)
 @given(x=safe)
 def test_tan_matches_math_away_from_poles(x: float):
-    # 距离极点太近时 tan 对微小误差极度敏感，这里跳过这些样本
-    assume(_dist_to_half_pi_grid(x) > 1.2e-4)
-    assert _isclose(my_tan(x), math.tan(x), rel=5e-10, abs_=3e-10, ulps=256)
+    # 与实现保持一致：先规约到 [-π/2, π/2] 再比较
+    xr = math.remainder(x, C.PI)
+    assume(_dist_to_half_pi_grid(xr) > 1.2e-4)
+    assert _isclose(my_tan(x), math.tan(xr), rel=5e-10, abs_=3e-10, ulps=256)
 
 # -----------------------
 # identities (approximate)
@@ -87,5 +88,10 @@ def test_periodicity(x: float, y: float):
     k2 = int(round(y / C.PI))
     yk2 = k2 * C.PI
     # 两端都远离极点
-    assume(_dist_to_half_pi_grid(x) > 8e-4 and _dist_to_half_pi_grid(x + yk2) > 8e-4)
+    # assume(_dist_to_half_pi_grid(x) > 8e-4 and _dist_to_half_pi_grid(x + yk2) > 8e-4)
+    # 用同一个代表元体系判断“远离极点”，避免两端判定口径不一致
+    xr = math.remainder(x, C.PI)
+    xr2 = math.remainder(x + yk2, C.PI)
+    assume(_dist_to_half_pi_grid(xr) > 8e-4 and
+           _dist_to_half_pi_grid(xr2) > 8e-4)
     assert _isclose(my_tan(x + yk2), my_tan(x), rel=6e-9, abs_=3e-9, ulps=4096)

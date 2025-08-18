@@ -22,7 +22,12 @@ class SystemTrigBackend:
     def cos(self, x: float) -> float:
         return math.cos(x) if _is_finite(x) else _NAN
     def tan(self, x: float) -> float:
-        return math.tan(x) if _is_finite(x) else _NAN
+        if not _is_finite(x):
+            return _NAN
+        # 关键：先做 π 的最近整数倍规约（ties-to-even），
+        # 确保 x 与 x+kπ 规约到同一个代表元，再调用 math.tan。
+        r = math.remainder(x, math.pi)
+        return math.tan(r)
 
 # 初始只注册 system，pure 延迟加载
 _BACKENDS: Dict[str, TrigBackend] = {
