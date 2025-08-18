@@ -198,7 +198,7 @@ class Complex:
         Returns
         -------
         float
-            The modulus :math:`\sqrt{a^2 + b^2}`.
+            The modulus :math:`\\sqrt{a^2 + b^2}`.
 
         Examples
         --------
@@ -216,24 +216,57 @@ class Complex:
 
     def argument(self) -> float:
         r"""
-        Return the principal argument :math:`\arg z \in (-\pi, \pi]`.
+        Compute the principal argument of the complex number.
 
-        Uses :func:`math.atan2`.
+        Returns
+        -------
+        float
+            The argument (angle in radians) in the range :math:`(-\\pi, \\pi]`.
+
+        Examples
+        --------
+        >>> z = Complex(0, 1)
+        >>> z.argument()
+        1.5707963267948966
         """
         return math.atan2(self.im, self.re)
 
     def conjugate(self) -> "Complex":
         r"""
-        Return the complex conjugate :math:`\overline{z} = a - b i`.
+        Compute the complex conjugate of the number.
+
+        Returns
+        -------
+        Complex
+            The conjugate :math:`a - b \\mathrm{i}`.
+
+        Examples
+        --------
+        >>> z = Complex(3, 4)
+        >>> z.conjugate()
+        Complex(re=3.0, im=-4.0)
         """
         return Complex(self.re, -self.im)
 
     def normalized(self) -> "Complex":
         r"""
-        Return :math:`z / |z|`. Raises if :math:`z = 0`.
+        Normalize the complex number by :math:`\\frac{z}{\\abs{z}}` to have a modulus of 1.
 
-        This implementation performs a second, tiny rescaling step so that the
-        final norm is ~1 within a few ULP even for subnormals.
+        Returns
+        -------
+        Complex
+            The normalized complex number.
+
+        Raises
+        ------
+        InvalidValueError
+            If the complex number is zero.
+
+        Examples
+        --------
+        >>> z = Complex(3, 4)
+        >>> z.normalized()
+        Complex(re=0.6, im=0.8)
         """
         r = math.hypot(self.re, self.im)
         if r == 0.0:
@@ -253,9 +286,29 @@ class Complex:
 
     def __add__(self, other: "Complex") -> "Complex":
         """
-        Add two complex numbers (component-wise).
+        Add two complex numbers.
 
-        :raises InvalidTypeError: If ``other`` is not :class:`Complex`.
+        Parameters
+        ----------
+        other : :class:`Complex`
+            The complex number to add.
+
+        Returns
+        -------
+        :class:`Complex`
+            The sum of the two complex numbers.
+
+        Raises
+        ------
+        InvalidTypeError
+            If ``other`` is not :class:`Complex`.
+
+        Examples
+        --------
+        >>> z1 = Complex(3, 4)
+        >>> z2 = Complex(1, -1)
+        >>> z1 + z2
+        Complex(re=4.0, im=3.0)
         """
         if not isinstance(other, Complex):
             raise InvalidTypeError("other must be Complex.")
