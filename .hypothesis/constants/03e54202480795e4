@@ -1,0 +1,4 @@
+# file: /Users/zhengshi/Projects/algolib/src/algolib/maths/algebra/polynomial.py
+# hypothesis_version: 6.138.2
+
+[0.0, 1.0, ' + ', '0', 'Polynomial', 'coeffs']

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 07:10+0900\n"
+"POT-Creation-Date: 2025-08-18 09:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -166,6 +166,12 @@ msgstr ""
 
 #: algolib.core.complex.Complex.normalized:1 of
 msgid "Return :math:`z / |z|`. Raises if :math:`z = 0`."
+msgstr ""
+
+#: algolib.core.complex.Complex.normalized:3 of
+msgid ""
+"This implementation performs a second, tiny rescaling step so that the final "
+"norm is ~1 within a few ULP even for subnormals."
 msgstr ""
 
 #: algolib.core.complex.Complex.to_polar:1 of

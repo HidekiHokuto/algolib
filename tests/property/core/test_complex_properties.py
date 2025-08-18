@@ -10,6 +10,10 @@ def _ulp_around_one(k: int = 8) -> float:
     # 1.0 的 ULP ~ 2**-52 ≈ 2.22e-16
     return k * math.ulp(1.0)
 
+def _ulp(x: float) -> float:
+    # 1 ULP around |x|；对 0 给一个极小兜底
+    return math.ulp(x if x != 0.0 else 1.0)
+
 TOL = 1e-10  # 常规比较用的松一点容差
 
 # =========================
@@ -138,4 +142,6 @@ def test_polar_roundtrip(z: Complex):
 def test_triangle_inequality(z1: Complex, z2: Complex):
     left = (z1 + z2).modulus()
     right = z1.modulus() + z2.modulus()
-    assert left <= right + 1e-12
+    # Allow a handful of ULPs to account for rounding in (+) and hypot()
+    eps = 8 * _ulp(right)
+    assert left <= right + eps

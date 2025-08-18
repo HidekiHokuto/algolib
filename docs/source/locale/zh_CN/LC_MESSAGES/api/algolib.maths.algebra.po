@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 23:24+0900\n"
+"POT-Creation-Date: 2025-08-18 09:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -31,7 +31,8 @@ msgstr "子模块"
 msgid "algolib.maths.algebra.matrix\\_dense module"
 msgstr ""
 
-#: algolib.maths.algebra.matrix_dense.MatrixDense:1 of
+#: algolib.maths.algebra.matrix_dense.MatrixDense:1
+#: algolib.maths.algebra.polynomial.Polynomial:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
@@ -65,7 +66,8 @@ msgstr ""
 msgid "If matrix is empty or not rectangular."
 msgstr ""
 
-#: algolib.maths.algebra.matrix_dense.MatrixDense:13 of
+#: algolib.maths.algebra.matrix_dense.MatrixDense:13
+#: algolib.maths.algebra.polynomial:8 of
 msgid "Examples"
 msgstr ""
 
@@ -140,5 +142,91 @@ msgid ""
 msgstr ""
 
 #: ../source/api/algolib.maths.algebra.rst:16
+#, fuzzy
+msgid "algolib.maths.algebra.polynomial module"
+msgstr "algolib.maths.algebra 包"
+
+#: algolib.maths.algebra.polynomial:1 of
+msgid "A lightweight univariate polynomial with real coefficients."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial:3 of
+msgid ""
+"Coefficients are in **ascending** degree order: ``p(x) = c0 + c1 x + ... + "
+"cn x^n``."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial:4 of
+msgid "Immutable API; internal representation is a tuple of floats."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial:5 of
+msgid ""
+"Supports +, -, * (convolution), evaluation (Horner), derivative, integral."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial:1 of
+msgid "Univariate polynomial with real coefficients."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial:3 of
+#, python-brace-format
+msgid ""
+"Coefficients in ascending degree order: ``[c0, c1, ..., cn]`` "
+"represents :math:`\\sum_{k=0}^n c_k x^k`."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial:7 of
+msgid "If ``coeffs`` contains non-numeric types."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial:8 of
+msgid "If ``coeffs`` is empty."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.constant:1 of
+msgid "Return constant polynomial ``p(x)=c``."
+msgstr ""
+
+#: algolib.maths.algebra.Polynomial.degree:1
+#: algolib.maths.algebra.polynomial.Polynomial.degree:1 of
+msgid "Return the degree (``len(coeffs)-1``), with ``deg(0)=0`` by convention."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.derivative:1 of
+msgid "Return the derivative :math:`p'(x)`."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.derivative:3 of
+#, python-brace-format
+msgid ""
+"If ``p(x)=\\\\sum_{k=0}^n c_k x^k``, then :math:`p'(x)=\\\\sum_{k=1}^n k c_k "
+"x^{k-1}`."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.identity:1 of
+msgid "Return multiplicative identity polynomial ``1``."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.integral:1 of
+msgid ""
+"Return an antiderivative :math:`\\\\int p(x)dx` with constant term ``c0``."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.integral:3 of
+#, python-brace-format
+msgid ":math:`\\\\int c_k x^k dx = \\\\frac{c_k}{k+1} x^{k+1}`"
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.zeros:1 of
+msgid ""
+"Return the zero polynomial of (at most) given degree (all coefficients 0)."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.zeros:3 of
+msgid "Non-negative degree."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:24
 msgid "Module contents"
 msgstr ""

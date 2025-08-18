@@ -12,6 +12,14 @@ algolib.maths.algebra.matrix\_dense module
    :undoc-members:
    :show-inheritance:
 
+algolib.maths.algebra.polynomial module
+---------------------------------------
+
+.. automodule:: algolib.maths.algebra.polynomial
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
