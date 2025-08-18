@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 17:41+0900\n"
+"POT-Creation-Date: 2025-08-18 18:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -61,10 +61,14 @@ msgid ""
 msgstr ""
 "为避免依赖内置特性，本类特意不使用 Python 内置的 :class:`complex` 类型。"
 
-#: algolib.core.complex:13 algolib.core.complex.Complex.from_cartesian:12
+#: algolib.core.complex:13 algolib.core.complex.Complex.argument:7
+#: algolib.core.complex.Complex.conjugate:7
+#: algolib.core.complex.Complex.from_cartesian:12
 #: algolib.core.complex.Complex.from_iterable:12
 #: algolib.core.complex.Complex.from_polar:15
 #: algolib.core.complex.Complex.modulus:7
+#: algolib.core.complex.Complex.normalized:9
+#: algolib.core.complex.Complex.to_polar:7
 #: algolib.core.complex.Complex.to_tuple:7 of
 msgid "Examples"
 msgstr "示例"
@@ -93,7 +97,8 @@ msgid "Imaginary part :math:`b`."
 msgstr "虚部 :math:`b`。"
 
 #: ../source/api/algolib.core.rst algolib.core.complex.Complex.from_iterable
-#: algolib.core.complex.Complex.from_polar of
+#: algolib.core.complex.Complex.from_polar
+#: algolib.core.complex.Complex.normalized of
 msgid "Raises"
 msgstr "抛出异常"
 
@@ -110,16 +115,40 @@ msgid "This is safer than exact float equality."
 msgstr ""
 
 #: algolib.core.complex.Complex.argument:1 of
-msgid "Return the principal argument :math:`\\arg z \\in (-\\pi, \\pi]`."
+msgid "Compute the principal argument of the complex number."
+msgstr ""
+
+#: algolib.core.complex.Complex.argument algolib.core.complex.Complex.conjugate
+#: algolib.core.complex.Complex.from_cartesian
+#: algolib.core.complex.Complex.from_iterable
+#: algolib.core.complex.Complex.from_polar algolib.core.complex.Complex.modulus
+#: algolib.core.complex.Complex.normalized
+#: algolib.core.complex.Complex.to_polar algolib.core.complex.Complex.to_tuple
+#: of
+msgid "Returns"
 msgstr ""
 
 #: algolib.core.complex.Complex.argument:3 of
-msgid "Uses :func:`math.atan2`."
+msgid "The argument (angle in radians) in the range :math:`(-\\pi, \\pi]`."
+msgstr ""
+
+#: algolib.core.complex.Complex.argument algolib.core.complex.Complex.conjugate
+#: algolib.core.complex.Complex.from_cartesian
+#: algolib.core.complex.Complex.from_iterable
+#: algolib.core.complex.Complex.from_polar algolib.core.complex.Complex.modulus
+#: algolib.core.complex.Complex.normalized
+#: algolib.core.complex.Complex.to_polar algolib.core.complex.Complex.to_tuple
+#: of
+msgid "Return type"
 msgstr ""
 
 #: algolib.core.complex.Complex.conjugate:1 of
+msgid "Compute the complex conjugate of the number."
+msgstr ""
+
+#: algolib.core.complex.Complex.conjugate:3 of
 #, python-brace-format
-msgid "Return the complex conjugate :math:`\\overline{z} = a - b i`."
+msgid "The conjugate :math:`a - b \\mathrm{i}`."
 msgstr ""
 
 #: algolib.core.complex.Complex.from_cartesian:1 of
@@ -134,22 +163,8 @@ msgstr ""
 msgid "The imaginary part of the complex number."
 msgstr ""
 
-#: algolib.core.complex.Complex.from_cartesian
-#: algolib.core.complex.Complex.from_iterable
-#: algolib.core.complex.Complex.from_polar algolib.core.complex.Complex.modulus
-#: algolib.core.complex.Complex.to_tuple of
-msgid "Returns"
-msgstr ""
-
 #: algolib.core.complex.Complex.from_cartesian:8 of
 msgid "The complex number corresponding to the Cartesian coordinates."
-msgstr ""
-
-#: algolib.core.complex.Complex.from_cartesian
-#: algolib.core.complex.Complex.from_iterable
-#: algolib.core.complex.Complex.from_polar algolib.core.complex.Complex.modulus
-#: algolib.core.complex.Complex.to_tuple of
-msgid "Return type"
 msgstr ""
 
 #: algolib.core.complex.Complex.from_iterable:1 of
@@ -204,18 +219,25 @@ msgid "The modulus :math:`\\sqrt{a^2 + b^2}`."
 msgstr ""
 
 #: algolib.core.complex.Complex.normalized:1 of
-msgid "Return :math:`z / |z|`. Raises if :math:`z = 0`."
+msgid "Normalize the complex number by :math:`z/|z|` to have a modulus of 1."
 msgstr ""
 
 #: algolib.core.complex.Complex.normalized:3 of
-msgid ""
-"This implementation performs a second, tiny rescaling step so that the final "
-"norm is ~1 within a few ULP even for subnormals."
+msgid "The normalized complex number."
+msgstr ""
+
+#: algolib.core.complex.Complex.normalized:6 of
+msgid "If the complex number is zero."
 msgstr ""
 
 #: algolib.core.complex.Complex.to_polar:1 of
+msgid "Convert the complex number to polar coordinates."
+msgstr ""
+
+#: algolib.core.complex.Complex.to_polar:3 of
 msgid ""
-"Return ``(r, theta)`` with :math:`r = |z|` and :math:`\\theta = \\arg z`."
+"A tuple ``(r, theta)`` where ``r`` is the modulus and ``theta`` is the "
+"argument."
 msgstr ""
 
 #: algolib.core.complex.Complex.to_tuple:1 of

@@ -198,7 +198,7 @@ class Complex:
         Returns
         -------
         float
-            The modulus :math:`\\sqrt{a^2 + b^2}`.
+            The modulus :math:`\sqrt{a^2 + b^2}`.
 
         Examples
         --------
@@ -221,7 +221,7 @@ class Complex:
         Returns
         -------
         float
-            The argument (angle in radians) in the range :math:`(-\\pi, \\pi]`.
+            The argument (angle in radians) in the range :math:`(-\pi, \pi]`.
 
         Examples
         --------
@@ -238,7 +238,7 @@ class Complex:
         Returns
         -------
         Complex
-            The conjugate :math:`a - b \\mathrm{i}`.
+            The conjugate :math:`a - b \mathrm{i}`.
 
         Examples
         --------
@@ -250,7 +250,7 @@ class Complex:
 
     def normalized(self) -> "Complex":
         r"""
-        Normalize the complex number by :math:`\\frac{z}{\\abs{z}}` to have a modulus of 1.
+        Normalize the complex number by :math:`z/|z|` to have a modulus of 1.
 
         Returns
         -------
@@ -403,8 +403,19 @@ class Complex:
     # --------------------------------- polar ------------------------------------
 
     def to_polar(self) -> Tuple[float, float]:
-        """
-        Return ``(r, theta)`` with :math:`r = |z|` and :math:`\\theta = \\arg z`.
+        r"""
+        Convert the complex number to polar coordinates.
+
+        Returns
+        -------
+        tuple of float
+            A tuple ``(r, theta)`` where ``r`` is the modulus and ``theta`` is the argument.
+
+        Examples
+        --------
+        >>> z = Complex(3, 4)
+        >>> z.to_polar()
+        (5.0, 0.9272952180016122)
         """
         return (self.modulus(), self.argument())
 

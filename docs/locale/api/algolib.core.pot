@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 17:41+0900\n"
+"POT-Creation-Date: 2025-08-18 18:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,10 +49,14 @@ msgid "We intentionally avoid Python's built-in :class:`complex` to practice fun
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex:13
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.argument:7
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.conjugate:7
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:12
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:12
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:15
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:7
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:9
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_polar:7
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:7
 msgid "Examples"
 msgstr ""
@@ -83,6 +87,7 @@ msgstr ""
 #: ../source/api/algolib.core.rst:0
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:0
 msgid "Raises"
 msgstr ""
 
@@ -99,15 +104,43 @@ msgid "This is safer than exact float equality."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.argument:1
-msgid "Return the principal argument :math:`\\arg z \\in (-\\pi, \\pi]`."
+msgid "Compute the principal argument of the complex number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.argument:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.conjugate:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
+msgid "Returns"
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.argument:3
-msgid "Uses :func:`math.atan2`."
+msgid "The argument (angle in radians) in the range :math:`(-\\pi, \\pi]`."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.argument:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.conjugate:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_polar:0
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
+msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.conjugate:1
-msgid "Return the complex conjugate :math:`\\overline{z} = a - b i`."
+msgid "Compute the complex conjugate of the number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.conjugate:3
+msgid "The conjugate :math:`a - b \\mathrm{i}`."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:1
@@ -122,24 +155,8 @@ msgstr ""
 msgid "The imaginary part of the complex number."
 msgstr ""
 
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
-msgid "Returns"
-msgstr ""
-
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:8
 msgid "The complex number corresponding to the Cartesian coordinates."
-msgstr ""
-
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_cartesian:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_polar:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.modulus:0
-#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:0
-msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.from_iterable:1
@@ -191,15 +208,23 @@ msgid "The modulus :math:`\\sqrt{a^2 + b^2}`."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:1
-msgid "Return :math:`z / |z|`. Raises if :math:`z = 0`."
+msgid "Normalize the complex number by :math:`z/|z|` to have a modulus of 1."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:3
-msgid "This implementation performs a second, tiny rescaling step so that the final norm is ~1 within a few ULP even for subnormals."
+msgid "The normalized complex number."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.normalized:6
+msgid "If the complex number is zero."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_polar:1
-msgid "Return ``(r, theta)`` with :math:`r = |z|` and :math:`\\theta = \\arg z`."
+msgid "Convert the complex number to polar coordinates."
+msgstr ""
+
+#: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_polar:3
+msgid "A tuple ``(r, theta)`` where ``r`` is the modulus and ``theta`` is the argument."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex.Complex.to_tuple:1
