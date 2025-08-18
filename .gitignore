@@ -12,5 +12,5 @@ docs/_build/
 coverage.xml
 coverage_html/
 docs/coverage/
-
+.hypothesis/
 

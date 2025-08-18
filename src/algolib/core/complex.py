@@ -140,11 +140,29 @@ class Complex:
 
     @staticmethod
     def from_iterable(pair: Iterable[Number]) -> "Complex":
-        """
-        Construct from an iterable of two numbers.
+        r"""
+        Construct a complex number from an iterable of two numbers.
 
-        :param pair: Iterable ``(re, im)``.
-        :raises InvalidTypeError: If iterable does not have exactly two numeric elements.
+        Parameters
+        ----------
+        pair : Iterable[float]
+            An iterable containing exactly two elements: the real and imaginary parts.
+
+        Returns
+        -------
+        Complex
+            The complex number constructed from the iterable.
+
+        Raises
+        ------
+        InvalidTypeError
+            If the iterable does not contain exactly two numeric elements.
+
+        Examples
+        --------
+        >>> z = Complex.from_iterable([3, 4])
+        >>> z
+        Complex(re=3.0, im=4.0)
         """
         try:
             re, im = pair  # type: ignore[misc]
@@ -155,17 +173,46 @@ class Complex:
     # ------------------------------- properties ---------------------------------
 
     def to_tuple(self) -> Tuple[Number, Number]:
-        """Return ``(re, im)``."""
+        r"""
+        Convert the complex number to a tuple of its real and imaginary parts.
+
+        Returns
+        -------
+        tuple of float
+            A tuple `(re, im)` representing the real and imaginary parts.
+
+        Examples
+        --------
+        >>> z = Complex(3, 4)
+        >>> z.to_tuple()
+        (3.0, 4.0)
+        """
         return (self.re, self.im)
 
     # --------------------------------- queries ----------------------------------
 
     def modulus(self) -> float:
         r"""
-        Return the modulus :math:`\\abs{z} = \\sqrt{a^2 + b^2}`.
+        Compute the modulus (absolute value) of the complex number.
+
+        Returns
+        -------
+        float
+            The modulus :math:`\sqrt{a^2 + b^2}`.
+
+        Examples
+        --------
+        >>> z = Complex(3, 4)
+        >>> z.modulus()
+        5.0
         """
-        # hypot is stable for large/small numbers
-        return math.hypot(self.re, self.im)
+        x, y = abs(self.re), abs(self.im)
+        if x < y:
+            x, y = y, x
+        if x == 0.0:  # 避免 0/0
+            return 0.0
+        r = y / x
+        return x * (1.0 + r * r) ** 0.5
 
     def argument(self) -> float:
         r"""
