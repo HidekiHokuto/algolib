@@ -55,7 +55,7 @@ def test_sin_cos_match_math(x: float):
 @given(x=safe)
 def test_tan_matches_math_away_from_poles(x: float):
     # 与实现保持一致：先规约到 [-π/2, π/2] 再比较
-    xr = math.remainder(x, C.PI)
+    xr = math.remainder(x, C.TAU)
     assume(_dist_to_half_pi_grid(xr) > 1.2e-4)
     assert _isclose(my_tan(x), math.tan(xr), rel=5e-10, abs_=3e-10, ulps=256)
 
