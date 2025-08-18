@@ -7,8 +7,8 @@ Minimal algorithms library template with pytest and Sphinx docs.
 Coverage: 85%
 <!-- coverage:end -->
 <!-- i18n-progress:start -->
-[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-26%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
-Translation Progress: 26%
+[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-25%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
+Translation Progress: 25%
 <!-- i18n-progress:end -->
 
 [**Docs (EN)**](https://HidekiHokuto.github.io/algolib/en/) • [**文档（简体中文）**](https://HidekiHokuto.github.io/algolib/zh/)

@@ -20,6 +20,14 @@ algolib.numerics.diff module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.trig module
+----------------------------
+
+.. automodule:: algolib.numerics.trig
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

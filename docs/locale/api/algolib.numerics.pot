@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 17:43+0900\n"
+"POT-Creation-Date: 2025-08-18 18:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,5 +97,37 @@ msgid "Requires f to support complex input. Very stable since there is no subtra
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
+msgid "algolib.numerics.trig module"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig:1
+msgid "Numerical trig functions: sin / cos / tan"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig:3
+msgid "No stdlib math usage in implementation"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig:4
+msgid "Cody–Waite style range reduction by π/2"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig:5
+msgid "Polynomial approximation on [-π/4, π/4]"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:1
+msgid "Cosine with π/2 range reduction; returns NaN for non-finite x."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.sin:1
+msgid "Sine with π/2 range reduction; returns NaN for non-finite x."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:1
+msgid "Tangent computed as sin(x)/cos(x); NaN for non-finite x."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:32
 msgid "Module contents"
 msgstr ""
