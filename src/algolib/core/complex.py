@@ -116,10 +116,25 @@ class Complex:
     @staticmethod
     def from_cartesian(re: Number, im: Number) -> "Complex":
         """
-        Construct from Cartesian coordinates (re, im).
-        :param re: Real part.
-        :param im: Imaginary part.
-        :returns: Complex number corresponding to :math:`(re, im)`.
+        Construct a complex number from Cartesian coordinates.
+
+        Parameters
+        ----------
+        re : float
+            The real part of the complex number.
+        im : float
+            The imaginary part of the complex number.
+
+        Returns
+        -------
+        Complex
+            The complex number corresponding to the Cartesian coordinates.
+
+        Examples
+        --------
+        >>> z = Complex.from_cartesian(3, 4)
+        >>> z
+        Complex(re=3.0, im=4.0)
         """
         return Complex(re, im)
 
