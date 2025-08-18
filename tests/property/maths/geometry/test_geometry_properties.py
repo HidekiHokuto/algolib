@@ -238,11 +238,16 @@ def test_dot_symmetry_and_cauchy_schwarz(data):
     # 当前：
     # assert abs(dv1) <= _v_norm(v1) * _v_norm(v2) + 1e-9
 
-    # 替换为（平方比较，误差极小更稳）：
+    # squared-form Cauchy–Schwarz check with ULP bump on RHS
     s1 = _v_norm_sq(v1)
     s2 = _v_norm_sq(v2)
-    # 允许一个很小的绝对松弛以覆盖加法舍入（相对~1e-18 量级）
-    assert (dv1 * dv1) <= (s1 * s2) + 1e-6
+    lhs = dv1 * dv1
+    rhs = s1 * s2
+
+    # bump RHS by two ULPs toward +inf to cover rounding-path discrepancies
+    rhs_up = math.nextafter(math.nextafter(rhs, math.inf), math.inf)
+
+    assert lhs <= rhs_up
 
 
 @given(data=vec2_same_dim(), a=st.floats(allow_nan=False, allow_infinity=False, min_value=-1e6, max_value=1e6))

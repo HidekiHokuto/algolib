@@ -102,7 +102,17 @@ class Vector:
         r"""
         Return the Euclidean norm :math:`\\lVert v\\rVert = \\sqrt{\\sum_i v_i^2}`.
         """
-        return math.sqrt(sum(c * c for c in self.comps))
+        scale = 0.0
+        sumsq = 1.0
+        for c in self.comps:
+            if c != 0.0:
+                abs_c = abs(c)
+                if scale < abs_c:
+                    sumsq = 1.0 + sumsq * (scale / abs_c) ** 2
+                    scale = abs_c
+                else:
+                    sumsq += (abs_c / scale) ** 2
+        return scale * math.sqrt(sumsq) if scale > 0.0 else 0.0
 
     def dot(self, other: "Vector") -> float:
         r"""
