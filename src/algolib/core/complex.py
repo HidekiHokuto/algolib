@@ -59,6 +59,17 @@ class Complex:
     # ------------------------------- constructors -------------------------------
 
     def __post_init__(self) -> None:
+        """
+        Post-initialization validation and normalization.
+
+        Ensures that the real and imaginary parts are valid numbers (int or float)
+        and converts them to floats for consistency.
+
+        Raises
+        ------
+        InvalidTypeError
+        If `re` or `im` is not a real number.
+        """
         if not isinstance(self.re, (int, float)) or not isinstance(self.im, (int, float)):
             raise InvalidTypeError("re and im must be real numbers (int or float).")
 
@@ -68,13 +79,33 @@ class Complex:
 
     @staticmethod
     def from_polar(r: Number, theta: Number) -> "Complex":
-        """
-        Construct from polar coordinates :math:`(r, \\theta)`.
+        r"""
+        Construct a complex number from polar coordinates.
 
-        :param r: Modulus (radius). Must be non-negative.
-        :param theta: Argument (angle in radians).
-        :raises InvalidValueError: If ``r < 0``.
-        :returns: Complex number corresponding to :math:`r(\\cos\\theta + i\\sin\\theta)`.
+        Parameters
+        ----------
+        r : float
+            The modulus (radius) of the complex number. Must be non-negative.
+        theta : float
+            The argument (angle in radians) of the complex number.
+
+        Returns
+        -------
+        Complex
+            The complex number corresponding to the polar coordinates.
+
+        Raises
+        ------
+        InvalidTypeError
+            If `r` or `theta` is not a real number.
+        InvalidValueError
+            If `r` is negative.
+
+        Examples
+        --------
+        >>> z = Complex.from_polar(2, math.pi / 2)
+        >>> z
+        Complex(re=1.2246467991473532e-16, im=2.0)
         """
         if not isinstance(r, (int, float)) or not isinstance(theta, (int, float)):
             raise InvalidTypeError("r and theta must be real numbers (int or float).")
