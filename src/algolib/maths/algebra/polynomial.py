@@ -271,6 +271,7 @@ class Polynomial:
         """Unambiguous representation, e.g. ``Polynomial(coeffs=(1.0, 2.0))``."""
         return f"Polynomial(coeffs={self.coeffs})"
 
+
     def __str__(self) -> str:
         """Human‑readable form such as ``"3x^2 + 2x + 1"`` (or ``"0"`` for the zero polynomial)."""
         terms = []
