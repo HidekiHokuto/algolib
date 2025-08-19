@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 01:15+0900\n"
+"POT-Creation-Date: 2025-08-20 05:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,6 +98,56 @@ msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
 msgid "algolib.numerics.trig module"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:1
+msgid "Cosine of an angle (system backend)."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:3
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.sin:3
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:9
+msgid "Input angle in radians."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:6
+msgid "``cos(x)`` evaluated by the active numerics backend."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.sin:1
+msgid "Sine of an angle (system backend)."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.sin:6
+msgid "``sin(x)`` evaluated by the active numerics backend."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:1
+msgid "Tangent of an angle (system backend)."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:4
+msgid "Notes"
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:5
+msgid "Argument-reduction and non-finite handling are performed inside the active backend (see ``_backend.SystemTrigBackend.tan``). Keeping this wrapper free of extra reduction ensures consistent periodicity tests."
+msgstr ""
+
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:12
+msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:32

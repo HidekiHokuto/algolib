@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 17:41+0900\n"
+"POT-Creation-Date: 2025-08-20 05:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -157,7 +157,8 @@ msgid "Coordinates of the point; length defines the dimension."
 msgstr "点的坐标。坐标长度决定了空间的维度。"
 
 #: algolib.maths.geometry.geometry.Point:7
-#: algolib.maths.geometry.geometry.Vector:7 of
+#: algolib.maths.geometry.geometry.Vector:7
+#: algolib.maths.geometry.geometry.Vector.norm:4 of
 msgid "Notes"
 msgstr ""
 
@@ -207,8 +208,20 @@ msgstr ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
 #: algolib.maths.geometry.geometry.Vector.norm:1 of
 #, python-brace-format
 msgid ""
-"Return the Euclidean norm :math:`\\\\lVert v\\\\rVert = \\\\sqrt{\\\\sum_i "
-"v_i^2}`."
+"Return the Euclidean norm :math:`\\lVert v \\rVert = \\sqrt{\\sum_i v_i^2}`."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:5 of
+msgid ""
+"Non-finite inputs are handled explicitly: if any component is NaN, the "
+"result is NaN; if any component has infinite magnitude, the result is "
+"``inf``."
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:8 of
+msgid ""
+"Uses a scaling strategy for numerical stability to avoid overflow and "
+"underflow with mixed-magnitude components."
 msgstr ""
 
 #: ../source/api/algolib.maths.geometry.rst:16

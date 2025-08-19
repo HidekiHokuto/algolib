@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 01:15+0900\n"
+"POT-Creation-Date: 2025-08-20 05:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -114,6 +114,58 @@ msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
 msgid "algolib.numerics.trig module"
+msgstr ""
+
+#: algolib.numerics.trig.cos:1 of
+msgid "Cosine of an angle (system backend)."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst
+msgid "Parameters"
+msgstr ""
+
+#: algolib.numerics.trig.cos:3 algolib.numerics.trig.sin:3
+#: algolib.numerics.trig.tan:9 of
+msgid "Input angle in radians."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst
+msgid "Returns"
+msgstr ""
+
+#: algolib.numerics.trig.cos:6 of
+msgid "``cos(x)`` evaluated by the active numerics backend."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst
+msgid "Return type"
+msgstr ""
+
+#: algolib.numerics.trig.sin:1 of
+msgid "Sine of an angle (system backend)."
+msgstr ""
+
+#: algolib.numerics.trig.sin:6 of
+msgid "``sin(x)`` evaluated by the active numerics backend."
+msgstr ""
+
+#: algolib.numerics.trig.tan:1 of
+msgid "Tangent of an angle (system backend)."
+msgstr ""
+
+#: algolib.numerics.trig.tan:4 of
+msgid "Notes"
+msgstr ""
+
+#: algolib.numerics.trig.tan:5 of
+msgid ""
+"Argument-reduction and non-finite handling are performed inside the active "
+"backend (see ``_backend.SystemTrigBackend.tan``). Keeping this wrapper free "
+"of extra reduction ensures consistent periodicity tests."
+msgstr ""
+
+#: algolib.numerics.trig.tan:12 of
+msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:32

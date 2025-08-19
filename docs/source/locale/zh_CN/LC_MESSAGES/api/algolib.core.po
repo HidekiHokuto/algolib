@@ -112,11 +112,11 @@ msgstr "当各分量绝对误差不超过 ``tol`` 时返回 True。"
 
 #: algolib.core.complex.Complex.almost_equal:3 of
 msgid "This is safer than exact float equality."
-msgstr ""
+msgstr "这比直接使用浮点数的精确相等比较更安全。"
 
 #: algolib.core.complex.Complex.argument:1 of
 msgid "Compute the principal argument of the complex number."
-msgstr ""
+msgstr "计算复数的主幅角。"
 
 #: algolib.core.complex.Complex.argument algolib.core.complex.Complex.conjugate
 #: algolib.core.complex.Complex.from_cartesian
@@ -130,7 +130,7 @@ msgstr "返回"
 
 #: algolib.core.complex.Complex.argument:3 of
 msgid "The argument (angle in radians) in the range :math:`(-\\pi, \\pi]`."
-msgstr ""
+msgstr "幅角（弧度制），范围为 :math:`(-\\pi, \\pi]`。"
 
 #: algolib.core.complex.Complex.argument algolib.core.complex.Complex.conjugate
 #: algolib.core.complex.Complex.from_cartesian
@@ -144,110 +144,113 @@ msgstr "返回类型"
 
 #: algolib.core.complex.Complex.conjugate:1 of
 msgid "Compute the complex conjugate of the number."
-msgstr ""
+msgstr "计算复数的共轭。"
 
 #: algolib.core.complex.Complex.conjugate:3 of
 #, python-brace-format
 msgid "The conjugate :math:`a - b \\mathrm{i}`."
-msgstr ""
+msgstr "共轭复数 :math:`a - b \\mathrm{i}`。"
 
 #: algolib.core.complex.Complex.from_cartesian:1 of
 msgid "Construct a complex number from Cartesian coordinates."
-msgstr "以笛卡尔坐标创建复数。"
+msgstr "以笛卡尔坐标构造复数。"
 
 #: algolib.core.complex.Complex.from_cartesian:3 of
 msgid "The real part of the complex number."
-msgstr ""
+msgstr "复数的实部。"
 
 #: algolib.core.complex.Complex.from_cartesian:5 of
 msgid "The imaginary part of the complex number."
-msgstr ""
+msgstr "复数的虚部。"
 
 #: algolib.core.complex.Complex.from_cartesian:8 of
 msgid "The complex number corresponding to the Cartesian coordinates."
-msgstr ""
+msgstr "由笛卡尔坐标生成的复数。"
 
 #: algolib.core.complex.Complex.from_iterable:1 of
 msgid "Construct a complex number from an iterable of two numbers."
-msgstr ""
+msgstr "由一个包含两个数的可迭代对象构造复数。"
 
 #: algolib.core.complex.Complex.from_iterable:3 of
 msgid ""
 "An iterable containing exactly two elements: the real and imaginary parts."
-msgstr ""
+msgstr "一个恰好包含两个元素的可迭代对象：实部与虚部。"
 
 #: algolib.core.complex.Complex.from_iterable:6 of
 msgid "The complex number constructed from the iterable."
-msgstr ""
+msgstr "由可迭代对象构造的复数。"
 
 #: algolib.core.complex.Complex.from_iterable:9 of
 msgid "If the iterable does not contain exactly two numeric elements."
-msgstr ""
+msgstr "当可迭代对象不包含恰好两个数值元素时触发。"
 
 #: algolib.core.complex.Complex.from_polar:1 of
 msgid "Construct a complex number from polar coordinates."
-msgstr ""
+msgstr "以极坐标形式构造复数。"
 
 #: algolib.core.complex.Complex.from_polar:3 of
 msgid "The modulus (radius) of the complex number. Must be non-negative."
-msgstr ""
+msgstr "复数的模（半径）。必须为非负数。"
 
 #: algolib.core.complex.Complex.from_polar:5 of
 msgid "The argument (angle in radians) of the complex number."
-msgstr ""
+msgstr "复数的幅角（弧度制）。"
 
 #: algolib.core.complex.Complex.from_polar:8 of
 msgid "The complex number corresponding to the polar coordinates."
-msgstr ""
+msgstr "由极坐标生成的复数。"
 
 #: algolib.core.complex.Complex.from_polar:11 of
-#, fuzzy
 msgid "If `r` or `theta` is not a real number."
-msgstr "当任意部分非实数（int/float）时触发。"
+msgstr "当 `r` 或 `theta` 不是实数时触发。"
+
 
 #: algolib.core.complex.Complex.from_polar:12 of
 msgid "If `r` is negative."
-msgstr ""
+msgstr "当 `r` 为负数时触发。"
 
 #: algolib.core.complex.Complex.modulus:1 of
 msgid "Compute the modulus (absolute value) of the complex number."
-msgstr ""
+msgstr "计算复数的模（绝对值）。"
+
 
 #: algolib.core.complex.Complex.modulus:3 of
 #, python-brace-format
 msgid "The modulus :math:`\\sqrt{a^2 + b^2}`."
-msgstr ""
+msgstr "模长 :math:`\\sqrt{a^2 + b^2}`。"
 
 #: algolib.core.complex.Complex.normalized:1 of
 msgid "Normalize the complex number by :math:`z/|z|` to have a modulus of 1."
-msgstr ""
+msgstr "将复数按 :math:`z/|z|` 归一化，使其模为 1。"
+
 
 #: algolib.core.complex.Complex.normalized:3 of
 msgid "The normalized complex number."
-msgstr ""
+msgstr "归一化后的复数。"
 
 #: algolib.core.complex.Complex.normalized:6 of
 msgid "If the complex number is zero."
-msgstr ""
+msgstr "当复数为零时触发。"
 
 #: algolib.core.complex.Complex.to_polar:1 of
 msgid "Convert the complex number to polar coordinates."
-msgstr ""
+msgstr "将复数转换为极坐标形式。"
 
 #: algolib.core.complex.Complex.to_polar:3 of
 msgid ""
 "A tuple ``(r, theta)`` where ``r`` is the modulus and ``theta`` is the "
 "argument."
-msgstr ""
+msgstr "一个二元组 ``(r, theta)``，其中 ``r`` 为模，``theta`` 为幅角。"
 
 #: algolib.core.complex.Complex.to_tuple:1 of
 msgid "Convert the complex number to a tuple of its real and imaginary parts."
-msgstr ""
+msgstr "将复数转换为由实部与虚部组成的元组。"
 
 #: algolib.core.complex.Complex.to_tuple:3 of
 msgid "A tuple `(re, im)` representing the real and imaginary parts."
-msgstr ""
+msgstr "一个二元组 `(re, im)`，表示复数的实部与虚部。"
+
 
 #: ../source/api/algolib.core.rst:16
 msgid "Module contents"
-msgstr ""
+msgstr "模块内容"
