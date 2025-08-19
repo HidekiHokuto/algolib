@@ -28,6 +28,14 @@ algolib.numerics.trig module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.trig\_pure module
+----------------------------------
+
+.. automodule:: algolib.numerics.trig_pure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
