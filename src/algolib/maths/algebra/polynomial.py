@@ -1,10 +1,13 @@
 # src/algolib/maths/algebra/polynomial.py
 """
-A lightweight univariate polynomial with real coefficients.
+Lightweight univariate polynomial with real coefficients.
 
-- Coefficients are in **ascending** degree order: ``p(x) = c0 + c1 x + ... + cn x^n``.
-- Immutable API; internal representation is a tuple of floats.
-- Supports +, -, * (convolution), evaluation (Horner), derivative, integral.
+Notes
+-----
+- Coefficients are stored in **ascending** degree order: ``p(x) = c0 + c1*x + … + cn*x**n``.
+- The public API is immutable; the internal representation is a tuple of ``float``.
+- Supported operations include addition, subtraction, multiplication (convolution),
+  evaluation (Horner scheme), derivative, and antiderivative (indefinite integral).
 
 Examples
 --------
@@ -27,7 +30,19 @@ Number = Union[int, float]
 
 
 def _strip_trailing_zeros(cs: Sequence[Number]) -> Tuple[float, ...]:
-    """Remove trailing zeros to keep a canonical form."""
+    """Remove trailing zeros to keep a canonical representation.
+
+    Parameters
+    ----------
+    cs : Sequence[Number]
+        Input coefficients in ascending degree order.
+
+    Returns
+    -------
+    Tuple[float, ...]
+        Coefficients with all high‑degree zeros removed. At least one
+        coefficient is preserved (the zero polynomial becomes ``(0.0,)``).
+    """
     if not cs:
         return (0.0,)
     out = list(map(float, cs))
@@ -37,7 +52,27 @@ def _strip_trailing_zeros(cs: Sequence[Number]) -> Tuple[float, ...]:
     return tuple(out)
 
 def _horner_kahan(coeffs: Sequence[Number], x: Number) -> Number:
-    """Evaluate p(x) using Horner with Kahan compensation. Coeffs ascending."""
+    """Evaluate ``p(x)`` via Horner's method with Kahan compensation for the
+    accumulating sum.
+
+    Notes
+    -----
+    The Kahan term stabilizes the *addition* in each fused step ``s*x + c_k``.
+    This is a lightweight compromise that improves accuracy for floating‑point
+    inputs without adding significant overhead.
+
+    Parameters
+    ----------
+    coeffs : Sequence[Number]
+        Coefficients in ascending degree order.
+    x : Number
+        Evaluation point. Real and complex values are supported.
+
+    Returns
+    -------
+    Number
+        The evaluated value ``p(x)``.
+    """
     n = len(coeffs)
     if n == 1:
         return float(coeffs[0])
@@ -67,9 +102,15 @@ class Polynomial:
     Raises
     ------
     InvalidTypeError
-        If ``coeffs`` contains non-numeric types.
+        If any coefficient is not a real number.
     InvalidValueError
         If ``coeffs`` is empty.
+
+    Notes
+    -----
+    - Construction enforces a **canonical form** by stripping trailing zeros; the
+      zero polynomial is thus represented as ``(0.0,)`` and has degree 0.
+    - All operations return new ``Polynomial`` instances (immutable API).
     """
 
     coeffs: Tuple[float, ...]  # stored canonical (no trailing zeros)
@@ -104,9 +145,18 @@ class Polynomial:
     @staticmethod
     def zeros(deg: int) -> "Polynomial":
         """
-        Return the zero polynomial of (at most) given degree (all coefficients 0).
+        Return the (canonical) zero polynomial.
 
-        :param deg: Non-negative degree.
+        Parameters
+        ----------
+        deg : int
+            Requested degree (non‑negative). This value is accepted for API symmetry,
+            but the canonical zero polynomial always has degree 0 after construction.
+
+        Returns
+        -------
+        Polynomial
+            The zero polynomial.
         """
         if deg < 0:
             raise InvalidValueError("degree must be non-negative.")
@@ -114,35 +164,48 @@ class Polynomial:
 
     @staticmethod
     def constant(c: Number) -> "Polynomial":
-        """Return constant polynomial ``p(x)=c``."""
+        """Return a constant polynomial ``p(x) = c``."""
         return Polynomial([c])
 
     @staticmethod
     def identity() -> "Polynomial":
-        """Return multiplicative identity polynomial ``1``."""
+        """Return the multiplicative identity polynomial ``1``."""
         return Polynomial([1.0])
 
     # --------------------------------- queries ----------------------------------
 
     @property
     def degree(self) -> int:
-        """Return the degree (``len(coeffs)-1``), with ``deg(0)=0`` by convention."""
+        """Degree of the polynomial (``len(coeffs) - 1``). By convention, ``deg(0) = 0``."""
         return len(self.coeffs) - 1
 
     def __call__(self, x: Number) -> Number:
         """
-        Evaluate p(x) using Horner + Kahan.
-        Supports both real and complex x.
+        Evaluate ``p(x)``.
+
+        Parameters
+        ----------
+        x : float or complex
+            Evaluation point.
+
+        Returns
+        -------
+        float or complex
+            The value ``p(x)`` computed via Horner's method with lightweight
+            Kahan compensation.
         """
         return _horner_kahan(self.coeffs, x)
 
     # -------------------------------- calculus ----------------------------------
 
     def derivative(self) -> "Polynomial":
-        r"""
-        Return the analytical derivative p'(x).
-        If p(x) = a0 + a1*x + ... + an*x^n,
-        then p'(x) = a1 + 2*a2*x + ... + n*an*x^(n-1).
+        """
+        Return the analytical derivative :math:`p'(x)`.
+
+        Notes
+        -----
+        If :math:`p(x) = a_0 + a_1 x + \cdots + a_n x^n`, then
+        :math:`p'(x) = a_1 + 2 a_2 x + \cdots + n a_n x^{n-1}`.
         """
 
         if self.degree == 0:
@@ -151,10 +214,18 @@ class Polynomial:
         return Polynomial(der)
 
     def integral(self, c0: Number = 0.0) -> "Polynomial":
-        r"""
-        Return an antiderivative :math:`\\int p(x)dx` with constant term ``c0``.
+        """
+        Return an antiderivative :math:`\int p(x)\,dx` with constant term ``c0``.
 
-        :math:`\\int c_k x^k dx = \\frac{c_k}{k+1} x^{k+1}`
+        Parameters
+        ----------
+        c0 : Number, default=0.0
+            Constant of integration (the coefficient of :math:`x^0`).
+
+        Returns
+        -------
+        Polynomial
+            An antiderivative whose derivative equals ``self``.
         """
         out = [float(c0)]
         out.extend(c / (k + 1.0) for k, c in enumerate(self.coeffs))
@@ -197,10 +268,11 @@ class Polynomial:
     # --------------------------------- display ----------------------------------
 
     def __repr__(self) -> str:
+        """Unambiguous representation, e.g. ``Polynomial(coeffs=(1.0, 2.0))``."""
         return f"Polynomial(coeffs={self.coeffs})"
 
     def __str__(self) -> str:
-        # pretty form like "3x^2 + 2x + 1"
+        """Human‑readable form such as ``"3x^2 + 2x + 1"`` (or ``"0"`` for the zero polynomial)."""
         terms = []
         for k, c in enumerate(self.coeffs):
             if c == 0.0:

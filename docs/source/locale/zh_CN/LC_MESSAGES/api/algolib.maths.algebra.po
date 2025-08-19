@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 17:41+0900\n"
+"POT-Creation-Date: 2025-08-20 06:21+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -67,7 +67,7 @@ msgid "If matrix is empty or not rectangular."
 msgstr ""
 
 #: algolib.maths.algebra.matrix_dense.MatrixDense:13
-#: algolib.maths.algebra.polynomial:8 of
+#: algolib.maths.algebra.polynomial:11 of
 msgid "Examples"
 msgstr ""
 
@@ -147,22 +147,32 @@ msgid "algolib.maths.algebra.polynomial module"
 msgstr "algolib.maths.algebra 包"
 
 #: algolib.maths.algebra.polynomial:1 of
-msgid "A lightweight univariate polynomial with real coefficients."
+msgid "Lightweight univariate polynomial with real coefficients."
 msgstr ""
 
-#: algolib.maths.algebra.polynomial:3 of
-msgid ""
-"Coefficients are in **ascending** degree order: ``p(x) = c0 + c1 x + ... + "
-"cn x^n``."
-msgstr ""
-
-#: algolib.maths.algebra.polynomial:4 of
-msgid "Immutable API; internal representation is a tuple of floats."
+#: algolib.maths.algebra.polynomial:4
+#: algolib.maths.algebra.polynomial.Polynomial:11
+#: algolib.maths.algebra.polynomial.Polynomial.derivative:4 of
+msgid "Notes"
 msgstr ""
 
 #: algolib.maths.algebra.polynomial:5 of
 msgid ""
-"Supports +, -, * (convolution), evaluation (Horner), derivative, integral."
+"Coefficients are stored in **ascending** degree order: ``p(x) = c0 + c1*x + "
+"… + cn*x**n``."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial:6 of
+msgid ""
+"The public API is immutable; the internal representation is a tuple of "
+"``float``."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial:7 of
+msgid ""
+"Supported operations include addition, subtraction, multiplication "
+"(convolution), evaluation (Horner scheme), derivative, and antiderivative "
+"(indefinite integral)."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial:1 of
@@ -177,49 +187,74 @@ msgid ""
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial:7 of
-msgid "If ``coeffs`` contains non-numeric types."
+msgid "If any coefficient is not a real number."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial:8 of
 msgid "If ``coeffs`` is empty."
 msgstr ""
 
+#: algolib.maths.algebra.polynomial.Polynomial:12 of
+msgid ""
+"Construction enforces a **canonical form** by stripping trailing zeros; the "
+"zero polynomial is thus represented as ``(0.0,)`` and has degree 0."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial:14 of
+msgid "All operations return new ``Polynomial`` instances (immutable API)."
+msgstr ""
+
 #: algolib.maths.algebra.polynomial.Polynomial.constant:1 of
-msgid "Return constant polynomial ``p(x)=c``."
+msgid "Return a constant polynomial ``p(x) = c``."
 msgstr ""
 
 #: algolib.maths.algebra.Polynomial.degree:1
 #: algolib.maths.algebra.polynomial.Polynomial.degree:1 of
-msgid "Return the degree (``len(coeffs)-1``), with ``deg(0)=0`` by convention."
+msgid ""
+"Degree of the polynomial (``len(coeffs) - 1``). By convention, ``deg(0) = "
+"0``."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.derivative:1 of
+msgid "Return the analytical derivative :math:`p'(x)`."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.derivative:5 of
+#, python-brace-format
 msgid ""
-"Return the analytical derivative p'(x). If p(x) = a0 + a1*x + ... + an*x^n, "
-"then p'(x) = a1 + 2*a2*x + ... + n*an*x^(n-1)."
+"If :math:`p(x) = a_0 + a_1 x + \\cdots + a_n x^n`, then :math:`p'(x) = a_1 + "
+"2 a_2 x + \\cdots + n a_n x^{n-1}`."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.identity:1 of
-msgid "Return multiplicative identity polynomial ``1``."
+msgid "Return the multiplicative identity polynomial ``1``."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.integral:1 of
 msgid ""
-"Return an antiderivative :math:`\\\\int p(x)dx` with constant term ``c0``."
+"Return an antiderivative :math:`\\int p(x)\\,dx` with constant term ``c0``."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.integral:3 of
-#, python-brace-format
-msgid ":math:`\\\\int c_k x^k dx = \\\\frac{c_k}{k+1} x^{k+1}`"
+msgid "Constant of integration (the coefficient of :math:`x^0`)."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.integral:6 of
+msgid "An antiderivative whose derivative equals ``self``."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.zeros:1 of
-msgid ""
-"Return the zero polynomial of (at most) given degree (all coefficients 0)."
+msgid "Return the (canonical) zero polynomial."
 msgstr ""
 
 #: algolib.maths.algebra.polynomial.Polynomial.zeros:3 of
-msgid "Non-negative degree."
+msgid ""
+"Requested degree (non‑negative). This value is accepted for API symmetry, "
+"but the canonical zero polynomial always has degree 0 after construction."
+msgstr ""
+
+#: algolib.maths.algebra.polynomial.Polynomial.zeros:7 of
+msgid "The zero polynomial."
 msgstr ""
 
 #: ../source/api/algolib.maths.algebra.rst:24

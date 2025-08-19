@@ -204,7 +204,6 @@ msgstr "由极坐标生成的复数。"
 msgid "If `r` or `theta` is not a real number."
 msgstr "当 `r` 或 `theta` 不是实数时触发。"
 
-
 #: algolib.core.complex.Complex.from_polar:12 of
 msgid "If `r` is negative."
 msgstr "当 `r` 为负数时触发。"
@@ -212,7 +211,6 @@ msgstr "当 `r` 为负数时触发。"
 #: algolib.core.complex.Complex.modulus:1 of
 msgid "Compute the modulus (absolute value) of the complex number."
 msgstr "计算复数的模（绝对值）。"
-
 
 #: algolib.core.complex.Complex.modulus:3 of
 #, python-brace-format
@@ -222,7 +220,6 @@ msgstr "模长 :math:`\\sqrt{a^2 + b^2}`。"
 #: algolib.core.complex.Complex.normalized:1 of
 msgid "Normalize the complex number by :math:`z/|z|` to have a modulus of 1."
 msgstr "将复数按 :math:`z/|z|` 归一化，使其模为 1。"
-
 
 #: algolib.core.complex.Complex.normalized:3 of
 msgid "The normalized complex number."
@@ -249,7 +246,6 @@ msgstr "将复数转换为由实部与虚部组成的元组。"
 #: algolib.core.complex.Complex.to_tuple:3 of
 msgid "A tuple `(re, im)` representing the real and imaginary parts."
 msgstr "一个二元组 `(re, im)`，表示复数的实部与虚部。"
-
 
 #: ../source/api/algolib.core.rst:16
 msgid "Module contents"
