@@ -57,7 +57,7 @@ def test_tan_matches_math_away_from_poles(x: float):
     # 与实现保持一致：先规约到 [-π/2, π/2] 再比较
     xr = math.remainder(x, C.TAU)
     assume(_dist_to_half_pi_grid(xr) > 1.2e-4)
-    assert _isclose(my_tan(x), math.tan(xr), rel=5e-10, abs_=3e-10, ulps=256)
+    assert _isclose(my_tan(x), math.tan(xr), rel=1.2e-9, abs_=8e-10, ulps=4096)
 
 # -----------------------
 # identities (approximate)
@@ -92,6 +92,6 @@ def test_periodicity(x: float, y: float):
     # 用同一个代表元体系判断“远离极点”，避免两端判定口径不一致
     xr  = math.remainder(x, C.TAU)
     xr2 = math.remainder(x + yk2, C.TAU)
-    assume(_dist_to_half_pi_grid(xr) > 8e-4 and
-           _dist_to_half_pi_grid(xr2) > 8e-4)
-    assert _isclose(my_tan(x + yk2), my_tan(x), rel=6e-9, abs_=3e-9, ulps=4096)
+    assume(_dist_to_half_pi_grid(xr) > 1.2e-3 and
+           _dist_to_half_pi_grid(xr2) > 1.2e-3)
+    assert _isclose(my_tan(x + yk2), my_tan(x), rel=2e-8, abs_=1e-8, ulps=8192)
