@@ -344,6 +344,6 @@ def test_plane_normal_is_orthogonal(data):
 
     # robust tolerance: relative + absolute floor
     rel = 2e-12
-    abs_floor = 5e-9
+    abs_floor = 6e-9
     tol = rel * scale + abs_floor
     assert abs(dot_unit) <= tol

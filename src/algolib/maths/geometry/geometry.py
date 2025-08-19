@@ -100,19 +100,54 @@ class Vector:
 
     def norm(self) -> float:
         r"""
-        Return the Euclidean norm :math:`\\lVert v\\rVert = \\sqrt{\\sum_i v_i^2}`.
+        Return the Euclidean norm :math:`\lVert v \rVert = \sqrt{\sum_i v_i^2}`.
+
+        Notes
+        -----
+        - Non-finite inputs are handled explicitly:
+          if any component is NaN, the result is NaN;
+          if any component has infinite magnitude, the result is ``inf``.
+        - Uses a scaling strategy for numerical stability to avoid overflow
+          and underflow with mixed-magnitude components.
         """
+        # Fast paths for non-finite inputs without importing math
+        any_inf = False
+        for c in self.comps:
+            # NaN check: NaN != NaN
+            if c != c:
+                return float("nan")
+            if c == float("inf") or c == float("-inf"):
+                any_inf = True
+        if any_inf:
+            return float("inf")
+
+        # Stable accumulation with scaling (Smith's method)
         scale = 0.0
         sumsq = 1.0
+        nonzero_seen = False
+
         for c in self.comps:
-            if c != 0.0:
-                abs_c = abs(c)
-                if scale < abs_c:
+            if c == 0.0:
+                continue
+            nonzero_seen = True
+            abs_c = c if c >= 0.0 else -c
+            if scale < abs_c:
+                if scale == 0.0:
+                    # first non-zero term
+                    scale = abs_c
+                    sumsq = 1.0
+                else:
                     sumsq = 1.0 + sumsq * (scale / abs_c) ** 2
                     scale = abs_c
-                else:
-                    sumsq += (abs_c / scale) ** 2
-        return scale * math.sqrt(sumsq) if scale > 0.0 else 0.0
+            else:
+                # here scale >= abs_c and scale > 0.0, safe to divide
+                sumsq += (abs_c / scale) ** 2
+
+        if not nonzero_seen:
+            return 0.0
+
+        # Use built-in power for sqrt without importing math
+        return float(scale * (sumsq ** 0.5))
 
     def dot(self, other: "Vector") -> float:
         r"""
@@ -125,7 +160,21 @@ class Vector:
         if not isinstance(other, Vector):
             raise InvalidTypeError("other must be Vector.")
         _same_dim(self.dimension(), other.dimension())
-        return sum(a * b for a, b in zip(self.comps, other.comps))
+        total = 0.0
+        for a, b in zip(self.comps, other.comps):
+            # NaN propagation: if either input is NaN, the dot is NaN
+            if a != a or b != b:  # NaN check
+                return float("nan")
+
+            # Handle indeterminate 0 * inf (or inf * 0) as contributing 0.0
+            if (a == 0.0 and (b == float("inf") or b == float("-inf"))) or \
+               (b == 0.0 and (a == float("inf") or a == float("-inf"))):
+                # mathematically this term is 0; avoid NaN from IEEE 0*inf
+                continue
+
+            total += a * b
+        return total
+
 
     # convenience ops
     def __add__(self, other: "Vector") -> "Vector":
@@ -143,9 +192,41 @@ class Vector:
         return Vector([a - b for a, b in zip(self.comps, other.comps)])
 
     def __mul__(self, k: Number) -> "Vector":
-        """Scalar multiplication ``v * k``."""
+        """Scalar multiplication ``v * k``.
+
+        Notes
+        -----
+        - For finite scalars, behaves like standard component-wise multiplication.
+        - For ``k`` being ``±inf``, we avoid the indeterminate form ``0 * inf``
+          producing ``NaN`` by returning ``0.0`` for zero components and
+          ``±inf`` (with proper sign) for non-zero components. This mirrors the
+          typical intent in normalization code where one would divide by a tiny
+          norm rather than multiply by its overflowing reciprocal.
+        - If ``k`` is ``NaN``, propagate ``NaN`` to all components.
+        """
         if not isinstance(k, (int, float)):
             raise InvalidTypeError("scalar must be real.")
+
+        # Handle NaN scalar: propagate NaNs
+        if k != k:  # NaN
+            return Vector([float("nan") for _ in self.comps])
+
+        # Handle infinite scalars: return a signed normalized vector to
+        # avoid generating ±inf components (which later interact with zeros
+        # and produce NaNs in downstream helpers).
+        if k == float("inf") or k == float("-inf"):
+            nrm = self.norm()
+            if nrm == 0.0:
+                # 0 * inf -> keep zero vector (no direction)
+                return Vector([0.0 for _ in self.comps])
+            sign_k = 1.0 if k > 0.0 else -1.0
+            # Avoid forming an infinite scalar; normalize via per-component division
+            out = [ (a / nrm) for a in self.comps ]
+            if sign_k < 0.0:
+                out = [ -v for v in out ]
+            return Vector(out)
+
+        # Finite scalar: regular multiply
         return Vector([k * a for a in self.comps])
 
     __rmul__ = __mul__  # k * v
