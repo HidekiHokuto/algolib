@@ -32,7 +32,6 @@ msgid "algolib.maths.number\\_theory.prime module"
 msgstr "algolib.maths.number_theory.prime 模块"
 
 #: algolib.maths.number_theory.prime.is_prime:1 of
-#, fuzzy
 msgid ""
 "Check whether an integer is a prime using the :math:`6k \\pm 1` optimization."
 msgstr "使用 :math:`6k \\pm 1` 优化方法检查一个整数是否为质数。"

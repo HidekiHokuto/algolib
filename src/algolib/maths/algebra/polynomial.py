@@ -199,7 +199,7 @@ class Polynomial:
     # -------------------------------- calculus ----------------------------------
 
     def derivative(self) -> "Polynomial":
-        """
+        r"""
         Return the analytical derivative :math:`p'(x)`.
 
         Notes
@@ -214,7 +214,7 @@ class Polynomial:
         return Polynomial(der)
 
     def integral(self, c0: Number = 0.0) -> "Polynomial":
-        """
+        r"""
         Return an antiderivative :math:`\int p(x)\,dx` with constant term ``c0``.
 
         Parameters

@@ -10,6 +10,7 @@ Subpackages
    algolib.core
    algolib.maths
    algolib.numerics
+   algolib.physics
    algolib.utils
 
 Submodules
