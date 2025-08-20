@@ -21,97 +21,102 @@ msgstr ""
 
 #: ../source/api/algolib.physics.rst:2
 msgid "algolib.physics package"
-msgstr ""
+msgstr "algolib.physics 包"
 
 #: ../source/api/algolib.physics.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.physics.rst:8
 msgid "algolib.physics.constants module"
-msgstr ""
+msgstr "algolib.physics.constants 模块"
 
 #: algolib.physics.constants:1 of
 msgid "CODATA-based physical constants in SI units."
-msgstr ""
+msgstr "基于 CODATA 的 SI 单位物理常数。"
 
 #: algolib.physics.constants:4 of
 msgid "Notes"
-msgstr ""
+msgstr "说明"
 
 #: algolib.physics.constants:5 of
 msgid "All values are provided in SI base units."
-msgstr ""
+msgstr "所有数值均以 SI 基本单位给出。"
 
 #: algolib.physics.constants:6 of
 msgid ""
 "`rel_unc` is the relative standard uncertainty. A value of `0.0` indicates an"
-msgstr ""
+msgstr "`rel_unc` 表示相对标准不确定度。取值为 0.0 表示"
 
 #: algolib.physics.constants:7 of
 msgid ""
 "exact value as defined by the 2019 SI redefinition (e.g., `c`, `h`, `e`, "
 "`k_B`, `N_A`)."
 msgstr ""
+"根据 2019 年 SI 重新定义而给出的精确值（例"
+"如 :math:`c`、:math:`h`、:math:`e`、:math:`k_{\\mathrm{B}}"
+"`、:math:`N_\\mathrm{A}`）。"
 
 #: algolib.physics.constants:9 of
 msgid "Source label reflects the CODATA release used to curate the numbers."
-msgstr ""
+msgstr "Source 字段表示采用的 CODATA 版本。"
 
 #: algolib.physics.constants.PhysConst:1 of
 msgid "Bases: :py:class:`object`"
-msgstr ""
+msgstr "基类：:py:class:object`"
 
 #: algolib.physics.constants.PhysConst:1 of
 msgid "Container for a physical constant in SI units."
-msgstr ""
+msgstr "以 SI 单位表示的物理常数容器。"
 
 #: algolib.physics.constants.PhysConst:2 of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: algolib.physics.constants.PhysConst:6 of
 msgid "unit"
-msgstr ""
+msgstr "单位"
 
 #: algolib.physics.constants.PhysConst:-1 of
 msgid "str"
-msgstr ""
+msgstr "str"
 
 #: algolib.physics.constants.PhysConst:7 of
 msgid "Unit string, e.g. \"m s^-1\", \"J s\", \"C\"."
-msgstr ""
+msgstr "单位字符串，例如 “m s^-1”、“J s”、“C”。"
 
 #: algolib.physics.constants.PhysConst:8 of
 msgid "rel_unc"
-msgstr ""
+msgstr "rel_unc"
 
 #: algolib.physics.constants.PhysConst:-1 of
 msgid "float | None"
-msgstr ""
+msgstr "float | None"
 
 #: algolib.physics.constants.PhysConst:9 of
 msgid ""
 "Relative standard uncertainty (e.g. ``1.5e-10``); use ``0.0`` for exact "
 "constants per the 2019 SI definitions."
 msgstr ""
+"相对标准不确定度（例如 1.5e-10）；对于 2019 年 SI 定义中的精确常数请使用 "
+"0.0。"
 
 #: algolib.physics.constants.PhysConst:11 of
 msgid "source"
-msgstr ""
+msgstr "来源"
 
 #: algolib.physics.constants.PhysConst:12 of
 msgid "Provenance label, e.g. \"CODATA 2022\"."
-msgstr ""
+msgstr "来源标签，例如 “CODATA 2022”。"
 
 #: algolib.physics.constants.PhysConst:13 of
 msgid "symbol"
-msgstr ""
+msgstr "符号"
 
 #: algolib.physics.constants.PhysConst:14 of
 msgid "Conventional symbol such as ``c``, ``h``, ``k_B``."
-msgstr ""
+msgstr "常用符号，如 c、h、k_B。"
 
 #: ../source/api/algolib.physics.rst:16
 msgid "Module contents"
-msgstr ""
+msgstr "模块内容"
