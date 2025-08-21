@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 06:21+0900\n"
+"POT-Creation-Date: 2025-08-22 03:06+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,179 @@ msgid "Submodules"
 msgstr ""
 
 #: ../source/api/algolib.maths.algebra.rst:8
+msgid "algolib.maths.algebra.lu module"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:1
+msgid "Lightweight LU factorization with partial pivoting (no NumPy)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:3
+msgid "This module implements a compact LU routine intended for teaching purposes and small dense systems. It works with built-in Python types and does not mutate the input matrix."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:21
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:18
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:8
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:21
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:18
+#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial:4
+#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial.Polynomial:11
+#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial.Polynomial.derivative:4
+msgid "Notes"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:9
+msgid "We factor a square matrix ``A`` so that ``P @ A = L @ U`` with partial pivoting. Here ``P`` is a permutation matrix encoded by an index array ``piv``; ``L`` has unit diagonal and is stored in the strictly lower part of the combined ``LU`` matrix; ``U`` occupies the upper part including the diagonal."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:14
+msgid "The permutation parity ``sign`` is ``+1`` for an even number of row swaps and ``-1`` for an odd number. The determinant satisfies ``det(A) = sign * prod(diag(U))``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:17
+msgid "Right-hand sides for the solver can be either a vector (length ``n``) or a matrix stored **by rows** with shape ``(n, nrhs)`` (each column is one RHS)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:21
+msgid "References"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu:22
+msgid "Golub, G. H., & Van Loan, C. F. (2013). *Matrix Computations* (4th ed.)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_det:1
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_det:1
+msgid "Compute the determinant from a precomputed LU factorization."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_det:3
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_det:3
+msgid "Combined LU matrix returned by :func:`lu_factor`."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_det:5
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_det:5
+msgid "Permutation parity returned by :func:`lu_factor`."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_det:8
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_det:8
+msgid "**det** -- Determinant of the original matrix ``A``."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:1
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:1
+msgid "Compute the LU factorization with partial pivoting."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:3
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:3
+msgid "Square coefficient matrix. It will not be modified."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:5
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:5
+msgid "If ``abs(pivot) <= piv_tol``, the matrix is treated as singular and a ``ValueError`` is raised. Use a small positive value (e.g. ``1e-15``) to guard nearly singular systems."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:10
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:10
+msgid "* **LU** (*list[list[float]]*) -- Combined LU factors. The strictly lower part stores ``L`` (with unit   diagonal implied); the upper part including the diagonal stores ``U``. * **piv** (*list[int]*) -- Pivot index array encoding the row permutation ``P`` such that   row ``k`` of ``LU`` corresponds to original row ``piv[k]`` of ``A``. * **sign** (*int*) -- Permutation parity indicator. ``+1`` means an even number of row swaps,   ``-1`` means an odd number of swaps. Useful for determinant via   ``det(A) = sign * prod(diag(U))``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:10
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:10
+msgid "**LU** (*list[list[float]]*) -- Combined LU factors. The strictly lower part stores ``L`` (with unit diagonal implied); the upper part including the diagonal stores ``U``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:12
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:12
+msgid "**piv** (*list[int]*) -- Pivot index array encoding the row permutation ``P`` such that row ``k`` of ``LU`` corresponds to original row ``piv[k]`` of ``A``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:14
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:14
+msgid "**sign** (*int*) -- Permutation parity indicator. ``+1`` means an even number of row swaps, ``-1`` means an odd number of swaps. Useful for determinant via ``det(A) = sign * prod(diag(U))``."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:0
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:0
+msgid "Raises"
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:18
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:18
+msgid "If the matrix is not square or a zero/too-small pivot is encountered."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_factor:22
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_factor:22
+msgid "This is the Doolittle scheme with partial pivoting (``P A = L U``)."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:1
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:1
+msgid "Solve ``A x = b`` given a precomputed LU factorization with partial pivoting."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:3
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:3
+msgid "Combined LU matrix produced by :func:`lu_factor`."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:5
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:5
+msgid "Pivot index array returned by :func:`lu_factor`."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:7
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:7
+msgid "Right-hand side. A 1-D sequence is treated as a vector (single RHS). A 2-D sequence is treated as multiple RHS arranged **by rows** with shape ``(n, nrhs)``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:12
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:12
+msgid "**x** -- Solution vector or a matrix with the same RHS layout as ``b``."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:15
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:15
+msgid "If the dimensions are incompatible."
+msgstr ""
+
+#: ../../src/algolib/maths/algebra/__init__.py:docstring of algolib.maths.algebra.lu.lu_solve:19
+#: ../../src/algolib/maths/algebra/lu.py:docstring of algolib.maths.algebra.lu.lu_solve:19
+msgid "Performs forward substitution (``L y = P b``) followed by back substitution (``U x = y``)."
+msgstr ""
+
+#: ../source/api/algolib.maths.algebra.rst:16
 msgid "algolib.maths.algebra.matrix\\_dense module"
 msgstr ""
 
@@ -41,16 +214,8 @@ msgstr ""
 msgid "Designed for correctness and clarity (teaching/learning oriented). Not optimized for large-scale numerical workloads."
 msgstr ""
 
-#: ../source/api/algolib.maths.algebra.rst:0
-msgid "Parameters"
-msgstr ""
-
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:6
 msgid "Row-major data. Must be rectangular (all rows same length)."
-msgstr ""
-
-#: ../source/api/algolib.maths.algebra.rst:0
-msgid "Raises"
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense:9
@@ -114,16 +279,8 @@ msgstr ""
 msgid "Vector of length equal to number of columns."
 msgstr ""
 
-#: ../source/api/algolib.maths.algebra.rst:0
-msgid "Returns"
-msgstr ""
-
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.matrix_dense.MatrixDense.matvec:6
 msgid "Resulting vector."
-msgstr ""
-
-#: ../source/api/algolib.maths.algebra.rst:0
-msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/matrix_dense.py:docstring of algolib.maths.algebra.MatrixDense.shape:1
@@ -135,18 +292,12 @@ msgstr ""
 msgid "Return an :math:`(n_{\\mathrm{rows}} × n_{\\mathrm{cols}})` zero matrix."
 msgstr ""
 
-#: ../source/api/algolib.maths.algebra.rst:16
+#: ../source/api/algolib.maths.algebra.rst:24
 msgid "algolib.maths.algebra.polynomial module"
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial:1
 msgid "Lightweight univariate polynomial with real coefficients."
-msgstr ""
-
-#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial:4
-#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial.Polynomial:11
-#: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial.Polynomial.derivative:4
-msgid "Notes"
 msgstr ""
 
 #: ../../src/algolib/maths/algebra/polynomial.py:docstring of algolib.maths.algebra.polynomial:5
@@ -230,6 +381,6 @@ msgstr ""
 msgid "The zero polynomial."
 msgstr ""
 
-#: ../source/api/algolib.maths.algebra.rst:24
+#: ../source/api/algolib.maths.algebra.rst:32
 msgid "Module contents"
 msgstr ""

@@ -4,6 +4,14 @@ algolib.maths.algebra package
 Submodules
 ----------
 
+algolib.maths.algebra.lu module
+-------------------------------
+
+.. automodule:: algolib.maths.algebra.lu
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.maths.algebra.matrix\_dense module
 ------------------------------------------
 
