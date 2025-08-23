@@ -19,3 +19,14 @@ print("cos(pi/2) ~", cos(3.1415926 / 2))
 # 3) 其它库照常用
 print("is_prime(29) =", is_prime(29))
 print("is_prime(97) =", is_prime(97))
+
+
+from algolib.algorithms.sort_demo import bubble_sort
+import random
+# 4) Bubble sort demo
+arr = []
+
+for i in range(100):
+    arr.append(random.randint(1, 10000))
+print("Original array:", arr)
+print("Bubble sorted:", bubble_sort(arr))

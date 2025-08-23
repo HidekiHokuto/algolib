@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-21 04:21+0900\n"
+"POT-Creation-Date: 2025-08-23 09:55+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Subpackages"
 msgstr ""
 
-#: ../source/api/algolib.rst:17
+#: ../source/api/algolib.rst:18
 msgid "Submodules"
 msgstr ""
 
-#: ../source/api/algolib.rst:20
+#: ../source/api/algolib.rst:21
 msgid "algolib.exceptions module"
 msgstr ""
 
@@ -145,6 +145,6 @@ msgstr ""
 msgid "An expected property did not hold within tolerance."
 msgstr ""
 
-#: ../source/api/algolib.rst:28
+#: ../source/api/algolib.rst:29
 msgid "Module contents"
 msgstr ""

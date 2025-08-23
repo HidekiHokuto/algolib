@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, Hideki Hokuto
+# This file is distributed under the same license as the Algolib package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Algolib \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-23 09:55+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/api/algolib.algorithms.rst:2
+msgid "algolib.algorithms package"
+msgstr ""
+
+#: ../source/api/algolib.algorithms.rst:5
+msgid "Submodules"
+msgstr ""
+
+#: ../source/api/algolib.algorithms.rst:8
+msgid "algolib.algorithms.sort\\_demo module"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo:1
+msgid "Teaching implementations of basic sorting algorithms."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo:3
+msgid "This module contains simple, dependency-free reference implementations of classical sorting algorithms. They are intended for educational use and small inputs, not for performance."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:1
+msgid "Sort a list using the bubble sort algorithm."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:3
+msgid "Input sequence of numbers."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:6
+msgid "A new list containing the sorted values in ascending order."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:10
+msgid "Notes"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:11
+msgid "Time complexity: O(n^2)"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:12
+msgid "Space complexity: O(1) extra (besides the output copy)"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:13
+msgid "Stable: yes"
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:15
+msgid "This implementation makes a copy of the input and sorts in place."
+msgstr ""
+
+#: ../source/api/algolib.algorithms.rst:16
+msgid "Module contents"
+msgstr ""

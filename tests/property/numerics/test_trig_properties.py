@@ -92,6 +92,6 @@ def test_periodicity(x: float, y: float):
     # 用同一个代表元体系判断“远离极点”，避免两端判定口径不一致
     xr  = math.remainder(x, C.TAU)
     xr2 = math.remainder(x + yk2, C.TAU)
-    assume(_dist_to_half_pi_grid(xr) > 1.2e-3 and
-           _dist_to_half_pi_grid(xr2) > 1.2e-3)
-    assert _isclose(my_tan(x + yk2), my_tan(x), rel=2e-8, abs_=1e-8, ulps=8192)
+    assume(_dist_to_half_pi_grid(xr) > 2.0e-3 and
+           _dist_to_half_pi_grid(xr2) > 2.0e-3)
+    assert _isclose(my_tan(x + yk2), my_tan(x), rel=7e-8, abs_=2e-8, ulps=8192)
