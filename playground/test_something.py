@@ -3,6 +3,7 @@ from algolib.numerics.trig import sin, cos, tan
 from algolib.maths.number_theory.prime import is_prime
 
 print("I'm Yuanxun")
+print("I'm Joshua")
 
 # 1) 切换到 system backend（就是用 math 库）
 set_backend("system")
