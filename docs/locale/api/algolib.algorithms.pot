@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-23 09:55+0900\n"
+"POT-Creation-Date: 2025-08-23 10:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,35 +41,41 @@ msgid "Sort a list using the bubble sort algorithm."
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
 msgid "Parameters"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:3
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:3
 msgid "Input sequence of numbers."
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
 msgid "Returns"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:6
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:6
 msgid "A new list containing the sorted values in ascending order."
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
 msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:10
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:10
 msgid "Notes"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:11
-msgid "Time complexity: O(n^2)"
+msgid "Time complexity: :math:`\\mathcal{O}(n^2)`"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:12
-msgid "Space complexity: O(1) extra (besides the output copy)"
+msgid "Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:13
@@ -77,7 +83,24 @@ msgid "Stable: yes"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:15
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:15
 msgid "This implementation makes a copy of the input and sorts in place."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:1
+msgid "Sort a list using the insertion sort algorithm."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:11
+msgid "Time complexity: :math:`\\mathcal{O}(n^2)` in the worst case."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:12
+msgid "Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)."
+msgstr ""
+
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:13
+msgid "Stable: yes."
 msgstr ""
 
 #: ../source/api/algolib.algorithms.rst:16

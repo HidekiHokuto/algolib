@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-23 09:55+0900\n"
+"POT-Creation-Date: 2025-08-23 10:54+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,19 +21,19 @@ msgstr ""
 
 #: ../source/api/algolib.algorithms.rst:2
 msgid "algolib.algorithms package"
-msgstr ""
+msgstr "algolib.algorithms 包"
 
 #: ../source/api/algolib.algorithms.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.algorithms.rst:8
 msgid "algolib.algorithms.sort\\_demo module"
-msgstr ""
+msgstr "algolib.algorithms.sort\\_demo 模块"
 
 #: algolib.algorithms.sort_demo:1 of
 msgid "Teaching implementations of basic sorting algorithms."
-msgstr ""
+msgstr "基础排序算法的教学实现。"
 
 #: algolib.algorithms.sort_demo:3 of
 msgid ""
@@ -41,51 +41,78 @@ msgid ""
 "classical sorting algorithms. They are intended for educational use and "
 "small inputs, not for performance."
 msgstr ""
+"本模块提供经典排序算法的简单、零依赖的参考实现。这些实现面向教学用途和小规模"
+"输入，并非以性能为目标。"
 
 #: algolib.algorithms.sort_demo.bubble_sort:1 of
 msgid "Sort a list using the bubble sort algorithm."
-msgstr ""
+msgstr "使用冒泡排序算法对列表进行排序。"
 
-#: algolib.algorithms.sort_demo.bubble_sort of
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
-#: algolib.algorithms.sort_demo.bubble_sort:3 of
+#: algolib.algorithms.sort_demo.bubble_sort:3
+#: algolib.algorithms.sort_demo.insertion_sort:3 of
 msgid "Input sequence of numbers."
-msgstr ""
+msgstr "输入的数值序列。"
 
-#: algolib.algorithms.sort_demo.bubble_sort of
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
 msgid "Returns"
-msgstr ""
+msgstr "返回"
 
-#: algolib.algorithms.sort_demo.bubble_sort:6 of
+#: algolib.algorithms.sort_demo.bubble_sort:6
+#: algolib.algorithms.sort_demo.insertion_sort:6 of
 msgid "A new list containing the sorted values in ascending order."
-msgstr ""
+msgstr "包含升序结果的新列表。"
 
-#: algolib.algorithms.sort_demo.bubble_sort of
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
 msgid "Return type"
-msgstr ""
+msgstr "返回类型"
 
-#: algolib.algorithms.sort_demo.bubble_sort:10 of
+#: algolib.algorithms.sort_demo.bubble_sort:10
+#: algolib.algorithms.sort_demo.insertion_sort:10 of
 msgid "Notes"
-msgstr ""
+msgstr "说明"
 
 #: algolib.algorithms.sort_demo.bubble_sort:11 of
-msgid "Time complexity: O(n^2)"
-msgstr ""
+msgid "Time complexity: :math:`\\mathcal{O}(n^2)`"
+msgstr "时间复杂度：:math:`\\mathcal{O}(n^2)`"
 
 #: algolib.algorithms.sort_demo.bubble_sort:12 of
-msgid "Space complexity: O(1) extra (besides the output copy)"
-msgstr ""
+msgid ""
+"Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)"
+msgstr "空间复杂度：:math:`\\mathcal{O}(1)` 额外开销（不计输出副本）"
 
 #: algolib.algorithms.sort_demo.bubble_sort:13 of
 msgid "Stable: yes"
-msgstr ""
+msgstr "稳定性：稳定（是）"
 
-#: algolib.algorithms.sort_demo.bubble_sort:15 of
+#: algolib.algorithms.sort_demo.bubble_sort:15
+#: algolib.algorithms.sort_demo.insertion_sort:15 of
 msgid "This implementation makes a copy of the input and sorts in place."
-msgstr ""
+msgstr "该实现会复制输入并在副本上就地排序。"
+
+#: algolib.algorithms.sort_demo.insertion_sort:1 of
+msgid "Sort a list using the insertion sort algorithm."
+msgstr "使用插入排序算法对列表进行排序。"
+
+#: algolib.algorithms.sort_demo.insertion_sort:11 of
+msgid "Time complexity: :math:`\\mathcal{O}(n^2)` in the worst case."
+msgstr "时间复杂度：最坏情况 :math:`\\mathcal{O}(n^2)`"
+
+#: algolib.algorithms.sort_demo.insertion_sort:12 of
+msgid ""
+"Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)."
+msgstr "空间复杂度：:math:`\\mathcal{O}(1)` 额外开销（不计输出副本）。"
+
+#: algolib.algorithms.sort_demo.insertion_sort:13 of
+msgid "Stable: yes."
+msgstr "稳定性：稳定。"
 
 #: ../source/api/algolib.algorithms.rst:16
 msgid "Module contents"
-msgstr ""
+msgstr "模块内容"
