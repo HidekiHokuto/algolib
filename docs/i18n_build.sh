@@ -16,18 +16,15 @@ sphinx-apidoc -f -o "$API_DIR" ../src/algolib
 # --- Strip any automodule directives and Module contents section from package page ---
 PKG_RST="$API_DIR/algolib.physics.rst"
 if [ -f "$PKG_RST" ]; then
-  # Remove automodule directives and their option lines
-  sed -i '' '/^\.\. automodule:: algolib\.physics/,/^$/d' "$PKG_RST"
-  # Remove the entire Module contents section (header underline and body)
-  sed -i '' '/^Module contents$/{
-    N
-    /^[^\n]\+\n[-=~^"`:+*#]\+$/{
-      :a
-      N
-      /\n[^=~-].*/!ba
-      d
-    }
-  }' "$PKG_RST"
+  if [[ "$(uname)" == "Darwin" ]]; then
+    # macOS (BSD sed)
+    sed -i '' '/^\.\. automodule:: algolib\.physics/,/^$/d' "$PKG_RST"
+    sed -i '' '/^Module contents$/,/^[^ ].*/d' "$PKG_RST"
+  else
+    # Linux (GNU sed, for CI)
+    sed -i '/^\.\. automodule:: algolib\.physics/,/^$/d' "$PKG_RST"
+    sed -i '/^Module contents$/,/^[^ ].*/d' "$PKG_RST"
+  fi
 fi
 
 
