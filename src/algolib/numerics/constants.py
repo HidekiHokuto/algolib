@@ -4,8 +4,8 @@ Centralized numerical constants for algolib.
 
 - No imports from `math` or third-party libs: *pure Python floats only*.
 - Values are given either as exact decimal, or with comments showing hex-float
-  for traceability.
-- Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos.
+    for traceability.
+- Includes Cody-Waite style splits for stable range-reduction in exp/sin/cos.
 """
 
 from algolib.exceptions import NumericOverflowError

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 05:45+0900\n"
+"POT-Creation-Date: 2025-08-25 21:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,7 +105,7 @@ msgid "Return the point :math:`P_0 + t\\,d`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:1
-msgid "Hyperplane :math:`\\\\{X:\\\\; n\\\\cdot(X-P_0)=0\\\\}` in :math:`\\\\mathbb{R}^N`."
+msgid "Hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}` in :math:`\\mathbb{R}^N`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane:3
@@ -117,11 +117,11 @@ msgid "Normal vector :math:`n` (must be non-zero)."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane.contains:1
-msgid "Return True if ``|n·(p-P0)| <= tol * ||n||``."
+msgid "Return ``True`` if ``|n·(p-P0)| <= tol * ||n||``."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Plane.signed_distance:1
-msgid "Return signed distance :math:`\\\\frac{n\\\\cdot (p-P_0)}{\\\\lVert n\\\\rVert}`."
+msgid "Return signed distance :math:`\\frac{n\\cdot (p-P_0)}{\\lVert n\\rVert}`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:1
@@ -139,7 +139,7 @@ msgid "Notes"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point:8
-msgid "A point has location but no direction or magnitude: :math:`P=(x_1,x_2,\\\\dots,x_N)`."
+msgid "A point has location but no direction or magnitude: :math:`P=(x_1,x_2,\\cdots,x_N)`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Point.dimension:1
@@ -171,7 +171,7 @@ msgid "Formula"
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.dot:5
-msgid ":math:`v\\\\cdot w = \\\\sum_i v_i w_i`."
+msgid ":math:`\\mathbf{v} \\cdot \\mathbf{w} = \\sum_i v_i w_i`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:1
@@ -179,11 +179,19 @@ msgid "Return the Euclidean norm :math:`\\lVert v \\rVert = \\sqrt{\\sum_i v_i^2
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:5
-msgid "Non-finite inputs are handled explicitly: if any component is NaN, the result is NaN; if any component has infinite magnitude, the result is ``inf``."
+msgid "Non-finite inputs are handled explicitly:"
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:6
+msgid "if any component is NaN, the result is NaN; if any component has infinite magnitude, the result is ``inf``."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:8
-msgid "Uses a scaling strategy for numerical stability to avoid overflow and underflow with mixed-magnitude components."
+msgid "Uses a scaling strategy for numerical stability to avoid overflow"
+msgstr ""
+
+#: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Vector.norm:9
+msgid "and underflow with mixed-magnitude components."
 msgstr ""
 
 #: ../source/api/algolib.maths.geometry.rst:16

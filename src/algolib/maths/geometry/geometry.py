@@ -54,7 +54,7 @@ class Point:
     Notes
     -----
     A point has location but no direction or magnitude:
-    :math:`P=(x_1,x_2,\\dots,x_N)`.
+    :math:`P=(x_1,x_2,\cdots,x_N)`.
     """
 
     def __init__(self, coords: Sequence[Number]):
@@ -105,10 +105,10 @@ class Vector:
         Notes
         -----
         - Non-finite inputs are handled explicitly:
-          if any component is NaN, the result is NaN;
-          if any component has infinite magnitude, the result is ``inf``.
+            if any component is NaN, the result is NaN;
+            if any component has infinite magnitude, the result is ``inf``.
         - Uses a scaling strategy for numerical stability to avoid overflow
-          and underflow with mixed-magnitude components.
+            and underflow with mixed-magnitude components.
         """
         # Fast paths for non-finite inputs without importing math
         any_inf = False
@@ -155,7 +155,7 @@ class Vector:
 
         Formula
         -------
-        :math:`v\\cdot w = \\sum_i v_i w_i`.
+        :math:`\mathbf{v} \cdot \mathbf{w} = \sum_i v_i w_i`.
         """
         if not isinstance(other, Vector):
             raise InvalidTypeError("other must be Vector.")
@@ -286,7 +286,7 @@ class Line:
 
 class Plane:
     r"""
-    Hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}` in :math:`\\mathbb{R}^N`.
+    Hyperplane :math:`\{X:\; n\cdot(X-P_0)=0\}` in :math:`\mathbb{R}^N`.
 
     Parameters
     ----------
@@ -310,7 +310,7 @@ class Plane:
 
     def signed_distance(self, p: Point) -> float:
         r"""
-        Return signed distance :math:`\\frac{n\\cdot (p-P_0)}{\\lVert n\\rVert}`.
+        Return signed distance :math:`\frac{n\cdot (p-P_0)}{\lVert n\rVert}`.
         """
         _same_dim(self.point.dimension(), p.dimension())
         n2 = self.normal.dot(self.normal)
@@ -320,7 +320,7 @@ class Plane:
         return self.normal.dot(diff) / math.sqrt(n2)
 
     def contains(self, p: Point, tol: float = 1e-12) -> bool:
-        """Return True if ``|n·(p-P0)| <= tol * ||n||``."""
+        """Return ``True`` if ``|n·(p-P0)| <= tol * ||n||``."""
         return abs(self.signed_distance(p)) <= tol
 
 

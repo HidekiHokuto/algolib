@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 15:00+0900\n"
+"POT-Creation-Date: 2025-08-25 22:09+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,15 @@ msgid "No imports from `math` or third-party libs: *pure Python floats only*."
 msgstr ""
 
 #: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:4
-msgid "Values are given either as exact decimal, or with comments showing hex-float for traceability."
+msgid "Values are given either as exact decimal, or with comments showing hex-float"
+msgstr ""
+
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:5
+msgid "for traceability."
 msgstr ""
 
 #: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:6
-msgid "Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos."
+msgid "Includes Cody-Waite style splits for stable range-reduction in exp/sin/cos."
 msgstr ""
 
 #: ../../src/algolib/exceptions.py:docstring of algolib.exceptions.NumericOverflowError:1
@@ -157,7 +161,7 @@ msgid "No stdlib math usage in implementation"
 msgstr ""
 
 #: ../../src/algolib/numerics/trig_pure.py:docstring of algolib.numerics.trig_pure:4
-msgid "Cody–Waite style range reduction by π/2"
+msgid "Cody-Waite style range reduction by π/2"
 msgstr ""
 
 #: ../../src/algolib/numerics/trig_pure.py:docstring of algolib.numerics.trig_pure:5

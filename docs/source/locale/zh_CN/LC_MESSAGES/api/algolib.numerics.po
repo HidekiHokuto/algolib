@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 15:00+0900\n"
+"POT-Creation-Date: 2025-08-25 22:09+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -41,13 +41,16 @@ msgstr ""
 
 #: algolib.numerics.constants:4 of
 msgid ""
-"Values are given either as exact decimal, or with comments showing hex-float "
-"for traceability."
+"Values are given either as exact decimal, or with comments showing hex-float"
+msgstr ""
+
+#: algolib.numerics.constants:5 of
+msgid "for traceability."
 msgstr ""
 
 #: algolib.numerics.constants:6 of
 msgid ""
-"Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos."
+"Includes Cody-Waite style splits for stable range-reduction in exp/sin/cos."
 msgstr ""
 
 #: algolib.exceptions.NumericOverflowError:1 of
@@ -172,7 +175,7 @@ msgid "No stdlib math usage in implementation"
 msgstr ""
 
 #: algolib.numerics.trig_pure:4 of
-msgid "Cody–Waite style range reduction by π/2"
+msgid "Cody-Waite style range reduction by π/2"
 msgstr ""
 
 #: algolib.numerics.trig_pure:5 of

@@ -3,7 +3,7 @@ r"""
 Numerical trig functions: sin / cos / tan
 
 - No stdlib math usage in implementation
-- Cody–Waite style range reduction by π/2
+- Cody-Waite style range reduction by π/2
 - Polynomial approximation on [-π/4, π/4]
 """
 

@@ -3,7 +3,7 @@ import math
 from typing import Callable
 
 def derivative_cstep(f: Callable[[complex], complex], x: float, h: float = 1e-20) -> float:
-    """
+    r"""
     Complex-step derivative approximation:
 
         f'(x) ≈ Im(f(x + i*h)) / h

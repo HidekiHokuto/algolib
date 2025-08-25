@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 05:45+0900\n"
+"POT-Creation-Date: 2025-08-25 21:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -123,11 +123,10 @@ msgid "Return the point :math:`P_0 + t\\,d`."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Plane:1 of
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
-"Hyperplane :math:`\\\\{X:\\\\; n\\\\cdot(X-P_0)=0\\\\}` in :math:`\\"
-"\\mathbb{R}^N`."
-msgstr ""
+"Hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}` in :math:`\\mathbb{R}^N`."
+msgstr "**Plane（平面）**：超平面 :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}`。"
 
 #: algolib.maths.geometry.geometry.Plane:3 of
 #, fuzzy
@@ -139,14 +138,13 @@ msgid "Normal vector :math:`n` (must be non-zero)."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Plane.contains:1 of
-msgid "Return True if ``|n·(p-P0)| <= tol * ||n||``."
+msgid "Return ``True`` if ``|n·(p-P0)| <= tol * ||n||``."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Plane.signed_distance:1 of
 #, python-brace-format
 msgid ""
-"Return signed distance :math:`\\\\frac{n\\\\cdot (p-P_0)}{\\\\lVert n\\"
-"\\rVert}`."
+"Return signed distance :math:`\\frac{n\\cdot (p-P_0)}{\\lVert n\\rVert}`."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Point:1 of
@@ -167,8 +165,8 @@ msgstr ""
 
 #: algolib.maths.geometry.geometry.Point:8 of
 msgid ""
-"A point has location but no direction or magnitude: :math:`P=(x_1,x_2,\\"
-"\\dots,x_N)`."
+"A point has location but no direction or "
+"magnitude: :math:`P=(x_1,x_2,\\cdots,x_N)`."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Point.dimension:1 of
@@ -182,6 +180,7 @@ msgid "Vector in :math:`N`-dimensional Euclidean space."
 msgstr "表示 :math:`N` 维欧几里得空间中的一个向量。"
 
 #: algolib.maths.geometry.geometry.Vector:3 of
+#, fuzzy
 msgid "Components of the vector."
 msgstr "向量的分量。"
 
@@ -204,8 +203,8 @@ msgid "Formula"
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Vector.dot:5 of
-#, fuzzy
-msgid ":math:`v\\\\cdot w = \\\\sum_i v_i w_i`."
+#, fuzzy, python-brace-format
+msgid ":math:`\\mathbf{v} \\cdot \\mathbf{w} = \\sum_i v_i w_i`."
 msgstr ":math:`v \\cdot w = \\sum(v_i \\cdot w_i)`"
 
 #: algolib.maths.geometry.geometry.Vector.norm:1 of
@@ -215,16 +214,21 @@ msgid ""
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Vector.norm:5 of
+msgid "Non-finite inputs are handled explicitly:"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:6 of
 msgid ""
-"Non-finite inputs are handled explicitly: if any component is NaN, the "
-"result is NaN; if any component has infinite magnitude, the result is "
-"``inf``."
+"if any component is NaN, the result is NaN; if any component has infinite "
+"magnitude, the result is ``inf``."
 msgstr ""
 
 #: algolib.maths.geometry.geometry.Vector.norm:8 of
-msgid ""
-"Uses a scaling strategy for numerical stability to avoid overflow and "
-"underflow with mixed-magnitude components."
+msgid "Uses a scaling strategy for numerical stability to avoid overflow"
+msgstr ""
+
+#: algolib.maths.geometry.geometry.Vector.norm:9 of
+msgid "and underflow with mixed-magnitude components."
 msgstr ""
 
 #: ../source/api/algolib.maths.geometry.rst:16
