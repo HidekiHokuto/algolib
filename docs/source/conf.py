@@ -25,6 +25,7 @@ gettext_compact = False
 # 使用主题默认侧边栏，不再指定自定义模板
 # html_sidebars = {...}  # ← 删除这一段配置（如果你有的话）
 
+
 # 注入我们的 JS 与 CSS
 def setup(app):
     app.add_js_file("langswitch.js")

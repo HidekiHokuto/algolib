@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-21 04:21+0900\n"
+"POT-Creation-Date: 2025-08-25 19:08+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,82 +28,6 @@ msgstr ""
 msgid "algolib.physics.constants module"
 msgstr ""
 
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:1
-msgid "CODATA-based physical constants in SI units."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:4
-msgid "Notes"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:5
-msgid "All values are provided in SI base units."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:6
-msgid "`rel_unc` is the relative standard uncertainty. A value of `0.0` indicates an"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:7
-msgid "exact value as defined by the 2019 SI redefinition (e.g., `c`, `h`, `e`, `k_B`, `N_A`)."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants:9
-msgid "Source label reflects the CODATA release used to curate the numbers."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:1
-msgid "Bases: :py:class:`object`"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:1
-msgid "Container for a physical constant in SI units."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:2
-msgid "Parameters"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:6
-msgid "unit"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:-1
-msgid "str"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:7
-msgid "Unit string, e.g. \"m s^-1\", \"J s\", \"C\"."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:8
-msgid "rel_unc"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:-1
-msgid "float | None"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:9
-msgid "Relative standard uncertainty (e.g. ``1.5e-10``); use ``0.0`` for exact constants per the 2019 SI definitions."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:11
-msgid "source"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:12
-msgid "Provenance label, e.g. \"CODATA 2022\"."
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:13
-msgid "symbol"
-msgstr ""
-
-#: ../../src/algolib/physics/constants.py:docstring of algolib.physics.constants.PhysConst:14
-msgid "Conventional symbol such as ``c``, ``h``, ``k_B``."
-msgstr ""
-
-#: ../source/api/algolib.physics.rst:16
+#: ../source/api/algolib.physics.rst:11
 msgid "Module contents"
 msgstr ""

@@ -17,8 +17,10 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True, slots=True)
 class PhysConst:
-    """Container for a physical constant in SI units.
-        Parameters
+    r"""
+    Container for a physical constant in SI units.
+        
+    Attributes
     ----------
     value : float
         Numerical value in SI base units.

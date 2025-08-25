@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 05:45+0900\n"
+"POT-Creation-Date: 2025-08-25 15:00+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -50,37 +50,12 @@ msgid ""
 "Includes Cody–Waite style splits for stable range-reduction in exp/sin/cos."
 msgstr ""
 
-#: algolib.numerics.constants.copysign1:1 of
-#, python-brace-format
-msgid ""
-"Return :math:\\\\abs{x} with the sign of y. No math module, handles ±0.0 and "
-"NaN."
+#: algolib.exceptions.NumericOverflowError:1 of
+msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`OverflowError`"
 msgstr ""
 
-#: algolib.numerics.constants.pow2_int:1 of
-msgid ""
-"Compute 2**k using only multiplies (supports negative k) with IEEE754-style "
-"bounds."
-msgstr ""
-
-#: algolib.numerics.constants.pow2_int:3 of
-msgid "Behavior:"
-msgstr ""
-
-#: algolib.numerics.constants.pow2_int:4 of
-msgid "k >  1023 -> raise NumericOverflowError (subclass of OverflowError)"
-msgstr ""
-
-#: algolib.numerics.constants.pow2_int:5 of
-msgid "k < -1074 -> 0.0 (underflow to zero)"
-msgstr ""
-
-#: algolib.numerics.constants.pow2_int:6 of
-msgid "-1074 <= k <= -1023 -> exact subnormal via halving from DBL_MIN"
-msgstr ""
-
-#: algolib.numerics.constants.pow2_int:7 of
-msgid "otherwise -> exponentiation-by-squaring (<= 1023 以及 >= -1022)"
+#: algolib.exceptions.NumericOverflowError:1 of
+msgid "Numeric overflow exposed as algolib-specific error."
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:16
@@ -113,6 +88,22 @@ msgid ""
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
+msgid "algolib.numerics.stable module"
+msgstr ""
+
+#: algolib.numerics.stable.hypot:1 of
+#, python-brace-format
+msgid "Stable :math:`\\sqrt{x^2 + y^2}` with overflow/underflow protections."
+msgstr ""
+
+#: algolib.numerics.stable.hypot_n:1 of
+#, python-brace-format
+msgid ""
+"Stable Euclidean norm for :math:`N` components: :math:`\\sqrt{\\sum_i "
+"xs[i]^2}`."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:32
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -168,7 +159,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:32
+#: ../source/api/algolib.numerics.rst:40
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -196,6 +187,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:40
+#: ../source/api/algolib.numerics.rst:48
 msgid "Module contents"
 msgstr ""

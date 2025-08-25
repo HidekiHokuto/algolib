@@ -10,25 +10,96 @@ API_DIR="source/api"
 echo "[0/7] Generate API docs..."
 rm -rf "$API_DIR"               # 关键：清掉旧的 .rst（避免残留 algolib.maths.complex）
 mkdir -p "$API_DIR"
+
 sphinx-apidoc -f -o "$API_DIR" ../src/algolib
 
-# 可选：自动生成 API 文档（注释掉就不生成）
-if command -v sphinx-apidoc >/dev/null 2>&1; then
-  echo "[0/7] Generate API docs..."
-  sphinx-apidoc -f -o source/api ../src/algolib
+# --- Strip any automodule directives and Module contents section from package page ---
+PKG_RST="$API_DIR/algolib.physics.rst"
+if [ -f "$PKG_RST" ]; then
+  # Remove automodule directives and their option lines
+  sed -i '' '/^\.\. automodule:: algolib\.physics/,/^$/d' "$PKG_RST"
+  # Remove the entire Module contents section (header underline and body)
+  sed -i '' '/^Module contents$/{
+    N
+    /^[^\n]\+\n[-=~^"`:+*#]\+$/{
+      :a
+      N
+      /\n[^=~-].*/!ba
+      d
+    }
+  }' "$PKG_RST"
 fi
 
+
+# --- Remove ALL automodule blocks for algolib.physics from the package page ---
+PKG_RST="$API_DIR/algolib.physics.rst"
+if [ -f "$PKG_RST" ]; then
+  echo "[0/7] Strip automodule blocks from $PKG_RST"
+  python3 - <<'PY'
+from pathlib import Path
+p = Path("docs/source/api/algolib.physics.rst")
+if not p.exists():
+    p = Path("source/api/algolib.physics.rst")
+if not p.exists():
+    raise SystemExit(0)
+
+lines = p.read_text(encoding="utf-8").splitlines()
+out = []
+i = 0
+removed = 0
+
+def is_block_start(s: str) -> bool:
+    return s.strip() == ".. automodule:: algolib.physics"
+
+n = len(lines)
+while i < n:
+    if is_block_start(lines[i]):
+
+        i += 1
+        # skip all option lines that belong to this directive
+        while i < n and lines[i].startswith("   :"):
+            i += 1
+        removed += 1
+        continue  # do not append anything for this block
+    out.append(lines[i])
+    i += 1
+
+# Also de-duplicate accidental duplicate option lines if any remained near the block
+# (safety no-op if none)
+cleaned = []
+seen = set()
+for ln in out:
+    key = ln.strip()
+    if key.startswith(":") and key in seen:
+        continue
+    if key.startswith(":"):
+        seen.add(key)
+    cleaned.append(ln)
+
+if removed:
+    p.write_text("\n".join(cleaned) + ("\n" if cleaned and cleaned[-1] != "" else ""), encoding="utf-8")
+    print(f"Removed {removed} automodule block(s).")
+else:
+    print("No automodule blocks found.")
+PY
+else
+  echo "[0/7] WARN: $PKG_RST not found; skip strip."
+fi
+
+# Preview the remaining top of package page for sanity
+head -n 60 "$PKG_RST" | sed -n '1,120p' || true
+
 echo "[1/7] Extract gettext templates..."
-sphinx-build -b gettext source locale
+sphinx-build -E -b gettext source locale
 
 echo "[2/7] Update/create PO files for zh_CN..."
 sphinx-intl update -p locale -l zh_CN
 
 echo "[3/7] Build EN site..."
-sphinx-build -b html -D language=en    source build/html/en
+sphinx-build -E -b html -D language=en    source build/html/en
 
 echo "[4/7] Build ZH site..."
-sphinx-build -b html -D language=zh_CN source build/html/zh
+sphinx-build -E -b html -D language=zh_CN source build/html/zh
 
 echo "[5/7] Create root index.html..."
 mkdir -p build/html
