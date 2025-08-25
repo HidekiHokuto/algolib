@@ -210,7 +210,7 @@ class Complex:
         x, y = abs(self.re), abs(self.im)
         if x < y:
             x, y = y, x
-        if x == 0.0:  # 避免 0/0
+        if x == 0.0:  # avoid 0/0
             return 0.0
         r = y / x
         return x * (1.0 + r * r) ** 0.5
@@ -273,12 +273,12 @@ class Complex:
         r = hypot(self.re, self.im)
         if r == 0.0:
             raise InvalidValueError("cannot normalize 0+0i.")
-        # 先标准化
+        # normalize first
         x, y = self.re / r, self.im / r
-        # 计算（标准化后）的模长平方，理论应为 1，但会有舍入
+        # compute modulus squared after normalization; should be 1 in theory but rounding occurs
         m2 = x * x + y * y
-        # 用一次性的缩放把模长“微校准”到 1
-        # 注意：sqrt 和乘法的舍入会再带来极小误差，但会压到 ~1e-15 量级
+        # apply one-time scaling to adjust modulus back to 1
+        # note: sqrt and multiplication introduce tiny rounding errors, but within ~1e-15
         if m2 != 1.0 and m2 > 0.0 and math.isfinite(m2):
             adj = 1.0 / math.sqrt(m2)
             x, y = x * adj, y * adj
@@ -352,26 +352,26 @@ class Complex:
         if c == 0.0 and d == 0.0:
             raise InvalidValueError("division by zero complex.")
 
-        # ---- 统一缩放，避免中间量溢出/下溢 ----
+        # ---- unified scaling to avoid overflow/underflow ----
         scale = max(abs(a), abs(b), abs(c), abs(d))
         if scale > 0.0:
-            a /= scale;
-            b /= scale;
-            c /= scale;
+            a /= scale
+            b /= scale
+            c /= scale
             d /= scale
-        # 若 scale==0，这里意味着 self==0 且 other!=0，直接走下面公式也安全
+        # if scale==0, this means self==0 and other!=0, applying formulas directly is safe
 
         ac = abs(c)
         ad = abs(d)
         if ac >= ad:
             # |c| >= |d|
             t = d / c  # |t| <= 1
-            denom = c + d * t  # 数值上 ~ (c^2 + d^2)/c
+            denom = c + d * t  # numerically ~ (c^2 + d^2)/c
             re = (a + b * t) / denom
             im = (b - a * t) / denom
         else:
             t = c / d  # |t| <= 1
-            denom = d + c * t  # 数值上 ~ (c^2 + d^2)/d
+            denom = d + c * t  # numerically ~ (c^2 + d^2)/d
             re = (a * t + b) / denom
             im = (b * t - a) / denom
 
