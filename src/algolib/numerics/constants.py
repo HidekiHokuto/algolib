@@ -139,3 +139,11 @@ def copysign1(x: float, y: float) -> float:
 
     # 其余情况：比较即可
     return ax if y > 0.0 else -ax
+
+__all__ = [
+    "NumericOverflowError",
+    "DBL_MANT_DIG", "DBL_EPS", "DBL_MIN_EXP", "DBL_MAX_EXP",
+    "DBL_MIN", "DBL_DENORM_MIN", "DBL_MAX",
+    "PI", "PI_2", "PI_4", "TAU", "INV_PI", "INV_PI_2", "E", "LN2",
+    "PI_HI", "PI_LO",
+]

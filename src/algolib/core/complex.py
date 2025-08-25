@@ -30,6 +30,7 @@ from dataclasses import dataclass
 from typing import Iterable, Tuple
 
 from algolib.exceptions import InvalidTypeError, InvalidValueError
+from algolib.numerics import hypot
 
 
 Number = float  # for readability
@@ -268,7 +269,8 @@ class Complex:
         >>> z.normalized()
         Complex(re=0.6, im=0.8)
         """
-        r = math.hypot(self.re, self.im)
+        # r = math.hypot(self.re, self.im)
+        r = hypot(self.re, self.im)
         if r == 0.0:
             raise InvalidValueError("cannot normalize 0+0i.")
         # 先标准化
