@@ -14,3 +14,4 @@ coverage_html/
 docs/coverage/
 .hypothesis/
 .DS_Store
+.vscode
