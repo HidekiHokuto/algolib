@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 19:08+0900\n"
+"POT-Creation-Date: 2025-08-25 19:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -30,10 +30,6 @@ msgstr "子模块"
 #: ../source/api/algolib.physics.rst:8
 msgid "algolib.physics.constants module"
 msgstr "algolib.physics.constants 模块"
-
-#: ../source/api/algolib.physics.rst:11
-msgid "Module contents"
-msgstr "模块内容"
 
 #~ msgid "Parameters"
 #~ msgstr "参数"
@@ -105,3 +101,6 @@ msgstr "模块内容"
 
 #~ msgid "Conventional symbol such as ``c``, ``h``, ``k_B``."
 #~ msgstr "常用符号，如 c、h、k_B。"
+
+#~ msgid "Module contents"
+#~ msgstr "模块内容"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 19:08+0900\n"
+"POT-Creation-Date: 2025-08-25 19:39+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,4 @@ msgstr ""
 
 #: ../source/api/algolib.physics.rst:8
 msgid "algolib.physics.constants module"
-msgstr ""
-
-#: ../source/api/algolib.physics.rst:11
-msgid "Module contents"
 msgstr ""

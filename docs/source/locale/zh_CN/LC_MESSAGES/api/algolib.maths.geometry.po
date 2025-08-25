@@ -32,34 +32,34 @@ msgstr "algolib.maths.geometry.geometry 模块"
 
 #: algolib.maths.geometry.geometry:1 of
 msgid "A professional-grade :math:`N`-dimensional geometry module."
-msgstr ""
+msgstr "一个专业级的 :math:`N` 维几何模块。"
 
 #: algolib.maths.geometry.geometry:3 of
 msgid "It implements:"
-msgstr ""
+msgstr "该模块实现了："
 
 #: algolib.maths.geometry.geometry:5 of
 #, python-brace-format
 msgid "**Point**: a location in :math:`\\mathbb{R}^N`."
-msgstr ""
+msgstr "**Point（点）**：:math:`\\mathbb{R}^N` 中的位置。"
 
 #: algolib.maths.geometry.geometry:6 of
 #, python-brace-format
 msgid "**Vector**: a displacement in :math:`\\mathbb{R}^N`."
-msgstr ""
+msgstr "**Vector（向量）**：:math:`\\mathbb{R}^N` 中的位移。"
 
 #: algolib.maths.geometry.geometry:7 of
 msgid "**Line**: parametric line :math:`P(t) = P_0 + t\\,d`."
-msgstr ""
+msgstr "**Line（直线）**：参数方程 :math:`P(t) = P_0 + t\\,d`。"
 
 #: algolib.maths.geometry.geometry:8 of
 #, python-brace-format
 msgid "**Plane**: hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}`."
-msgstr ""
+msgstr "**Plane（平面）**：超平面 :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}`。"
 
 #: algolib.maths.geometry.geometry:9 of
 msgid "**GeometryUtils**: utility routines."
-msgstr ""
+msgstr "**GeometryUtils（几何工具）**：通用几何工具函数。"
 
 #: algolib.maths.geometry.geometry:11 of
 msgid ""
@@ -67,6 +67,9 @@ msgid ""
 "raise :class:`algolib.exceptions.InvalidTypeError` "
 "or :class:`algolib.exceptions.InvalidValueError` on invalid usage."
 msgstr ""
+"所有类都会验证维度和数值输入；如使用不当，将抛"
+"出 :class:`algolib.exceptions.InvalidTypeError` "
+"或 :class:`algolib.exceptions.InvalidValueError`。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1
 #: algolib.maths.geometry.geometry.Line:1
@@ -74,15 +77,15 @@ msgstr ""
 #: algolib.maths.geometry.geometry.Point:1
 #: algolib.maths.geometry.geometry.Vector:1 of
 msgid "Bases: :py:class:`object`"
-msgstr ""
+msgstr "基类：:py:class:`object`"
 
 #: algolib.maths.geometry.geometry.GeometryUtils:1 of
 msgid "Common geometry utilities."
-msgstr ""
+msgstr "常用几何工具函数。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:1 of
 msgid "Euclidean distance :math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`."
-msgstr ""
+msgstr "欧几里得距离公式：:math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`。"
 
 #: algolib.maths.geometry.geometry.Line:1 of
 #, python-brace-format

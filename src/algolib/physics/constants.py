@@ -6,8 +6,8 @@ Notes
 -----
 - All values are provided in SI base units.
 - `rel_unc` is the relative standard uncertainty. A value of `0.0` indicates an
-   exact value as defined by the 2019 SI redefinition (e.g., `c`, `h`, `e`,
-   `k_B`, `N_A`).
+    exact value as defined by the 2019 SI redefinition (e.g., `c`, `h`, `e`,
+    `k_B`, `N_A`).
 - Source label reflects the CODATA release used to curate the numbers.
 """
 
@@ -39,6 +39,7 @@ class PhysConst:
     rel_unc: float | None   # relative uncertainty (0.0 for exact constants)
     source: str             # provenance label, e.g. "CODATA 2022"
     symbol: str             # conventional symbol ("c", "h", etc.)
+
 
 
 

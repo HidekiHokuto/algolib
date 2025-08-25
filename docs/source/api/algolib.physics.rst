@@ -7,6 +7,4 @@ Submodules
 algolib.physics.constants module
 --------------------------------
 
-Module contents
----------------
 
