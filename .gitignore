@@ -15,3 +15,9 @@ docs/coverage/
 .hypothesis/
 .DS_Store
 .vscode
+# Sphinx build artifacts
+docs/build/
+docs/locale/.doctrees/
+
+# Coverage report file (我们只用来读数，不提交)
+coverage.xml
