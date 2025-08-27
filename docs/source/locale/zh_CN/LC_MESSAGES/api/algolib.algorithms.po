@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-23 10:54+0900\n"
+"POT-Creation-Date: 2025-08-28 00:37+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -28,6 +28,88 @@ msgid "Submodules"
 msgstr "子模块"
 
 #: ../source/api/algolib.algorithms.rst:8
+#, fuzzy
+msgid "algolib.algorithms.rootfinding module"
+msgstr "algolib.algorithms.sort\\_demo 模块"
+
+#: algolib.algorithms.rootfinding.newton:1 of
+msgid "General Newton-Raphson root finding."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
+msgid "Parameters"
+msgstr "参数"
+
+#: algolib.algorithms.rootfinding.newton:3 of
+msgid "Function whose root is to be found."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:5 of
+msgid ""
+"Derivative of ``f``. If ``None``, a forward finite-difference approximation "
+"is used."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:8 of
+msgid "Initial guess."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:10 of
+msgid "Relative tolerance for convergence. Defaults to ``1e-15``."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:12 of
+msgid "Maximum number of iterations. Defaults to ``100``."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:14 of
+msgid ""
+"Step size used by the finite-difference derivative when ``fprime`` is "
+"``None``. Defaults to ``1e-8``."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
+msgid "Returns"
+msgstr "返回"
+
+#: algolib.algorithms.rootfinding.newton:18 of
+msgid "Approximate root of :math:`f(x) = 0`."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton
+#: algolib.algorithms.sort_demo.bubble_sort
+#: algolib.algorithms.sort_demo.insertion_sort of
+msgid "Return type"
+msgstr "返回类型"
+
+#: algolib.algorithms.rootfinding.newton of
+msgid "Raises"
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:21 of
+msgid ""
+"If convergence is not reached within ``max_iter`` iterations     or the "
+"derivative becomes zero."
+msgstr ""
+
+#: algolib.algorithms.rootfinding.newton:24
+#: algolib.algorithms.sort_demo.bubble_sort:10
+#: algolib.algorithms.sort_demo.insertion_sort:10 of
+msgid "Notes"
+msgstr "说明"
+
+#: algolib.algorithms.rootfinding.newton:25 of
+#, python-brace-format
+msgid ""
+"The update is :math:`x_{n+1} = x_n - f(x_n) / f'(x_n)`. Convergence is "
+"tested using ``abs(dx) <= tol * max(1.0, abs(x_{n+1}))``."
+msgstr ""
+
+#: ../source/api/algolib.algorithms.rst:16
 msgid "algolib.algorithms.sort\\_demo module"
 msgstr "algolib.algorithms.sort\\_demo 模块"
 
@@ -48,41 +130,23 @@ msgstr ""
 msgid "Sort a list using the bubble sort algorithm."
 msgstr "使用冒泡排序算法对列表进行排序。"
 
-#: algolib.algorithms.sort_demo.bubble_sort
-#: algolib.algorithms.sort_demo.insertion_sort of
-msgid "Parameters"
-msgstr "参数"
-
 #: algolib.algorithms.sort_demo.bubble_sort:3
 #: algolib.algorithms.sort_demo.insertion_sort:3 of
 msgid "Input sequence of numbers."
 msgstr "输入的数值序列。"
-
-#: algolib.algorithms.sort_demo.bubble_sort
-#: algolib.algorithms.sort_demo.insertion_sort of
-msgid "Returns"
-msgstr "返回"
 
 #: algolib.algorithms.sort_demo.bubble_sort:6
 #: algolib.algorithms.sort_demo.insertion_sort:6 of
 msgid "A new list containing the sorted values in ascending order."
 msgstr "包含升序结果的新列表。"
 
-#: algolib.algorithms.sort_demo.bubble_sort
-#: algolib.algorithms.sort_demo.insertion_sort of
-msgid "Return type"
-msgstr "返回类型"
-
-#: algolib.algorithms.sort_demo.bubble_sort:10
-#: algolib.algorithms.sort_demo.insertion_sort:10 of
-msgid "Notes"
-msgstr "说明"
-
 #: algolib.algorithms.sort_demo.bubble_sort:11 of
+#, python-brace-format
 msgid "Time complexity: :math:`\\mathcal{O}(n^2)`"
 msgstr "时间复杂度：:math:`\\mathcal{O}(n^2)`"
 
 #: algolib.algorithms.sort_demo.bubble_sort:12 of
+#, python-brace-format
 msgid ""
 "Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)"
 msgstr "空间复杂度：:math:`\\mathcal{O}(1)` 额外开销（不计输出副本）"
@@ -101,10 +165,12 @@ msgid "Sort a list using the insertion sort algorithm."
 msgstr "使用插入排序算法对列表进行排序。"
 
 #: algolib.algorithms.sort_demo.insertion_sort:11 of
+#, python-brace-format
 msgid "Time complexity: :math:`\\mathcal{O}(n^2)` in the worst case."
 msgstr "时间复杂度：最坏情况 :math:`\\mathcal{O}(n^2)`"
 
 #: algolib.algorithms.sort_demo.insertion_sort:12 of
+#, python-brace-format
 msgid ""
 "Space complexity: :math:`\\mathcal{O}(1)` extra (besides the output copy)."
 msgstr "空间复杂度：:math:`\\mathcal{O}(1)` 额外开销（不计输出副本）。"
@@ -113,6 +179,6 @@ msgstr "空间复杂度：:math:`\\mathcal{O}(1)` 额外开销（不计输出副
 msgid "Stable: yes."
 msgstr "稳定性：稳定。"
 
-#: ../source/api/algolib.algorithms.rst:16
+#: ../source/api/algolib.algorithms.rst:24
 msgid "Module contents"
 msgstr "模块内容"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-23 10:54+0900\n"
+"POT-Creation-Date: 2025-08-28 00:37+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,78 @@ msgid "Submodules"
 msgstr ""
 
 #: ../source/api/algolib.algorithms.rst:8
+msgid "algolib.algorithms.rootfinding module"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:1
+msgid "General Newton-Raphson root finding."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:3
+msgid "Function whose root is to be found."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:5
+msgid "Derivative of ``f``. If ``None``, a forward finite-difference approximation is used."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:8
+msgid "Initial guess."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:10
+msgid "Relative tolerance for convergence. Defaults to ``1e-15``."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:12
+msgid "Maximum number of iterations. Defaults to ``100``."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:14
+msgid "Step size used by the finite-difference derivative when ``fprime`` is ``None``. Defaults to ``1e-8``."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:18
+msgid "Approximate root of :math:`f(x) = 0`."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:0
+msgid "Raises"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:21
+msgid "If convergence is not reached within ``max_iter`` iterations     or the derivative becomes zero."
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:24
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:10
+#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:10
+msgid "Notes"
+msgstr ""
+
+#: ../../src/algolib/algorithms/rootfinding.py:docstring of algolib.algorithms.rootfinding.newton:25
+msgid "The update is :math:`x_{n+1} = x_n - f(x_n) / f'(x_n)`. Convergence is tested using ``abs(dx) <= tol * max(1.0, abs(x_{n+1}))``."
+msgstr ""
+
+#: ../source/api/algolib.algorithms.rst:16
 msgid "algolib.algorithms.sort\\_demo module"
 msgstr ""
 
@@ -40,34 +112,14 @@ msgstr ""
 msgid "Sort a list using the bubble sort algorithm."
 msgstr ""
 
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
-msgid "Parameters"
-msgstr ""
-
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:3
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:3
 msgid "Input sequence of numbers."
 msgstr ""
 
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
-msgid "Returns"
-msgstr ""
-
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:6
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:6
 msgid "A new list containing the sorted values in ascending order."
-msgstr ""
-
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:0
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:0
-msgid "Return type"
-msgstr ""
-
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:10
-#: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.insertion_sort:10
-msgid "Notes"
 msgstr ""
 
 #: ../../src/algolib/algorithms/sort_demo.py:docstring of algolib.algorithms.sort_demo.bubble_sort:11
@@ -103,6 +155,6 @@ msgstr ""
 msgid "Stable: yes."
 msgstr ""
 
-#: ../source/api/algolib.algorithms.rst:16
+#: ../source/api/algolib.algorithms.rst:24
 msgid "Module contents"
 msgstr ""

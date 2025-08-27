@@ -20,6 +20,14 @@ algolib.numerics.diff module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.sqrt module
+----------------------------
+
+.. automodule:: algolib.numerics.sqrt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.numerics.stable module
 ------------------------------
 
