@@ -47,3 +47,8 @@ Copyright (C) 2025 Hideki Hokuto
 
 This project is licensed under the terms of the GNU General Public License v3.0 (GPLv3).
 See the [LICENSE](./LICENSE) file for details.
+
+<!-- coverage-badge:start -->
+[![coverage](https://img.shields.io/badge/coverage-81.20%25-brightgreen)](./docs/coverage/index.html)
+Coverage: 81.20%
+<!-- coverage-badge:end -->
