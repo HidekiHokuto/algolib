@@ -1,3 +1,4 @@
+'''
 from algolib.numerics import set_backend, get_backend_name
 from algolib.numerics.trig import sin, cos, tan
 from algolib.maths.number_theory.prime import is_prime
@@ -33,3 +34,4 @@ for i in range(100):
     arr.append(random.randint(1, 10000))
 print("Original array:", arr)
 print("Bubble sorted:", bubble_sort(arr))
+'''

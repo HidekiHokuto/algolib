@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 22:09+0900\n"
+"POT-Creation-Date: 2025-08-28 00:37+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -91,6 +91,26 @@ msgid ""
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
+msgid "algolib.numerics.sqrt module"
+msgstr ""
+
+#: algolib.numerics.sqrt.newton_sqrt:1 of
+msgid "Square root via Newton–Raphson iteration (overflow-safe update)."
+msgstr ""
+
+#: algolib.numerics.sqrt.newton_sqrt:4 algolib.numerics.trig.tan:4 of
+msgid "Notes"
+msgstr ""
+
+#: algolib.numerics.sqrt.newton_sqrt:5 of
+#, python-brace-format
+msgid ""
+"Uses the overflow-safe iteration y_{k+1} = 0.5 * (y_k + x / y_k). The "
+"initial guess is derived from the binary exponent of `x` (parsed via "
+"float.hex) to match the magnitude of sqrt(x)."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:32
 msgid "algolib.numerics.stable module"
 msgstr ""
 
@@ -106,7 +126,7 @@ msgid ""
 "xs[i]^2}`."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:32
+#: ../source/api/algolib.numerics.rst:40
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -147,10 +167,6 @@ msgstr ""
 msgid "Tangent of an angle (system backend)."
 msgstr ""
 
-#: algolib.numerics.trig.tan:4 of
-msgid "Notes"
-msgstr ""
-
 #: algolib.numerics.trig.tan:5 of
 msgid ""
 "Argument-reduction and non-finite handling are performed inside the active "
@@ -162,7 +178,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:40
+#: ../source/api/algolib.numerics.rst:48
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -190,6 +206,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:48
+#: ../source/api/algolib.numerics.rst:56
 msgid "Module contents"
 msgstr ""
