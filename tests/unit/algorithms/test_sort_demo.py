@@ -1,6 +1,6 @@
 import pytest
 from algolib.algorithms.sort_demo import bubble_sort
-
+from algolib.algorithms.sort_demo import insertion_sort
 
 @pytest.mark.parametrize("data", [
     [],
@@ -22,8 +22,6 @@ def test_bubble_sort_does_not_mutate_input():
     _ = bubble_sort(data)
     assert data == copy
 
-import pytest
-from algolib.algorithms.sort_demo import insertion_sort
 
 @pytest.mark.parametrize("data", [
     [],
