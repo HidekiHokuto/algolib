@@ -4,6 +4,14 @@ algolib.algorithms package
 Submodules
 ----------
 
+algolib.algorithms.rootfinding module
+-------------------------------------
+
+.. automodule:: algolib.algorithms.rootfinding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.algorithms.sort\_demo module
 ------------------------------------
 
