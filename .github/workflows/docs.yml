@@ -6,11 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write           # 用于创建 PR（回写 README 进度）
-  pull-requests: write
-  pages: write              # 部署 Pages
-  id-token: write           # OIDC for Pages
-  issues: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -53,59 +50,17 @@ jobs:
             --cov-report=xml:coverage.xml \
             --cov-report=html:docs/build/html/coverage
 
-      # 读取 coverage.xml，计算百分比，并回写 README 的覆盖率徽章块
-      - name: Update README coverage badge (real)
-        run: |
-          python - <<'PY'
-          import re, pathlib, xml.etree.ElementTree as ET
-          root = ET.parse("coverage.xml").getroot()
-          # coverage.py 的 XML summary 在 <coverage line-rate="0.80" .../>
-          line_rate = float(root.attrib.get("line-rate", "0"))
-          pct = int(round(line_rate * 100))
-          readme = pathlib.Path("README.md")
-          text = readme.read_text(encoding="utf-8")
 
-          new_block = (
-              "<!-- coverage:start -->\n"
-              f"[![coverage](https://img.shields.io/badge/coverage-{pct}%25-brightgreen)](https://HidekiHokuto.github.io/algolib/coverage/)\n"
-              f"Coverage: {pct}%\n"
-              "<!-- coverage:end -->"
-          )
-          text = re.sub(
-              r"<!-- coverage:start -->.*?<!-- coverage:end -->",
-              new_block,
-              text,
-              flags=re.S,
-          )
-          readme.write_text(text, encoding="utf-8")
-          print(f"README coverage updated to {pct}%")
-          PY
-
-      # 一步完成构建 + 首页 + 翻译进度回写
-      - name: Build docs (EN + ZH) & update progress
+      # Build docs (HTML only, no i18n updates)
+      - name: Build docs (HTML only, no i18n updates)
         run: |
-          bash docs/i18n_build.sh
+          make -C docs html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/build/html
 
-      # 如果 README 被脚本改动，则开 PR（仅包含 README）
-      - name: Create PR for README progress update
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "docs(readme): update zh_CN translation progress badge"
-          title: "docs: update zh_CN translation progress badge"
-          body: |
-            Automated update of zh_CN translation progress badge in README.
-            - Computed from all zh_CN .po files (non-obsolete).
-          branch: ci/update-readme-progress
-          add-paths: |
-            README.md
-          labels: |
-            docs
-            automation
 
   deploy:
     needs: build
