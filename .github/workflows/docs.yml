@@ -51,10 +51,33 @@ jobs:
             --cov-report=html:docs/build/html/coverage
 
 
-      # Build docs (HTML only, no i18n updates)
-      - name: Build docs (HTML only, no i18n updates)
+      # Build docs (EN + ZH; read-only)
+      - name: Build docs (EN + ZH; read-only)
         run: |
-          make -C docs html
+          set -e
+          
+          # 1) Extract translatable strings (does not write back to repo)
+          make -C docs gettext
+
+                    # 2) Ensure intl helpers are present (idempotent)
+          python -m pip install -U sphinx sphinx-intl
+
+          # 3) Compile translations (.mo) so Sphinx can build localized HTML
+          sphinx-intl build -d docs/source/locale
+
+          # 4) Build language-specific sites under en/ and zh/
+          sphinx-build -b html -D language=en    docs/source docs/build/html/en
+          sphinx-build -b html -D language=zh_CN docs/source docs/build/html/zh
+
+          # 5) Prevent Jekyll processing and provide a root index redirect
+          touch docs/build/html/.nojekyll
+          cat > docs/build/html/index.html <<'HTML'
+          <!doctype html><meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=./en/">
+          <title>algolib docs</title>
+          <p>Redirecting to <a href="./en/">English</a> | <a href="./zh/">简体中文</a></p>
+          HTML
+
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
