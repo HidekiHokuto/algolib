@@ -1,6 +1,6 @@
 from hypothesis import given, strategies as st
 import math
-from algolib.algorithms.rootfinding import newton_sqrt
+from algolib.numerics.sqrt import newton_sqrt
 from algolib.numerics.stable import hypot
 
 safe = st.floats(allow_nan=False, allow_infinity=False, width=64, min_value=0.0, max_value=1e308)

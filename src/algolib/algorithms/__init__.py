@@ -1,1 +1,1 @@
-from .rootfinding import newton, newton_sqrt
+from .rootfinding import newton

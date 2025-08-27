@@ -2,7 +2,8 @@
 import math
 import pytest
 
-from algolib.algorithms.rootfinding import newton, newton_sqrt
+from algolib.algorithms.rootfinding import newton
+from algolib.numerics.sqrt import newton_sqrt
 from algolib.exceptions import ConvergenceError
 
 
