@@ -2,13 +2,13 @@
 
 Minimal algorithms library template with pytest and Sphinx docs.
 
-<!-- coverage:start -->
-[![coverage](https://img.shields.io/badge/coverage-81%25-brightgreen)](https://HidekiHokuto.github.io/algolib/coverage/)
-Coverage: 81%
-<!-- coverage:end -->
+<!-- coverage-badge:start -->
+[![coverage](https://img.shields.io/badge/coverage-82.80%25-brightgreen)](./docs/coverage/index.html)
+Coverage: 82.80%
+<!-- coverage-badge:end -->
 <!-- i18n-progress:start -->
-[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-39%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
-Translation Progress: 39%
+[![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-35%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)
+Translation Progress: 35%
 <!-- i18n-progress:end -->
 
 [**Docs (EN)**](https://HidekiHokuto.github.io/algolib/en/) • [**文档（简体中文）**](https://HidekiHokuto.github.io/algolib/zh/)
@@ -47,8 +47,3 @@ Copyright (C) 2025 Hideki Hokuto
 
 This project is licensed under the terms of the GNU General Public License v3.0 (GPLv3).
 See the [LICENSE](./LICENSE) file for details.
-
-<!-- coverage-badge:start -->
-[![coverage](https://img.shields.io/badge/coverage-81.20%25-brightgreen)](./docs/coverage/index.html)
-Coverage: 81.20%
-<!-- coverage-badge:end -->
