@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-29 23:42+0900\n"
+"POT-Creation-Date: 2025-08-30 00:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,23 +97,19 @@ msgid "Range reduction:"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:7
-msgid "Choose integer k = round(x / ln2)."
+msgid "Choose integer :math:`k = \\text{round}(x / \\ln 2)`."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:8
-msgid "Let r = x - k*ln2 computed via LN2_HI + LN2_LO splitting to reduce"
+msgid "Let :math:`r = x - k \\ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting to reduce cancellation."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:9
-msgid "cancellation."
+msgid "Then :math:`\\exp{x} = 2^k \\cdot \\exp{r}`."
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:10
-msgid "Then e^x = 2^k * e^r."
-msgstr ""
-
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:12
-msgid "Kernel approximation on r in [-ln2/2, ln2/2]:"
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:11
+msgid "Kernel approximation on :math:`r` in :math:`[-\\ln2/2, \\ln2/2]`:"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:13
@@ -125,7 +121,7 @@ msgid "exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3)."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:16
-msgid "Reconstruct with 2**k."
+msgid "Reconstruct with :math:`2^k`."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:20

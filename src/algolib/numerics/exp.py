@@ -26,16 +26,16 @@ def exp(x: float) -> float:
     Algorithm
     ---------
     1. Range reduction:
-        - Choose integer k = round(x / ln2).
-        - Let r = x - k*ln2 computed via LN2_HI + LN2_LO splitting to reduce
-            cancellation.
-        - Then e^x = 2^k * e^r.
+        - Choose integer :math:`k = \text{round}(x / \ln 2)`.
+        - Let :math:`r = x - k \ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting to reduce cancellation.
+        - Then :math:`\exp{x} = 2^k \cdot \exp{r}`.
 
-    2. Kernel approximation on r in [-ln2/2, ln2/2]:
+    2. Kernel approximation on :math:`r` in :math:`[-\ln2/2, \ln2/2]`:
+
         - Use a [3/3] Padé approximant:
             exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3).
 
-    3. Reconstruct with 2**k.
+    3. Reconstruct with :math:`2^k`.
 
 
     Special cases

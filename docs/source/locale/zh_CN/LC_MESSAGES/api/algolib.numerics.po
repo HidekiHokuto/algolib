@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-29 23:41+0900\n"
+"POT-Creation-Date: 2025-08-30 00:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,37 +21,37 @@ msgstr ""
 
 #: ../source/api/algolib.numerics.rst:2
 msgid "algolib.numerics package"
-msgstr ""
+msgstr "algolib.numerics 包"
 
 #: ../source/api/algolib.numerics.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.numerics.rst:8
 msgid "algolib.numerics.constants module"
-msgstr ""
+msgstr "algolib.numerics.constants 模块"
 
 #: algolib.numerics.constants:1 of
 msgid "Centralized numerical constants for algolib."
-msgstr ""
+msgstr "algolib 的集中化数值常数。"
 
 #: algolib.numerics.constants:3 of
 msgid "No imports from `math` or third-party libs: *pure Python floats only*."
-msgstr ""
+msgstr "不依赖 math 或任何第三方库：仅使用*纯 Python 浮点数*。"
 
 #: algolib.numerics.constants:4 of
 msgid ""
 "Values are given either as exact decimal, or with comments showing hex-float"
-msgstr ""
+msgstr "常数值要么给出精确十进制，要么附带十六进制浮点表示"
 
 #: algolib.numerics.constants:5 of
 msgid "for traceability."
-msgstr ""
+msgstr "以便追溯。"
 
 #: algolib.numerics.constants:6 of
 msgid ""
 "Includes Cody-Waite style splits for stable range-reduction in exp/sin/cos."
-msgstr ""
+msgstr "包含 Cody-Waite 风格的拆分，用于 exp/sin/cos 的稳定区间缩减。"
 
 #: algolib.exceptions.NumericOverflowError:1 of
 msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`OverflowError`"
@@ -69,16 +69,17 @@ msgstr ""
 msgid ""
 "Central difference derivative approximation with Richardson extrapolation."
 msgstr ""
+"Central difference derivative approximation with Richardson extrapolation."
 
 #: algolib.numerics.diff.derivative_central:3 of
 msgid ""
 "Useful when f does not support complex input. Accuracy is O(h^2) per step "
 "and improved by extrapolation."
-msgstr ""
+msgstr "适用于 f 不支持复数输入的情况。每步精度为 O(h²)，可通过外推提高精度。"
 
 #: algolib.numerics.diff.derivative_cstep:1 of
 msgid "Complex-step derivative approximation:"
-msgstr ""
+msgstr "复步长法导数近似："
 
 #: algolib.numerics.diff.derivative_cstep:3 of
 msgid "f'(x) ≈ Im(f(x + i*h)) / h"
@@ -88,7 +89,7 @@ msgstr ""
 msgid ""
 "Requires f to support complex input. Very stable since there is no "
 "subtractive cancellation."
-msgstr ""
+msgstr "要求 f 支持复数输入。方法非常稳定，因为没有减法消去误差。"
 
 #: ../source/api/algolib.numerics.rst:24
 msgid "algolib.numerics.exp module"
@@ -99,6 +100,8 @@ msgid ""
 "Compute the natural exponential :math:`e^x` using Cody-Waite style range "
 "reduction and a Padé [3/3] kernel, without relying on :mod:`math`."
 msgstr ""
+"使用 Cody-Waite 区间缩减和 Padé [3/3] 核来计算自然指数 e^x，不依"
+"赖 :mod:`math` 模块。"
 
 #: algolib.numerics.exp.exp:5 of
 msgid "Algorithm"
@@ -109,35 +112,35 @@ msgid "Range reduction:"
 msgstr ""
 
 #: algolib.numerics.exp.exp:7 of
-msgid "Choose integer k = round(x / ln2)."
+#, python-brace-format
+msgid "Choose integer :math:`k = \\text{round}(x / \\ln 2)`."
 msgstr ""
 
 #: algolib.numerics.exp.exp:8 of
-msgid "Let r = x - k*ln2 computed via LN2_HI + LN2_LO splitting to reduce"
+msgid ""
+"Let :math:`r = x - k \\ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting "
+"to reduce cancellation."
 msgstr ""
 
 #: algolib.numerics.exp.exp:9 of
-msgid "cancellation."
+#, python-brace-format
+msgid "Then :math:`\\exp{x} = 2^k \\cdot \\exp{r}`."
 msgstr ""
 
-#: algolib.numerics.exp.exp:10 of
-msgid "Then e^x = 2^k * e^r."
+#: algolib.numerics.exp.exp:11 of
+msgid "Kernel approximation on :math:`r` in :math:`[-\\ln2/2, \\ln2/2]`:"
 msgstr ""
 
 #: algolib.numerics.exp.exp:12 of
-msgid "Kernel approximation on r in [-ln2/2, ln2/2]:"
-msgstr ""
-
-#: algolib.numerics.exp.exp:13 of
 msgid "Use a [3/3] Padé approximant:"
 msgstr ""
 
-#: algolib.numerics.exp.exp:14 of
+#: algolib.numerics.exp.exp:13 of
 msgid "exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3)."
 msgstr ""
 
-#: algolib.numerics.exp.exp:16 of
-msgid "Reconstruct with 2**k."
+#: algolib.numerics.exp.exp:15 of
+msgid "Reconstruct with :math:`2^k`."
 msgstr ""
 
 #: algolib.numerics.exp.exp:19 of
