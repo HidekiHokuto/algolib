@@ -32,12 +32,9 @@ fi
 echo "📖 Running i18n_build.sh (no repo writes by CI; local only)..."
 zsh docs/i18n_build.sh
 
-# Generate coverage.xml if missing, then update coverage badge in README
-if [ ! -f coverage.xml ]; then
-  echo "🧪 coverage.xml not found; generating via pytest..."
-  # Keep it quiet; failures shouldn't abort the whole flow
-  (pytest --cov=src/algolib --cov-report=xml:coverage.xml -q || true)
-fi
+# Always regenerate coverage.xml to ensure it is fresh
+echo "🧪 Running pytest to refresh coverage.xml..."
+(pytest --cov=src/algolib --cov-report=xml:coverage.xml -q || true)
 
 echo "📊 Updating coverage badge from coverage.xml..."
 python tools/update_coverage_badge.py

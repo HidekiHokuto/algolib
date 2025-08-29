@@ -44,8 +44,8 @@ INV_SQRT2  = 7.07106781186547524400844362104849039284835937688474036588339868995
 # Cody–Waite splits for stable range reduction / exp()
 # ----------------------------------------------------
 # ln(2) = LN2_HI + LN2_LO (sum exactly equals LN2 in double)
-LN2_HI = 0.6931471803691238
-LN2_LO = 1.9082149292705877e-10
+LN2_HI = 0.6931471805599453
+LN2_LO = 9.4172321214581765e-18
 
 # π/2 triple split for high-accuracy range reduction
 # Values compatible with fdlibm-style splits
@@ -60,7 +60,7 @@ INV_PI_2_LO = -5.692446494650995e-17
 
 # Optional: π split (rarely needed if you reduce by π/2)
 PI_HI = 3.141592653589793
-PI_LO = 1.2246467991473532e-16
+PI_LO = 2.3846264338327950e-16
 
 # -----------------------------------
 # Default, *general* numerical tolerances

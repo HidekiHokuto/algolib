@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from typing import Iterable
-import math
+from algolib.numerics.sqrt import newton_sqrt
 
 def hypot(x: float, y: float) -> float:
     r"""
@@ -14,7 +14,7 @@ def hypot(x: float, y: float) -> float:
     if x == 0.0:
         return 0.0
     r = y / x # |r| <= 1
-    return x * math.sqrt(1.0 + r*r)
+    return x * newton_sqrt(1.0 + r*r)
 
 def hypot_n(*xs: float) -> float:
     r"""

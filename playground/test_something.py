@@ -1,7 +1,8 @@
-'''
 from algolib.numerics import set_backend, get_backend_name
 from algolib.numerics.trig import sin, cos, tan
 from algolib.maths.number_theory.prime import is_prime
+from algolib.numerics.exp import exp
+import math
 
 print("I'm Yuanxun")
 print("I'm Joshua")
@@ -34,4 +35,5 @@ for i in range(100):
     arr.append(random.randint(1, 10000))
 print("Original array:", arr)
 print("Bubble sorted:", bubble_sort(arr))
-'''
+
+print(exp(3) - math.exp(3))
