@@ -60,7 +60,7 @@ INV_PI_2_LO = -5.692446494650995e-17
 
 # Optional: π split (rarely needed if you reduce by π/2)
 PI_HI = 3.141592653589793
-PI_LO = 1.2246467991473532e-16
+PI_LO = 2.3846264338327950e-16
 
 # -----------------------------------
 # Default, *general* numerical tolerances

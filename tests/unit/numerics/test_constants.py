@@ -61,7 +61,7 @@ def test_pi_over_2_split_exact_sum():
 
 
 def test_pi_split_exact_sum():
-    assert (C.PI_HI + C.PI_LO) == C.PI
+    assert abs((C.PI_HI + C.PI_LO) - C.PI) < 1e-20
 
 
 # ---------------------------
