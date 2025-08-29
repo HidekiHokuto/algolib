@@ -11,10 +11,41 @@ import sys
 import subprocess
 from pathlib import Path
 import xml.etree.ElementTree as ET
+import os
 
 ROOT = Path(__file__).resolve().parents[1]
 COV_XML = ROOT / "coverage.xml"
 README = ROOT / "README.md"
+SITE_COV_DIR = ROOT / "docs" / "build" / "html" / "coverage"
+
+
+def run_pytest_cov() -> int:
+    """Run pytest to (re)create coverage.xml.
+
+    Returns
+    -------
+    int
+        The pytest return code (0 if tests passed). We don't bail on failures;
+        we still attempt to update the README with whatever coverage was
+        produced (if any).
+    """
+    cmd = [
+        sys.executable,
+        "-m",
+        "pytest",
+        "--cov=src/algolib",
+        "--cov-report=xml:coverage.xml",
+        f"--cov-report=html:{SITE_COV_DIR.as_posix()}",
+        "-q",
+    ]
+    print("🧪 Running pytest to refresh coverage.xml...", flush=True)
+    try:
+        proc = subprocess.run(cmd, cwd=ROOT)
+        return proc.returncode
+    except FileNotFoundError:
+        print("[warn] pytest not found. Please install pytest and pytest-cov.", file=sys.stderr)
+        return 127
+
 
 
 def run_pytest_cov() -> int:
@@ -62,9 +93,16 @@ def update_readme(pct: float) -> None:
         print("[warn] README.md not found.", file=sys.stderr)
         sys.exit(3)
 
-    # You can customize the badge style/alt text here
-    badge = f"[![coverage](https://img.shields.io/badge/coverage-{pct:.2f}%25-brightgreen)](./docs/coverage/index.html)"
+    base = os.environ.get("GHPAGES_BASE_URL", "").rstrip("/")
+    if base:
+        link = f"{base}/coverage/"
+    else:
+        # Fallback to local site path (useful for viewing README locally)
+        link = (SITE_COV_DIR / "index.html").as_posix()
 
+    # You can customize the badge style/alt text here
+    badge = f"[![coverage](https://img.shields.io/badge/coverage-{pct:.2f}%25-brightgreen)]({link})"
+    
     block = (
         "<!-- coverage-badge:start -->\n"
         f"{badge}\n"
