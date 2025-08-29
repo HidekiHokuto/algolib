@@ -3,7 +3,7 @@
 Minimal algorithms library template with pytest and Sphinx docs.
 
 <!-- coverage-badge:start -->
-[![coverage](https://img.shields.io/badge/coverage-82.80%25-brightgreen)](./docs/coverage/index.html)
+[![coverage](https://img.shields.io/badge/coverage-82.80%25-brightgreen)](/Users/zhengshi/Projects/algolib/docs/build/html/coverage/index.html)
 Coverage: 82.80%
 <!-- coverage-badge:end -->
 <!-- i18n-progress:start -->
