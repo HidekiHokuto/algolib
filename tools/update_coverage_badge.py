@@ -47,6 +47,34 @@ def run_pytest_cov() -> int:
         return 127
 
 
+
+def run_pytest_cov() -> int:
+    """Run pytest to (re)create coverage.xml.
+
+    Returns
+    -------
+    int
+        The pytest return code (0 if tests passed). We don't bail on failures;
+        we still attempt to update the README with whatever coverage was
+        produced (if any).
+    """
+    cmd = [
+        sys.executable,
+        "-m",
+        "pytest",
+        "--cov=src/algolib",
+        "--cov-report=xml:coverage.xml",
+        "-q",
+    ]
+    print("🧪 Running pytest to refresh coverage.xml...", flush=True)
+    try:
+        proc = subprocess.run(cmd, cwd=ROOT)
+        return proc.returncode
+    except FileNotFoundError:
+        print("[warn] pytest not found. Please install pytest and pytest-cov.", file=sys.stderr)
+        return 127
+
+
 def read_coverage_percent(xml_path: Path) -> float:
     if not xml_path.exists():
         print(f"[warn] {xml_path} not found. Run pytest with --cov-report=xml first.", file=sys.stderr)
