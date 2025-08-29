@@ -12,6 +12,7 @@ import subprocess
 import os
 from pathlib import Path
 import xml.etree.ElementTree as ET
+import os
 
 # Paths
 ROOT = Path(__file__).resolve().parents[1]
@@ -111,6 +112,10 @@ def update_readme(pct: float) -> None:
     # Always link to the published site; do not embed local absolute paths into README
     badge = f"[![coverage](https://img.shields.io/badge/coverage-{pct:.2f}%25-brightgreen)]({link})"
 
+
+    # You can customize the badge style/alt text here
+    badge = f"[![coverage](https://img.shields.io/badge/coverage-{pct:.2f}%25-brightgreen)]({link})"
+    
     block = (
         "<!-- coverage-badge:start -->\n"
         f"{badge}\n"
