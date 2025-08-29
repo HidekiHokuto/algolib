@@ -20,6 +20,22 @@ algolib.numerics.diff module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.exp module
+---------------------------
+
+.. automodule:: algolib.numerics.exp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+algolib.numerics.rounding module
+--------------------------------
+
+.. automodule:: algolib.numerics.rounding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.numerics.sqrt module
 ----------------------------
 

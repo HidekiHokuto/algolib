@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-28 00:37+0900\n"
+"POT-Creation-Date: 2025-08-29 23:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,6 +81,191 @@ msgid "Requires f to support complex input. Very stable since there is no subtra
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:24
+msgid "algolib.numerics.exp module"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:1
+msgid "Compute the natural exponential :math:`e^x` using Cody-Waite style range reduction and a Padé [3/3] kernel, without relying on :mod:`math`."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:5
+msgid "Algorithm"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:6
+msgid "Range reduction:"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:7
+msgid "Choose integer k = round(x / ln2)."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:8
+msgid "Let r = x - k*ln2 computed via LN2_HI + LN2_LO splitting to reduce"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:9
+msgid "cancellation."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:10
+msgid "Then e^x = 2^k * e^r."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:12
+msgid "Kernel approximation on r in [-ln2/2, ln2/2]:"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:13
+msgid "Use a [3/3] Padé approximant:"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:14
+msgid "exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3)."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:16
+msgid "Reconstruct with 2**k."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:20
+msgid "Special cases"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:21
+msgid "exp(+inf) = +inf"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:22
+msgid "exp(-inf) = 0.0"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:23
+msgid "exp(NaN)  = NaN"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+msgid "param x"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:25
+msgid "Input value."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+msgid "type x"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:26
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:29
+msgid "float"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+msgid "returns"
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:28
+msgid "The exponential e**x."
+msgstr ""
+
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+msgid "rtype"
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:32
+msgid "algolib.numerics.rounding module"
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:1
+msgid "Rounding functions for numerical values."
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:3
+msgid "This module provides functions to perform rounding of floating-point numbers using different strategies."
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:7
+msgid "Functions"
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:8
+msgid "round_half_away_from_zero(x)"
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:9
+msgid "Rounds a number to the nearest integer, rounding halves away from zero."
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:11
+msgid "round_even(x)"
+msgstr ""
+
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding:12
+msgid "Rounds a number to the nearest integer, rounding halves to the nearest even integer."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:1
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:1
+msgid "Round a number to the nearest integer, rounding halves to the nearest even integer."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:3
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:3
+msgid "This rounding method is also known as \"bankers' rounding\". When the fractional part of the number is exactly 0.5 or -0.5, the number is rounded to the nearest even integer."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:7
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:3
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:7
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:3
+msgid "The number to round."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:10
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:6
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:10
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:6
+msgid "The rounded integer."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:14
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:10
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:14
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:10
+msgid "Examples"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:1
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:1
+msgid "Round a number to the nearest integer, rounding halves away from zero."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:40
 msgid "algolib.numerics.sqrt module"
 msgstr ""
 
@@ -100,7 +285,7 @@ msgstr ""
 msgid "Uses the overflow-safe iteration y_{k+1} = 0.5 * (y_k + x / y_k). The initial guess is derived from the binary exponent of `x` (parsed via float.hex) to match the magnitude of sqrt(x)."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:32
+#: ../source/api/algolib.numerics.rst:48
 msgid "algolib.numerics.stable module"
 msgstr ""
 
@@ -114,16 +299,12 @@ msgstr ""
 msgid "Stable Euclidean norm for :math:`N` components: :math:`\\sqrt{\\sum_i xs[i]^2}`."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:40
+#: ../source/api/algolib.numerics.rst:56
 msgid "algolib.numerics.trig module"
 msgstr ""
 
 #: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:1
 msgid "Cosine of an angle (system backend)."
-msgstr ""
-
-#: ../source/api/algolib.numerics.rst:0
-msgid "Parameters"
 msgstr ""
 
 #: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:3
@@ -132,16 +313,8 @@ msgstr ""
 msgid "Input angle in radians."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:0
-msgid "Returns"
-msgstr ""
-
 #: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.cos:6
 msgid "``cos(x)`` evaluated by the active numerics backend."
-msgstr ""
-
-#: ../source/api/algolib.numerics.rst:0
-msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.sin:1
@@ -164,7 +337,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:48
+#: ../source/api/algolib.numerics.rst:64
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -192,6 +365,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:56
+#: ../source/api/algolib.numerics.rst:72
 msgid "Module contents"
 msgstr ""
