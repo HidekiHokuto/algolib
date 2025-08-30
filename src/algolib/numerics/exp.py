@@ -25,26 +25,25 @@ def exp(x: float) -> float:
     Algorithm
     ---------
     1. Range reduction:
-        - Choose integer :math:`k = \text{round}(x / \ln 2)`.
-        - Let :math:`r = x - k \ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting to reduce cancellation.
-        - Then :math:`\exp{x} = 2^k \cdot \exp{r}`.
-        - A guard is applied to ensure :math:`k \neq \pm 1024` to avoid overflow in :math:`2^k`.
-
+        1. Choose integer :math:`k = \text{round}(x / \ln 2)`.
+        2. Let :math:`r = x - k \ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting to reduce cancellation.
+        3. Then :math:`\exp{x} = 2^k \cdot \exp{r}`.
+        4. A guard is applied to ensure :math:`k \neq \pm 1024` to avoid overflow in :math:`2^k`.
     2. Kernel approximation on :math:`r` in :math:`[-\ln2/2, \ln2/2]`:
-
-        - Use a [5/5] Padé approximant:
-          \[
-          \exp(r) \approx \frac{30240 + 15120 r + 3360 r^2 + 420 r^3 + 30 r^4 + r^5}
-                          {30240 - 15120 r + 3360 r^2 - 420 r^3 + 30 r^4 - r^5}.
-          \]
+        1. Use a [5/5] Padé approximant:
+                \exp(r) \approx \frac{30240 + 15120 r + 3360 r^2 + 420 r^3 + 30 r^4 + r^5}
+                {30240 - 15120 r + 3360 r^2 - 420 r^3 + 30 r^4 - r^5}.
 
     3. Reconstruct with :math:`2^k`.
 
 
     Special cases
     -------------
+
     - exp(+inf) = +inf
+
     - exp(-inf) = 0.0
+
     - exp(NaN)  = NaN
 
     Parameters
@@ -52,11 +51,14 @@ def exp(x: float) -> float:
     x : float
         Input value.
 
+
     Returns
     -------
     float
         The exponential e**x.
+
     """
+
 
     # Handle specials
     if x != x:  # NaN

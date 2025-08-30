@@ -8,11 +8,12 @@ and uses cancellation-safe formulas.
 
 Notes
 -----
-* Non-finite input (NaN/:math:`\pm`Inf) returns NaN, to align with algolib's numerics
+
+- Non-finite input (NaN/:math:`\pm` Inf) returns NaN, to align with algolib's numerics
     contract.
-* ``tanh`` uses the stable identity with ``exp(-2|x|)`` to avoid overflow and
+- ``tanh`` uses the stable identity with ``exp(-2|x|)`` to avoid overflow and
     catastrophic cancellation.
-* ``sinh``/``cosh`` are implemented with reciprocal forms and simple small-``x``
+- ``sinh``/``cosh`` are implemented with reciprocal forms and simple small-``x``
     fallbacks.
 
 These functions live as normal numerics utilities (not bebind the backend
@@ -55,15 +56,15 @@ def sinh(x: float) -> float:
         Real input.
 
     Returns
+    -------
     float
         ``sinh(x)``.
 
     Notes
     -----
-    * Non-finite input NaN.
-    * For very small ``|x|`` we return ``x`` (first-order Taylor) to avoid
-        cancellation when forming ``exp(x) - exp(-x)``.
-    * For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)`` with sign.
+    - Non-finite input NaN.
+    - For very small ``|x|`` we return ``x`` (first-order Taylor) to avoid cancellation when forming ``exp(x) - exp(-x)``.
+    - For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)`` with sign.
     """
     if not _isfinite(x):
         return NAN
@@ -93,10 +94,11 @@ def cosh(x: float) -> float:
 
     Notes
     -----
-    * Non-finite input returns NaN.
-    * For small ``|x|`` we use ``1 + x**2/2``.
-    * For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)``.
+    - Non-finite input returns NaN.
+    - For small ``|x|`` we use ``1 + x**2/2``.
+    - For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)``.
     """
+
     if not _isfinite(x):
         return NAN
     ax = _abs(x)
@@ -119,18 +121,19 @@ def tanh(x: float) -> float:
     ----------
     x : float
         Input value.
+
     Returns
     -------
     float
         tanh(x). For non-finite inputs, returns NaN per algolib convention.
+
     Notes
     -----
     We use odd-function reduction: tanh(-x) = -tanh(x). For x ≥ 0, compute:
-        tanh(x) = (e^{2x} - 1) / (e^{2x} + 1)
+    tanh(x) = (e^{2x} - 1) / (e^{2x} + 1)
     which avoids catastrophic cancellation for moderate/large x. For very
     large x we directly saturate to 1.0 to avoid overflow.
     """
-
 
     # Non-finite policy
     if not isfinite_f(x):

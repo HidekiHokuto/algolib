@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-30 00:42+0900\n"
+"POT-Creation-Date: 2025-08-31 06:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,115 @@ msgstr ""
 msgid "Numeric overflow exposed as algolib-specific error."
 msgstr ""
 
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.copysign1:1
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.copysign1:1
+msgid "Return :math:\\\\abs{x} with the sign of y. No math module, handles ±0.0 and NaN."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:1
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:1
+msgid "Lightweight finiteness check without importing :mod:`math`."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:3
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:3
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:3
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:28
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:3
+msgid "Input value."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Returns"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:6
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:6
+msgid "True if x is finite, else False."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:0
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
+#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
+msgid "Return type"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:10
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:10
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:10
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:10
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.sqrt.newton_sqrt:4
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:10
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:8
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:10
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:10
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:10
+#: ../../src/algolib/numerics/sqrt.py:docstring of algolib.numerics.sqrt.newton_sqrt:4
+#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:4
+msgid "Notes"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.isfinite_f:11
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.isfinite_f:11
+msgid "Uses ``x == x`` to reject NaN and a bound check to reject ±Inf."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:1
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:1
+msgid "Compute 2**k using only multiplies (supports negative k) with IEEE754-style bounds."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:3
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:3
+msgid "Behavior:"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:4
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:4
+msgid "k >  1023 -> raise NumericOverflowError (subclass of OverflowError)"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:5
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:5
+msgid "k < -1074 -> 0.0 (underflow to zero)"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:6
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:6
+msgid "-1074 <= k <= -1023 -> exact subnormal via halving from DBL_MIN"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.constants.pow2_int:7
+#: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants.pow2_int:7
+msgid "otherwise -> exponentiation-by-squaring (<= 1023 以及 >= -1022)"
+msgstr ""
+
 #: ../source/api/algolib.numerics.rst:16
 msgid "algolib.numerics.diff module"
 msgstr ""
@@ -85,7 +194,7 @@ msgid "algolib.numerics.exp module"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:1
-msgid "Compute the natural exponential :math:`e^x` using Cody-Waite style range reduction and a Padé [3/3] kernel, without relying on :mod:`math`."
+msgid "Compute the natural exponential :math:`e^x` using Cody-Waite style range reduction and a Padé [5/5] kernel, without relying on :mod:`math`."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:5
@@ -108,16 +217,20 @@ msgstr ""
 msgid "Then :math:`\\exp{x} = 2^k \\cdot \\exp{r}`."
 msgstr ""
 
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:10
+msgid "A guard is applied to ensure :math:`k \\neq \\pm 1024` to avoid overflow in :math:`2^k`."
+msgstr ""
+
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:11
 msgid "Kernel approximation on :math:`r` in :math:`[-\\ln2/2, \\ln2/2]`:"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:13
-msgid "Use a [3/3] Padé approximant:"
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:12
+msgid "Use a [5/5] Padé approximant:"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:14
-msgid "exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3)."
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:13
+msgid "\\exp(r) \\approx \\frac{30240 + 15120 r + 3360 r^2 + 420 r^3 + 30 r^4 + r^5} {30240 - 15120 r + 3360 r^2 - 420 r^3 + 30 r^4 - r^5}."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:16
@@ -128,15 +241,15 @@ msgstr ""
 msgid "Special cases"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:21
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:22
 msgid "exp(+inf) = +inf"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:22
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:24
 msgid "exp(-inf) = 0.0"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:23
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:26
 msgid "exp(NaN)  = NaN"
 msgstr ""
 
@@ -144,16 +257,12 @@ msgstr ""
 msgid "param x"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:25
-msgid "Input value."
-msgstr ""
-
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
 msgid "type x"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:26
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:29
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:32
 msgid "float"
 msgstr ""
 
@@ -161,7 +270,7 @@ msgstr ""
 msgid "returns"
 msgstr ""
 
-#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:28
+#: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:31
 msgid "The exponential e**x."
 msgstr ""
 
@@ -170,6 +279,118 @@ msgid "rtype"
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:32
+msgid "algolib.numerics.hyper module"
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:1
+msgid "Hyperbolic functions (pure implementation)."
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:3
+msgid "This module provides ``sinh``, ``cosh`` and ``tanh`` implemented in pure Python, without importing :mod:`math`. It relies on the local ``exp`` kernel and uses cancellation-safe formulas."
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:9
+msgid "Non-finite input (NaN/:math:`\\pm` Inf) returns NaN, to align with algolib's numerics"
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:10
+msgid "contract."
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:11
+msgid "``tanh`` uses the stable identity with ``exp(-2|x|)`` to avoid overflow and"
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:12
+msgid "catastrophic cancellation."
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:13
+msgid "``sinh``/``cosh`` are implemented with reciprocal forms and simple small-``x``"
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:14
+msgid "fallbacks."
+msgstr ""
+
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper:16
+msgid "These functions live as normal numerics utilities (not bebind the backend switch), similar to ``sqrt`` and the stable helpers."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:1
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:1
+msgid "Hyperbolic cosine."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:3
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:3
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:3
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:3
+msgid "Real input."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:6
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:6
+msgid "``cosh(x)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:11
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:11
+msgid "Non-finite input returns NaN."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:12
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:12
+msgid "For small ``|x|`` we use ``1 + x**2/2``."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.cosh:13
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:13
+msgid "For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:1
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:1
+msgid "Hyperbolic sine."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:6
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:6
+msgid "``sinh(x)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:11
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:11
+msgid "Non-finite input NaN."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:12
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:12
+msgid "For very small ``|x|`` we return ``x`` (first-order Taylor) to avoid cancellation when forming ``exp(x) - exp(-x)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.sinh:13
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:13
+msgid "For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)`` with sign."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:1
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:1
+msgid "Hyperbolic tangent with stable branches."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:6
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:6
+msgid "tanh(x). For non-finite inputs, returns NaN per algolib convention."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.hyper.tanh:11
+#: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:11
+msgid "We use odd-function reduction: tanh(-x) = -tanh(x). For x ≥ 0, compute: tanh(x) = (e^{2x} - 1) / (e^{2x} + 1) which avoids catastrophic cancellation for moderate/large x. For very large x we directly saturate to 1.0 to avoid overflow."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:40
 msgid "algolib.numerics.rounding module"
 msgstr ""
 
@@ -211,14 +432,6 @@ msgstr ""
 msgid "This rounding method is also known as \"bankers' rounding\". When the fractional part of the number is exactly 0.5 or -0.5, the number is rounded to the nearest even integer."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-msgid "Parameters"
-msgstr ""
-
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:7
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:3
 #: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:7
@@ -226,27 +439,11 @@ msgstr ""
 msgid "The number to round."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-msgid "Returns"
-msgstr ""
-
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:10
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:6
 #: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:10
 #: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:6
 msgid "The rounded integer."
-msgstr ""
-
-#: ../source/api/algolib.numerics.rst:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_even:0
-#: ../../src/algolib/numerics/rounding.py:docstring of algolib.numerics.rounding.round_half_away_from_zero:0
-msgid "Return type"
 msgstr ""
 
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.rounding.round_even:14
@@ -261,19 +458,13 @@ msgstr ""
 msgid "Round a number to the nearest integer, rounding halves away from zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:40
+#: ../source/api/algolib.numerics.rst:48
 msgid "algolib.numerics.sqrt module"
 msgstr ""
 
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.sqrt.newton_sqrt:1
 #: ../../src/algolib/numerics/sqrt.py:docstring of algolib.numerics.sqrt.newton_sqrt:1
-msgid "Square root via Newton–Raphson iteration (overflow-safe update)."
-msgstr ""
-
-#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.sqrt.newton_sqrt:4
-#: ../../src/algolib/numerics/sqrt.py:docstring of algolib.numerics.sqrt.newton_sqrt:4
-#: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:4
-msgid "Notes"
+msgid "Square root via Newton-Raphson iteration (overflow-safe update)."
 msgstr ""
 
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.sqrt.newton_sqrt:5
@@ -281,8 +472,37 @@ msgstr ""
 msgid "Uses the overflow-safe iteration y_{k+1} = 0.5 * (y_k + x / y_k). The initial guess is derived from the binary exponent of `x` (parsed via float.hex) to match the magnitude of sqrt(x)."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:48
+#: ../source/api/algolib.numerics.rst:56
 msgid "algolib.numerics.stable module"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.gcd:1
+#: ../../src/algolib/numerics/stable.py:docstring of algolib.numerics.stable.gcd:1
+msgid "Greatest common divisor for one or more integers."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.gcd:3
+#: ../../src/algolib/numerics/stable.py:docstring of algolib.numerics.stable.gcd:3
+msgid "One or more integer values. Booleans are accepted (as integers)."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.gcd:6
+#: ../../src/algolib/numerics/stable.py:docstring of algolib.numerics.stable.gcd:6
+msgid "Non-negative GCD. By convention, gcd(0, 0) -> 0."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:0
+msgid "Raises"
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.gcd:9
+#: ../../src/algolib/numerics/stable.py:docstring of algolib.numerics.stable.gcd:9
+msgid "If no arguments are provided."
+msgstr ""
+
+#: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.gcd:10
+#: ../../src/algolib/numerics/stable.py:docstring of algolib.numerics.stable.gcd:10
+msgid "If any argument is not an integer."
 msgstr ""
 
 #: ../../src/algolib/numerics/__init__.py:docstring of algolib.numerics.stable.hypot:1
@@ -295,7 +515,7 @@ msgstr ""
 msgid "Stable Euclidean norm for :math:`N` components: :math:`\\sqrt{\\sum_i xs[i]^2}`."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:56
+#: ../source/api/algolib.numerics.rst:64
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -333,7 +553,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:64
+#: ../source/api/algolib.numerics.rst:72
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -361,6 +581,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:72
+#: ../source/api/algolib.numerics.rst:80
 msgid "Module contents"
 msgstr ""
