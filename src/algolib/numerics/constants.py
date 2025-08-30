@@ -22,6 +22,32 @@ DBL_MIN           = 2.0 ** -1022          # ~= 2.2250738585072014e-308 (min norm
 DBL_DENORM_MIN    = 2.0 ** -1074          # ~= 5e-324 (min subnormal)
 DBL_MAX           = (2.0 - 2.0 ** -52) * (2.0 ** 1023)  # ~= 1.7976931348623157e+308
 
+# -----------------------------
+# Basic IEEE-754 float sentinels
+# -----------------------------
+NAN: float = float("nan")
+INF: float = float("inf")
+NEG_INF: float = -INF
+
+def isfinite_f(x: float) -> bool:
+    """Lightweight finiteness check without importing :mod:`math`.
+
+    Parameters
+    ----------
+    x : float
+        Input value.
+
+    Returns
+    -------
+    bool
+        True if x is finite, else False.
+
+    Notes
+    -----
+    Uses ``x == x`` to reject NaN and a bound check to reject ±Inf.
+    """
+    return (x == x) and (-INF < x < INF)
+
 # --------------------------------
 # Fundamental mathematical constants
 # --------------------------------
@@ -141,9 +167,26 @@ def copysign1(x: float, y: float) -> float:
     return ax if y > 0.0 else -ax
 
 __all__ = [
+    # exceptions
     "NumericOverflowError",
+    # machine info
     "DBL_MANT_DIG", "DBL_EPS", "DBL_MIN_EXP", "DBL_MAX_EXP",
     "DBL_MIN", "DBL_DENORM_MIN", "DBL_MAX",
-    "PI", "PI_2", "PI_4", "TAU", "INV_PI", "INV_PI_2", "E", "LN2",
+    # float sentinels & helpers
+    "NAN", "INF", "NEG_INF", "isfinite_f",
+    # fundamental mathematical constants
+    "PI", "PI_2", "PI_4", "TAU",
+    "INV_PI", "INV_PI_2",
+    "E", "LN2", "INV_LN2", "LOG2E",
+    "LN10", "INV_LN10",
+    "SQRT2", "INV_SQRT2",
+    # Cody–Waite splits
+    "LN2_HI", "LN2_LO",
+    "PI2_HI", "PI2_MID", "PI2_LO",
+    "INV_PI_2_HI", "INV_PI_2_LO",
     "PI_HI", "PI_LO",
+    # library-wide tolerances
+    "REL_EPS_DEFAULT", "ABS_EPS_DEFAULT",
+    # small helpers
+    "pow2_int", "copysign1",
 ]

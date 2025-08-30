@@ -3,8 +3,8 @@
 Minimal algorithms library template with pytest and Sphinx docs.
 
 <!-- coverage-badge:start -->
-[![coverage](https://img.shields.io/badge/coverage-82.80%25-brightgreen)](https://hidekihokuto.github.io/algolib/coverage/)
-Coverage: 82.80%
+[![coverage](https://img.shields.io/badge/coverage-83.47%25-brightgreen)](https://hidekihokuto.github.io/algolib/coverage/)
+Coverage: 83.47%
 <!-- coverage-badge:end -->
 <!-- i18n-progress:start -->
 [![i18n zh_CN](https://img.shields.io/badge/i18n%20zh--CN-35%25-blue)](https://HidekiHokuto.github.io/algolib/zh/)

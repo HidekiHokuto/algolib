@@ -5,7 +5,7 @@ from algolib.exceptions import ConvergenceError
 
 def newton_sqrt(x: float, *, tol: float = 1e-15, max_iter: int = 100) -> float:
     """
-    Square root via Newton–Raphson iteration (overflow-safe update).
+    Square root via Newton-Raphson iteration (overflow-safe update).
 
     Notes
     -----

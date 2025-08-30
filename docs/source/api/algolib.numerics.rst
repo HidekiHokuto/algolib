@@ -28,6 +28,14 @@ algolib.numerics.exp module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.hyper module
+-----------------------------
+
+.. automodule:: algolib.numerics.hyper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.numerics.rounding module
 --------------------------------
 

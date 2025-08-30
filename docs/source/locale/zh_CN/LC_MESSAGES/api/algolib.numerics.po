@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-29 23:41+0900\n"
+"POT-Creation-Date: 2025-08-31 06:42+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,37 +21,37 @@ msgstr ""
 
 #: ../source/api/algolib.numerics.rst:2
 msgid "algolib.numerics package"
-msgstr ""
+msgstr "algolib.numerics 包"
 
 #: ../source/api/algolib.numerics.rst:5
 msgid "Submodules"
-msgstr ""
+msgstr "子模块"
 
 #: ../source/api/algolib.numerics.rst:8
 msgid "algolib.numerics.constants module"
-msgstr ""
+msgstr "algolib.numerics.constants 模块"
 
 #: algolib.numerics.constants:1 of
 msgid "Centralized numerical constants for algolib."
-msgstr ""
+msgstr "algolib 的集中化数值常数。"
 
 #: algolib.numerics.constants:3 of
 msgid "No imports from `math` or third-party libs: *pure Python floats only*."
-msgstr ""
+msgstr "不依赖 math 或任何第三方库：仅使用*纯 Python 浮点数*。"
 
 #: algolib.numerics.constants:4 of
 msgid ""
 "Values are given either as exact decimal, or with comments showing hex-float"
-msgstr ""
+msgstr "常数值要么给出精确十进制，要么附带十六进制浮点表示"
 
 #: algolib.numerics.constants:5 of
 msgid "for traceability."
-msgstr ""
+msgstr "以便追溯。"
 
 #: algolib.numerics.constants:6 of
 msgid ""
 "Includes Cody-Waite style splits for stable range-reduction in exp/sin/cos."
-msgstr ""
+msgstr "包含 Cody-Waite 风格的拆分，用于 exp/sin/cos 的稳定区间缩减。"
 
 #: algolib.exceptions.NumericOverflowError:1 of
 msgid "Bases: :py:class:`~algolib.exceptions.AlgolibError`, :py:class:`OverflowError`"
@@ -59,6 +59,81 @@ msgstr ""
 
 #: algolib.exceptions.NumericOverflowError:1 of
 msgid "Numeric overflow exposed as algolib-specific error."
+msgstr ""
+
+#: algolib.numerics.constants.copysign1:1 of
+#, python-brace-format
+msgid ""
+"Return :math:\\\\abs{x} with the sign of y. No math module, handles ±0.0 and "
+"NaN."
+msgstr ""
+
+#: algolib.numerics.constants.isfinite_f:1 of
+msgid "Lightweight finiteness check without importing :mod:`math`."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst algolib.numerics.constants.isfinite_f
+#: algolib.numerics.hyper.tanh algolib.numerics.rounding.round_even
+#: algolib.numerics.rounding.round_half_away_from_zero of
+msgid "Parameters"
+msgstr ""
+
+#: algolib.numerics.constants.isfinite_f:3 algolib.numerics.exp.exp:28
+#: algolib.numerics.hyper.tanh:3 of
+msgid "Input value."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst algolib.numerics.constants.isfinite_f
+#: algolib.numerics.hyper.tanh algolib.numerics.rounding.round_even
+#: algolib.numerics.rounding.round_half_away_from_zero of
+msgid "Returns"
+msgstr ""
+
+#: algolib.numerics.constants.isfinite_f:6 of
+msgid "True if x is finite, else False."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst algolib.numerics.constants.isfinite_f
+#: algolib.numerics.hyper.tanh algolib.numerics.rounding.round_even
+#: algolib.numerics.rounding.round_half_away_from_zero of
+msgid "Return type"
+msgstr ""
+
+#: algolib.numerics.constants.isfinite_f:10 algolib.numerics.hyper:8
+#: algolib.numerics.hyper.cosh:10 algolib.numerics.hyper.sinh:10
+#: algolib.numerics.hyper.tanh:10 algolib.numerics.sqrt.newton_sqrt:4
+#: algolib.numerics.trig.tan:4 of
+msgid "Notes"
+msgstr ""
+
+#: algolib.numerics.constants.isfinite_f:11 of
+msgid "Uses ``x == x`` to reject NaN and a bound check to reject ±Inf."
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:1 of
+msgid ""
+"Compute 2**k using only multiplies (supports negative k) with IEEE754-style "
+"bounds."
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:3 of
+msgid "Behavior:"
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:4 of
+msgid "k >  1023 -> raise NumericOverflowError (subclass of OverflowError)"
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:5 of
+msgid "k < -1074 -> 0.0 (underflow to zero)"
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:6 of
+msgid "-1074 <= k <= -1023 -> exact subnormal via halving from DBL_MIN"
+msgstr ""
+
+#: algolib.numerics.constants.pow2_int:7 of
+msgid "otherwise -> exponentiation-by-squaring (<= 1023 以及 >= -1022)"
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:16
@@ -69,16 +144,17 @@ msgstr ""
 msgid ""
 "Central difference derivative approximation with Richardson extrapolation."
 msgstr ""
+"Central difference derivative approximation with Richardson extrapolation."
 
 #: algolib.numerics.diff.derivative_central:3 of
 msgid ""
 "Useful when f does not support complex input. Accuracy is O(h^2) per step "
 "and improved by extrapolation."
-msgstr ""
+msgstr "适用于 f 不支持复数输入的情况。每步精度为 O(h²)，可通过外推提高精度。"
 
 #: algolib.numerics.diff.derivative_cstep:1 of
 msgid "Complex-step derivative approximation:"
-msgstr ""
+msgstr "复步长法导数近似："
 
 #: algolib.numerics.diff.derivative_cstep:3 of
 msgid "f'(x) ≈ Im(f(x + i*h)) / h"
@@ -88,17 +164,20 @@ msgstr ""
 msgid ""
 "Requires f to support complex input. Very stable since there is no "
 "subtractive cancellation."
-msgstr ""
+msgstr "要求 f 支持复数输入。方法非常稳定，因为没有减法消去误差。"
 
 #: ../source/api/algolib.numerics.rst:24
 msgid "algolib.numerics.exp module"
 msgstr ""
 
 #: algolib.numerics.exp.exp:1 of
+#, fuzzy
 msgid ""
 "Compute the natural exponential :math:`e^x` using Cody-Waite style range "
-"reduction and a Padé [3/3] kernel, without relying on :mod:`math`."
+"reduction and a Padé [5/5] kernel, without relying on :mod:`math`."
 msgstr ""
+"使用 Cody-Waite 区间缩减和 Padé [3/3] 核来计算自然指数 e^x，不依"
+"赖 :mod:`math` 模块。"
 
 #: algolib.numerics.exp.exp:5 of
 msgid "Algorithm"
@@ -109,50 +188,59 @@ msgid "Range reduction:"
 msgstr ""
 
 #: algolib.numerics.exp.exp:7 of
-msgid "Choose integer k = round(x / ln2)."
+#, python-brace-format
+msgid "Choose integer :math:`k = \\text{round}(x / \\ln 2)`."
 msgstr ""
 
 #: algolib.numerics.exp.exp:8 of
-msgid "Let r = x - k*ln2 computed via LN2_HI + LN2_LO splitting to reduce"
+msgid ""
+"Let :math:`r = x - k \\ln 2` computed via ``LN2_HI`` + ``LN2_LO`` splitting "
+"to reduce cancellation."
 msgstr ""
 
 #: algolib.numerics.exp.exp:9 of
-msgid "cancellation."
+#, python-brace-format
+msgid "Then :math:`\\exp{x} = 2^k \\cdot \\exp{r}`."
 msgstr ""
 
 #: algolib.numerics.exp.exp:10 of
-msgid "Then e^x = 2^k * e^r."
+msgid ""
+"A guard is applied to ensure :math:`k \\neq \\pm 1024` to avoid overflow "
+"in :math:`2^k`."
+msgstr ""
+
+#: algolib.numerics.exp.exp:11 of
+msgid "Kernel approximation on :math:`r` in :math:`[-\\ln2/2, \\ln2/2]`:"
 msgstr ""
 
 #: algolib.numerics.exp.exp:12 of
-msgid "Kernel approximation on r in [-ln2/2, ln2/2]:"
+msgid "Use a [5/5] Padé approximant:"
 msgstr ""
 
 #: algolib.numerics.exp.exp:13 of
-msgid "Use a [3/3] Padé approximant:"
-msgstr ""
-
-#: algolib.numerics.exp.exp:14 of
-msgid "exp(r) ≈ (120 + 60r + 12r^2 + r^3) / (120 - 60r + 12r^2 - r^3)."
+#, python-brace-format
+msgid ""
+"\\exp(r) \\approx \\frac{30240 + 15120 r + 3360 r^2 + 420 r^3 + 30 r^4 + "
+"r^5} {30240 - 15120 r + 3360 r^2 - 420 r^3 + 30 r^4 - r^5}."
 msgstr ""
 
 #: algolib.numerics.exp.exp:16 of
-msgid "Reconstruct with 2**k."
-msgstr ""
-
-#: algolib.numerics.exp.exp:19 of
-msgid "Special cases"
+msgid "Reconstruct with :math:`2^k`."
 msgstr ""
 
 #: algolib.numerics.exp.exp:20 of
-msgid "exp(+inf) = +inf"
-msgstr ""
-
-#: algolib.numerics.exp.exp:21 of
-msgid "exp(-inf) = 0.0"
+msgid "Special cases"
 msgstr ""
 
 #: algolib.numerics.exp.exp:22 of
+msgid "exp(+inf) = +inf"
+msgstr ""
+
+#: algolib.numerics.exp.exp:24 of
+msgid "exp(-inf) = 0.0"
+msgstr ""
+
+#: algolib.numerics.exp.exp:26 of
 msgid "exp(NaN)  = NaN"
 msgstr ""
 
@@ -160,15 +248,11 @@ msgstr ""
 msgid "param x"
 msgstr ""
 
-#: algolib.numerics.exp.exp:24 of
-msgid "Input value."
-msgstr ""
-
 #: algolib.numerics.exp.exp of
 msgid "type x"
 msgstr ""
 
-#: algolib.numerics.exp.exp:25 algolib.numerics.exp.exp:28 of
+#: algolib.numerics.exp.exp:29 algolib.numerics.exp.exp:32 of
 msgid "float"
 msgstr ""
 
@@ -176,7 +260,7 @@ msgstr ""
 msgid "returns"
 msgstr ""
 
-#: algolib.numerics.exp.exp:27 of
+#: algolib.numerics.exp.exp:31 of
 msgid "The exponential e**x."
 msgstr ""
 
@@ -185,6 +269,121 @@ msgid "rtype"
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:32
+#, fuzzy
+msgid "algolib.numerics.hyper module"
+msgstr "algolib.numerics.constants 模块"
+
+#: algolib.numerics.hyper:1 of
+msgid "Hyperbolic functions (pure implementation)."
+msgstr ""
+
+#: algolib.numerics.hyper:3 of
+msgid ""
+"This module provides ``sinh``, ``cosh`` and ``tanh`` implemented in pure "
+"Python, without importing :mod:`math`. It relies on the local ``exp`` kernel "
+"and uses cancellation-safe formulas."
+msgstr ""
+
+#: algolib.numerics.hyper:9 of
+msgid ""
+"Non-finite input (NaN/:math:`\\pm` Inf) returns NaN, to align with algolib's "
+"numerics"
+msgstr ""
+
+#: algolib.numerics.hyper:10 of
+msgid "contract."
+msgstr ""
+
+#: algolib.numerics.hyper:11 of
+msgid ""
+"``tanh`` uses the stable identity with ``exp(-2|x|)`` to avoid overflow and"
+msgstr ""
+
+#: algolib.numerics.hyper:12 of
+msgid "catastrophic cancellation."
+msgstr ""
+
+#: algolib.numerics.hyper:13 of
+msgid ""
+"``sinh``/``cosh`` are implemented with reciprocal forms and simple small-"
+"``x``"
+msgstr ""
+
+#: algolib.numerics.hyper:14 of
+msgid "fallbacks."
+msgstr ""
+
+#: algolib.numerics.hyper:16 of
+msgid ""
+"These functions live as normal numerics utilities (not bebind the backend "
+"switch), similar to ``sqrt`` and the stable helpers."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:1 of
+msgid "Hyperbolic cosine."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:3 algolib.numerics.hyper.sinh:3 of
+msgid "Real input."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:6 of
+msgid "``cosh(x)``."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:11 of
+msgid "Non-finite input returns NaN."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:12 of
+msgid "For small ``|x|`` we use ``1 + x**2/2``."
+msgstr ""
+
+#: algolib.numerics.hyper.cosh:13 of
+msgid "For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)``."
+msgstr ""
+
+#: algolib.numerics.hyper.sinh:1 of
+msgid "Hyperbolic sine."
+msgstr ""
+
+#: algolib.numerics.hyper.sinh:6 of
+msgid "``sinh(x)``."
+msgstr ""
+
+#: algolib.numerics.hyper.sinh:11 of
+msgid "Non-finite input NaN."
+msgstr ""
+
+#: algolib.numerics.hyper.sinh:12 of
+msgid ""
+"For very small ``|x|`` we return ``x`` (first-order Taylor) to avoid "
+"cancellation when forming ``exp(x) - exp(-x)``."
+msgstr ""
+
+#: algolib.numerics.hyper.sinh:13 of
+msgid ""
+"For large ``|x|`` we use the dominant term ``0.5 * exp(|x|)`` with sign."
+msgstr ""
+
+#: algolib.numerics.hyper.tanh:1 of
+msgid "Hyperbolic tangent with stable branches."
+msgstr ""
+
+#: algolib.numerics.hyper.tanh:6 of
+msgid "tanh(x). For non-finite inputs, returns NaN per algolib convention."
+msgstr ""
+
+#: algolib.numerics.hyper.tanh:11 of
+#, python-brace-format
+msgid ""
+"We use odd-function reduction: tanh(-x) = -tanh(x). For x ≥ 0, compute: "
+"tanh(x) = (e^{2x} - 1) / (e^{2x} + 1) which avoids catastrophic cancellation "
+"for moderate/large x. For very large x we directly saturate to 1.0 to avoid "
+"overflow."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:40
 msgid "algolib.numerics.rounding module"
 msgstr ""
 
@@ -233,29 +432,14 @@ msgid ""
 "to the nearest even integer."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst algolib.numerics.rounding.round_even
-#: algolib.numerics.rounding.round_half_away_from_zero of
-msgid "Parameters"
-msgstr ""
-
 #: algolib.numerics.rounding.round_even:7
 #: algolib.numerics.rounding.round_half_away_from_zero:3 of
 msgid "The number to round."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst algolib.numerics.rounding.round_even
-#: algolib.numerics.rounding.round_half_away_from_zero of
-msgid "Returns"
-msgstr ""
-
 #: algolib.numerics.rounding.round_even:10
 #: algolib.numerics.rounding.round_half_away_from_zero:6 of
 msgid "The rounded integer."
-msgstr ""
-
-#: ../source/api/algolib.numerics.rst algolib.numerics.rounding.round_even
-#: algolib.numerics.rounding.round_half_away_from_zero of
-msgid "Return type"
 msgstr ""
 
 #: algolib.numerics.rounding.round_even:14
@@ -267,16 +451,12 @@ msgstr ""
 msgid "Round a number to the nearest integer, rounding halves away from zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:40
+#: ../source/api/algolib.numerics.rst:48
 msgid "algolib.numerics.sqrt module"
 msgstr ""
 
 #: algolib.numerics.sqrt.newton_sqrt:1 of
-msgid "Square root via Newton–Raphson iteration (overflow-safe update)."
-msgstr ""
-
-#: algolib.numerics.sqrt.newton_sqrt:4 algolib.numerics.trig.tan:4 of
-msgid "Notes"
+msgid "Square root via Newton-Raphson iteration (overflow-safe update)."
 msgstr ""
 
 #: algolib.numerics.sqrt.newton_sqrt:5 of
@@ -287,8 +467,32 @@ msgid ""
 "float.hex) to match the magnitude of sqrt(x)."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:48
+#: ../source/api/algolib.numerics.rst:56
 msgid "algolib.numerics.stable module"
+msgstr ""
+
+#: algolib.numerics.stable.gcd:1 of
+msgid "Greatest common divisor for one or more integers."
+msgstr ""
+
+#: algolib.numerics.stable.gcd:3 of
+msgid "One or more integer values. Booleans are accepted (as integers)."
+msgstr ""
+
+#: algolib.numerics.stable.gcd:6 of
+msgid "Non-negative GCD. By convention, gcd(0, 0) -> 0."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst
+msgid "Raises"
+msgstr ""
+
+#: algolib.numerics.stable.gcd:9 of
+msgid "If no arguments are provided."
+msgstr ""
+
+#: algolib.numerics.stable.gcd:10 of
+msgid "If any argument is not an integer."
 msgstr ""
 
 #: algolib.numerics.stable.hypot:1 of
@@ -303,7 +507,7 @@ msgid ""
 "xs[i]^2}`."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:56
+#: ../source/api/algolib.numerics.rst:64
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -343,7 +547,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:64
+#: ../source/api/algolib.numerics.rst:72
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -371,6 +575,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:72
+#: ../source/api/algolib.numerics.rst:80
 msgid "Module contents"
 msgstr ""

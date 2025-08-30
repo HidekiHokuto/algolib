@@ -21,8 +21,8 @@ msgstr ""
 
 #: ../source/api/algolib.utils.rst:2
 msgid "algolib.utils package"
-msgstr ""
+msgstr "algolib.utils 包"
 
 #: ../source/api/algolib.utils.rst:5
 msgid "Module contents"
-msgstr ""
+msgstr "模块内容"
