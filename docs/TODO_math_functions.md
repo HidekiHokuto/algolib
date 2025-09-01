@@ -58,8 +58,8 @@
 
 ## Float ops & predicates
 - [ ] copysign
-- [ ] frexp
-- [ ] ldexp
+- [x] frexp
+- [x] ldexp
 - [ ] nextafter
 - [ ] ulp
 - [ ] isclose
