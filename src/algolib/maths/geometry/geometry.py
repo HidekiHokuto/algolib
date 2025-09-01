@@ -1,13 +1,13 @@
 # src/algolib/maths/geometry/geometry.py
-"""
+r"""
 A professional-grade :math:`N`-dimensional geometry module.
 
 It implements:
 
-- **Point**: a location in :math:`\\mathbb{R}^N`.
-- **Vector**: a displacement in :math:`\\mathbb{R}^N`.
-- **Line**: parametric line :math:`P(t) = P_0 + t\\,d`.
-- **Plane**: hyperplane :math:`\\{X:\\; n\\cdot(X-P_0)=0\\}`.
+- **Point**: a location in :math:`\mathbb{R}^N`.
+- **Vector**: a displacement in :math:`\mathbb{R}^N`.
+- **Line**: parametric line :math:`P(t) = P_0 + t\,d`.
+- **Plane**: hyperplane :math:`\{X:\; n\cdot(X-P_0)=0\}`.
 - **GeometryUtils**: utility routines.
 
 All classes validate dimensions and numeric inputs, and raise
@@ -168,7 +168,7 @@ class Vector:
 
             # Handle indeterminate 0 * inf (or inf * 0) as contributing 0.0
             if (a == 0.0 and (b == float("inf") or b == float("-inf"))) or \
-               (b == 0.0 and (a == float("inf") or a == float("-inf"))):
+                (b == 0.0 and (a == float("inf") or a == float("-inf"))):
                 # mathematically this term is 0; avoid NaN from IEEE 0*inf
                 continue
 
@@ -198,10 +198,10 @@ class Vector:
         -----
         - For finite scalars, behaves like standard component-wise multiplication.
         - For ``k`` being ``±inf``, we avoid the indeterminate form ``0 * inf``
-          producing ``NaN`` by returning ``0.0`` for zero components and
-          ``±inf`` (with proper sign) for non-zero components. This mirrors the
-          typical intent in normalization code where one would divide by a tiny
-          norm rather than multiply by its overflowing reciprocal.
+            producing ``NaN`` by returning ``0.0`` for zero components and
+            ``±inf`` (with proper sign) for non-zero components. This mirrors the
+            typical intent in normalization code where one would divide by a tiny
+            norm rather than multiply by its overflowing reciprocal.
         - If ``k`` is ``NaN``, propagate ``NaN`` to all components.
         """
         if not isinstance(k, (int, float)):
