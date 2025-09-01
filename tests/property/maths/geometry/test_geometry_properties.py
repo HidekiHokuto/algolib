@@ -323,15 +323,21 @@ def test_plane_normal_is_orthogonal(data):
     assume(_v_norm(nvec) > 0.0)
     P = Plane(p0, nvec)
     # Construct a point X on the plane: p0 + t*(u - proj_n(u))
-    # 原来：nv2 可能在 subnormal 区域下溢为 0
-    # nv2 = _v_dot(nvec, nvec)
-    # w = _v_sub(u, _v_scale(nvec, _v_dot(u, nvec) / nv2))
-
-    # 改为：先用单位法向量做投影，避免除以极小的 ||n||^2
-    norm_n = _v_norm(nvec)
-    assume(norm_n > 0.0)  # 已有的前置条件
-    n_hat = _v_scale(nvec, 1.0 / norm_n)  # 单位法向量
-    w = _v_sub(u, _v_scale(n_hat, _v_dot(u, n_hat)))
+    # 自适应投影：优先用原始法向量（更少往返舍入），当 ||n|| 非常小时退回单位法向量
+    nv2 = _v_dot(nvec, nvec)
+    if nv2 > 1e-300:
+        # 经典投影：proj_n(u) = ((u·n)/(n·n)) n
+        w = _v_sub(u, _v_scale(nvec, _v_dot(u, nvec) / nv2))
+        # 同时构造单位法向量用于下方正交性检测
+        norm_n = _v_norm(nvec)
+        assume(norm_n > 0.0)
+        n_hat = _v_scale(nvec, 1.0 / norm_n)
+    else:
+        # 极小范数：使用单位法向量避免除以几乎为零的 n·n
+        norm_n = _v_norm(nvec)
+        assume(norm_n > 0.0)
+        n_hat = _v_scale(nvec, 1.0 / norm_n)
+        w = _v_sub(u, _v_scale(n_hat, _v_dot(u, n_hat)))
     X = _make_point(a + t * b for a, b in zip(_p_coords(p0), _get_components(w)))
     diff = _v_sub(_make_vector(_p_coords(X)), _make_vector(_p_coords(p0)))
     # 原来：

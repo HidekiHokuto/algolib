@@ -17,10 +17,10 @@ All classes validate dimensions and numeric inputs, and raise
 
 from __future__ import annotations
 
-import math
 from typing import Iterable, List, Sequence, Union
 
 from algolib.exceptions import InvalidTypeError, InvalidValueError
+from algolib.numerics.stable import hypot, hypot_n, hypot_iter
 
 Number = Union[int, float]
 
@@ -161,6 +161,7 @@ class Vector:
             raise InvalidTypeError("other must be Vector.")
         _same_dim(self.dimension(), other.dimension())
         total = 0.0
+        c = 0.0
         for a, b in zip(self.comps, other.comps):
             # NaN propagation: if either input is NaN, the dot is NaN
             if a != a or b != b:  # NaN check
@@ -172,7 +173,12 @@ class Vector:
                 # mathematically this term is 0; avoid NaN from IEEE 0*inf
                 continue
 
-            total += a * b
+            prod = a * b
+            # Kahan summation: add with compensation
+            y = prod - c
+            t = total + y
+            c = (t - total) - y
+            total = t
         return total
 
 
@@ -313,11 +319,12 @@ class Plane:
         Return signed distance :math:`\frac{n\cdot (p-P_0)}{\lVert n\rVert}`.
         """
         _same_dim(self.point.dimension(), p.dimension())
-        n2 = self.normal.dot(self.normal)
-        if n2 == 0.0:  # guarded at init; defensive
+        # Use stable hypot for ||n|| to avoid overflow/underflow.
+        n_norm = hypot_n(*self.normal.comps)
+        if n_norm == 0.0:  # guarded at init; defensive
             raise InvalidValueError("normal vector must be non-zero.")
         diff = Vector([a - b for a, b in zip(p.coords, self.point.coords)])
-        return self.normal.dot(diff) / math.sqrt(n2)
+        return self.normal.dot(diff) / n_norm
 
     def contains(self, p: Point, tol: float = 1e-12) -> bool:
         """Return ``True`` if ``|n·(p-P0)| <= tol * ||n||``."""
@@ -333,4 +340,5 @@ class GeometryUtils:
         Euclidean distance :math:`\sqrt{\sum_i (x_{1i}-x_{2i})^2}`.
         """
         _same_dim(p1.dimension(), p2.dimension())
-        return math.sqrt(sum((a - b) ** 2 for a, b in zip(p1.coords, p2.coords)))
+        diffs = [a - b for a, b in zip(p1.coords, p2.coords)]
+        return hypot_n(*diffs)
