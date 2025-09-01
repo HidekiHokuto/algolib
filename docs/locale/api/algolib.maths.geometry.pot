@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 21:04+0900\n"
+"POT-Creation-Date: 2025-09-02 00:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgid "Common geometry utilities."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.GeometryUtils.distance:1
-msgid "Euclidean distance :math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`."
+msgid "Euclidean distance :math:`\\sqrt{\\sum_i (x_{1i}-x_{2i})^2}`."
 msgstr ""
 
 #: ../../src/algolib/maths/geometry/geometry.py:docstring of algolib.maths.geometry.geometry.Line:1

@@ -36,6 +36,14 @@ algolib.numerics.hyper module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.log module
+---------------------------
+
+.. automodule:: algolib.numerics.log
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.numerics.rounding module
 --------------------------------
 

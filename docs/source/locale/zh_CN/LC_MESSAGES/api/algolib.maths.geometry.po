@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 21:04+0900\n"
+"POT-Creation-Date: 2025-09-02 00:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -84,7 +84,8 @@ msgid "Common geometry utilities."
 msgstr "常用几何工具函数。"
 
 #: algolib.maths.geometry.geometry.GeometryUtils.distance:1 of
-msgid "Euclidean distance :math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`."
+#, fuzzy
+msgid "Euclidean distance :math:`\\sqrt{\\sum_i (x_{1i}-x_{2i})^2}`."
 msgstr "欧几里得距离公式：:math:`\\\\sqrt{\\\\sum_i (x_{1i}-x_{2i})^2}`。"
 
 #: algolib.maths.geometry.geometry.Line:1 of

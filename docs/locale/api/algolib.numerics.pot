@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 18:16+0900\n"
+"POT-Creation-Date: 2025-09-02 00:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "Centralized numerical constants for algolib."
 msgstr ""
 
 #: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:3
-msgid "No imports from `math` or third-party libs: *pure Python floats only*."
+msgid "No imports from :mod:`math` or third-party libs: pure Python floats only."
 msgstr ""
 
 #: ../../src/algolib/numerics/constants.py:docstring of algolib.numerics.constants:4
@@ -125,6 +125,7 @@ msgstr ""
 #: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.cosh:10
 #: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.sinh:10
 #: ../../src/algolib/numerics/hyper.py:docstring of algolib.numerics.hyper.tanh:10
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:35
 #: ../../src/algolib/numerics/sqrt.py:docstring of algolib.numerics.sqrt.newton_sqrt:4
 #: ../../src/algolib/numerics/trig.py:docstring of algolib.numerics.trig.tan:4
 msgid "Notes"
@@ -254,19 +255,24 @@ msgid "exp(NaN)  = NaN"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
 msgid "param x"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
 msgid "type x"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:29
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:32
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:23
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:29
 msgid "float"
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
 msgid "returns"
 msgstr ""
 
@@ -275,6 +281,7 @@ msgid "The exponential e**x."
 msgstr ""
 
 #: ../../src/algolib/numerics/exp.py:docstring of algolib.numerics.exp.exp:0
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
 msgid "rtype"
 msgstr ""
 
@@ -391,6 +398,114 @@ msgid "We use odd-function reduction: tanh(-x) = -tanh(x). For x ≥ 0, compute:
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:40
+msgid "algolib.numerics.log module"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:1
+msgid "Natural logarithm :math:`\\ln(x)`; if ``base`` is provided, return :math:`\\log_{\\text{base}}(x) = \\ln(x) / \\ln(\\text{base})`."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:5
+msgid "Strategy"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:6
+msgid "**Special-cases**:"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:8
+msgid "``log(NaN) -> NaN``"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:9
+msgid "``log(+inf) -> +inf``"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:10
+msgid "``x == 0.0 -> -inf``"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:11
+msgid "``x < 0`` raises :class:`InvalidValueError`."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:13
+msgid "**Initial guess via binary scaling**:"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:15
+msgid "Use our own :func:`frexp` to write ``x = m * 2**e`` with ``m in [0.5, 1)``. Then ``ln(x) = ln(m) + e * LN2``. For ``ln(m)`` seed Newton with the short series ``log1p(t) ≈ t - t^2/2 + t^3/3`` where ``t = m - 1``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:19
+msgid "**Refine with Newton** on ``f(y) = exp(y) - x`` using our own :func:`exp` as both function and derivative: ``f'(y) = exp(y)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:22
+msgid "Input value (must be positive for a finite result)."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
+msgid "param base"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:24
+msgid "If provided, compute ``log(x, base)``. ``base`` must be positive and not equal to 1."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
+msgid "type base"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:26
+msgid "float, optional"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:28
+msgid "``ln(x)`` if ``base is None``; otherwise ``ln(x)/ln(base)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
+msgid "raises InvalidTypeError"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:31
+msgid "If ``x`` (or ``base`` when provided) is not ``int``/``float`` compatible."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:0
+msgid "raises InvalidValueError"
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:32
+msgid "If ``x <= 0``; or if ``base`` is not positive or equals 1."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:36
+msgid "Implementation avoids :mod:`math` and relies only on the library's internal numerics."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log:38
+msgid "``frexp`` handles subnormal inputs; the Newton step quickly brings the seed to full precision."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log10:1
+msgid "Base-10 logarithm of ``x``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log10:3
+msgid "Equivalent to ``log(x, 10.0)``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log2:1
+msgid "Base-2 logarithm of ``x``."
+msgstr ""
+
+#: ../../src/algolib/numerics/log.py:docstring of algolib.numerics.log.log2:3
+msgid "Equivalent to ``log(x, 2.0)``."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:48
 msgid "algolib.numerics.rounding module"
 msgstr ""
 
@@ -458,7 +573,7 @@ msgstr ""
 msgid "Round a number to the nearest integer, rounding halves away from zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:48
+#: ../source/api/algolib.numerics.rst:56
 msgid "algolib.numerics.sqrt module"
 msgstr ""
 
@@ -472,7 +587,7 @@ msgstr ""
 msgid "Uses the overflow-safe iteration y_{k+1} = 0.5 * (y_k + x / y_k). The initial guess is derived from the binary exponent of `x` (parsed via float.hex) to match the magnitude of sqrt(x)."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:56
+#: ../source/api/algolib.numerics.rst:64
 msgid "algolib.numerics.stable module"
 msgstr ""
 
@@ -527,7 +642,7 @@ msgstr ""
 msgid "Inverse of :func:`frexp`: return ``m * 2**e`` using only multiplications (no :mod:`math`, no :mod:`struct`). Propagates NaN/Inf, preserves signed zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:64
+#: ../source/api/algolib.numerics.rst:72
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -565,7 +680,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:72
+#: ../source/api/algolib.numerics.rst:80
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -593,6 +708,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:80
+#: ../source/api/algolib.numerics.rst:88
 msgid "Module contents"
 msgstr ""
