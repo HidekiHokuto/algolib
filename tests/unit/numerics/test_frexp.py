@@ -28,3 +28,9 @@ def test_frexp_mantissa_range():
             assert m == 0.0 and e == 0
         else:
             assert 0.5 <= abs(m) < 1.0
+
+def test_ldexp_basic_cases():
+    assert ldexp(0.0, 0) == math.ldexp(0.0, 0)
+    for _ in range(100):
+        m, e = (random.random()*2-1)*1e200, random.randint(-100, 100)
+        assert ldexp(m, e) == math.ldexp(m, e)
