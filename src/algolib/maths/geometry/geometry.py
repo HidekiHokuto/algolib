@@ -330,7 +330,7 @@ class GeometryUtils:
     @staticmethod
     def distance(p1: Point, p2: Point) -> float:
         r"""
-        Euclidean distance :math:`\\sqrt{\\sum_i (x_{1i}-x_{2i})^2}`.
+        Euclidean distance :math:`\sqrt{\sum_i (x_{1i}-x_{2i})^2}`.
         """
         _same_dim(p1.dimension(), p2.dimension())
         return math.sqrt(sum((a - b) ** 2 for a, b in zip(p1.coords, p2.coords)))
