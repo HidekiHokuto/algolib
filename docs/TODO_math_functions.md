@@ -2,7 +2,7 @@
 
 ## Number-theoretic
 - [ ] factorial
-- [ ] gcd
+- [x] gcd
 - [ ] lcm
 - [ ] comb
 - [ ] perm
