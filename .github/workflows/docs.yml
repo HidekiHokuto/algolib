@@ -71,12 +71,7 @@ jobs:
 
           # 5) Prevent Jekyll processing and provide a root index redirect
           touch docs/build/html/.nojekyll
-          cat > docs/build/html/index.html <<'HTML'
-          <!doctype html><meta charset="utf-8">
-          <meta http-equiv="refresh" content="0; url=./en/">
-          <title>algolib docs</title>
-          <p>Redirecting to <a href="./en/">English</a> | <a href="./zh/">简体中文</a></p>
-          HTML
+          cp docs/index.html docs/build/html/index.html
 
 
       - name: Upload Pages artifact
