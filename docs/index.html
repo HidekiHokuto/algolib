@@ -1,0 +1,176 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algolib — Rigorous Numerical Computation Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3460', // 深蓝 - 严谨
+                        secondary: '#F9D342', // 明黄 - 可追溯
+                        accent: '#1A73E8',
+                        dark: '#1A1A2E',
+                        light: '#F5F7FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #0F3460 0%, #1A73E8 100%);
+            }
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- Header with Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & Project Name -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center">
+                        <i class="fa fa-calculator text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-primary">algolib</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (First Screen) -->
+    <section class="py-20 md:py-32 bg-gradient-to-b from-white to-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Logo for Hero -->
+                <div class="w-16 h-16 mx-auto mb-8 rounded-lg gradient-bg flex items-center justify-center">
+                    <i class="fa fa-calculator text-white text-2xl"></i>
+                </div>
+
+                <!-- Project Name -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">algolib</h1>
+
+                <!-- Slogan -->
+                <p class="text-xl md:text-2xl text-gray-700 font-medium mb-8 italic">
+                    A rigorous, auditable numerical computation library in Python.
+                </p>
+
+                <!-- Brief Introduction -->
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto text-balance">
+                    algolib 是一个开源数学算法库，目标是为科学研究与工程计算提供高可靠、可追溯、工业级审计友好的数值工具。
+                </p>
+
+                <!-- Key Features -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa fa-code text-primary text-2xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">统一 API 与模块结构</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa fa-check-circle text-primary text-2xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">严格的数值约定</h3>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <i class="fa fa-flask text-primary text-2xl mb-4"></i>
+                        <h3 class="font-semibold mb-2">高覆盖率测试体系</h3>
+                    </div>
+                </div>
+
+                <!-- Primary Goal -->
+                <div class="inline-block bg-primary/10 text-primary px-6 py-3 rounded-full text-lg font-medium">
+                    比 math / numpy 更严谨，比工业黑箱更透明
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://hidekihokuto.github.io/algolib/coverage/" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg shadow-lg shadow-primary/20 transition-custom">
+                        <i class="fa fa-chart-pie mr-2"></i>Coverage Report
+                    </a>
+                </div>
+
+                <!-- Language Selection -->
+                <div class="mt-10">
+                    <p class="text-gray-600 mb-3">Select doc language / 选择文档语言：</p>
+                    <div class="flex justify-center gap-3">
+                        <a href="./en/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:border-primary transition-custom">
+                            English
+                        </a>
+                        <a href="./zh/" class="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:border-primary transition-custom">
+                            简体中文
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+                        <i class="fa fa-calculator text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold">algolib</span>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="mb-2">© 2025 algolib contributors. All rights reserved.</p>
+                    <p class="text-white/70 text-sm">Released under the GNU General Public License v3.0 (GPLv3)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactions -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+    </script>
+
+
+
+    </body></html>
