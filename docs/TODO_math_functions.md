@@ -20,7 +20,7 @@
 
 ## Power & logarithmic
 - [x] sqrt
-- [x] pow
+- [ ] pow
 - [x] exp
 - [ ] exp2
 - [ ] expm1
