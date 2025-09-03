@@ -9,7 +9,7 @@ and algorithmic implementations. It supports algebraic form (a + bi) and polar f
 Notes
 -----
 - This class uses plain floats and is immutable.
-- We intentionally avoid Python's built-in :class:`complex` to practice fundamentals.
+- We intentionally avoid Python's built-in `Complex` to practice fundamentals.
 
 Examples
 --------
@@ -26,11 +26,14 @@ Examples
 from __future__ import annotations
 
 import math
+
 from dataclasses import dataclass
 from typing import Iterable, Tuple
 
-from algolib.exceptions import InvalidTypeError, InvalidValueError
+from algolib.exceptions import InvalidTypeError, InvalidValueError, NotImplementedAlgolibError
 from algolib.numerics import hypot
+from algolib.numerics.trig_pure import sin, cos
+from algolib.numerics.sqrt import newton_sqrt as sqrt
 
 
 Number = float  # for readability
@@ -112,7 +115,7 @@ class Complex:
             raise InvalidTypeError("r and theta must be real numbers (int or float).")
         if r < 0:
             raise InvalidValueError(f"radius r must be non-negative, got {r}")
-        return Complex(r * math.cos(theta), r * math.sin(theta))
+        return Complex(r * cos(theta), r * sin(theta))
 
     @staticmethod
     def from_cartesian(re: Number, im: Number) -> "Complex":
@@ -280,14 +283,14 @@ class Complex:
         # apply one-time scaling to adjust modulus back to 1
         # note: sqrt and multiplication introduce tiny rounding errors, but within ~1e-15
         if m2 != 1.0 and m2 > 0.0 and math.isfinite(m2):
-            adj = 1.0 / math.sqrt(m2)
+            adj = 1.0 / sqrt(m2)
             x, y = x * adj, y * adj
         return Complex(x, y)
 
     # ---------------------------------- algebra ---------------------------------
 
     def __add__(self, other: "Complex") -> "Complex":
-        """
+        r"""
         Add two complex numbers.
 
         Parameters
@@ -384,6 +387,59 @@ class Complex:
     def __abs__(self) -> float:
         """Builtin ``abs(z)`` -> modulus."""
         return self.modulus()
+
+    def __pow__(self, exponent: int) -> "Complex":
+        r"""
+        Raise this Complex number to an integer power.
+
+        Implements exponentiation by squaring for integer exponents.
+        Non-integer exponents are not supported here and will return
+        NotImplemented to allow the Python runtime to dispatch elsewhere.
+
+        Parameters
+        ----------
+        exponent : int
+            The integer exponent. Booleans are treated as integers.
+
+        Returns
+        -------
+        Complex
+            The result of raising `self` to `exponent`.
+
+        Notes
+        -----
+        - This implementation does not import any external math library.
+        - Negative exponents are handled via reciprocal:
+            `self ** (-n)` is computed first (with `n > 0`), then inverted.
+        """
+        # Accept bool as int (True -> 1, False -> 0)
+        if isinstance(exponent, bool):
+            exponent = int(exponent)
+
+        if not isinstance(exponent, int):
+            return NotImplementedAlgolibError # defer to other implementations if any
+
+        # 0-th power yields multiplicative identity 1 + 0i
+        if exponent == 0:
+            return type(self)(1.0, 0.0)
+
+        # Handle negative exponents via reciprocal
+        if exponent < 0:
+            pos = -exponent
+            return type(self)(1.0, 0.0) / (self.__pow__(pos))
+
+        # Fast exponentiation (exponentiation by squaring)
+        result = type(self)(1.0, 0.0)
+        base = self
+        n =  exponent
+
+        while n > 0:
+            if n & 1:
+                result = result * base
+            base = base * base
+            n >>= 1
+
+        return result
 
     # ------------------------------- comparisons --------------------------------
 

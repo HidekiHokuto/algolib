@@ -20,14 +20,14 @@
 
 ## Power & logarithmic
 - [x] sqrt
-- [x] pow
+- [ ] pow
 - [x] exp
 - [ ] exp2
 - [ ] expm1
 - [ ] log
 - [ ] log1p
-- [ ] log2
-- [ ] log10
+- [x] log2
+- [x] log10
 - [ ] cbrt
 
 ## Trigonometric
