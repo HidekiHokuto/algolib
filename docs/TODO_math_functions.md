@@ -26,8 +26,8 @@
 - [ ] expm1
 - [ ] log
 - [ ] log1p
-- [ ] log2
-- [ ] log10
+- [x] log2
+- [x] log10
 - [ ] cbrt
 
 ## Trigonometric
