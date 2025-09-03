@@ -9,7 +9,7 @@ and algorithmic implementations. It supports algebraic form (a + bi) and polar f
 Notes
 -----
 - This class uses plain floats and is immutable.
-- We intentionally avoid Python's built-in :class:`complex` to practice fundamentals.
+- We intentionally avoid Python's built-in `Complex` to practice fundamentals.
 
 Examples
 --------
@@ -290,7 +290,7 @@ class Complex:
     # ---------------------------------- algebra ---------------------------------
 
     def __add__(self, other: "Complex") -> "Complex":
-        """
+        r"""
         Add two complex numbers.
 
         Parameters

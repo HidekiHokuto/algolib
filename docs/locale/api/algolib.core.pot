@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 18:17+0900\n"
+"POT-Creation-Date: 2025-09-03 12:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgid "This class uses plain floats and is immutable."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex:10
-msgid "We intentionally avoid Python's built-in :class:`complex` to practice fundamentals."
+msgid "We intentionally avoid Python's built-in `Complex` to practice fundamentals."
 msgstr ""
 
 #: ../../src/algolib/core/complex.py:docstring of algolib.core.complex:13

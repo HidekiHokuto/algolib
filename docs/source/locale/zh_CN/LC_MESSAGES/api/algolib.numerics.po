@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-02 00:50+0900\n"
+"POT-Creation-Date: 2025-09-03 12:45+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -104,7 +104,8 @@ msgstr ""
 #: algolib.numerics.constants.isfinite_f:10 algolib.numerics.hyper:8
 #: algolib.numerics.hyper.cosh:10 algolib.numerics.hyper.sinh:10
 #: algolib.numerics.hyper.tanh:10 algolib.numerics.log.log:35
-#: algolib.numerics.sqrt.newton_sqrt:4 algolib.numerics.trig.tan:4 of
+#: algolib.numerics.pow.pow:18 algolib.numerics.sqrt.newton_sqrt:4
+#: algolib.numerics.trig.tan:4 of
 msgid "Notes"
 msgstr ""
 
@@ -510,6 +511,59 @@ msgid "Equivalent to ``log(x, 2.0)``."
 msgstr ""
 
 #: ../source/api/algolib.numerics.rst:48
+#, fuzzy
+msgid "algolib.numerics.pow module"
+msgstr "algolib.numerics.constants 模块"
+
+#: algolib.numerics.pow.pow:1 of
+msgid "Compute `base` raised to the exponent `exp`."
+msgstr ""
+
+#: algolib.numerics.pow.pow:3 of
+msgid ""
+"This is a thin wrapper around Python's built-in exponentiation operator "
+"(`**`), provided for API consistency within algolib. For built-in numeric "
+"types (int, float), this function behaves exactly like `base ** exp`. For "
+"`algolib.core.complex.Complex`, integer exponents are supported via its "
+"`__pow__` implementation."
+msgstr ""
+
+#: algolib.numerics.pow.pow:8 of
+msgid "The base value."
+msgstr ""
+
+#: algolib.numerics.pow.pow:10 of
+msgid ""
+"The exponent. For built-in numeric types this follows Python semantics. "
+"For :class:`~algolib.core.complex.Complex`, only integer exponents are "
+"guaranteed to be supported."
+msgstr ""
+
+#: algolib.numerics.pow.pow:14 of
+msgid "The result of `base ** exp`."
+msgstr ""
+
+#: algolib.numerics.pow.pow:15 of
+msgid "int or float or :class:`~algolib.core.complex.Complex`"
+msgstr ""
+
+#: algolib.numerics.pow.pow:19 of
+msgid ""
+"No attempt is made here to alter Python's semantics or to perform domain "
+"checking."
+msgstr ""
+
+#: algolib.numerics.pow.pow:20 of
+msgid ""
+"For :class:`~algolib.core.complex.Complex`, non-integer exponents return "
+"`NotImplemented` from `__pow__`,"
+msgstr ""
+
+#: algolib.numerics.pow.pow:21 of
+msgid "so the caller may need to handle that case if used directly."
+msgstr ""
+
+#: ../source/api/algolib.numerics.rst:56
 msgid "algolib.numerics.rounding module"
 msgstr ""
 
@@ -577,7 +631,7 @@ msgstr ""
 msgid "Round a number to the nearest integer, rounding halves away from zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:56
+#: ../source/api/algolib.numerics.rst:64
 msgid "algolib.numerics.sqrt module"
 msgstr ""
 
@@ -593,7 +647,7 @@ msgid ""
 "float.hex) to match the magnitude of sqrt(x)."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:64
+#: ../source/api/algolib.numerics.rst:72
 msgid "algolib.numerics.stable module"
 msgstr ""
 
@@ -653,7 +707,7 @@ msgid ""
 "zero."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:72
+#: ../source/api/algolib.numerics.rst:80
 msgid "algolib.numerics.trig module"
 msgstr ""
 
@@ -693,7 +747,7 @@ msgstr ""
 msgid "``tan(x)`` evaluated by the active numerics backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:80
+#: ../source/api/algolib.numerics.rst:88
 msgid "algolib.numerics.trig\\_pure module"
 msgstr ""
 
@@ -721,6 +775,6 @@ msgstr ""
 msgid "Wrap current pure-Python trig implementations as a backend."
 msgstr ""
 
-#: ../source/api/algolib.numerics.rst:88
+#: ../source/api/algolib.numerics.rst:96
 msgid "Module contents"
 msgstr ""

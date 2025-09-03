@@ -44,6 +44,14 @@ algolib.numerics.log module
    :undoc-members:
    :show-inheritance:
 
+algolib.numerics.pow module
+---------------------------
+
+.. automodule:: algolib.numerics.pow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 algolib.numerics.rounding module
 --------------------------------
 

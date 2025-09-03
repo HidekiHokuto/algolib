@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Algolib \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 18:17+0900\n"
+"POT-Creation-Date: 2025-09-03 12:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -56,10 +56,8 @@ msgstr "本类使用普通浮点数且为不可变对象。"
 
 #: algolib.core.complex:10 of
 msgid ""
-"We intentionally avoid Python's built-in :class:`complex` to practice "
-"fundamentals."
-msgstr ""
-"为避免依赖内置特性，本类特意不使用 Python 内置的 :class:`complex` 类型。"
+"We intentionally avoid Python's built-in `Complex` to practice fundamentals."
+msgstr "为避免依赖内置特性，本类特意不使用 Python 内置的 `Complex` 类型。"
 
 #: algolib.core.complex:13 algolib.core.complex.Complex.argument:7
 #: algolib.core.complex.Complex.conjugate:7
