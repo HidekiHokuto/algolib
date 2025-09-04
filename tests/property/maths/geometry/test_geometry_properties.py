@@ -314,10 +314,11 @@ def test_distance_metric_axioms(data):
     assert d_pq >= 0.0
     assert math.isclose(d_pq, d_qp, rel_tol=1e-12, abs_tol=1e-12)
     same = all(
-        math.isclose(a, b, abs_tol=0.0) for a, b in zip(_p_coords(p), _p_coords(q))
+        math.isclose(a, b, rel_tol=0.0, abs_tol=0.0)
+        for a, b in zip(_p_coords(p), _p_coords(q))
     )
     if same:
-        assert math.isclose(d_pq, 0.0, abs_tol=0.0)
+        assert math.isclose(d_pq, 0.0, rel_tol=0.0, abs_tol=0.0)
     d_pr = d(p, r)
     d_qr = d(q, r)
     # allow a tiny absolute slack for FP rounding of two norms + one add
