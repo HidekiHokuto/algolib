@@ -2,6 +2,7 @@ from algolib.numerics import set_backend, get_backend_name
 from algolib.numerics.trig import sin, cos, tan
 from algolib.maths.number_theory.prime import is_prime
 from algolib.numerics.exp import exp
+from algolib.numerics.hyper import atanh
 import math
 
 print("I'm Yuanxun")
@@ -37,3 +38,6 @@ print("Original array:", arr)
 print("Bubble sorted:", bubble_sort(arr))
 
 print(exp(3) - math.exp(3))
+
+print(atanh(1), atanh(0.0001))
+
