@@ -5,6 +5,7 @@ from typing import Iterable
 from algolib.numerics.sqrt import newton_sqrt
 from algolib.exceptions import InvalidTypeError, InvalidValueError
 
+
 def hypot(x: float, y: float) -> float:
     r"""
     Stable :math:`\sqrt{x^2 + y^2}` with overflow/underflow protections.
@@ -14,8 +15,9 @@ def hypot(x: float, y: float) -> float:
         x, y = y, x
     if x == 0.0:
         return 0.0
-    r = y / x # |r| <= 1
-    return x * newton_sqrt(1.0 + r*r)
+    r = y / x  # |r| <= 1
+    return x * newton_sqrt(1.0 + r * r)
+
 
 def hypot_n(*xs: float) -> float:
     r"""
@@ -27,11 +29,13 @@ def hypot_n(*xs: float) -> float:
         acc = hypot(acc, float(v))
     return acc
 
+
 def hypot_iter(vals: Iterable[float]) -> float:
     acc = 0.0
     for v in vals:
         acc = hypot(acc, float(v))
     return acc
+
 
 def gcd(*args: int) -> int:
     r"""
@@ -60,7 +64,9 @@ def gcd(*args: int) -> int:
     g: int = 0
     for x in args:
         if not isinstance(x, int):
-            raise InvalidTypeError(f"gcd() only accepts integers, got {type(x).__name__}.")
+            raise InvalidTypeError(
+                f"gcd() only accepts integers, got {type(x).__name__}."
+            )
         a = x if x >= 0 else -x
         if a == 0:
             # gcd(g, 0) = g
@@ -74,6 +80,7 @@ def gcd(*args: int) -> int:
             g, b = b, g % b
 
     return g
+
 
 def frexp(x: float) -> tuple[float, int]:
     r"""
@@ -93,7 +100,7 @@ def frexp(x: float) -> tuple[float, int]:
     # specials: NaN / ±Inf / ±0.0 (preserve signed zero)
     if xf != xf:  # NaN
         return (xf, 0)
-    if xf == float('inf') or xf == float('-inf'):
+    if xf == float("inf") or xf == float("-inf"):
         return (xf, 0)
     if xf == 0.0:
         return (xf, 0)
@@ -101,24 +108,24 @@ def frexp(x: float) -> tuple[float, int]:
     # Use hex representation: '[-]0x1.mmmmmmp±e' for normals,
     # subnormals may appear like '[-]0x0.mmmmmmp-1022'.
     hs = xf.hex()  # e.g., '-0x1.8p-1'
-    neg = hs[0] == '-'
+    neg = hs[0] == "-"
     if neg:
         hs = hs[1:]
     # split mantissa and binary exponent
-    mant_str, exp_str = hs.split('p')
+    mant_str, exp_str = hs.split("p")
     bexp = int(exp_str)  # binary exponent (base-2)
-    assert mant_str.startswith('0x')
+    assert mant_str.startswith("0x")
     mant_str = mant_str[2:]  # like '1.8' or '0.0001'
-    if '.' in mant_str:
-        ip, fp = mant_str.split('.')
+    if "." in mant_str:
+        ip, fp = mant_str.split(".")
     else:
-        ip, fp = mant_str, ''
+        ip, fp = mant_str, ""
 
     # parse hex fraction to a Python float exactly
     ip_val = int(ip, 16) if ip else 0
     frac_val = 0.0
     for i, ch in enumerate(fp, start=1):
-        frac_val += int(ch, 16) / (16.0 ** i)
+        frac_val += int(ch, 16) / (16.0**i)
     mant = ip_val + frac_val  # in [0, 2)
 
     # Now xf = sign * mant * 2**bexp
@@ -153,7 +160,7 @@ def ldexp(m: float, e: int) -> float:
 
     mf = float(m)
     # NaN/Inf propagate; ±0.0 returns ±0.0 regardless of e
-    if mf != mf or mf == float('inf') or mf == float('-inf') or mf == 0.0:
+    if mf != mf or mf == float("inf") or mf == float("-inf") or mf == 0.0:
         return mf
 
     # exponentiation by squaring on base 2.0 or 0.5 depending on e sign

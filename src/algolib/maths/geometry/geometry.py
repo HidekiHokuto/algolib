@@ -29,7 +29,9 @@ def _ensure_numbers(xs: Iterable[Number]) -> List[float]:
     try:
         out = [float(x) for x in xs]
     except Exception as e:  # noqa: BLE001
-        raise InvalidTypeError("all coordinates/components must be real numbers.") from e
+        raise InvalidTypeError(
+            "all coordinates/components must be real numbers."
+        ) from e
     return out
 
 
@@ -147,7 +149,7 @@ class Vector:
             return 0.0
 
         # Use built-in power for sqrt without importing math
-        return float(scale * (sumsq ** 0.5))
+        return float(scale * (sumsq**0.5))
 
     def dot(self, other: "Vector") -> float:
         r"""
@@ -168,8 +170,9 @@ class Vector:
                 return float("nan")
 
             # Handle indeterminate 0 * inf (or inf * 0) as contributing 0.0
-            if (a == 0.0 and (b == float("inf") or b == float("-inf"))) or \
-                (b == 0.0 and (a == float("inf") or a == float("-inf"))):
+            if (a == 0.0 and (b == float("inf") or b == float("-inf"))) or (
+                b == 0.0 and (a == float("inf") or a == float("-inf"))
+            ):
                 # mathematically this term is 0; avoid NaN from IEEE 0*inf
                 continue
 
@@ -180,7 +183,6 @@ class Vector:
             c = (t - total) - y
             total = t
         return total
-
 
     # convenience ops
     def __add__(self, other: "Vector") -> "Vector":
@@ -227,9 +229,9 @@ class Vector:
                 return Vector([0.0 for _ in self.comps])
             sign_k = 1.0 if k > 0.0 else -1.0
             # Avoid forming an infinite scalar; normalize via per-component division
-            out = [ (a / nrm) for a in self.comps ]
+            out = [(a / nrm) for a in self.comps]
             if sign_k < 0.0:
-                out = [ -v for v in out ]
+                out = [-v for v in out]
             return Vector(out)
 
         # Finite scalar: regular multiply
@@ -266,7 +268,9 @@ class Line:
         """Return the point :math:`P_0 + t\\,d`."""
         if not isinstance(t, (int, float)):
             raise InvalidTypeError("t must be real.")
-        return Point([p + float(t) * d for p, d in zip(self.point.coords, self.direction.comps)])
+        return Point(
+            [p + float(t) * d for p, d in zip(self.point.coords, self.direction.comps)]
+        )
 
     def contains(self, p: Point, tol: float = 1e-12) -> bool:
         """
@@ -277,7 +281,9 @@ class Line:
         """
         _same_dim(self.point.dimension(), p.dimension())
         ratios = []
-        for (pi, p0i), di in zip(zip(p.coords, self.point.coords), self.direction.comps):
+        for (pi, p0i), di in zip(
+            zip(p.coords, self.point.coords), self.direction.comps
+        ):
             if abs(di) <= tol:
                 if abs(pi - p0i) > tol:
                     return False  # movement along a zero direction -> off-line
@@ -285,7 +291,9 @@ class Line:
             ratios.append((pi - p0i) / di)
         if not ratios:
             # direction is almost zero in all components -> treat as aligned if p == P0
-            return all(abs(pi - p0i) <= tol for (pi, p0i) in zip(p.coords, self.point.coords))
+            return all(
+                abs(pi - p0i) <= tol for (pi, p0i) in zip(p.coords, self.point.coords)
+            )
         first = ratios[0]
         return all(abs(r - first) <= tol for r in ratios[1:])
 

@@ -115,6 +115,7 @@ def log(x: float, base: float | None = None) -> float:
 
     return ln_x / ln_base
 
+
 def log10(x: float) -> float:
     r"""
     Base-10 logarithm of ``x``.
@@ -122,6 +123,7 @@ def log10(x: float) -> float:
     Equivalent to ``log(x, 10.0)``.
     """
     return log(x, 10.0)
+
 
 def log2(x: float) -> float:
     r"""

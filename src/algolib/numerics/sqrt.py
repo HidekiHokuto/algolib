@@ -26,7 +26,7 @@ def newton_sqrt(x: float, *, tol: float = 1e-15, max_iter: int = 100) -> float:
     # Initial guess from binary exponent: float.hex(x) -> '0x1.23p+e'
     hx = float.hex(x)
     try:
-        p = int(hx.split('p')[-1])
+        p = int(hx.split("p")[-1])
     except Exception:
         p = 0
     y = 2.0 ** (p // 2)

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Callable, Optional
 from algolib.exceptions import ConvergenceError
 
+
 def newton(
     f: Callable[[float], float],
     fprime: Optional[Callable[[float], float]],
@@ -31,7 +32,7 @@ def newton(
     fd_eps : float, optional
         Step size used by the finite-difference derivative when ``fprime``
         is ``None``. Defaults to ``1e-8``.
-    
+
     Returns
     -------
     float
@@ -66,4 +67,3 @@ def newton(
         x = x_new
     # Not converged
     raise ConvergenceError(iterations=max_iter, residual=abs(f(x)), target_tol=tol)
-

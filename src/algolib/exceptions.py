@@ -17,11 +17,13 @@ from typing import Any, Optional
 
 # -------------------- base --------------------
 
+
 class AlgolibError(Exception):
     """Base exception for this library."""
 
 
 # -------------------- arguments / dimensions --------------------
+
 
 class InvalidTypeError(AlgolibError, TypeError):
     """Raised when an argument has an invalid type."""
@@ -33,10 +35,13 @@ class InvalidValueError(AlgolibError, ValueError):
 
 class DimensionMismatchError(AlgolibError):
     """Incompatible shapes/dimensions."""
+
     def __init__(self, expected: Any, got: Any, message: Optional[str] = None):
         self.expected = expected
         self.got = got
-        super().__init__(message or f"Dimension mismatch: expected {expected}, got {got}")
+        super().__init__(
+            message or f"Dimension mismatch: expected {expected}, got {got}"
+        )
 
 
 class DegeneracyError(AlgolibError):
@@ -44,6 +49,7 @@ class DegeneracyError(AlgolibError):
 
 
 # -------------------- algebra / linear algebra --------------------
+
 
 class SingularMatrixError(AlgolibError):
     """Matrix is singular / not invertible."""
@@ -55,6 +61,7 @@ class NotPositiveDefiniteError(AlgolibError):
 
 # -------------------- geometry --------------------
 
+
 class NoIntersectionError(AlgolibError):
     """No intersection between geometric entities."""
 
@@ -65,9 +72,11 @@ class AmbiguousGeometryError(AlgolibError):
 
 # -------------------- numeric / convergence --------------------
 
+
 @dataclass
 class ConvergenceError(AlgolibError):
     """Iteration did not converge within budget/tolerance."""
+
     iterations: int
     residual: float | None = None
     target_tol: float | None = None
@@ -99,6 +108,7 @@ class ToleranceError(AlgolibError, AssertionError):
 
 # -------------------- feature / support --------------------
 
+
 class NotSupportedError(AlgolibError):
     """Feature not supported in this backend/type/platform."""
 
@@ -111,14 +121,23 @@ __all__ = [
     # base
     "AlgolibError",
     # args/dim
-    "InvalidTypeError", "InvalidValueError", "DimensionMismatchError", "DegeneracyError",
+    "InvalidTypeError",
+    "InvalidValueError",
+    "DimensionMismatchError",
+    "DegeneracyError",
     # algebra
-    "SingularMatrixError", "NotPositiveDefiniteError",
+    "SingularMatrixError",
+    "NotPositiveDefiniteError",
     # geometry
-    "NoIntersectionError", "AmbiguousGeometryError",
+    "NoIntersectionError",
+    "AmbiguousGeometryError",
     # numeric
-    "ConvergenceError", "NumericOverflowError", "NumericUnderflowError",
-    "LossOfSignificanceError", "ToleranceError",
+    "ConvergenceError",
+    "NumericOverflowError",
+    "NumericUnderflowError",
+    "LossOfSignificanceError",
+    "ToleranceError",
     # feature
-    "NotSupportedError", "NotImplementedAlgolibError",
+    "NotSupportedError",
+    "NotImplementedAlgolibError",
 ]

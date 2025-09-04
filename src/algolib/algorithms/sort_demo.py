@@ -40,6 +40,7 @@ def bubble_sort(arr: Sequence[float]) -> List[float]:
                 a[j], a[j + 1] = a[j + 1], a[j]
     return a
 
+
 def insertion_sort(arr: Sequence[float]) -> List[float]:
     r"""
     Sort a list using the insertion sort algorithm.
