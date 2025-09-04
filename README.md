@@ -18,10 +18,27 @@ Translation Progress: 31%
 ---
 
 ## Quick start
+
+1. Get the code
+```bash
+git clone https://github.com/HidekiHokuto/algolib.git
+cd algolib
+```
+
+2. Create env
 ```bash
 conda create -n algos310 python=3.10 -y
 conda activate algos310
-conda install -c conda-forge pytest sphinx sphinx_rtd_theme myst-parser -y
+```
+
+3. Install dev dependencies via extras
+```bash
+python -m pip install -U pip
+pip install .[dev]
+```
+
+4. Run tests
+```bash
 pytest
 ```
 
