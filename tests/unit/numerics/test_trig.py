@@ -5,7 +5,6 @@ import pytest
 from algolib.numerics import constants as C
 
 
-
 from algolib.numerics.trig_pure import sin as my_sin, cos as my_cos, tan as my_tan
 
 # -----------------------
