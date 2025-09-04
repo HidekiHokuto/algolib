@@ -36,7 +36,7 @@
 
 ## Hyperbolic
 - [x] sinh, cosh, tanh
-- [ ] asinh, acosh, atanh
+- [x] asinh, acosh, atanh
 
 ## Special functions
 - [ ] erf, erfc
