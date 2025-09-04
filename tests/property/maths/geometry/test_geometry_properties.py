@@ -12,6 +12,7 @@ from algolib.maths.geometry.geometry import Point, Vector, GeometryUtils
 
 # ------------------------------- feature flags ---------------------------------
 
+
 def _has_symbol(module_path: str, name: str) -> bool:
     try:
         mod = importlib.import_module(module_path)
@@ -19,11 +20,13 @@ def _has_symbol(module_path: str, name: str) -> bool:
     except Exception:
         return False
 
+
 HAS_LINE = _has_symbol("algolib.maths.geometry.geometry", "Line")
 HAS_PLANE = _has_symbol("algolib.maths.geometry.geometry", "Plane")
 
 
 # ------------------------------- helpers ---------------------------------
+
 
 def _get_components(v: Vector) -> Sequence[float]:
     """Extract vector components in a robust way."""
@@ -93,6 +96,7 @@ def _v_norm(a: Vector) -> float:
         return float(a.norm())  # type: ignore[attr-defined]
     return float(math.sqrt(sum(x * x for x in _get_components(a))))
 
+
 def _v_norm_sq(a: Vector) -> float:
     """Return ||a||^2 computed as sum of squares (no sqrt)."""
     return float(sum(x * x for x in _get_components(a)))
@@ -128,14 +132,21 @@ safe_float = st.floats(
     width=64,
 )
 
+
 def vectors_of_dim(n: int):
-    return st.builds(lambda xs: _make_vector(xs), st.lists(safe_float, min_size=n, max_size=n))
+    return st.builds(
+        lambda xs: _make_vector(xs), st.lists(safe_float, min_size=n, max_size=n)
+    )
+
 
 def points_of_dim(n: int):
-    return st.builds(lambda xs: _make_point(xs), st.lists(safe_float, min_size=n, max_size=n))
+    return st.builds(
+        lambda xs: _make_point(xs), st.lists(safe_float, min_size=n, max_size=n)
+    )
 
 
 # ------------------------------ composite strategies -------------------------------
+
 
 @st.composite
 def vec2_same_dim(draw):
@@ -144,6 +155,7 @@ def vec2_same_dim(draw):
     v1 = draw(st.builds(Vector, arr))
     v2 = draw(st.builds(Vector, arr))
     return n, v1, v2
+
 
 @st.composite
 def vec3_same_dim(draw):
@@ -154,6 +166,7 @@ def vec3_same_dim(draw):
     v3 = draw(st.builds(Vector, arr))
     return n, v1, v2, v3
 
+
 @st.composite
 def point3_same_dim(draw):
     n = draw(dims)
@@ -162,6 +175,7 @@ def point3_same_dim(draw):
     q = draw(st.builds(Point, arr))
     r = draw(st.builds(Point, arr))
     return n, p, q, r
+
 
 @st.composite
 def line_triplet(draw):
@@ -172,8 +186,11 @@ def line_triplet(draw):
     xs = draw(arr)
     assume(any(abs(x) > 0.0 for x in xs))
     d = Vector(xs)
-    t = draw(st.floats(min_value=-10, max_value=10, allow_nan=False, allow_infinity=False))
+    t = draw(
+        st.floats(min_value=-10, max_value=10, allow_nan=False, allow_infinity=False)
+    )
     return n, p0, d, t
+
 
 @st.composite
 def plane_quad(draw):
@@ -184,11 +201,14 @@ def plane_quad(draw):
     assume(any(abs(x) > 0.0 for x in xs))
     nvec = Vector(xs)
     u = draw(st.builds(Vector, arr))
-    t = draw(st.floats(min_value=-10, max_value=10, allow_nan=False, allow_infinity=False))
+    t = draw(
+        st.floats(min_value=-10, max_value=10, allow_nan=False, allow_infinity=False)
+    )
     return n, p0, nvec, u, t
 
 
 # --------------------------- vector properties (single @given) ---------------------------
+
 
 @given(data=vec2_same_dim())
 @settings(max_examples=60)
@@ -252,7 +272,10 @@ def test_dot_symmetry_and_cauchy_schwarz(data):
         assert lhs <= bound * (1 + 1e-12) + 1e-12
 
 
-@given(data=vec2_same_dim(), a=st.floats(allow_nan=False, allow_infinity=False, min_value=-1e6, max_value=1e6))
+@given(
+    data=vec2_same_dim(),
+    a=st.floats(allow_nan=False, allow_infinity=False, min_value=-1e6, max_value=1e6),
+)
 @settings(max_examples=60)
 def test_norm_properties(data, a):
     n, v1, v2 = data
@@ -269,7 +292,9 @@ def test_norm_properties(data, a):
     else:
         assert nv > 0.0
     # homogeneity
-    assert math.isclose(_v_norm(_v_scale(v1, a)), abs(a) * _v_norm(v1), rel_tol=1e-12, abs_tol=1e-12)
+    assert math.isclose(
+        _v_norm(_v_scale(v1, a)), abs(a) * _v_norm(v1), rel_tol=1e-12, abs_tol=1e-12
+    )
     # triangle inequality
     left = _v_norm(_v_add(v1, v2))
     right = _v_norm(v1) + _v_norm(v2)
@@ -277,6 +302,7 @@ def test_norm_properties(data, a):
 
 
 # --------------------------- point / distance properties ---------------------------
+
 
 @given(data=point3_same_dim())
 @settings(max_examples=60)
@@ -287,7 +313,9 @@ def test_distance_metric_axioms(data):
     d_qp = d(q, p)
     assert d_pq >= 0.0
     assert math.isclose(d_pq, d_qp, rel_tol=1e-12, abs_tol=1e-12)
-    same = all(math.isclose(a, b, abs_tol=0.0) for a, b in zip(_p_coords(p), _p_coords(q)))
+    same = all(
+        math.isclose(a, b, abs_tol=0.0) for a, b in zip(_p_coords(p), _p_coords(q))
+    )
     if same:
         assert math.isclose(d_pq, 0.0, abs_tol=0.0)
     d_pr = d(p, r)
@@ -298,11 +326,13 @@ def test_distance_metric_axioms(data):
 
 # ----------------------------- line / plane (optional) -----------------------------
 
+
 @pytest.mark.skipif(not HAS_LINE, reason="Line not implemented")
 @given(data=line_triplet())
 @settings(max_examples=40)
 def test_line_parametric_goes_through_base(data):
     from algolib.maths.geometry.geometry import Line  # type: ignore
+
     n, p0, d, t = data
     L = Line(p0, d)
     # If API has point_at(t) use it, else reconstruct manually
@@ -311,7 +341,10 @@ def test_line_parametric_goes_through_base(data):
     else:
         pt = _make_point(a + t * b for a, b in zip(_p_coords(p0), _get_components(d)))
     pt0 = _make_point(a + 0.0 * b for a, b in zip(_p_coords(p0), _get_components(d)))
-    assert all(math.isclose(a, b, rel_tol=0, abs_tol=1e-12) for a, b in zip(_p_coords(pt0), _p_coords(p0)))
+    assert all(
+        math.isclose(a, b, rel_tol=0, abs_tol=1e-12)
+        for a, b in zip(_p_coords(pt0), _p_coords(p0))
+    )
 
 
 @pytest.mark.skipif(not HAS_PLANE, reason="Plane not implemented")
@@ -319,6 +352,7 @@ def test_line_parametric_goes_through_base(data):
 @settings(max_examples=40)
 def test_plane_normal_is_orthogonal(data):
     from algolib.maths.geometry.geometry import Plane  # type: ignore
+
     n, p0, nvec, u, t = data
     assume(_v_norm(nvec) > 0.0)
     P = Plane(p0, nvec)
@@ -346,7 +380,6 @@ def test_plane_normal_is_orthogonal(data):
     # check orthogonality against unit normal
     dot_unit = _v_dot(n_hat, diff)
     scale = _v_norm(diff)
-
 
     # robust tolerance: relative + absolute floor
     rel = 2e-12

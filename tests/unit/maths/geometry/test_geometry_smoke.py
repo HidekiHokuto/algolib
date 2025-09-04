@@ -2,6 +2,7 @@
 import math
 from algolib.maths.geometry.geometry import Point, Vector, GeometryUtils
 
+
 def test_point_vector_basic():
     p = Point([0, 0, 0])
     q = Point([1, 2, 2])

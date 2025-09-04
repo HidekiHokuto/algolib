@@ -9,21 +9,27 @@ REL = 1e-12
 ABS = 1e-12
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_sinh_matches_math(x):
     got = sinh(x)
     exp = math.sinh(x)
     assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_cosh_matches_math(x):
     got = cosh(x)
     exp = math.cosh(x)
     assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_tanh_matches_math(x):
     got = tanh(x)
     exp = math.tanh(x)
@@ -52,7 +58,7 @@ def test_odd_even_properties():
     for x in [0.0, 0.25, 1.3, 5.0]:
         assert math.isclose(sinh(-x), -sinh(x), rel_tol=REL, abs_tol=ABS)
         assert math.isclose(tanh(-x), -tanh(x), rel_tol=REL, abs_tol=ABS)
-        assert math.isclose(cosh(-x),  cosh(x), rel_tol=REL, abs_tol=ABS)
+        assert math.isclose(cosh(-x), cosh(x), rel_tol=REL, abs_tol=ABS)
 
 
 def test_nonfinite_returns_nan_per_contract():

@@ -17,7 +17,10 @@ from algolib.numerics.trig import sin as my_sin, cos as my_cos, tan as my_tan
 REL = getattr(C, "REL_EPS_DEFAULT", 2e-12)
 ABS = getattr(C, "ABS_EPS_DEFAULT", 1e-12)
 
-def _isclose(a: float, b: float, rel: float = REL, abs_: float = ABS, ulps: int | None = None) -> bool:
+
+def _isclose(
+    a: float, b: float, rel: float = REL, abs_: float = ABS, ulps: int | None = None
+) -> bool:
     d = abs(a - b)
     scale = max(1.0, abs(a), abs(b))
     tol = rel * scale + abs_
@@ -29,6 +32,7 @@ def _isclose(a: float, b: float, rel: float = REL, abs_: float = ABS, ulps: int 
         tol = max(tol, ulps * ulp)
     return d <= tol
 
+
 def _dist_to_half_pi_grid(x: float) -> float:
     t = (x - C.PI_2) / C.PI
     k = math.floor(t + 0.5)
@@ -39,9 +43,11 @@ def _dist_to_half_pi_grid(x: float) -> float:
         r += C.PI
     return abs(r)
 
+
 # -----------------------
 # basic values & symmetry
 # -----------------------
+
 
 @pytest.mark.parametrize(
     "x",
@@ -65,6 +71,7 @@ def test_against_math_known_points(x):
     if _dist_to_half_pi_grid(x) > 1e-6:
         assert _isclose(my_tan(x), math.tan(x), rel=2e-11, abs_=2e-11, ulps=64)
 
+
 def test_symmetry_identities():
     xs = [0.0, 0.1, 1.0, 10.0, -0.5, 123.456]
     for x in xs:
@@ -73,9 +80,11 @@ def test_symmetry_identities():
         if _dist_to_half_pi_grid(x) > 1e-6:
             assert _isclose(my_tan(-x), -my_tan(x), rel=2e-11, abs_=2e-11, ulps=64)
 
+
 # -----------------------
 # edge cases: NaN / Inf
 # -----------------------
+
 
 @pytest.mark.parametrize("x", [float("nan"), float("inf"), float("-inf")])
 def test_non_finite_returns_nan(x):
