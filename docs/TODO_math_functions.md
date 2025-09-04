@@ -92,7 +92,7 @@
 
 ## Power & logarithmic
 - [x] sqrt
-- [ ] pow
+- [x] pow
 - [x] exp
 - [ ] exp2 (3.11+)
 - [ ] expm1
@@ -115,9 +115,9 @@
 - [x] sinh
 - [x] cosh
 - [x] tanh
-- [ ] asinh
-- [ ] acosh
-- [ ] atanh
+- [x] asinh
+- [x] acosh
+- [x] atanh
 
 ## Special functions
 - [ ] erf
