@@ -30,21 +30,27 @@ def test_scalar_mul_and_matmul():
     M = MatrixDense([[1, 0], [0, 1], [1, -1]])  # 3x2
     # A(2x3) * M(3x2) => 2x2
     P = A * M
-    assert P.equals(MatrixDense([[1 + 0 + 3*1, 0 + 2*1 + 3*(-1)],
-                                 [4 + 0 + 6*1, 0 + 5*1 + 6*(-1)]]))
+    assert P.equals(
+        MatrixDense(
+            [
+                [1 + 0 + 3 * 1, 0 + 2 * 1 + 3 * (-1)],
+                [4 + 0 + 6 * 1, 0 + 5 * 1 + 6 * (-1)],
+            ]
+        )
+    )
 
 
 def test_matvec_and_transpose():
     A = MatrixDense([[1, 2], [3, 4], [5, 6]])
     v = [10, -2]
-    assert A.matvec(v) == [1*10 + 2*(-2), 3*10 + 4*(-2), 5*10 + 6*(-2)]
+    assert A.matvec(v) == [1 * 10 + 2 * (-2), 3 * 10 + 4 * (-2), 5 * 10 + 6 * (-2)]
     assert A.T().equals(MatrixDense([[1, 3, 5], [2, 4, 6]]))
 
 
 def test_determinant_and_inverse_2x2():
     A = MatrixDense([[4, 7], [2, 6]])
     detA = A.det()
-    assert abs(detA - (4*6 - 7*2)) < 1e-12
+    assert abs(detA - (4 * 6 - 7 * 2)) < 1e-12
     invA = A.inv()
     # A * A^{-1} = I
     I = MatrixDense.identity(2)

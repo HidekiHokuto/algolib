@@ -24,6 +24,9 @@ from __future__ import annotations
 
 from algolib.numerics.constants import INF, NAN, isfinite_f
 from algolib.numerics.exp import exp
+from algolib.numerics.sqrt import newton_sqrt as sqrt
+from algolib.numerics.log import log
+from algolib.exceptions import InvalidValueError
 
 __all__ = ["sinh", "cosh", "tanh"]
 
@@ -160,3 +163,114 @@ def tanh(x: float) -> float:
     e2a = exp(2.0 * ax)
     t = (e2a - 1.0) / (e2a + 1.0)
     return sgn * t
+
+
+def asinh(x: float) -> float:
+    r"""
+    Inverse hyperbolic sine.
+
+    Parameters
+    ----------
+    x : float
+        Real input.
+
+    Returns
+    -------
+    float
+        ``asinh(x)``.
+
+    Notes
+    -----
+    - Non-finite input returns NaN, per algolib contract.
+    - Preserves signed zero: asinh(±0.0) = ±0.0.
+    - Implemented using the stable form
+      ``sgn(x) * log(|x| + sqrt(x**2 + 1))``.
+    """
+
+    # Non-finite policy
+    if not isfinite_f(x):
+        return NAN
+
+    if x == 0.0:
+        return x
+
+    sgn = 1.0 if x > 0.0 else -1.0
+    ax = x if x > 0.0 else -x
+
+    return sgn * log(ax + sqrt(ax**2 + 1))
+
+
+def acosh(x: float) -> float:
+    r"""
+    Inverse hyperbolic cosine.
+
+    Parameters
+    ----------
+    x : float
+        Real input.
+
+    Returns
+    -------
+    float
+        ``acosh(x)``.
+
+    Notes
+    -----
+    - Domain: ``x >= 1``.
+    - Non-finite input returns NaN, per algolib contract.
+    - Out-of-domain inputs (``x < 1``) return NaN (no exceptions).
+    - Preserves floating semantics: ``acosh(1.0) = 0.0``.
+    - Implemented with the cancellation-safe form:
+      ``acosh(x) = log(x + sqrt((x - 1) * (x + 1)))``,
+      which is more stable near ``x ≈ 1`` than ``sqrt(x**2 - 1)``.
+
+    """
+    if not isfinite_f(x):
+        return NAN
+
+    if x < 1.0:
+        return NAN
+    if x == 1.0:
+        return 0.0
+
+    # Stable form near x ≈ 1: sqrt((x - 1)*(x + 1))
+    t = sqrt((x - 1.0) * (x + 1.0))
+    return log(x + t)
+
+
+def atanh(x: float) -> float:
+    r"""
+    Inverse hyperbolic tangent.
+
+    Parameters
+    ----------
+    x : float
+        Real input.
+
+    Returns
+    -------
+    float
+        ``atanh(x)``.
+
+    Notes
+    -----
+    - Domain: ``-1 < x < 1``.
+    - Non-finite input returns NaN, per algolib contract.
+    - Out-of-domain inputs (``|x| >= 1``) return NaN (no exceptions).
+    - Preserves signed zero: ``atanh(±0.0) = ±0.0``.
+    - Implemented as ``sgn(x) * 0.5 * log((1 + |x|) / (1 - |x|))``,
+      which is equivalent to the usual formula while keeping sign handling explicit.
+
+    """
+    if not isfinite_f(x):
+        return NAN
+    if not (-1.0 < x < 1.0):
+        return NAN
+
+    if x == 0.0:
+        # Preserve signed zero
+        return x
+
+    sgn = 1.0 if x > 0.0 else -1.0
+    ax = x if x > 0.0 else -x
+    return sgn * 0.5 * log((1.0 + ax) / (1.0 - ax))

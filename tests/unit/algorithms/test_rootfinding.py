@@ -51,9 +51,18 @@ def test_newton_sqrt_matches_math(x):
 
 
 # ---------- newton_sqrt(): stress both tiny and huge for exponent-based initial guess ----------
-@pytest.mark.parametrize("x", [5e-324,  # subnormal minimum > 0
-                               1e-308,  # tiny normal
-                               1e-200, 1e-100, 1e100, 1e200, 1e308])
+@pytest.mark.parametrize(
+    "x",
+    [
+        5e-324,  # subnormal minimum > 0
+        1e-308,  # tiny normal
+        1e-200,
+        1e-100,
+        1e100,
+        1e200,
+        1e308,
+    ],
+)
 def test_newton_sqrt_extremes(x):
     got = newton_sqrt(x)
     exp = math.sqrt(x)

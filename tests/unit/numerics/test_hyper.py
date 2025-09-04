@@ -3,27 +3,33 @@ import math
 import pytest
 
 # 测试只对比“有限输入”的数值等价；非有限输入按 algolib 约定应返回 NaN
-from algolib.numerics.hyper import sinh, cosh, tanh
+from algolib.numerics.hyper import sinh, cosh, tanh, asinh, acosh, atanh
 
 REL = 1e-12
 ABS = 1e-12
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_sinh_matches_math(x):
     got = sinh(x)
     exp = math.sinh(x)
     assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_cosh_matches_math(x):
     got = cosh(x)
     exp = math.cosh(x)
     assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
 
 
-@pytest.mark.parametrize("x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0])
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
 def test_tanh_matches_math(x):
     got = tanh(x)
     exp = math.tanh(x)
@@ -52,7 +58,7 @@ def test_odd_even_properties():
     for x in [0.0, 0.25, 1.3, 5.0]:
         assert math.isclose(sinh(-x), -sinh(x), rel_tol=REL, abs_tol=ABS)
         assert math.isclose(tanh(-x), -tanh(x), rel_tol=REL, abs_tol=ABS)
-        assert math.isclose(cosh(-x),  cosh(x), rel_tol=REL, abs_tol=ABS)
+        assert math.isclose(cosh(-x), cosh(x), rel_tol=REL, abs_tol=ABS)
 
 
 def test_nonfinite_returns_nan_per_contract():
@@ -62,3 +68,39 @@ def test_nonfinite_returns_nan_per_contract():
             out = f(bad)
             assert isinstance(out, float)
             assert math.isnan(out)
+
+
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
+def test_asinh_matches_math(x):
+    got = asinh(x)
+    exp = math.asinh(x)
+    assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
+
+
+def test_acosh_domain_and_edges():
+    assert acosh(1.0) == 0.0
+    assert math.isnan(acosh(0.999999999999))  # out of domain
+    # finite check vs math for a typical value
+    x = 2.5
+    assert math.isclose(acosh(x), math.acosh(x), rel_tol=1e-12, abs_tol=1e-12)
+
+
+def test_acosh_nonfinite_nan():
+    for bad in (float("nan"), float("inf"), -float("inf")):
+        assert math.isnan(acosh(bad))
+
+
+def test_atanh_domain_and_zero():
+    assert atanh(0.0) == 0.0
+    assert math.isnan(atanh(1.0))
+    assert math.isnan(atanh(-1.0))
+    # typical value vs math
+    x = 0.75
+    assert math.isclose(atanh(x), math.atanh(x), rel_tol=1e-12, abs_tol=1e-12)
+
+
+def test_atanh_nonfinite_nan():
+    for bad in (float("nan"), float("inf"), -float("inf")):
+        assert math.isnan(atanh(bad))

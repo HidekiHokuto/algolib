@@ -18,9 +18,7 @@ def test_lu_solve_identity():
 
 
 def test_lu_solve_small_dense():
-    A = [[3.0, 2.0, -1.0],
-         [2.0, -2.0, 4.0],
-         [-1.0, 0.5, -1.0]]
+    A = [[3.0, 2.0, -1.0], [2.0, -2.0, 4.0], [-1.0, 0.5, -1.0]]
     b = [1.0, -2.0, 0.0]
     LU, piv, sign = lu_factor(A)
     x = lu_solve(LU, piv, b)
@@ -32,10 +30,8 @@ def test_lu_solve_small_dense():
 
 
 def test_lu_multiple_rhs():
-    A = [[2.0, 1.0],
-         [5.0, 7.0]]
-    B = [[11.0, 1.0],
-         [13.0, 0.0]]  # two RHS as columns stored by rows
+    A = [[2.0, 1.0], [5.0, 7.0]]
+    B = [[11.0, 1.0], [13.0, 0.0]]  # two RHS as columns stored by rows
     LU, piv, sign = lu_factor(A)
     X = lu_solve(LU, piv, B)
     for col in range(2):
@@ -45,7 +41,6 @@ def test_lu_multiple_rhs():
 
 
 def test_lu_singular_raises():
-    A = [[1.0, 2.0],
-         [2.0, 4.0]]  # rank-1
+    A = [[1.0, 2.0], [2.0, 4.0]]  # rank-1
     with pytest.raises(ValueError):
         lu_factor(A, piv_tol=0.0)

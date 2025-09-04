@@ -6,6 +6,7 @@ import math
 from algolib.numerics import pow as algo_pow
 from algolib.core.complex import Complex
 
+
 # --- Helper: ensure behavior parity with Python's built-in `**` ---
 def _assert_pow_same_behavior(x, e):
     """Assert that algolib.numerics.pow mirrors Python's built-in `**` behavior.
@@ -23,7 +24,7 @@ def _assert_pow_same_behavior(x, e):
 
     # Right: Python built-in
     try:
-        b = (x ** e)
+        b = x**e
         b_ok, b_exc = True, None
     except Exception as ex:  # noqa: BLE001 - compare exception types explicitly
         b_ok, b_exc = False, type(ex)
@@ -32,6 +33,7 @@ def _assert_pow_same_behavior(x, e):
         assert a == b
     else:
         assert a_ok == b_ok and a_exc is b_exc
+
 
 # --- Helper: compare Complex power vs. reference, including exceptions ---
 def _assert_complex_pow_matches_reference(z: Complex, e: int) -> None:
@@ -53,11 +55,16 @@ def _assert_complex_pow_matches_reference(z: Complex, e: int) -> None:
         b_ok, b_exc = False, type(ex)
 
     if a_ok and b_ok:
-        assert _complex_almost_equal(a, b), f"Complex pow mismatch: a={a!r}, b={b!r}, z={z!r}, e={e}"
+        assert _complex_almost_equal(
+            a, b
+        ), f"Complex pow mismatch: a={a!r}, b={b!r}, z={z!r}, e={e}"
     else:
         assert a_ok == b_ok and a_exc is b_exc
 
-def _complex_almost_equal(a: Complex, b: Complex, rel: float = 5e-13, abs_: float = 1e-12) -> bool:
+
+def _complex_almost_equal(
+    a: Complex, b: Complex, rel: float = 5e-13, abs_: float = 1e-12
+) -> bool:
     """Numerical equality for Complex allowing -0.0/+0.0 and tiny roundoff.
 
     Tries `abs(a-b)` if supported, otherwise falls back to componentwise math.isclose.
@@ -89,7 +96,9 @@ def _complex_almost_equal(a: Complex, b: Complex, rel: float = 5e-13, abs_: floa
             if not (math.isinf(a.re) and math.isinf(b.re) and (a.re > 0) == (b.re > 0)):
                 return False
         else:
-            if not ((a.re == b.re) or math.isclose(a.re, b.re, rel_tol=rel, abs_tol=abs_)):
+            if not (
+                (a.re == b.re) or math.isclose(a.re, b.re, rel_tol=rel, abs_tol=abs_)
+            ):
                 return False
 
         # Imag parts
@@ -97,12 +106,15 @@ def _complex_almost_equal(a: Complex, b: Complex, rel: float = 5e-13, abs_: floa
             if not (math.isinf(a.im) and math.isinf(b.im) and (a.im > 0) == (b.im > 0)):
                 return False
         else:
-            if not ((a.im == b.im) or math.isclose(a.im, b.im, rel_tol=rel, abs_tol=abs_)):
+            if not (
+                (a.im == b.im) or math.isclose(a.im, b.im, rel_tol=rel, abs_tol=abs_)
+            ):
                 return False
 
         return True
     except Exception:
         return False
+
 
 def _repeat_mul(z: Complex, n: int) -> Complex:
     """Reference implementation for integer power using repeated multiplication."""
@@ -115,22 +127,27 @@ def _repeat_mul(z: Complex, n: int) -> Complex:
         acc = acc * z
     return acc
 
+
 # ---------- Built-in integers ----------
 @given(
-    a=st.integers(min_value=-10**6, max_value=10**6),
-    e=st.integers(min_value=0, max_value=64), # keep it moderate
+    a=st.integers(min_value=-(10**6), max_value=10**6),
+    e=st.integers(min_value=0, max_value=64),  # keep it moderate
 )
 def test_pow_int_equals_builtin(a, e):
-    assert algo_pow(a, e) == (a ** e)
+    assert algo_pow(a, e) == (a**e)
+
 
 # ---------- Built-in floats with integer exponents ----------
 @given(
-    x=st.floats(allow_nan=False, allow_infinity=False, width=64, min_value=-1e3, max_value=1e3),
+    x=st.floats(
+        allow_nan=False, allow_infinity=False, width=64, min_value=-1e3, max_value=1e3
+    ),
     e=st.integers(min_value=-10, max_value=10),
 )
 def test_pow_float_intexp_equals_builtin(x, e):
     # For float base with int exponent, compare behavior (value or exception).
     _assert_pow_same_behavior(x, e)
+
 
 # ---------- Complex integer exponents ----------
 def test_complex_basic_integer_exponents():
@@ -142,8 +159,12 @@ def test_complex_basic_integer_exponents():
 
 
 @given(
-    re=st.floats(allow_nan=False, allow_infinity=False, width=64, min_value=-5.0, max_value=5.0),
-    im=st.floats(allow_nan=False, allow_infinity=False, width=64, min_value=-5.0, max_value=5.0),
+    re=st.floats(
+        allow_nan=False, allow_infinity=False, width=64, min_value=-5.0, max_value=5.0
+    ),
+    im=st.floats(
+        allow_nan=False, allow_infinity=False, width=64, min_value=-5.0, max_value=5.0
+    ),
     e=st.integers(min_value=-8, max_value=8),
 )
 @settings(max_examples=60)
