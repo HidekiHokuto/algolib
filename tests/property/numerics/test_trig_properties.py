@@ -4,7 +4,7 @@
 import math
 
 
-from algolib.numerics.trig_pure import sin as my_sin, cos as my_cos, tan as my_tan
+from algolib.numerics.trig import sin as my_sin, cos as my_cos, tan as my_tan
 from algolib.numerics import constants as C
 from hypothesis import given, settings, strategies as st, assume
 
@@ -62,8 +62,8 @@ def test_sin_cos_match_math(x: float):
 def test_tan_matches_math_away_from_poles(x: float):
     # 与实现保持一致：先规约到 [-π/2, π/2] 再比较
     xr = math.remainder(x, C.TAU)
-    assume(_dist_to_half_pi_grid(xr) > 1.2e-4)
-    assert _isclose(my_tan(x), math.tan(xr), rel=1.2e-9, abs_=8e-10, ulps=4096)
+    assume(_dist_to_half_pi_grid(x) > 1.0e-10)
+    assert _isclose(my_tan(x), math.tan(x), rel=1.2e-8, abs_=8e-10, ulps=4096)
 
 
 # -----------------------
