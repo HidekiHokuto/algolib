@@ -199,6 +199,7 @@ def asinh(x: float) -> float:
 
     return sgn * log(ax + sqrt(ax**2 + 1))
 
+
 def acosh(x: float) -> float:
     r"""
     Inverse hyperbolic cosine.

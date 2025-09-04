@@ -86,9 +86,11 @@ def test_acosh_domain_and_edges():
     x = 2.5
     assert math.isclose(acosh(x), math.acosh(x), rel_tol=1e-12, abs_tol=1e-12)
 
+
 def test_acosh_nonfinite_nan():
     for bad in (float("nan"), float("inf"), -float("inf")):
         assert math.isnan(acosh(bad))
+
 
 def test_atanh_domain_and_zero():
     assert atanh(0.0) == 0.0
@@ -97,6 +99,7 @@ def test_atanh_domain_and_zero():
     # typical value vs math
     x = 0.75
     assert math.isclose(atanh(x), math.atanh(x), rel_tol=1e-12, abs_tol=1e-12)
+
 
 def test_atanh_nonfinite_nan():
     for bad in (float("nan"), float("inf"), -float("inf")):
