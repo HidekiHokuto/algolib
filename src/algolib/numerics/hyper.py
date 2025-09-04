@@ -24,6 +24,8 @@ from __future__ import annotations
 
 from algolib.numerics.constants import INF, NAN, isfinite_f
 from algolib.numerics.exp import exp
+from algolib.numerics.sqrt import newton_sqrt as sqrt
+from algolib.numerics.log import log
 
 __all__ = ["sinh", "cosh", "tanh"]
 
@@ -160,3 +162,40 @@ def tanh(x: float) -> float:
     e2a = exp(2.0 * ax)
     t = (e2a - 1.0) / (e2a + 1.0)
     return sgn * t
+
+def asinh(x: float) -> float:
+    r"""
+    Inverse hyperbolic sine.
+
+    Parameters
+    ----------
+    x : float
+        Real input.
+
+    Returns
+    -------
+    float
+        ``asinh(x)``.
+
+    Notes
+    -----
+    - Non-finite input returns NaN, per algolib contract.
+    - Preserves signed zero: asinh(±0.0) = ±0.0.
+    - Implemented using the stable form
+      ``sgn(x) * log(|x| + sqrt(x**2 + 1))``.
+    """
+
+    # Non-finite policy
+    if not isfinite_f(x):
+        return NAN
+    
+    if x == 0.0:
+        return x
+    
+    sgn = 1.0 if x > 0.0 else -1.0
+    ax = x if x > 0.0 else -x
+    
+    return sgn * log(ax + sqrt(ax ** 2 + 1))
+
+
+    

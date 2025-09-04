@@ -3,7 +3,7 @@ import math
 import pytest
 
 # 测试只对比“有限输入”的数值等价；非有限输入按 algolib 约定应返回 NaN
-from algolib.numerics.hyper import sinh, cosh, tanh
+from algolib.numerics.hyper import sinh, cosh, tanh, asinh
 
 REL = 1e-12
 ABS = 1e-12
@@ -68,3 +68,12 @@ def test_nonfinite_returns_nan_per_contract():
             out = f(bad)
             assert isinstance(out, float)
             assert math.isnan(out)
+
+@pytest.mark.parametrize(
+    "x", [0.0, 1e-12, -1e-12, 1.0, -1.0, 10.0, -10.0, 350.0, -350.0]
+)
+def test_asinh_matches_math(x):
+    got = asinh(x)
+    exp = math.asinh(x)
+    assert math.isclose(got, exp, rel_tol=REL, abs_tol=ABS)
+
