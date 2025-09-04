@@ -2,11 +2,11 @@
 
 # 顶部先固定 system 后端（一定要在导入 trig 函数之前）
 import math
-from algolib.numerics import set_backend
 
-set_backend("system")
 
-from algolib.numerics.trig import sin as my_sin, cos as my_cos, tan as my_tan
+
+
+from algolib.numerics.trig_pure import sin as my_sin, cos as my_cos, tan as my_tan
 from algolib.numerics import constants as C
 from hypothesis import given, settings, strategies as st, assume
 

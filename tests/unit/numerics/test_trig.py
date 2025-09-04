@@ -3,12 +3,10 @@ import math
 import pytest
 
 from algolib.numerics import constants as C
-from algolib.numerics import set_backend
 
-# —— 强制使用 system 后端 ——
-set_backend("system")
 
-from algolib.numerics.trig import sin as my_sin, cos as my_cos, tan as my_tan
+
+from algolib.numerics.trig_pure import sin as my_sin, cos as my_cos, tan as my_tan
 
 # -----------------------
 # helpers / configurations
