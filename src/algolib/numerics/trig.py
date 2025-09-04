@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Any
 from ._backend import get_backend
 
+
 def sin(x: Any) -> float:
     """
     Sine of an angle (system backend).
@@ -18,6 +19,7 @@ def sin(x: Any) -> float:
     """
     return get_backend().sin(x)
 
+
 def cos(x: Any) -> float:
     """
     Cosine of an angle (system backend).
@@ -33,6 +35,7 @@ def cos(x: Any) -> float:
         ``cos(x)`` evaluated by the active numerics backend.
     """
     return get_backend().cos(x)
+
 
 def tan(x: Any) -> float:
     """

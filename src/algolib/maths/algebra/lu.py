@@ -32,6 +32,7 @@ from typing import List, Sequence, Tuple
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _check_square(A: Sequence[Sequence[float]]) -> int:
     """Validate squareness and return dimension ``n``.
 
@@ -70,8 +71,10 @@ def _deepcopy_2d(A: Sequence[Sequence[float]]) -> List[List[float]]:
 # Core API
 # ---------------------------------------------------------------------------
 
-def lu_factor(A: Sequence[Sequence[float]], *, piv_tol: float = 0.0
-              ) -> Tuple[List[List[float]], List[int], int]:
+
+def lu_factor(
+    A: Sequence[Sequence[float]], *, piv_tol: float = 0.0
+) -> Tuple[List[List[float]], List[int], int]:
     """
     Compute the LU factorization with partial pivoting.
 
@@ -137,7 +140,9 @@ def lu_factor(A: Sequence[Sequence[float]], *, piv_tol: float = 0.0
     return LU, piv, sign
 
 
-def _permute_inplace_rhs(b: List[float] | List[List[float]], piv: Sequence[int]) -> None:
+def _permute_inplace_rhs(
+    b: List[float] | List[List[float]], piv: Sequence[int]
+) -> None:
     """Apply the permutation ``P`` to the right-hand side ``b`` in-place.
 
     Parameters
@@ -166,10 +171,11 @@ def _permute_inplace_rhs(b: List[float] | List[List[float]], piv: Sequence[int])
             b[k] = permuted_vec[k]
 
 
-def lu_solve(LU: Sequence[Sequence[float]],
-             piv: Sequence[int],
-             b: Sequence[float] | Sequence[Sequence[float]]
-             ) -> List[float] | List[List[float]]:
+def lu_solve(
+    LU: Sequence[Sequence[float]],
+    piv: Sequence[int],
+    b: Sequence[float] | Sequence[Sequence[float]],
+) -> List[float] | List[List[float]]:
     """
     Solve ``A x = b`` given a precomputed LU factorization with partial pivoting.
 

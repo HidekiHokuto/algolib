@@ -7,6 +7,7 @@ if TYPE_CHECKING:
 
 Number = Union[int, float, "Complex"]
 
+
 def pow(base: Number, exp: Any) -> Number:
     r"""
     Compute `base` raised to the exponent `exp`.
@@ -35,4 +36,4 @@ def pow(base: Number, exp: Any) -> Number:
     - For :class:`~algolib.core.complex.Complex`, non-integer exponents return `NotImplemented` from `__pow__`,
         so the caller may need to handle that case if used directly.
     """
-    return base ** exp
+    return base**exp

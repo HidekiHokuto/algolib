@@ -30,7 +30,11 @@ import math
 from dataclasses import dataclass
 from typing import Iterable, Tuple
 
-from algolib.exceptions import InvalidTypeError, InvalidValueError, NotImplementedAlgolibError
+from algolib.exceptions import (
+    InvalidTypeError,
+    InvalidValueError,
+    NotImplementedAlgolibError,
+)
 from algolib.numerics import hypot
 from algolib.numerics.trig_pure import sin, cos
 from algolib.numerics.sqrt import newton_sqrt as sqrt
@@ -74,7 +78,9 @@ class Complex:
         InvalidTypeError
         If `re` or `im` is not a real number.
         """
-        if not isinstance(self.re, (int, float)) or not isinstance(self.im, (int, float)):
+        if not isinstance(self.re, (int, float)) or not isinstance(
+            self.im, (int, float)
+        ):
             raise InvalidTypeError("re and im must be real numbers (int or float).")
 
         # freeze as floats (even if ints given)
@@ -171,7 +177,9 @@ class Complex:
         try:
             re, im = pair  # type: ignore[misc]
         except Exception as e:  # noqa: BLE001
-            raise InvalidTypeError("pair must be an iterable of length 2 (re, im).") from e
+            raise InvalidTypeError(
+                "pair must be an iterable of length 2 (re, im)."
+            ) from e
         return Complex(re, im)
 
     # ------------------------------- properties ---------------------------------
@@ -417,7 +425,7 @@ class Complex:
             exponent = int(exponent)
 
         if not isinstance(exponent, int):
-            return NotImplementedAlgolibError # defer to other implementations if any
+            return NotImplementedAlgolibError  # defer to other implementations if any
 
         # 0-th power yields multiplicative identity 1 + 0i
         if exponent == 0:
@@ -431,7 +439,7 @@ class Complex:
         # Fast exponentiation (exponentiation by squaring)
         result = type(self)(1.0, 0.0)
         base = self
-        n =  exponent
+        n = exponent
 
         while n > 0:
             if n & 1:

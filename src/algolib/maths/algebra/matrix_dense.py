@@ -53,7 +53,9 @@ class MatrixDense:
             if n_cols is None:
                 n_cols = len(r)
             elif len(r) != n_cols:
-                raise InvalidValueError("matrix must be rectangular (same number of columns per row).")
+                raise InvalidValueError(
+                    "matrix must be rectangular (same number of columns per row)."
+                )
             # check elements are numbers
             for x in r:
                 if not isinstance(x, (int, float)):
@@ -78,7 +80,9 @@ class MatrixDense:
         """Return the :math:`n \\times n` identity matrix."""
         if n <= 0:
             raise InvalidValueError("size must be positive.")
-        return MatrixDense([[1.0 if i == j else 0.0 for j in range(n)] for i in range(n)])
+        return MatrixDense(
+            [[1.0 if i == j else 0.0 for j in range(n)] for i in range(n)]
+        )
 
     eye = identity
     """Alias of :func:`identity`."""
@@ -114,20 +118,22 @@ class MatrixDense:
     def __add__(self, other: "MatrixDense") -> "MatrixDense":
         """Matrix addition."""
         self._check_same_shape(other)
-        return MatrixDense([[a + b for a, b in zip(ra, rb)] for ra, rb in zip(self.rows, other.rows)])
+        return MatrixDense(
+            [[a + b for a, b in zip(ra, rb)] for ra, rb in zip(self.rows, other.rows)]
+        )
 
     def __sub__(self, other: "MatrixDense") -> "MatrixDense":
         """Matrix subtraction."""
         self._check_same_shape(other)
-        return MatrixDense([[a - b for a, b in zip(ra, rb)] for ra, rb in zip(self.rows, other.rows)])
+        return MatrixDense(
+            [[a - b for a, b in zip(ra, rb)] for ra, rb in zip(self.rows, other.rows)]
+        )
 
     @overload
-    def __mul__(self, other: Number) -> "MatrixDense":
-        ...
+    def __mul__(self, other: Number) -> "MatrixDense": ...
 
     @overload
-    def __mul__(self, other: "MatrixDense") -> "MatrixDense":
-        ...
+    def __mul__(self, other: "MatrixDense") -> "MatrixDense": ...
 
     def __mul__(self, other: Union[Number, "MatrixDense"]) -> "MatrixDense":
         """
@@ -142,7 +148,9 @@ class MatrixDense:
             a_rows, a_cols = self.shape
             b_rows, b_cols = other.shape
             if a_cols != b_rows:
-                raise InvalidValueError(f"incompatible shapes for matmul: {self.shape} * {other.shape}")
+                raise InvalidValueError(
+                    f"incompatible shapes for matmul: {self.shape} * {other.shape}"
+                )
             out = []
             # naive triple loop (clear & correct)
             for i in range(a_rows):
@@ -154,7 +162,9 @@ class MatrixDense:
                     row.append(s)
                 out.append(row)
             return MatrixDense(out)
-        raise InvalidTypeError("unsupported operand for *: MatrixDense and non-(number|MatrixDense)")
+        raise InvalidTypeError(
+            "unsupported operand for *: MatrixDense and non-(number|MatrixDense)"
+        )
 
     def __rmul__(self, other: Number) -> "MatrixDense":
         """Right scalar multiplication."""
@@ -193,7 +203,9 @@ class MatrixDense:
     def T(self) -> "MatrixDense":
         """Transpose."""
         n_rows, n_cols = self.shape
-        return MatrixDense([[self.rows[i][j] for i in range(n_rows)] for j in range(n_cols)])
+        return MatrixDense(
+            [[self.rows[i][j] for i in range(n_rows)] for j in range(n_cols)]
+        )
 
     def det(self) -> float:
         """
@@ -243,7 +255,10 @@ class MatrixDense:
         if n != m:
             raise InvalidValueError("inverse is defined for square matrices.")
         # augmented [A | I]
-        A = [list(row) + [1.0 if i == j else 0.0 for j in range(n)] for i, row in enumerate(self.rows)]
+        A = [
+            list(row) + [1.0 if i == j else 0.0 for j in range(n)]
+            for i, row in enumerate(self.rows)
+        ]
 
         # Gauss-Jordan with partial pivoting
         for col in range(n):

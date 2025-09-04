@@ -44,6 +44,7 @@ def round_half_away_from_zero(x: float) -> int:
     else:
         return int(x - 0.5)
 
+
 def round_even(x: float) -> int:
     """
     Round a number to the nearest integer, rounding halves to the nearest even integer.

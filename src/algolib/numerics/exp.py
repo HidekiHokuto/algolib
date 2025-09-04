@@ -13,8 +13,8 @@ from algolib.numerics.constants import (
 
 # Derived constants
 LOG2_E: Final[float] = INV_LN2
-MAX_LOG: Final[float] = 709.782712893384   # ln(DBL_MAX)
-MIN_LOG: Final[float] = -745.1332191019411 # ln(min subnormal)
+MAX_LOG: Final[float] = 709.782712893384  # ln(DBL_MAX)
+MIN_LOG: Final[float] = -745.1332191019411  # ln(min subnormal)
 
 
 def exp(x: float) -> float:
@@ -58,7 +58,6 @@ def exp(x: float) -> float:
         The exponential e**x.
 
     """
-
 
     # Handle specials
     if x != x:  # NaN
@@ -113,4 +112,4 @@ def exp(x: float) -> float:
     den = 30240.0 - 15120.0 * r + 3360.0 * r2 - 420.0 * r3 + 30.0 * r4 - r5
     er = num / den
 
-    return (2.0 ** k) * er
+    return (2.0**k) * er

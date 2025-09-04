@@ -2,7 +2,10 @@ from __future__ import annotations
 import math
 from typing import Callable
 
-def derivative_cstep(f: Callable[[complex], complex], x: float, h: float = 1e-20) -> float:
+
+def derivative_cstep(
+    f: Callable[[complex], complex], x: float, h: float = 1e-20
+) -> float:
     r"""
     Complex-step derivative approximation:
 
@@ -12,6 +15,7 @@ def derivative_cstep(f: Callable[[complex], complex], x: float, h: float = 1e-20
     there is no subtractive cancellation.
     """
     return (f(x + 1j * h)).imag / h
+
 
 def derivative_central(
     f: Callable[[float], float],
@@ -31,10 +35,10 @@ def derivative_central(
 
     T = []
     for k in range(max_iter):
-        hk = h / (2 ** k)
+        hk = h / (2**k)
         T0k = (f(x + hk) - f(x - hk)) / (2.0 * hk)
         T.append([T0k])
         for j in range(1, k + 1):
             num = T[k][j - 1] - T[k - 1][j - 1]
-            T[k].append(T[k][j - 1] + num / (4 ** j - 1))
+            T[k].append(T[k][j - 1] + num / (4**j - 1))
     return T[-1][-1]

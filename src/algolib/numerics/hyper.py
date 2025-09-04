@@ -27,6 +27,7 @@ from algolib.numerics.exp import exp
 
 __all__ = ["sinh", "cosh", "tanh"]
 
+
 def _isfinite(x: float) -> bool:
     r"""
     Lightweight finiteness check without :mod:`math`.
@@ -43,8 +44,10 @@ def _isfinite(x: float) -> bool:
     """
     return (x == x) and (-INF < x < INF)
 
+
 def _abs(x: float) -> float:
     return -x if x < 0.0 else x
+
 
 def sinh(x: float) -> float:
     r"""
@@ -78,6 +81,7 @@ def sinh(x: float) -> float:
         return (1.0 if x >= 0.0 else -1.0) * (0.5 * ex)
     ex = exp(x)
     return 0.5 * (ex - 1.0 / ex)
+
 
 def cosh(x: float) -> float:
     """Hyperbolic cosine.
@@ -142,7 +146,7 @@ def tanh(x: float) -> float:
     if x == 0.0:
         # Preserve signed zero behavior
         return x
-    
+
     # Odd reduction: work on positive magnitude, restore sign at the end.
     sgn = 1.0 if x > 0.0 else -1.0
     ax = x if x > 0.0 else -x
@@ -151,7 +155,7 @@ def tanh(x: float) -> float:
     # Threshold 20 is conservative and avoids overflow in exp(2*ax).
     if ax > 20.0:
         return sgn * 1.0
-    
+
     # Compute using (e^{2a} - 1)/(e^{2a} + 1) for a = |x|
     e2a = exp(2.0 * ax)
     t = (e2a - 1.0) / (e2a + 1.0)

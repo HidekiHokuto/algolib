@@ -51,6 +51,7 @@ def _strip_trailing_zeros(cs: Sequence[Number]) -> Tuple[float, ...]:
         out.pop()
     return tuple(out)
 
+
 def _horner_kahan(coeffs: Sequence[Number], x: Number) -> Number:
     """Evaluate ``p(x)`` via Horner's method with Kahan compensation for the
     accumulating sum.
@@ -85,7 +86,6 @@ def _horner_kahan(coeffs: Sequence[Number], x: Number) -> Number:
         c = (t - prod) - y
         s = t
     return s
-
 
 
 @dataclass(frozen=True, slots=True)
@@ -123,14 +123,18 @@ class Polynomial:
         try:
             for c in coeffs:
                 if not isinstance(c, (int, float)):
-                    raise InvalidTypeError("coeffs must contain real numbers (int or float)")
+                    raise InvalidTypeError(
+                        "coeffs must contain real numbers (int or float)"
+                    )
                 tmp.append(float(c))
         except InvalidTypeError:
             # re-raise our own type error untouched
             raise
         except Exception as e:
             # any other conversion error -> InvalidTypeError for a clean API
-            raise InvalidTypeError("coeffs must contain real numbers (int or float)") from e
+            raise InvalidTypeError(
+                "coeffs must contain real numbers (int or float)"
+            ) from e
 
         if len(tmp) == 0:
             raise InvalidValueError("coeffs must be non-empty")
@@ -140,7 +144,6 @@ class Polynomial:
         while i > 0 and tmp[i] == 0.0:
             i -= 1
         object.__setattr__(self, "coeffs", tuple(tmp[: i + 1]))
-
 
     @staticmethod
     def zeros(deg: int) -> "Polynomial":
@@ -270,7 +273,6 @@ class Polynomial:
     def __repr__(self) -> str:
         """Unambiguous representation, e.g. ``Polynomial(coeffs=(1.0, 2.0))``."""
         return f"Polynomial(coeffs={self.coeffs})"
-
 
     def __str__(self) -> str:
         """Human‑readable form such as ``"3x^2 + 2x + 1"`` (or ``"0"`` for the zero polynomial)."""

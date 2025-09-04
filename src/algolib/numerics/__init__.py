@@ -23,4 +23,4 @@ __all__ = [
     "cosh",
     "tanh",
     *_CONSTANTS_ALL,
-    ]
+]
